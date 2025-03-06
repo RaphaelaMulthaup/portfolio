@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+::-webkit-scrollbar {
+    display: none; /* Für Chrome, Edge, Safari */
+}
+
+html {
+    scrollbar-width: none; /* Für Firefox */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    // height: 100%;
+    overflow: hidden; /* Normales Scrollen verhindern */
+}
+
+$lightBlue: #679AAC;
+$cream: #F8F7E5;
+$black: #1D1D1D;
+
+@mixin fullDisplay() {
+    height: 100vh;
+    width: 100vw;
+}
