@@ -1,0 +1,15 @@
+@import './../../../styles.scss';
+
+#header {
+    height: 10vh;
+    min-height: 72px;
+    max-height: 88px;
+    font-family: 'Quicksand';
+    margin: 0 5% 0 5%;
+    // margin: 0 72px 0 72px;
+    @include dFlex($jc:space-between);
+    app-logo-name {
+        height: 100%;
+    }
+
+}
