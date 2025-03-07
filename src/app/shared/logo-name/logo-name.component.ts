@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { PortfolioService } from '../../portfolio.service';
 
 @Component({
   selector: 'app-logo-name',
@@ -7,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './logo-name.component.scss'
 })
 export class LogoNameComponent {
+  portfolioService = inject(PortfolioService);
 
+  /**
+   * This function calls the function in the portfolio service that scrolls to the main components and makes it scroll to the landing page.
+   */
+  scrollToLandingPage(){
+    this.portfolioService.scrollToSection(0);
+  }
 }
