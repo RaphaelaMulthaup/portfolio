@@ -1,7 +1,4 @@
-import {
-  ElementRef,
-  Injectable
-} from '@angular/core';
+import { ElementRef, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +10,7 @@ export class PortfolioService {
   public mainComonents: ElementRef[] = [];
   /**
    * This function assigns a list of element references of the main components to the variable 'mainComonents'.
-   * 
+   *
    * @param mainComonents a list of element references of the main components
    */
   setMainComponents(mainComonents: ElementRef[]) {
@@ -22,14 +19,19 @@ export class PortfolioService {
 
   /**
    * This function assigns the new index to the variable 'currentIndexMainComponents' and scrolls to the corresponding main component.
-   * 
+   *
    * @param index The index of the current main component.
-   * @returns 
+   * @returns
    */
   scrollToSection(index: number) {
     // if (index < 0 || index >= this.mainComonents.length) return;
     this.currentIndexMainComponents = index;
-    this.mainComonents[index].nativeElement.scrollIntoView({ behavior: 'smooth' });
+    this.mainComonents[index].nativeElement.scrollIntoView({
+      behavior: 'smooth',
+    });
   }
 
+  jumpToSection(index: number) {
+    
+  }
 }
