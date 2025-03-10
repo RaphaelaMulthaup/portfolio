@@ -1,0 +1,18 @@
+@import "./../../../styles.scss";
+
+div {
+  @include dFlex($g: 16px);
+  height: 100%;
+  img {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .burgerMenu {
+    height: 40%;
+  }
+  .languageButton {
+    border-radius: 50%;
+    height: 100%;
+  }
+}

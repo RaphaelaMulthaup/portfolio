@@ -17,7 +17,7 @@ export class LogoNameComponent {
   //   this.portfolioService.scrollToSection(0);
   // }
 
-  jumpToSection(index: number) {
-    this.portfolioService.jumpToSection(index);
+  scrollToSection(index: number) {
+    this.portfolioService.scrollToSection(index);
   }
 }

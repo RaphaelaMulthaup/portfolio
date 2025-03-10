@@ -1,1 +1,16 @@
-<p>mini-menu works!</p>
+<div>
+  <img
+    class="languageButton"
+    [src]="imageSrc(languageIsHovered, imagesLanguage)"
+    alt="language"
+    (mouseenter)="languageIsHovered = true"
+    (mouseleave)="languageIsHovered = false"
+  />
+  <img
+    class="burgerMenu"
+    [src]="imageSrc(burgermenuIsHovered, imagesBurgermenu)"
+    alt="menu"
+    (mouseenter)="burgermenuIsHovered = true"
+    (mouseleave)="burgermenuIsHovered = false"
+  />
+</div>

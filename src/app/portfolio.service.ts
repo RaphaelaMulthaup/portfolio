@@ -31,7 +31,7 @@ export class PortfolioService {
     });
   }
 
-  jumpToSection(index: number) {
+  // jumpToSection(index: number) {
     
-  }
+  // }
 }
