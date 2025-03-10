@@ -2,7 +2,7 @@
   <img
   (click)="changeLanguage()"
     class="languageButton"
-    [src]="imageSrc(languageIsHovered, imagesLanguage)"
+    [src]="imageSrc(languageIsHovered, this[currentLanguageButtonImgSet])"
     alt="language"
     (mouseenter)="languageIsHovered = true"
     (mouseleave)="languageIsHovered = false"
