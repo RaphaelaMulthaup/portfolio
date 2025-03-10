@@ -21,17 +21,12 @@ export class PortfolioService {
    * This function assigns the new index to the variable 'currentIndexMainComponents' and scrolls to the corresponding main component.
    *
    * @param index The index of the current main component.
-   * @returns
    */
   scrollToSection(index: number) {
-    // if (index < 0 || index >= this.mainComonents.length) return;
     this.currentIndexMainComponents = index;
     this.mainComonents[index].nativeElement.scrollIntoView({
       behavior: 'smooth',
     });
   }
 
-  // jumpToSection(index: number) {
-    
-  // }
 }

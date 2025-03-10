@@ -15,6 +15,11 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ReferencesComponent } from './references/references.component';
 import { ContactComponent } from './contact/contact.component';
 import { PortfolioService } from './portfolio.service';
+import {
+  TranslateService,
+  TranslatePipe,
+  TranslateDirective,
+} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -26,11 +31,18 @@ import { PortfolioService } from './portfolio.service';
     ProjectsComponent,
     ReferencesComponent,
     ContactComponent,
+    TranslatePipe,
+    TranslateDirective,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements AfterViewInit {
+  constructor(private translate: TranslateService) {
+    this.translate.addLangs(['de', 'en']);
+    this.translate.setDefaultLang('de');
+    this.translate.use('de');
+  }
   title = 'portfolio';
   portfolioService = inject(PortfolioService);
 
@@ -49,7 +61,7 @@ export class AppComponent implements AfterViewInit {
 
   /**
    * This HostListener checks whether scrolling is currently taking place. If so, the function that checks whether 'isScrolling' is true is executed. If not, it sets 'isScrolling' to true and checks in which direction the scrolling is taking place and whether there is another main component in that direction. If so, the function to scroll to that direction is called.
-   * 
+   *
    * @param event the wheel event
    * @returns 'true' and stops the function if, 'isScrolling' is true
    */
@@ -57,32 +69,48 @@ export class AppComponent implements AfterViewInit {
   onScroll(event: WheelEvent) {
     if (this.isScrolling) return;
     this.isScrolling = true;
-    setTimeout(() => this.isScrolling = false, 800);
+    setTimeout(() => (this.isScrolling = false), 800);
 
     if (
       event.deltaY > 0 &&
-      this.portfolioService.currentIndexMainComponents < this.portfolioService.mainComonents.length - 1
+      this.portfolioService.currentIndexMainComponents <
+        this.portfolioService.mainComonents.length - 1
     ) {
-      this.portfolioService.scrollToSection(++this.portfolioService.currentIndexMainComponents);
-    } else if (event.deltaY < 0 && this.portfolioService.currentIndexMainComponents > 0) {
-      this.portfolioService.scrollToSection(--this.portfolioService.currentIndexMainComponents);
+      this.portfolioService.scrollToSection(
+        ++this.portfolioService.currentIndexMainComponents
+      );
+    } else if (
+      event.deltaY < 0 &&
+      this.portfolioService.currentIndexMainComponents > 0
+    ) {
+      this.portfolioService.scrollToSection(
+        --this.portfolioService.currentIndexMainComponents
+      );
     }
   }
 
   /**
    * This HostListener checks whether whether a keydown event occurs. If so, the function is called. It checks whether one of the up or down arrow keys is pressed and whether there is another main component in that direction. If so, the function to scroll to that direction is called.
-   * 
-   * @param event 
+   *
+   * @param event the keydown event
    */
   @HostListener('window:keydown', ['$event'])
   onKeyDown(event: KeyboardEvent) {
     if (
       event.key === 'ArrowDown' &&
-      this.portfolioService.currentIndexMainComponents < this.portfolioService.mainComonents.length - 1
+      this.portfolioService.currentIndexMainComponents <
+        this.portfolioService.mainComonents.length - 1
     ) {
-      this.portfolioService.scrollToSection(++this.portfolioService.currentIndexMainComponents);
-    } else if (event.key === 'ArrowUp' && this.portfolioService.currentIndexMainComponents > 0) {
-      this.portfolioService.scrollToSection(--this.portfolioService.currentIndexMainComponents);
+      this.portfolioService.scrollToSection(
+        ++this.portfolioService.currentIndexMainComponents
+      );
+    } else if (
+      event.key === 'ArrowUp' &&
+      this.portfolioService.currentIndexMainComponents > 0
+    ) {
+      this.portfolioService.scrollToSection(
+        --this.portfolioService.currentIndexMainComponents
+      );
     }
   }
 }
