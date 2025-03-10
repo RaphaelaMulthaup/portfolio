@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { PortfolioService } from '../../portfolio.service';
+import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-logo-name',
-  imports: [],
+  imports: [TranslatePipe, TranslateDirective],
   templateUrl: './logo-name.component.html',
   styleUrl: './logo-name.component.scss'
 })

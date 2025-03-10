@@ -1,12 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
+import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
+import { PortfolioService } from '../../portfolio.service';
 
 @Component({
   selector: 'app-mini-menu',
-  imports: [],
+  imports: [TranslatePipe, TranslateDirective],
   templateUrl: './mini-menu.component.html',
   styleUrl: './mini-menu.component.scss'
 })
 export class MiniMenuComponent {
+  portfolioService = inject(PortfolioService);
   /** The name of a class that specifies the color of the elements in the header. */
   @Input() headerClass: string = '';
   /** A boolean that indicates whether the language change button is hovered. */
@@ -51,5 +54,9 @@ export class MiniMenuComponent {
     return hoverState 
       ? imageSet[this.headerClass]?.hover 
       : imageSet[this.headerClass]?.normal;
+  }
+
+  changeLanguage(): void {
+    this.portfolioService.changeLanguage();
   }
 }

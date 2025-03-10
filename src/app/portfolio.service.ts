@@ -1,9 +1,29 @@
 import { ElementRef, Injectable } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PortfolioService {
+  /**
+   * This constructor sets German as the default language and activates it.
+   *
+   * @param translate The TranslateService, which manages the language translations.
+   */
+  constructor(private translate: TranslateService) {
+    this.translate.setDefaultLang('de');
+    this.translate.use('de');
+  }
+
+  /**
+   * This function checks which language is currently used and switches to the other one accordingly.
+   */
+  changeLanguage(): void {
+    const currentLang = this.translate.currentLang;
+    const newLang = currentLang === 'de' ? 'en' : 'de';
+    this.translate.use(newLang);
+  }
+
   /** the index of the currently shown main component */
   public currentIndexMainComponents = 0;
   /** a list of the main components */
@@ -28,5 +48,4 @@ export class PortfolioService {
       behavior: 'smooth',
     });
   }
-
 }
