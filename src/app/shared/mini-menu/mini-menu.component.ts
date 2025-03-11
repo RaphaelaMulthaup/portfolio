@@ -1,10 +1,11 @@
 import { Component, inject, Input } from '@angular/core';
 import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 import { PortfolioService } from '../../portfolio.service';
+import { MenuComponent } from './menu/menu.component';
 
 @Component({
   selector: 'app-mini-menu',
-  imports: [TranslatePipe, TranslateDirective],
+  imports: [TranslatePipe, TranslateDirective, MenuComponent],
   templateUrl: './mini-menu.component.html',
   styleUrl: './mini-menu.component.scss',
 })

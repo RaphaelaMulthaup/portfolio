@@ -1,6 +1,11 @@
 {
-  "app": {
-    "title": "Willkommen",
-    "hello": "Hallo"
+  "shared": {
+    "miniMenu": {
+      "menu": {
+        "menu": "Menü"
+      }
+    }
   }
 }
+
+

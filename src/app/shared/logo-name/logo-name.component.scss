@@ -4,10 +4,6 @@
     height: 100%;
     width: fit-content;
     @include dFlex($g:6%);
-    span {
-        font-size: 24px;
-        font-weight: 700;
-    }
     &:hover {
         color: $darkOrange;
         cursor: pointer;
