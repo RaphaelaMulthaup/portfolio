@@ -1,8 +1,9 @@
 @import "./../../../styles.scss";
 
-div {
+.miniMenu {
   @include dFlex($g: 16px);
   height: 100%;
+  position: relative;
   img {
     &:hover {
       cursor: pointer;
@@ -17,5 +18,7 @@ div {
   }
   app-menu {
     position: absolute;
+    top: -10px;
+    right: -28px;
   }
 }

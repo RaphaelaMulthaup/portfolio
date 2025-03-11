@@ -1,6 +1,6 @@
-<div>
+<div class="miniMenu">
   <img
-  (click)="changeLanguage()"
+    (click)="changeLanguage()"
     class="languageButton"
     [src]="imageSrc(languageIsHovered, this[currentLanguageButtonImgSet])"
     alt="language"
@@ -8,11 +8,12 @@
     (mouseleave)="languageIsHovered = false"
   />
   <img
+    (click)="displayMenu()"
     class="burgerMenu"
     [src]="imageSrc(burgermenuIsHovered, imagesBurgermenu)"
     alt="menu"
     (mouseenter)="burgermenuIsHovered = true"
     (mouseleave)="burgermenuIsHovered = false"
   />
-  <app-menu></app-menu>
+  <app-menu [ngClass]="{ 'dNone': !menuDisplayed }" id="menu"></app-menu>
 </div>

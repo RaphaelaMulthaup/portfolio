@@ -2,7 +2,12 @@
   "shared": {
     "miniMenu": {
       "menu": {
-        "menu": "Menu"
+        "menu": "Menu",
+        "aboutMe": "About Me",
+        "skillset": "Skillset",
+        "portfolio": "Portfolio",
+        "references": "References",
+        "contactMe": "Contact me"
       }
     }
   }

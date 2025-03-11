@@ -2,10 +2,11 @@ import { Component, inject, Input } from '@angular/core';
 import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 import { PortfolioService } from '../../portfolio.service';
 import { MenuComponent } from './menu/menu.component';
+import { CommonModule } from '@angular/common'
 
 @Component({
   selector: 'app-mini-menu',
-  imports: [TranslatePipe, TranslateDirective, MenuComponent],
+  imports: [TranslatePipe, TranslateDirective, MenuComponent, CommonModule],
   templateUrl: './mini-menu.component.html',
   styleUrl: './mini-menu.component.scss',
 })
@@ -19,6 +20,8 @@ export class MiniMenuComponent {
   burgermenuIsHovered: boolean = false;
   /** The variable specifies which image set is used for the language button. */
   currentLanguageButtonImgSet: 'imagesEN' | 'imagesDE' = 'imagesDE';
+  /** This variable indicates whether the menu is currently shown. */
+  menuDisplayed:boolean = false;
 
   /** The paths to different colored language change to EN buttons. */
   public imagesEN: { [key: string]: { normal: string; hover: string } } = {
@@ -82,5 +85,10 @@ export class MiniMenuComponent {
   changeLanguage(): void {
     this.portfolioService.changeLanguage();
     this.currentLanguageButtonImgSet = this.currentLanguageButtonImgSet === 'imagesEN' ? 'imagesDE' : 'imagesEN';
+  }
+
+  /** */
+  displayMenu(){
+    this.menuDisplayed = true;
   }
 }

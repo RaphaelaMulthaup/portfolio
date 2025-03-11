@@ -1,4 +1,18 @@
-<div>
-  <h4>{{ 'shared.miniMenu.menu.menu' | translate }}</h4> 
-  <img [src]="closeImagePath" (mouseover)="closeOnHover()" (mouseout)="closeOnMouseOut()" alt="close" />
+<div class="menu">
+  <div>
+    <h4>{{ "shared.miniMenu.menu.menu" | translate }}</h4>
+    <img
+      [src]="closeImagePath"
+      (mouseover)="closeOnHover()"
+      (mouseout)="closeOnMouseOut()"
+      alt="close"
+    />
+  </div>
+  <div>
+    <span>{{ "shared.miniMenu.menu.aboutMe" | translate }}</span>
+    <span>{{ "shared.miniMenu.menu.skillset" | translate }}</span>
+    <span>{{ "shared.miniMenu.menu.portfolio" | translate }}</span>
+    <span>{{ "shared.miniMenu.menu.references" | translate }}</span>
+    <span>{{ "shared.miniMenu.menu.contactMe" | translate }}</span>
+  </div>
 </div>
