@@ -19,6 +19,12 @@
   app-menu {
     position: absolute;
     top: -10px;
-    right: -28px;
+    right: calc(-5vw - 208.6px); //-5vw for 5% padding-right of the header and -208.6px for the width of app-menu 
+    transition: transform 200ms ease-in;
+    &.open {
+      transform: translateX(
+        calc(-5vw - 208.6px + 16px) 
+      ); //-5vw for 5% padding-right of the header and -208.6px for the width of app-menu additional 16px to move app menu slightly to the right
+    }
   }
 }
