@@ -1,5 +1,6 @@
 import { ElementRef, Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -14,6 +15,11 @@ export class PortfolioService {
     this.translate.setDefaultLang('de');
     this.translate.use('de');
   }
+
+  /** a subject to control the menu display state */
+  private menuDisplayedSubject = new Subject<boolean>();
+  /** here the subject is converted into an observable */
+  menuDisplayed$ = this.menuDisplayedSubject.asObservable();
 
   /**
    * This function checks which language is currently used and switches to the other one accordingly.
@@ -38,7 +44,7 @@ export class PortfolioService {
   }
 
   /**
-   * This function assigns the new index to the variable 'currentIndexMainComponents' and scrolls to the corresponding main component.
+   * This function assigns the new index to the variable 'currentIndexMainComponents' and scrolls to the corresponding main component. And all subscribers of the menuDisplayed$ observable are sent the value false, which closes the menu.
    *
    * @param index The index of the current main component.
    */
@@ -47,5 +53,6 @@ export class PortfolioService {
     this.mainComonents[index].nativeElement.scrollIntoView({
       behavior: 'smooth',
     });
+    this.menuDisplayedSubject.next(false);
   }
 }

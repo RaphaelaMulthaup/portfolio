@@ -3,6 +3,7 @@ import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 import { PortfolioService } from '../../portfolio.service';
 import { MenuComponent } from './menu/menu.component';
 import { CommonModule } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-mini-menu',
@@ -23,10 +24,28 @@ export class MiniMenuComponent {
   /** This variable indicates whether the menu is currently shown. */
   menuDisplayed: boolean = false;
 
+  private menuDisplayedSubscription!: Subscription;
 
 
   /** A reference is created that points to the DOM element of app-mini-menu. */ 
   constructor(private elRef: ElementRef) {}
+
+  /**
+   * This function subscribes to the menuDisplayed$ observable and responds to any change in the menuDisplayed state and calls the callback function and this.menuDisplayed is set to the new value.
+   */
+  ngOnInit() {
+    this.menuDisplayedSubscription = this.portfolioService.menuDisplayed$.subscribe((displayed) => {
+      this.menuDisplayed = displayed;
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.menuDisplayedSubscription) {
+      this.menuDisplayedSubscription.unsubscribe();
+    }
+  }
+
+
 
   /**
    * This HostListener checks whether a click was made anywhere on the page. If so, it calls the function that checks whether the click was within the menu. If the click was not within the menu, the menu is closed.
