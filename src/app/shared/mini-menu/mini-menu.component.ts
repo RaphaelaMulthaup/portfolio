@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, Input, HostListener, ElementRef } from '@angular/core';
 import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 import { PortfolioService } from '../../portfolio.service';
 import { MenuComponent } from './menu/menu.component';
@@ -22,6 +22,39 @@ export class MiniMenuComponent {
   currentLanguageButtonImgSet: 'imagesEN' | 'imagesDE' = 'imagesDE';
   /** This variable indicates whether the menu is currently shown. */
   menuDisplayed: boolean = false;
+
+
+
+  /** A reference is created that points to the DOM element of app-mini-menu. */ 
+  constructor(private elRef: ElementRef) {}
+
+  /**
+   * This HostListener checks whether a click was made anywhere on the page. If so, it calls the function that checks whether the click was within the menu. If the click was not within the menu, the menu is closed.
+   * 
+   * @param event the click event
+   */
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    // Überprüfen, ob der Klick innerhalb des Menüs war
+    const clickedInside = this.elRef.nativeElement.contains(event.target);
+    if (!clickedInside) {
+      this.hideMenu();
+    }
+  }
+
+  /** 
+   * This function sets the variable menuDisplayed to true.
+   */
+  displayMenu() {
+    this.menuDisplayed = true;
+  }
+
+  /** 
+   * This function sets the variable menuDisplayed to false.
+   */
+  hideMenu() {
+    this.menuDisplayed = false;
+  }
 
   /** The paths to different colored language change to EN buttons. */
   public imagesEN: { [key: string]: { normal: string; hover: string } } = {
@@ -86,19 +119,5 @@ export class MiniMenuComponent {
     this.portfolioService.changeLanguage();
     this.currentLanguageButtonImgSet =
       this.currentLanguageButtonImgSet === 'imagesEN' ? 'imagesDE' : 'imagesEN';
-  }
-
-  /** 
-   * This function sets the variable menuDisplayed to true.
-   */
-  displayMenu() {
-    this.menuDisplayed = true;
-  }
-
-  /** 
-   * This function sets the variable menuDisplayed to false.
-   */
-  hideMenu() {
-    this.menuDisplayed = false;
   }
 }
