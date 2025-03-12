@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 
 @Component({
@@ -8,6 +8,7 @@ import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
   styleUrl: './menu.component.scss',
 })
 export class MenuComponent {
+  @Output() menuClosed = new EventEmitter<void>(); // EventEmitter für das Schließen des Menüs
   /** the path for the standard close image */
   defaultICloseImagePath = 'assets/img/close.png';
   /** the path for the hoverd close image */
@@ -27,5 +28,9 @@ export class MenuComponent {
    */
   closeOnMouseOut() {
     this.closeImagePath = this.defaultICloseImagePath;
+  }
+
+  hideMenu() {
+    this.menuClosed.emit(); // Event auslösen, um das Menü in der Elternkomponente zu schließen
   }
 }

@@ -15,5 +15,10 @@
     (mouseenter)="burgermenuIsHovered = true"
     (mouseleave)="burgermenuIsHovered = false"
   />
-  <app-menu [ngClass]="{ 'dNone': !menuDisplayed }" id="menu"></app-menu>
+  @if (menuDisplayed) {
+  <app-menu
+    (menuClosed)="hideMenu()"
+    id="menu"
+  ></app-menu>
+  }
 </div>

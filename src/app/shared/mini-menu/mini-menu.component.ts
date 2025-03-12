@@ -91,4 +91,8 @@ export class MiniMenuComponent {
   displayMenu(){
     this.menuDisplayed = true;
   }
+
+  hideMenu() {
+    this.menuDisplayed = false;
+  }
 }
