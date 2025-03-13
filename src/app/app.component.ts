@@ -68,6 +68,8 @@ export class AppComponent implements AfterViewInit {
   @HostListener('window:wheel', ['$event'])
   onScroll(event: WheelEvent) {
     if (this.isScrolling) return;
+    console.log('scroll');
+    
     this.isScrolling = true;
     setTimeout(() => (this.isScrolling = false), 800);
 

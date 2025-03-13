@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { Component, Output, EventEmitter, Input, inject } from '@angular/core';
 import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
+import { PortfolioService } from '../../../portfolio.service';
 
 @Component({
   selector: 'app-menu',
@@ -9,11 +10,9 @@ import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
   styleUrl: './menu.component.scss',
 })
 export class MenuComponent {
+  portfolioService = inject(PortfolioService);
   /** an event emitter for closing the menu */
   @Output() menuClosed = new EventEmitter<void>();
-
-  // @Input() menuDisplayed: boolean = false;
-
 
   /** the path for the standard close image */
   defaultICloseImagePath = 'assets/img/close.png';
