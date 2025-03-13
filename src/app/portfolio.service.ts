@@ -48,8 +48,9 @@ export class PortfolioService {
    *
    * @param index The index of the current main component.
    */
-  scrollToSection(index: number) {
+  scrollToSection(index: number) {    
     this.currentIndexMainComponents = index;
+    
     this.mainComonents[index].nativeElement.scrollIntoView({
       behavior: 'smooth',
     });

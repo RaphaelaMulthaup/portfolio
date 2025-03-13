@@ -49,6 +49,10 @@ $darkOrange: #ff834f;
   color: $cream;
 }
 
+.maxWidth {
+  max-width: 1920px;
+}
+
 /* quicksand-300 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */

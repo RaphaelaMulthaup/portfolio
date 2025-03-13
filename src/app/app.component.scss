@@ -1,17 +1,1 @@
 @import './../styles.scss';
-
-.mainComponent {
-    @include fullDisplay;
-}
-
-.bgc-lightBlue {
-    background-color: $lightBlue;
-}
-
-.bgc-cream {
-    background-color: $cream;
-}
-
-.bgc-black {
-    background-color: $black;
-}
