@@ -45,7 +45,7 @@ export class MainContentComponent implements AfterViewInit {
   @ViewChildren('section') mainComponents!: QueryList<ElementRef>;
 
   /**
-   * This function passes the list of main components to 'portfolioService' to store it in a variable.
+   * This function passes the list of main components to 'portfolioService' to store it in a variable. In addition, an observable is created with the wheel events, of which only one is passed through per time interval (800 milliseconds) and is then passed as a parameter for the called handleScroll function.
    */
   ngAfterViewInit() {
     this.portfolioService.setMainComponents(this.mainComponents.toArray());
@@ -60,7 +60,7 @@ export class MainContentComponent implements AfterViewInit {
   }
 
   /**
-   * This function handles the scroll event.
+   * This function checks whether 'isScrolling' is true. If not, it sets 'isScrolling' to true and checks in which direction the scrolling is taking place and whether there is another main component in that direction. If so, the function to scroll to that direction is called.
    *
    * @param event the wheel event
    */
@@ -88,7 +88,7 @@ export class MainContentComponent implements AfterViewInit {
   }
 
   /**
-   * This HostListener checks whether whether a keydown event occurs. If so, the function is called. It checks whether one of the up or down arrow keys is pressed and whether there is another main component in that direction. If so, the function to scroll to that direction is called.
+   * This HostListener checks whether a keydown event occurs. If so, the function is called. It checks whether one of the up or down arrow keys is pressed and whether there is another main component in that direction. If so, the function to scroll to that direction is called.
    *
    * @param event the keydown event
    */
