@@ -15,7 +15,10 @@
     stroke: $darkOrange;
     height: 45%;
     width: auto;
-    path {
+    polygon {
         stroke: $darkOrange;
+    }
+    line {
+        stroke: $darkOrange; 
     }
 }

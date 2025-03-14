@@ -15,6 +15,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ReferencesComponent } from './references/references.component';
 import { SkillsComponent } from './skills/skills.component';
+import { fromEvent, throttleTime } from 'rxjs';
 
 @Component({
   selector: 'app-main-content',
@@ -48,16 +49,22 @@ export class MainContentComponent implements AfterViewInit {
    */
   ngAfterViewInit() {
     this.portfolioService.setMainComponents(this.mainComponents.toArray());
+
+    fromEvent(window, 'wheel')
+      .pipe(
+        throttleTime(800)
+      )
+      .subscribe((event) => {
+        this.handleScroll(event as WheelEvent);
+      });
   }
 
   /**
-   * This HostListener checks whether scrolling is currently taking place. If so, the function that checks whether 'isScrolling' is true is executed. If not, it sets 'isScrolling' to true and checks in which direction the scrolling is taking place and whether there is another main component in that direction. If so, the function to scroll to that direction is called.
+   * This function handles the scroll event.
    *
    * @param event the wheel event
-   * @returns 'true' and stops the function if, 'isScrolling' is true
    */
-  @HostListener('window:wheel', ['$event'])
-  onScroll(event: WheelEvent) {
+  private handleScroll(event: WheelEvent) {
     if (this.isScrolling) return;
     this.isScrolling = true;
     setTimeout(() => (this.isScrolling = false), 800);
