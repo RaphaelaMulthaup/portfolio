@@ -1,4 +1,4 @@
-import { ElementRef, Injectable } from '@angular/core';
+import { ElementRef, Injectable, signal } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
 
@@ -31,16 +31,23 @@ export class PortfolioService {
   }
 
   /** the index of the currently shown main component */
-  public currentIndexMainComponents = 0;
+  public currentIndexMainComponents = signal(0);
+
+  // Methode, um den Index zu aktualisieren
+  setCurrentIndex(index: number) {
+    this.currentIndexMainComponents.set(index);
+  }
+
+
   /** a list of the main components */
-  public mainComonents: ElementRef[] = [];
+  public mainComponents: ElementRef[] = [];
   /**
-   * This function assigns a list of element references of the main components to the variable 'mainComonents'.
+   * This function assigns a list of element references of the main components to the variable 'mainComponents'.
    *
-   * @param mainComonents a list of element references of the main components
+   * @param mainComponents a list of element references of the main components
    */
-  setMainComponents(mainComonents: ElementRef[]) {
-    this.mainComonents = mainComonents;
+  setMainComponents(mainComponents: ElementRef[]) {
+    this.mainComponents = mainComponents;
   }
 
   /**
@@ -48,10 +55,12 @@ export class PortfolioService {
    *
    * @param index The index of the current main component.
    */
-  scrollToSection(index: number) {    
-    this.currentIndexMainComponents = index;
+  scrollToSection(index: number) {
+    this.setCurrentIndex(index);
+    console.log(this.currentIndexMainComponents);
     
-    this.mainComonents[index].nativeElement.scrollIntoView({
+
+    this.mainComponents[index].nativeElement.scrollIntoView({
       behavior: 'smooth',
     });
     this.menuDisplayedSubject.next(false);

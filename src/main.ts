@@ -4,3 +4,6 @@ import { AppComponent } from './app/app.component';
 
 bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));
+//   document.addEventListener("wheel", (event) => {
+//     console.log("Scroll Delta Y:", event.deltaY);
+// });

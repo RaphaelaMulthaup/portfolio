@@ -51,9 +51,7 @@ export class MainContentComponent implements AfterViewInit {
     this.portfolioService.setMainComponents(this.mainComponents.toArray());
 
     fromEvent(window, 'wheel')
-      .pipe(
-        throttleTime(800)
-      )
+      .pipe(throttleTime(800))
       .subscribe((event) => {
         this.handleScroll(event as WheelEvent);
       });
@@ -71,19 +69,19 @@ export class MainContentComponent implements AfterViewInit {
 
     if (
       event.deltaY > 0 &&
-      this.portfolioService.currentIndexMainComponents <
-        this.portfolioService.mainComonents.length - 1
+      this.portfolioService.currentIndexMainComponents() <
+        this.portfolioService.mainComponents.length - 1
     ) {
-      this.portfolioService.scrollToSection(
-        ++this.portfolioService.currentIndexMainComponents
-      );
+      const newIndex = this.portfolioService.currentIndexMainComponents() + 1;
+      this.portfolioService.setCurrentIndex(newIndex);
+      this.portfolioService.scrollToSection(newIndex);
     } else if (
       event.deltaY < 0 &&
-      this.portfolioService.currentIndexMainComponents > 0
+      this.portfolioService.currentIndexMainComponents() > 0
     ) {
-      this.portfolioService.scrollToSection(
-        --this.portfolioService.currentIndexMainComponents
-      );
+      const newIndex = this.portfolioService.currentIndexMainComponents() - 1;
+      this.portfolioService.setCurrentIndex(newIndex);
+      this.portfolioService.scrollToSection(newIndex);
     }
   }
 
@@ -96,19 +94,19 @@ export class MainContentComponent implements AfterViewInit {
   onKeyDown(event: KeyboardEvent) {
     if (
       event.key === 'ArrowDown' &&
-      this.portfolioService.currentIndexMainComponents <
-        this.portfolioService.mainComonents.length - 1
+      this.portfolioService.currentIndexMainComponents() <
+        this.portfolioService.mainComponents.length - 1
     ) {
-      this.portfolioService.scrollToSection(
-        ++this.portfolioService.currentIndexMainComponents
-      );
+      const newIndex = this.portfolioService.currentIndexMainComponents() + 1;
+      this.portfolioService.setCurrentIndex(newIndex);
+      this.portfolioService.scrollToSection(newIndex);
     } else if (
       event.key === 'ArrowUp' &&
-      this.portfolioService.currentIndexMainComponents > 0
+      this.portfolioService.currentIndexMainComponents() > 0
     ) {
-      this.portfolioService.scrollToSection(
-        --this.portfolioService.currentIndexMainComponents
-      );
+      const newIndex = this.portfolioService.currentIndexMainComponents() - 1;
+      this.portfolioService.setCurrentIndex(newIndex);
+      this.portfolioService.scrollToSection(newIndex);
     }
   }
 }
