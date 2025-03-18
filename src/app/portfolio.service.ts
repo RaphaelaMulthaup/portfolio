@@ -30,17 +30,21 @@ export class PortfolioService {
     this.translate.use(newLang);
   }
 
-  /** the index of the currently shown main component */
+  /** Signal to track the index of the currently shown main component. */
   public currentIndexMainComponents = signal(0);
 
-  // Methode, um den Index zu aktualisieren
+  /**
+   * This function updates the index of the currently shown main component.
+   * 
+   * @param index The new index value to be set.
+   */
   setCurrentIndex(index: number) {
     this.currentIndexMainComponents.set(index);
   }
 
-
   /** a list of the main components */
   public mainComponents: ElementRef[] = [];
+
   /**
    * This function assigns a list of element references of the main components to the variable 'mainComponents'.
    *
@@ -58,7 +62,6 @@ export class PortfolioService {
   scrollToSection(index: number) {
     this.setCurrentIndex(index);
     console.log(this.currentIndexMainComponents);
-    
 
     this.mainComponents[index].nativeElement.scrollIntoView({
       behavior: 'smooth',

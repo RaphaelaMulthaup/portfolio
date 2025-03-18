@@ -1,4 +1,10 @@
-import { Component, inject, Input, HostListener, ElementRef } from '@angular/core';
+import {
+  Component,
+  inject,
+  Input,
+  HostListener,
+  ElementRef,
+} from '@angular/core';
 import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 import { PortfolioService } from '../../../portfolio.service';
 import { MenuComponent } from './menu/menu.component';
@@ -23,33 +29,38 @@ export class MiniMenuComponent {
   currentLanguageButtonImgSet: 'imagesEN' | 'imagesDE' = 'imagesDE';
   /** This variable indicates whether the menu is currently shown. */
   menuDisplayed: boolean = false;
-
+  /** Subscription object to track and manage the menuDisplayed$ observable subscription. */
   private menuDisplayedSubscription!: Subscription;
 
-
-  /** A reference is created that points to the DOM element of app-mini-menu. */ 
+  /** A reference is created that points to the DOM element of app-mini-menu. */
   constructor(private elRef: ElementRef) {}
 
   /**
+   * Lifecycle hook that is executed when the component is initialized.
+   *
    * This function subscribes to the menuDisplayed$ observable and responds to any change in the menuDisplayed state and calls the callback function and this.menuDisplayed is set to the new value.
    */
   ngOnInit() {
-    this.menuDisplayedSubscription = this.portfolioService.menuDisplayed$.subscribe((displayed) => {
-      this.menuDisplayed = displayed;
-    });
+    this.menuDisplayedSubscription =
+      this.portfolioService.menuDisplayed$.subscribe((displayed) => {
+        this.menuDisplayed = displayed;
+      });
   }
 
+  /**
+   * Lifecycle hook that is executed when the component is destroyed.
+   *
+   * Unsubscribes from `menuDisplayedSubscription` to prevent memory leaks.
+   */
   ngOnDestroy() {
     if (this.menuDisplayedSubscription) {
       this.menuDisplayedSubscription.unsubscribe();
     }
   }
 
-
-
   /**
    * This HostListener checks whether a click was made anywhere on the page. If so, it calls the function that checks whether the click was within the menu. If the click was not within the menu, the menu is closed.
-   * 
+   *
    * @param event the click event
    */
   @HostListener('document:click', ['$event'])
@@ -61,14 +72,14 @@ export class MiniMenuComponent {
     }
   }
 
-  /** 
+  /**
    * This function sets the variable menuDisplayed to true.
    */
   displayMenu() {
     this.menuDisplayed = true;
   }
 
-  /** 
+  /**
    * This function sets the variable menuDisplayed to false.
    */
   hideMenu() {

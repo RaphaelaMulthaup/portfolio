@@ -58,7 +58,7 @@ export class MainContentComponent implements AfterViewInit {
   }
 
   /**
-   * This function checks whether 'isScrolling' is true. If not, it sets 'isScrolling' to true and checks in which direction the scrolling is taking place and whether there is another main component in that direction. If so, the function to scroll to that direction is called.
+   * This function checks whether 'isScrolling' is true. If not, it sets 'isScrolling' to true for 800ms and checks in which direction the scrolling is taking place and whether there is another main component in that direction. If so, the new 'currentIndexMainComponents' is set and the function to scroll to that direction is called.
    *
    * @param event the wheel event
    */
@@ -86,7 +86,7 @@ export class MainContentComponent implements AfterViewInit {
   }
 
   /**
-   * This HostListener checks whether a keydown event occurs. If so, the function is called. It checks whether one of the up or down arrow keys is pressed and whether there is another main component in that direction. If so, the function to scroll to that direction is called.
+   * This HostListener checks whether a keydown event occurs. If so, the function is called. It checks whether one of the up or down arrow keys is pressed and whether there is another main component in that direction. If so, the new 'currentIndexMainComponents' is set and the function to scroll to that direction is called.
    *
    * @param event the keydown event
    */
