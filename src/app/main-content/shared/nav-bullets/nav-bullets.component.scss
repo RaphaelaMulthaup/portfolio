@@ -31,3 +31,9 @@
 .darkOrangeBGround {
     background-color: $darkOrange !important;
 }
+
+.passiveBullet {
+    &:hover {
+        cursor: pointer;
+    }
+}

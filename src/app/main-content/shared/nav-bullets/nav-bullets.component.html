@@ -1,5 +1,12 @@
 <div class="navBullets" [ngClass]="themeClass">
-    @for (item of bulletArray; track bulletArray; let index = $index){
-        <div [ngClass]="{ 'activeBullet': index === currentIndexMainComponents(), 'darkOrangeBGround': index === currentIndexMainComponents() && (index === 1 || index === 5 )}"></div>
-    }
+  @for (item of bulletArray; track bulletArray; let index = $index){
+  <div
+    [ngClass]="{
+      activeBullet: index === currentIndexMainComponents(),
+      darkOrangeBGround:
+        index === currentIndexMainComponents() && (index === 1 || index === 5),
+      passiveBullet: index != currentIndexMainComponents()
+    }"
+  ></div>
+  }
 </div>
