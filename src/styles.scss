@@ -61,6 +61,21 @@ $yellow: #F9AF42;
   position: relative;
 }
 
+.header {
+  height: 10vh;
+  min-height: 72px;
+  max-height: 88px;
+  font-family: 'Quicksand';
+  margin: 0 5% 0 5%;
+  @include dFlex($jc:space-between);
+  app-logo-name {
+      height: 100%;
+  }
+  app-mini-menu {
+      height: 45%;
+  }
+}
+
 /* quicksand-300 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */

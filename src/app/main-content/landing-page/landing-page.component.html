@@ -1,5 +1,31 @@
 <div id="landingPage" class="maxWidth">
-  <app-header class="dNone cream" [headerClass]="'cream'"></app-header>
+  <!-- <app-header class="dNone cream" [headerClass]="'cream'"></app-header> -->
   <app-nav-bullets></app-nav-bullets>
+  <div class="header cream">
+    <div>
+      <img
+        [src]="portfolioService.getImageSrc(gitHubIsHovered, images['gitHub'])"
+        (mouseenter)="gitHubIsHovered = true"
+        (mouseleave)="gitHubIsHovered = false"
+        alt="gitHub"
+      />
+      <img
+        [src]="
+          portfolioService.getImageSrc(linkedinIsHovered, images['linkedin'])
+        "
+        (mouseenter)="linkedinIsHovered = true"
+        (mouseleave)="linkedinIsHovered = false"
+        alt="linkedin"
+      />
+      <img
+        [src]="portfolioService.getImageSrc(mailIsHovered, images['mail'])"
+        (mouseenter)="mailIsHovered = true"
+        (mouseleave)="mailIsHovered = false"
+        alt="mail"
+      />
+    </div>
+    <app-logo-name></app-logo-name>
+    <app-mini-menu [headerClass]="'cream'"></app-mini-menu>
+  </div>
   landing page
 </div>

@@ -127,22 +127,6 @@ export class MiniMenuComponent {
   };
 
   /**
-   * This function returns a path to an image, depending on the color class of the header and whether the corresponding img tag is hovered or not.
-   *
-   * @param hoverState A boolean that indicates whether the img tag is hovered or not.
-   * @param imageSet The image set matching the img tag.
-   * @returns The path to an image.
-   */
-  imageSrc(
-    hoverState: boolean,
-    imageSet: { [key: string]: { normal: string; hover: string } }
-  ): string {
-    return hoverState
-      ? imageSet[this.headerClass]?.hover
-      : imageSet[this.headerClass]?.normal;
-  }
-
-  /**
    * This function calls the function that changes the language. In addition, the image set for the 'languageButton' is stored in the variable 'currentLanguageButtonImgSet'.
    */
   changeLanguage(): void {

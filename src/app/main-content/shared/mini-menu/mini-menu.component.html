@@ -2,7 +2,7 @@
   <img
     (click)="changeLanguage()"
     class="languageButton"
-    [src]="imageSrc(languageIsHovered, this[currentLanguageButtonImgSet])"
+    [src]="portfolioService.getImageSrc(languageIsHovered, this[currentLanguageButtonImgSet][headerClass])"
     alt="language"
     (mouseenter)="languageIsHovered = true"
     (mouseleave)="languageIsHovered = false"
@@ -10,7 +10,7 @@
   <img
     (click)="displayMenu()"
     class="burgerMenu"
-    [src]="imageSrc(burgermenuIsHovered, imagesBurgermenu)"
+    [src]="portfolioService.getImageSrc(burgermenuIsHovered, imagesBurgermenu[headerClass])"
     alt="menu"
     (mouseenter)="burgermenuIsHovered = true"
     (mouseleave)="burgermenuIsHovered = false"
