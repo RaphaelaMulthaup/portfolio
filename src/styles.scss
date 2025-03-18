@@ -20,6 +20,12 @@ h4 {
   margin: 0;
 }
 
+app-nav-bullets {
+  position: absolute;
+  right: 5vw;
+  top: calc((100vh - 148px) / 2);
+}
+
 $lightBlue: #679aac;
 $cream: #f8f7e5;
 $black: #1d1d1d;
@@ -52,6 +58,7 @@ $yellow: #F9AF42;
 
 .maxWidth {
   max-width: 1920px;
+  position: relative;
 }
 
 /* quicksand-300 - latin */

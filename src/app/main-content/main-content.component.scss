@@ -1,17 +1,17 @@
-@import './../../styles.scss';
+@import "./../../styles.scss";
 
 .mainComponent {
-    @include fullDisplay;
+  @include fullDisplay;
 }
 
 .bgc-lightBlue {
-    background-color: $lightBlue;
+  background-color: $lightBlue;
 }
 
 .bgc-cream {
-    background-color: $cream;
+  background-color: $cream;
 }
 
 .bgc-black {
-    background-color: $black;
+  background-color: $black;
 }
