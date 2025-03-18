@@ -14,4 +14,8 @@ export class NavBulletsComponent {
   currentIndexMainComponents =
     this.portfolioService.currentIndexMainComponents;
   bulletArray = Array(6);
+
+  scrollToSection(index: number) {
+    this.portfolioService.scrollToSection(index);
+  }
 }

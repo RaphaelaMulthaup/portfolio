@@ -5,8 +5,9 @@
       activeBullet: index === currentIndexMainComponents(),
       darkOrangeBGround:
         index === currentIndexMainComponents() && (index === 1 || index === 5),
-      passiveBullet: index != currentIndexMainComponents()
+      passiveBullet: index !== currentIndexMainComponents()
     }"
+    (click)="index !== currentIndexMainComponents() && scrollToSection(index)"
   ></div>
   }
 </div>
