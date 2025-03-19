@@ -1,24 +1,27 @@
-@import './../../../../styles.scss';
+@import "./../../../../styles.scss";
 
 .logoName {
-    height: 100%;
-    width: fit-content;
-    @include dFlex($g:6%);
-    &:hover {
-        color: $darkOrange;
-        cursor: pointer;
-        transition: all 100ms ease-in;
-    }
+  height: 100%;
+  width: fit-content;
+  @include dFlex($g: 6%);
+}
+
+.logoNameHover {
+  &:hover {
+    color: $darkOrange;
+    cursor: pointer;
+    transition: all 100ms ease-in;
+  }
 }
 
 .logo {
+  stroke: $darkOrange;
+  height: 45%;
+  width: auto;
+  polygon {
     stroke: $darkOrange;
-    height: 45%;
-    width: auto;
-    polygon {
-        stroke: $darkOrange;
-    }
-    line {
-        stroke: $darkOrange; 
-    }
+  }
+  line {
+    stroke: $darkOrange;
+  }
 }
