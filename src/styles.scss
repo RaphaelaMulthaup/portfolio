@@ -3,7 +3,7 @@
 }
 
 * {
-  font-family: 'Quicksand';
+  font-family: "Quicksand";
 }
 
 html {
@@ -19,7 +19,17 @@ body {
 }
 
 h1 {
-  font-family: 'Eczar';
+  font-family: "Eczar";
+  font-size: 96px;
+  margin: 0;
+  line-height: 110%;
+}
+
+h3 {
+  font-size: 48px;
+  font-weight: 400;
+  margin: 0;
+  line-height: 100%;
 }
 
 h4 {
@@ -38,7 +48,7 @@ $lightBlue: #679aac;
 $cream: #f8f7e5;
 $black: #1d1d1d;
 $darkOrange: #ff834f;
-$yellow: #F9AF42;
+$yellow: #f9af42;
 
 @mixin fullDisplay() {
   height: 100vh;
@@ -74,12 +84,12 @@ $yellow: #F9AF42;
   min-height: 72px;
   max-height: 88px;
   margin: 0 5% 0 5%;
-  @include dFlex($jc:space-between);
+  @include dFlex($jc: space-between);
   app-logo-name {
-      height: 100%;
+    height: 100%;
   }
   app-mini-menu {
-      height: 45%;
+    height: 45%;
   }
 }
 
@@ -87,6 +97,23 @@ $yellow: #F9AF42;
   padding: 8vh 5vw 0 5vw;
 }
 
+.button {
+  font-family: 'Quicksand';
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 75%;
+  height: 40px;
+  border-radius: 20px;
+  padding: 12px 24px;
+  border: 1px solid $cream;
+  color: $cream;
+  background: inherit;
+  transition: background-color 200ms ease-in;
+  &:hover {
+    cursor: pointer;
+    background-color: $darkOrange;
+  }
+}
 
 /* quicksand-300 - latin */
 @font-face {

@@ -9,6 +9,9 @@
     a {
         @include dFlex();
     }
+    img {
+        cursor: pointer;
+    }
     img:first-child {
         height: 18.17px;
     }
@@ -17,5 +20,14 @@
     }
     img:nth-child(3) {
         height: 17.78px;
+    }
+}
+
+.landingPageLeftSide {
+    @include dFlex($g: 32px, $ai: flex-start);
+    flex-direction: column;
+    div {
+        @include dFlex($g: 8px, $ai: flex-start);
+        flex-direction: column;
     }
 }

@@ -26,7 +26,7 @@ export class MiniMenuComponent {
   /** A boolean that indicates whether the burger menu is hovered. */
   burgermenuIsHovered: boolean = false;
   /** The variable specifies which image set is used for the language button. */
-  currentLanguageButtonImgSet: 'imagesEN' | 'imagesDE' = 'imagesDE';
+  currentLanguageButtonImgSet: 'imagesEN' | 'imagesDE' = 'imagesEN';
   /** This variable indicates whether the menu is currently shown. */
   menuDisplayed: boolean = false;
   /** Subscription object to track and manage the menuDisplayed$ observable subscription. */
