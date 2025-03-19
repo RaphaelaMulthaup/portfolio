@@ -1,8 +1,9 @@
 @import "./../../../../styles.scss";
 
 .miniMenu {
-  @include dFlex($g: 16px);
+  @include dFlex($g: 16px, $jc: flex-end);
   height: 100%;
+  width: 98.67px;
   position: relative;
   img {
     &:hover {
