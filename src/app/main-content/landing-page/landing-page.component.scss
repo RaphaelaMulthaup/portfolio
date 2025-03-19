@@ -6,6 +6,9 @@
 
 .socialMediaButtons {
     @include dFlex($g: 24px);
+    a {
+        @include dFlex();
+    }
     img:first-child {
         height: 18.17px;
     }

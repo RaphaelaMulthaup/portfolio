@@ -18,13 +18,4 @@ export class NavBulletsComponent {
     this.portfolioService.currentIndexMainComponents;
   /** An array that represents the bullet points */
   bulletArray = Array(6);
-
-  /**
-   * This function calls the function to scroll to the selected main component.
-   * 
-   * @param index the index of the selected main component
-   */
-  scrollToSection(index: number) {
-    this.portfolioService.scrollToSection(index);
-  }
 }

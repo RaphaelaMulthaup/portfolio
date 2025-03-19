@@ -13,11 +13,4 @@ export class LogoNameComponent {
   portfolioService = inject(PortfolioService);
   /** A boolean that indicates whether LogoNameComponent is included in LandingPageComponent. */
   @Input() isLandingPage: boolean = false;
-
-  /**
-   * This function calls the function in the portfolio service that scrolls to the main components and makes it scroll to the landing page.
-   */
-  scrollToLandingPage(){
-    this.portfolioService.scrollToSection(0);
-  }
 }

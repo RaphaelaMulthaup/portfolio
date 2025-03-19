@@ -1,7 +1,7 @@
 <div
   class="logoName"
   [ngClass]="{ logoNameHover: !isLandingPage }"
-  (click)="!isLandingPage && scrollToLandingPage()">
+  (click)="!isLandingPage && portfolioService.scrollToSection(0)">
   <svg
     class="logo"
     version="1.1"

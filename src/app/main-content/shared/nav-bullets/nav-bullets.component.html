@@ -7,7 +7,7 @@
         index === currentIndexMainComponents() && (index === 1 || index === 5),
       passiveBullet: index !== currentIndexMainComponents()
     }"
-    (click)="index !== currentIndexMainComponents() && scrollToSection(index)"
+    (click)="index !== currentIndexMainComponents() && portfolioService.scrollToSection(index)"
   ></div>
   }
 </div>
