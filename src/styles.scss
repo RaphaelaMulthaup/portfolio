@@ -2,6 +2,10 @@
   display: none; /* Für Chrome, Edge, Safari */
 }
 
+* {
+  font-family: 'Quicksand';
+}
+
 html {
   scrollbar-width: none; /* Für Firefox */
 }
@@ -12,6 +16,10 @@ body {
   padding: 0;
   // height: 100%;
   overflow: hidden; /* Normales Scrollen verhindern */
+}
+
+h1 {
+  font-family: 'Eczar';
 }
 
 h4 {
@@ -65,7 +73,6 @@ $yellow: #F9AF42;
   height: 10vh;
   min-height: 72px;
   max-height: 88px;
-  font-family: 'Quicksand';
   margin: 0 5% 0 5%;
   @include dFlex($jc:space-between);
   app-logo-name {

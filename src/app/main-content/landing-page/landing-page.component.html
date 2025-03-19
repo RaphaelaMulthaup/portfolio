@@ -1,7 +1,7 @@
-<div id="landingPage" class="maxWidth">
+<div id="landingPage" class="maxWidth cream">
   <!-- <app-header class="dNone cream" [headerClass]="'cream'"></app-header> -->
   <app-nav-bullets></app-nav-bullets>
-  <div class="header cream">
+  <div class="header">
     <div class="socialMediaButtons">
       <a href="https://github.com/RaphaelaMulthaup" target="_blank">
         <img
@@ -37,5 +37,9 @@
     <app-logo-name [isLandingPage]="true"></app-logo-name>
     <app-mini-menu [headerClass]="'cream'"></app-mini-menu>
   </div>
-  landing page
+  <div>
+    <h3>{{ "landingPage.hello" | translate }}</h3>
+    <h1>Raphaela<br>Multhaup</h1>
+    <h3>{{ "landingPage.frontend" | translate }}</h3>
+  </div>
 </div>

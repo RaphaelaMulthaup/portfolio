@@ -10,6 +10,12 @@
         "contactMe": "Kontakt"
       }
     }
+  },
+  "landingPage": {
+    "hello": "Hallo! Ich bin",
+    "frontend": "Frontend-Entwicklerin",
+    "button": "Schreib mir",
+    "scrollDown": "Jetzt nach unten scrollen"
   }
 }
 

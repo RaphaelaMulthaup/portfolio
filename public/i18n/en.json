@@ -10,5 +10,11 @@
         "contactMe": "Contact me"
       }
     }
+  },
+  "landingPage": {
+    "hello": "Hello there! I’m",
+    "frontend": "Frontend Developer",
+    "button": "Get in Touch",
+    "scrollDown": "Scroll down"
   }
 }
