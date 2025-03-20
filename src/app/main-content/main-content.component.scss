@@ -2,6 +2,10 @@
 
 .mainComponent {
   @include fullDisplay;
+  > :first-child {
+    @include fullDisplay;
+    display: block;
+  }
 }
 
 .bgc-lightBlue {

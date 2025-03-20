@@ -75,8 +75,11 @@ $yellow: #f9af42;
 }
 
 .maxWidth {
+  height: 100vh;
   max-width: 1920px;
   position: relative;
+  @include dFlex($ai: normal);
+  flex-direction: column;
 }
 
 .header {
@@ -95,6 +98,8 @@ $yellow: #f9af42;
 
 .contentMainComponent {
   padding: 8vh 5vw 0 5vw;
+  @include dFlex();
+  flex-grow: 1;
 }
 
 .button {

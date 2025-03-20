@@ -6,6 +6,7 @@ import {
   HostListener,
   inject,
   AfterViewInit,
+  OnInit,
 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PortfolioService } from './portfolio.service';
@@ -25,6 +26,22 @@ import {
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'portfolio';
+
+  ngOnInit() {
+    this.updateHeaderHeight();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.updateHeaderHeight();
+  }
+
+  updateHeaderHeight() {
+    const header = document.querySelector('header');
+    if (header) {
+      document.documentElement.style.setProperty('--header-height', `${header.clientHeight}px`);
+    }
+  }
 }

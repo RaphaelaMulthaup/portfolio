@@ -1,33 +1,42 @@
-@import './../../../styles.scss';
+@import "./../../../styles.scss";
 
 #landingPage {
-    background-color: $lightBlue;
+  background-color: $lightBlue;
+  > :last-child {
+    justify-content: space-between;
+    padding-bottom: calc((100vh - var(--header-height)) * 0.12);
+  }
 }
 
 .socialMediaButtons {
-    @include dFlex($g: 24px);
-    a {
-        @include dFlex();
-    }
-    img {
-        cursor: pointer;
-    }
-    img:first-child {
-        height: 18.17px;
-    }
-    img:nth-child(2) {
-        height: 16px;
-    }
-    img:nth-child(3) {
-        height: 17.78px;
-    }
+  @include dFlex($g: 24px);
+  a {
+    @include dFlex();
+  }
+  img {
+    cursor: pointer;
+  }
+  img:first-child {
+    height: 18.17px;
+  }
+  img:nth-child(2) {
+    height: 16px;
+  }
+  img:nth-child(3) {
+    height: 17.78px;
+  }
 }
 
 .landingPageLeftSide {
+  @include dFlex($ai: flex-start, $jc: space-between);
+  flex-direction: column;
+  height: 100%;
+  div:first-child {
     @include dFlex($g: 32px, $ai: flex-start);
     flex-direction: column;
     div {
-        @include dFlex($g: 8px, $ai: flex-start);
-        flex-direction: column;
+      @include dFlex($g: 8px, $ai: flex-start);
+      flex-direction: column;
     }
+  }
 }
