@@ -48,44 +48,4 @@ export class LandingPageComponent {
       hover: 'assets/img/mail_hover.png',
     },
   };
-
-  // ngAfterViewInit(): void {
-  //   this.adjustTextToCircle();
-  // }
-
-  // private adjustTextToCircle(): void {
-  //   const svg = document.getElementById('svg-circle');
-  //   const textPath = document.querySelector('#circle-text textPath');
-  //   const text = textPath?.textContent || '';
-  //   const radius = 130; // Radius des Kreises
-  //   const circumference = 2 * Math.PI * radius; // Umfang des Kreises
-
-  //   if (textPath && svg) {
-  //     const fontSize = this.calculateFontSize(text, circumference, svg);
-  //     textPath.setAttribute('font-size', fontSize.toString());
-  //   }
-  // }
-
-  // private calculateFontSize(text: string, circumference: number, svg: HTMLElement): number {
-  //   let fontSize = 10; // Startgröße
-  //   let textLength = 0;
-
-  //   // Temporäres Element zur Messung der Textlänge
-  //   const tempText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-  //   tempText.setAttribute('font-family', 'Eczar');
-  //   tempText.setAttribute('font-size', fontSize.toString());
-  //   tempText.setAttribute('font-weight', '700');
-  //   tempText.textContent = text;
-  //   svg.appendChild(tempText);
-
-  //   // Textlänge messen und Schriftgröße anpassen
-  //   while (textLength < circumference) {
-  //     fontSize += 0.1;
-  //     tempText.setAttribute('font-size', fontSize.toString());
-  //     textLength = tempText.getComputedTextLength();
-  //   }
-
-  //   svg.removeChild(tempText); // Temporäres Element entfernen
-  //   return fontSize;
-  // }
 }

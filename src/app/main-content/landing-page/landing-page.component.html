@@ -1,5 +1,4 @@
 <div id="landingPage" class="maxWidth cream">
-  <!-- <app-header class="dNone cream" [headerClass]="'cream'"></app-header> -->
   <app-nav-bullets></app-nav-bullets>
   <header class="header">
     <div class="socialMediaButtons">
@@ -51,14 +50,11 @@
       </div>
       <div class="scrollDownAnimation">
         <svg viewBox="0 0 300 300" id="svg-circle">
-          <!-- Kreispfad, entlang dem der Text platziert wird -->
           <path
             id="circle-path"
             d="M150,22 a128,128 0 1,1 0,256 a128,128 0 1,1 0,-256"
             fill="none"
           />
-
-          <!-- Text entlang des Pfades -->
           <text id="circle-text">
             <textPath href="#circle-path" startOffset="0">
               @for (item of [0, 1, 2 ,3]; track $index) {
