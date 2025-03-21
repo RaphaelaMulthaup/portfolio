@@ -49,8 +49,24 @@
           {{ "landingPage.button" | translate }}
         </button>
       </div>
-      <div>
-        Animation
+      <div class="scrollDownAnimation">
+        <svg viewBox="0 0 300 300" id="svg-circle">
+          <!-- Kreispfad, entlang dem der Text platziert wird -->
+          <path
+            id="circle-path"
+            d="M150,22 a128,128 0 1,1 0,256 a128,128 0 1,1 0,-256"
+            fill="none"
+          />
+
+          <!-- Text entlang des Pfades -->
+          <text id="circle-text">
+            <textPath href="#circle-path" startOffset="0">
+              @for (item of [0, 1, 2 ,3]; track $index) {
+              {{ "landingPage.scrollDown" | translate }}
+              }
+            </textPath>
+          </text>
+        </svg>
       </div>
     </div>
     <div>landingPageRightSide</div>
