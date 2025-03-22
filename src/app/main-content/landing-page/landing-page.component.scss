@@ -67,7 +67,7 @@
       left: 20%;
       polygon {
         stroke: $yellow;
-        // fill: $yellow;
+        fill: $yellow;
       }
     }
   }
@@ -85,5 +85,26 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.landingPageRightSide {
+  margin-top: 9%;
+  height: 91%;
+  margin-right: 3.17%;
+  position: relative;
+  svg {
+    // Ausprobieren ob 15 30 oder 45 gut sind
+    transform: rotate(45deg);
+    height: 61%;
+    width: auto;
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    polygon {
+      fill: $darkOrange;
+      stroke: $darkOrange;
+    }
   }
 }
