@@ -45,15 +45,35 @@
   position: relative;
   width: 144px;
   aspect-ratio: 1;
-  svg {
-    text {
-      fill: $cream;
-      //für die Mediaqueris die Schriftgröße anpassen
-      font-size: 31.5px;
-      textPath {
-        font-family: "Eczar";
-        font-weight: 700;
+  div {
+    svg:first-child {
+      text {
+        fill: $cream;
+        //für die Mediaqueris die Schriftgröße anpassen
+        font-size: 31.5px;
+        textPath {
+          font-family: "Eczar";
+          font-weight: 700;
+        }
       }
     }
+    svg:nth-child(2) {
+      transform: rotate(30deg);
+      position: absolute;
+      width: 60%;
+      height: 60%;
+      top: 20%;
+      left: 20%;
+      polygon {
+        stroke: $yellow;
+        // fill: $yellow;
+      }
+    }
+  }
+  img {
+    height: 30%;
+    position: absolute;
+    top: 35%;
+    left: 36.855%;
   }
 }

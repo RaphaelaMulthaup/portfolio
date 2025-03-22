@@ -49,20 +49,46 @@
         </button>
       </div>
       <div class="scrollDownAnimation">
-        <svg viewBox="0 0 300 300" id="svg-circle">
-          <path
-            id="circle-path"
-            d="M150,22 a128,128 0 1,1 0,256 a128,128 0 1,1 0,-256"
-            fill="none"
-          />
-          <text id="circle-text">
-            <textPath href="#circle-path" startOffset="0">
-              @for (item of [0, 1, 2 ,3]; track $index) {
-              {{ "landingPage.scrollDown" | translate }}
-              }
-            </textPath>
-          </text>
-        </svg>
+        <div class="rotatingDiv">
+          <svg viewBox="0 0 300 300" id="svg-circle">
+            <path
+              id="circle-path"
+              d="M150,22 a128,128 0 1,1 0,256 a128,128 0 1,1 0,-256"
+              fill="none"
+            />
+            <text id="circle-text">
+              <textPath href="#circle-path" startOffset="0">
+                @for (item of [0, 1, 2 ,3]; track $index) {
+                {{ "landingPage.scrollDown" | translate }}
+                }
+              </textPath>
+            </text>
+          </svg>
+          <svg
+            class="logo"
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            width="511.544px"
+            height="443.01px"
+            viewBox="0 0 535 443.01"
+            enable-background="new 0 0 511.544 443.01"
+            xml:space="preserve"
+          >
+            <polygon
+              fill="none"
+              stroke=""
+              stroke-width="25"
+              stroke-miterlimit="10"
+              points="140.773,438.01 15.774,221.505 140.773,5 
+                    390.771,5 515.771,221.505 390.771,438.01"
+            />
+          </svg>
+        </div>
+        <img src="./../../../assets/img/arrowDown.png" alt="arrow down">
       </div>
     </div>
     <div>landingPageRightSide</div>
