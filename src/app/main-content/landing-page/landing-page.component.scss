@@ -46,6 +46,7 @@
   width: 144px;
   aspect-ratio: 1;
   div {
+    animation: rotate 7s linear infinite;
     svg:first-child {
       text {
         fill: $cream;
@@ -75,5 +76,14 @@
     position: absolute;
     top: 35%;
     left: 36.855%;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
