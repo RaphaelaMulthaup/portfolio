@@ -89,14 +89,13 @@
 }
 
 .landingPageRightSide {
-  margin-top: 9%;
-  height: 91%;
+  height: 100%;
   margin-right: 3.17%;
   position: relative;
   svg {
     // Ausprobieren ob 15 30 oder 45 gut sind
     transform: rotate(45deg);
-    height: 61%;
+    height: 68%;
     width: auto;
     aspect-ratio: 1 / 1;
     position: absolute;

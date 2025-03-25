@@ -16,7 +16,22 @@
     "frontend": "Frontend-Entwicklerin",
     "button": "Schreib mir",
     "scrollDown": "Jetzt nach unten scrollen ."
+  },
+  "aboutMe": {
+    "heyIm": "Hey, ich bin Raphaela. Mich begeistert die Welt des Codings, mit ihren vielen Möglichkeiten, kreative Ideen in funktionierenden Code zu verwandeln. Besonders fasziniert mich die Logik hinter dem Code: das Zusammenspiel einzelner Elemente, die flexibel und strukturiert miteinander agieren. Alles folgt klaren Regeln und trotzdem gibt es unzählige Wege zur Lösung. Jede neue Herausforderung ist für mich eine Gelegenheit, meine Fähigkeiten weiterzuentwickeln und elegante, effiziente Lösungen zu finden.",
+    "letsWork": "Lass uns zusammenarbeiten und innovative Lösungen entwickeln!",
+    "button": "Lass uns sprechen",
+    "moreAoutMe": {
+      "moreAoutMe": "Mehr über mich",
+      "ul": {
+        "0": "Fokus auf Architektur & Lesbarkeit",
+        "1": "Effizienzorientiert",
+        "2": "Clean Code als Grundsatz",
+        "3": "Authentische & empathische Kommunikation",
+        "4": "Bedürfnisorientierte Teamarbeit",
+        "5": "Standort Beverungen",
+        "6": "Remote-First-Mentalität"
+      }
+    }
   }
 }
-
-

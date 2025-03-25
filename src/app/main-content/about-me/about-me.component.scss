@@ -1,22 +1,80 @@
-@import './../../../styles.scss';
+@import "./../../../styles.scss";
 
 #aboutMe {
-    background-color: $cream;
-    div {
-        @include dFlex($jc: space-between, $ai: flex-end);
-    }
+  background-color: $cream;
+  > div {
+    @include dFlex($jc: space-between, $ai: flex-end);
+  }
 }
 
 .aboutMeLeftSide {
-    height: 91%;
-    aspect-ratio: 0.714;
-    background-color: red;
-    position: relative;
-    div {
-        background-color: $black;
-        height: 34%;
-        width: 114%;
-        position: absolute;
-        top: 22.7%;
+  height: 100%;
+  aspect-ratio: 0.714;
+  background-color: red;
+  position: relative;
+  > div {
+    background-color: $black;
+    width: 42vw;
+    position: absolute;
+    top: 17%;
+    left: 84%;
+    padding: 32px;
+    color: $cream;
+    font-size: 16px;
+    text-align: justify;
+    @include dFlex($ai: flex-start, $g: 32px);
+    flex-direction: column;
+    border-radius: 4px;
+    > div:last-child {
+      @include dFlex($jc: space-between);
+      width: 100%;
     }
+  }
+}
+
+.jumpingSmiley {
+  @include dFlex($ai: flex-end);
+  width: 40px;
+  aspect-ratio: 1;
+  img {
+    width: 28.4px;
+    height: fit-content;
+    animation: moveUpDown 450ms ease-in-out infinite alternate;
+    &:hover {
+      animation-play-state: paused;
+      cursor: pointer;
+    }
+  }
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.moreAboutMe {
+  background-color: $lightBlue;
+  padding: 24px;
+  top: 95%;
+  left: 80%;
+  @include dFlex($g: 16px);
+  flex-direction: column;
+  color: $cream;
+  width: max-content;
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    li {
+      @include dFlex($jc: flex-start);
+      img {
+        width: 16px;
+        margin-right: 8px;
+      }
+    }
+  }
 }

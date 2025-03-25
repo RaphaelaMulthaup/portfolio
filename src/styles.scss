@@ -1,3 +1,9 @@
+$lightBlue: #679aac;
+$cream: #f8f7e5;
+$black: #1d1d1d;
+$darkOrange: #ff834f;
+$yellow: #f9af42;
+
 ::-webkit-scrollbar {
   display: none; /* Für Chrome, Edge, Safari */
 }
@@ -38,18 +44,30 @@ h4 {
   margin: 0;
 }
 
+button {
+  font-family: "Quicksand";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 75%;
+  height: 40px;
+  border-radius: 20px;
+  padding: 12px 24px;
+  border: 1px solid $cream;
+  color: $cream;
+  background: inherit;
+  transition: background-color 100ms ease-in;
+  &:hover {
+    cursor: pointer;
+    background-color: $darkOrange;
+  }
+}
+
 app-nav-bullets {
   position: absolute;
   right: 5vw;
   top: calc((100vh - 148px) / 2);
   z-index: 100;
 }
-
-$lightBlue: #679aac;
-$cream: #f8f7e5;
-$black: #1d1d1d;
-$darkOrange: #ff834f;
-$yellow: #f9af42;
 
 @mixin fullDisplay() {
   height: 100vh;
@@ -103,22 +121,10 @@ $yellow: #f9af42;
   flex-grow: 1;
 }
 
-.button {
-  font-family: 'Quicksand';
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 75%;
-  height: 40px;
-  border-radius: 20px;
-  padding: 12px 24px;
-  border: 1px solid $cream;
-  color: $cream;
-  background: inherit;
-  transition: background-color 200ms ease-in;
-  &:hover {
-    cursor: pointer;
-    background-color: $darkOrange;
-  }
+.overlay {
+  border: 1px solid $black;
+  border-radius: 4px;
+  position: absolute;
 }
 
 /* quicksand-300 - latin */

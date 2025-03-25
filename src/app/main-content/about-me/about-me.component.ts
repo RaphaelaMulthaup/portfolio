@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderComponent } from '../shared/header/header.component';
 import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 import { NavBulletsComponent } from '../shared/nav-bullets/nav-bullets.component';
+import { PortfolioService } from '../../portfolio.service';
 
 @Component({
   selector: 'app-about-me',
@@ -10,5 +11,5 @@ import { NavBulletsComponent } from '../shared/nav-bullets/nav-bullets.component
   styleUrl: './about-me.component.scss'
 })
 export class AboutMeComponent {
-
+  portfolioService = inject(PortfolioService);
 }

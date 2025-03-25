@@ -1,44 +1,12 @@
 @import "./../../../../../styles.scss";
 
-// .menu {
-//   position: fixed;
-//   top: 0;
-//   right: -100%; // Startet außerhalb des sichtbaren Bereichs
-//   width: 300px;
-//   height: 100vh;
-//   background-color: white;
-//   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-//   transition: transform 200ms ease-in;
-  
-//   &.open {
-//     transform: translateX(-100%); // Fährt von rechts ins Bild
-//   }
-  
-//   &.close {
-//     transform: translateX(100%); // Fährt nach rechts raus
-//   }
-// }
-
-
 .menu {
-  // // position: fixed;
-  // top: 0;
-  // right: -100%; // Startet außerhalb des sichtbaren Bereichs
-  // transition: transform 200ms ease-in;
-  // &.open {
-  //   transform: translateX(-100%); // Fährt von rechts ins Bild
-  // }
-  
-  // &.close {
-  //   transform: translateX(100%); // Fährt nach rechts raus
-  // }
+  // Die beiden Punkte könnte man noch mit anderen Overlays, die keine eigene Component sind, zusammenfassen. Aber das ist vielleicht zu aufwändig.
+  border: 1px solid $black;
+  border-radius: 4px;
 
-
-
-    background-color: $cream;
-    padding: 16px 23.23px 16px 16px;
-    border: 1px solid $black;
-    border-radius: 4px;
+  background-color: $cream;
+  padding: 16px 23.23px 16px 16px;
   div:first-child {
     @include dFlex($g: 88.23px);
     h4 {
@@ -59,9 +27,9 @@
     font-weight: 700;
     color: $black;
     span {
-        &:hover{
-            cursor: pointer;
-        }
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }

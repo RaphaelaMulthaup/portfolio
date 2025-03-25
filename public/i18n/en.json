@@ -16,5 +16,22 @@
     "frontend": "Frontend Developer",
     "button": "Get in Touch",
     "scrollDown": "Scroll down . "
+  },
+  "aboutMe": {
+    "heyIm": "Hey, I'm Raphaela. I'm passionate about the world of coding, with its many opportunities to turn creative ideas into functional code. What especially fascinates me is the logic behind the code: the interaction of individual elements that work together flexibly and structured. Everything follows clear rules, yet there are countless ways to find a solution. Every new challenge is an opportunity for me to develop my skills further and find elegant, efficient solutions.",
+    "letsWork": "Let's work together and create innovative solutions!",
+    "button": "Let's Talk",
+    "moreAoutMe": {
+      "moreAoutMe": "More about me",
+      "ul": {
+        "0": "Focus on Architecture & Readability",
+        "1": "Efficiency-Driven",
+        "2": "Clean Code Advocate",
+        "3": "Authentic & Empathic Communicator",
+        "4": "Needs-Focused Teamwork",
+        "5": "Based in Beverungen",
+        "6": "Remote-First Mindset"
+      }
+    }
   }
 }
