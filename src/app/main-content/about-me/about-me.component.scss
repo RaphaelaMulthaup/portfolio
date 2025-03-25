@@ -62,12 +62,15 @@
 .moreAboutMe {
   background-color: $lightBlue;
   padding: 24px;
-  top: 95%;
+  top: calc(95% + 400px);
   left: 74%;
   @include dFlex($g: 16px);
   flex-direction: column;
   color: $cream;
   width: max-content;
+  &.open {
+    transform: translateY(-400px);
+  }
   ul {
     list-style-type: none;
     padding-left: 0;

@@ -14,8 +14,4 @@ import { CommonModule } from '@angular/common';
 export class AboutMeComponent {
   portfolioService = inject(PortfolioService);
   smileyIsHoverd: boolean = false;
-
-  log(){
-    console.log(this.smileyIsHoverd);
-  }
 }
