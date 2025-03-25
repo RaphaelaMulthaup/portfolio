@@ -131,6 +131,12 @@ app-nav-bullets {
   border: 1px solid $black;
   border-radius: 4px;
   position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 /* quicksand-300 - latin */

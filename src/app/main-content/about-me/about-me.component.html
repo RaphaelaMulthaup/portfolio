@@ -5,15 +5,14 @@
     <div class="aboutMeLeftSide">
       <img src="" alt="" />
       <div>
-        <div class="overlay moreAboutMe">
+        <div class="overlay moreAboutMe" [ngClass]="{'open': smileyIsHoverd}">
           <h4>{{ "aboutMe.moreAoutMe.moreAoutMe" | translate }}</h4>
           <ul>
             @for(item of [0,1,2,3,4,5,6]; track item; let index = $index){
             <li>
-              <img
-                src="./../../../assets/img/check_circle.png"
-                alt="check"
-              />{{ "aboutMe.moreAoutMe.ul." + index | translate }}
+              <img src="./../../../assets/img/check_circle.png" alt="check" />{{
+                "aboutMe.moreAoutMe.ul." + index | translate
+              }}
             </li>
             }
           </ul>
@@ -29,7 +28,12 @@
             {{ "aboutMe.button" | translate }}
           </button>
           <div class="jumpingSmiley">
-            <img src="./../../../assets/img/smiley.png" alt="smiley" />
+            <img
+              src="./../../../assets/img/smiley.png"
+              alt="smiley"
+              (mouseenter)="smileyIsHoverd = true; log()"
+              (mouseleave)="smileyIsHoverd = false"
+            />
           </div>
         </div>
       </div>
