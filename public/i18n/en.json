@@ -34,5 +34,9 @@
       }
     },
     "h2": "About me"
+  },
+  "skills": {
+    "h2": "Core Competencies",
+    "text": "I develop dynamic, responsive applications such as games and business software that adapt seamlessly to different devices. By working with APIs and databases, I create interactive and data-driven applications. I have also worked in collaborative teams on several projects, contributing effectively to the development process. My experience ranges from simple static websites to complex, modern web applications."
   }
 }

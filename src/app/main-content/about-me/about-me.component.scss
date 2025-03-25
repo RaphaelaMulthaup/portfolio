@@ -6,6 +6,7 @@
     @include dFlex($jc: space-between, $ai: flex-start);
     h2 {
       margin-right: 1.67vw;
+      color: $black;
     }
   }
 }
@@ -27,7 +28,7 @@
     text-align: justify;
     @include dFlex($ai: flex-start, $g: 32px);
     flex-direction: column;
-    border-radius: 4px;
+    border-radius: $borderRadius;
     > div:last-child {
       @include dFlex($jc: space-between);
       width: 100%;

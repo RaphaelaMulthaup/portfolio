@@ -3,6 +3,7 @@ $cream: #f8f7e5;
 $black: #1d1d1d;
 $darkOrange: #ff834f;
 $yellow: #f9af42;
+$borderRadius: 4px;
 
 ::-webkit-scrollbar {
   display: none; /* Für Chrome, Edge, Safari */
@@ -35,6 +36,7 @@ h2 {
   font-family: "Eczar";
   font-size: 72px;
   margin: 0;
+  line-height: 100%;
 }
 
 h3 {
@@ -48,6 +50,7 @@ h4 {
   font-size: 24px;
   font-weight: 700;
   margin: 0;
+  line-height: 100%;
 }
 
 button {
@@ -129,10 +132,10 @@ app-nav-bullets {
 
 .overlay {
   border: 1px solid $black;
-  border-radius: 4px;
+  border-radius: $borderRadius;
   position: absolute;
-  // opacity: 0;
-  // visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
   transition:  transform 200ms ease-in, opacity 200ms ease-in, visibility 200ms ease-in;
   &.open {
     opacity: 1;

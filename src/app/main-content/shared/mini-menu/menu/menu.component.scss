@@ -3,7 +3,7 @@
 .menu {
   // Die beiden Punkte könnte man noch mit anderen Overlays, die keine eigene Component sind, zusammenfassen. Aber das ist vielleicht zu aufwändig.
   border: 1px solid $black;
-  border-radius: 4px;
+  border-radius: $borderRadius;
 
   background-color: $cream;
   padding: 16px 23.23px 16px 16px;
