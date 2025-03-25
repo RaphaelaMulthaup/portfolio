@@ -3,7 +3,10 @@
 #aboutMe {
   background-color: $cream;
   > div {
-    @include dFlex($jc: space-between, $ai: flex-end);
+    @include dFlex($jc: space-between, $ai: flex-start);
+    h2 {
+      margin-right: 1.67vw;
+    }
   }
 }
 
@@ -14,9 +17,9 @@
   position: relative;
   > div {
     background-color: $black;
-    width: 42vw;
+    width: 46vw;
     position: absolute;
-    top: 17%;
+    top: 22%;
     left: 84%;
     padding: 32px;
     color: $cream;
@@ -60,7 +63,7 @@
   background-color: $lightBlue;
   padding: 24px;
   top: 95%;
-  left: 80%;
+  left: 74%;
   @include dFlex($g: 16px);
   flex-direction: column;
   color: $cream;
