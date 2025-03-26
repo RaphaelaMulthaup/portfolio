@@ -1,6 +1,6 @@
 @import "./../../../styles.scss";
 
-$gapSkillIkons: 40px;
+// $gapSkillIkons: 40px;
 
 #skills {
   background-color: $black;
@@ -13,11 +13,15 @@ $gapSkillIkons: 40px;
 }
 
 .skillsUpperArea {
+    h2 {
+        margin-bottom: 40px;
+    }
   > div {
     background-color: $lightBlue;
     border-radius: $borderRadius;
-    padding: 32px;
+    padding: 24px;
     text-align: justify;
+    width: 56%;
   }
 }
 
@@ -29,24 +33,23 @@ $gapSkillIkons: 40px;
     display: grid;
     grid-template-columns: 96px 96px 96px 96px 96px;
     grid-auto-rows: auto;
-    // grid-template-rows: 123px 144px;
     row-gap: 16px;
     column-gap: 40px;
-    // @include dFlex($g: 16px $gapSkillIkons, $jc: flex-end);
-    // flex-wrap: wrap;
-    // width: calc(5 * 96px + 4 * $gapSkillIkons);
-    // height: 283px;
     > div {
-      //   height: 123px;
-      //   width: 96px;
       @include dFlex($g:8px, $jc: flex-start);
       flex-direction: column;
       > div {
         height: 96px;
         aspect-ratio: 1;
         @include dFlex();
+        &:hover {
+            img {
+                height: 96px;
+            }
+        }
         img {
           height: 72px;
+          transition: height 200ms ease-in;
         }
       }
       span {
