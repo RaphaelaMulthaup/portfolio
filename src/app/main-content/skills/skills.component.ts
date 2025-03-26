@@ -15,6 +15,7 @@ import { NavBulletsComponent } from '../shared/nav-bullets/nav-bullets.component
   styleUrl: './skills.component.scss',
 })
 export class SkillsComponent {
+  /** An array with the names and image paths for the displayed skills. */
   skillList: { name: string; path: string }[] = [
     {
       name: 'HTML',

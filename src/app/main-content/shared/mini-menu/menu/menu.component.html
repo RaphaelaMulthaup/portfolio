@@ -10,10 +10,9 @@
     />
   </div>
   <div>
-    <span (click)="portfolioService.scrollToSection(1)">{{ "shared.miniMenu.menu.aboutMe" | translate }}</span>
-    <span (click)="portfolioService.scrollToSection(2)">{{ "shared.miniMenu.menu.skillset" | translate }}</span>
-    <span (click)="portfolioService.scrollToSection(3)">{{ "shared.miniMenu.menu.portfolio" | translate }}</span>
-    <span (click)="portfolioService.scrollToSection(4)">{{ "shared.miniMenu.menu.references" | translate }}</span>
-    <span (click)="portfolioService.scrollToSection(5)">{{ "shared.miniMenu.menu.contactMe" | translate }}</span>
+    @for (item of menuItems; track item; let index = $index) {
+      <app-hexagon></app-hexagon>
+      <span (click)="portfolioService.scrollToSection($index + 1)">{{ "shared.miniMenu.menu." + item | translate }}</span>
+    }
   </div>
 </div>

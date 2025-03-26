@@ -7,6 +7,8 @@
 
   background-color: $cream;
   padding: 16px 23.23px 16px 16px;
+  // z-index: 100;
+  // position: relative;
   div:first-child {
     @include dFlex($g: 88.23px);
     h4 {
@@ -26,9 +28,13 @@
     font-size: 18px;
     font-weight: 700;
     color: $black;
+    app-hexagon {
+      
+    }
     span {
       &:hover {
         cursor: pointer;
+        color: $lightBlue;
       }
     }
   }

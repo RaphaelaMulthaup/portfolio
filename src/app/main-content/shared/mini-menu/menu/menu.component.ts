@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, Output, EventEmitter, Input, inject } from '@angular/core';
 import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 import { PortfolioService } from '../../../../portfolio.service';
+import { HexagonComponent } from '../../hexagon/hexagon.component';
 
 @Component({
   selector: 'app-menu',
-  imports: [TranslatePipe, TranslateDirective, CommonModule],
+  imports: [TranslatePipe, TranslateDirective, CommonModule, HexagonComponent],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss',
 })
@@ -20,6 +21,14 @@ export class MenuComponent {
   hoverICloseImagePath = 'assets/img/close_hover.png';
   /** the path for the curred close image */
   closeImagePath = this.defaultICloseImagePath;
+  /** a list of menu items */
+  menuItems: string[] = [
+    'aboutMe',
+    'skillset',
+    'portfolio',
+    'references',
+    'contactMe',
+  ];
 
   /**
    * This function changes the path of close image to hoverd close image.

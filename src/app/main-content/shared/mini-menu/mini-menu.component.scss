@@ -19,6 +19,7 @@
   }
   app-menu {
     position: absolute;
+    z-index: 100;
     top: -10px;
     right: calc(-5vw - 208.6px); //-5vw for 5% padding-right of the header and -208.6px for the width of app-menu 
     transition: transform 200ms ease-in, opacity 200ms ease-in, visibility 200ms ease-in;
