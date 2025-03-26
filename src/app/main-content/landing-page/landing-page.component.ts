@@ -5,6 +5,7 @@ import { NavBulletsComponent } from '../shared/nav-bullets/nav-bullets.component
 import { LogoNameComponent } from '../shared/logo-name/logo-name.component';
 import { MiniMenuComponent } from '../shared/mini-menu/mini-menu.component';
 import { PortfolioService } from '../../portfolio.service';
+import { HexagonComponent } from '../shared/hexagon/hexagon.component';
 
 @Component({
   selector: 'app-landing-page',
@@ -15,6 +16,7 @@ import { PortfolioService } from '../../portfolio.service';
     NavBulletsComponent,
     LogoNameComponent,
     MiniMenuComponent,
+    HexagonComponent
   ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',

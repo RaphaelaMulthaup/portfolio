@@ -58,16 +58,23 @@
         }
       }
     }
-    svg:nth-child(2) {
-      transform: rotate(30deg);
+    ::ng-deep app-hexagon {
       position: absolute;
       width: 60%;
       height: 60%;
       top: 20%;
       left: 20%;
-      polygon {
-        stroke: $yellow;
-        fill: $yellow;
+
+       svg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+  
+        transform: rotate(30deg);
+        polygon {
+          stroke: $yellow;
+          fill: $yellow;
+        }
       }
     }
   }
@@ -92,18 +99,26 @@
   height: 100%;
   margin-right: 3.17%;
   position: relative;
-  svg {
-    // Ausprobieren ob 15 30 oder 45 gut sind
-    transform: rotate(45deg);
+  ::ng-deep app-hexagon {
     height: 68%;
     width: auto;
     aspect-ratio: 1 / 1;
     position: absolute;
     top: 0;
     right: 0;
-    polygon {
-      fill: $darkOrange;
-      stroke: $darkOrange;
+
+     svg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      // Ausprobieren ob 15 30 oder 45 gut sind
+      transform: rotate(45deg);
+      polygon {
+        fill: $darkOrange;
+        stroke: $darkOrange;
+      }
     }
   }
 }
