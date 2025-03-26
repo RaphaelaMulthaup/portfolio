@@ -1,28 +1,61 @@
-@import './../../../styles.scss';
+@import "./../../../styles.scss";
+
+$gapSkillIkons: 40px;
 
 #skills {
-    background-color: $black;
-    color: $cream;
-    > div {
-        @include dFlex($ai: flex-start, $jc: space-between);
-        flex-direction: column;
-        padding-bottom: 13vh;
-    }
+  background-color: $black;
+  color: $cream;
+  > div {
+    @include dFlex($ai: flex-start, $jc: space-between);
+    flex-direction: column;
+    padding-bottom: 13vh;
+  }
 }
 
 .skillsUpperArea {
-    > div {
-        background-color: $lightBlue;
-        border-radius: $borderRadius;
-        padding: 32px;
-        text-align: justify;
-    }
+  > div {
+    background-color: $lightBlue;
+    border-radius: $borderRadius;
+    padding: 32px;
+    text-align: justify;
+  }
 }
 
 .skillsLowerArea {
-    @include dFlex($jc: space-between);
-    width: 100%;
-    > div:last-child {
-        margin-right: 2.78vw;
+  @include dFlex($jc: space-between, $ai: flex-end);
+  width: 100%;
+  > div:last-child {
+    margin-right: 2.78vw;
+    display: grid;
+    grid-template-columns: 96px 96px 96px 96px 96px;
+    grid-auto-rows: auto;
+    // grid-template-rows: 123px 144px;
+    row-gap: 16px;
+    column-gap: 40px;
+    // @include dFlex($g: 16px $gapSkillIkons, $jc: flex-end);
+    // flex-wrap: wrap;
+    // width: calc(5 * 96px + 4 * $gapSkillIkons);
+    // height: 283px;
+    > div {
+      //   height: 123px;
+      //   width: 96px;
+      @include dFlex($g:8px, $jc: flex-start);
+      flex-direction: column;
+      > div {
+        height: 96px;
+        aspect-ratio: 1;
+        @include dFlex();
+        img {
+          height: 72px;
+        }
+      }
+      span {
+        text-align: center;
+      }
     }
+  }
 }
+
+// @media (max-width: 600px) {
+//     $gapSkillIkons: 12px;
+// }
