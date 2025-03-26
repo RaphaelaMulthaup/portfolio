@@ -11,8 +11,12 @@
   </div>
   <div>
     @for (item of menuItems; track item; let index = $index) {
+    <div (click)="portfolioService.scrollToSection($index + 1)">
       <app-hexagon></app-hexagon>
-      <span (click)="portfolioService.scrollToSection($index + 1)">{{ "shared.miniMenu.menu." + item | translate }}</span>
+      <span>{{
+        "shared.miniMenu.menu." + item | translate
+      }}</span>
+    </div>
     }
   </div>
 </div>
