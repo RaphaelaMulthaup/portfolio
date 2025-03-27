@@ -13,9 +13,9 @@
 }
 
 .skillsUpperArea {
-    h2 {
-        margin-bottom: 40px;
-    }
+  h2 {
+    margin-bottom: 40px;
+  }
   > div {
     background-color: $lightBlue;
     border-radius: $borderRadius;
@@ -28,6 +28,35 @@
 .skillsLowerArea {
   @include dFlex($jc: space-between, $ai: flex-end);
   width: 100%;
+  > div:first-child {
+    position: relative;
+    width: 120px;
+    aspect-ratio: 1;
+    @include dFlex();
+    img {
+      position: absolute;
+      z-index: 10;
+      top: 40px;
+      left: 40px;
+      height: 40px;
+      &:hover ~ .hexagon {
+        animation-play-state: paused;
+      }
+    }
+    > ::ng-deep app-hexagon {
+      animation: rotate 7s linear infinite;
+      width: 100%;
+      height: 100%;
+      svg {
+        width: 100%;
+        height: 100%;
+        polygon {
+          fill: $darkOrange;
+          stroke: $darkOrange;
+        }
+      }
+    }
+  }
   > div:last-child {
     margin-right: 2.78vw;
     display: grid;
@@ -36,16 +65,16 @@
     row-gap: 16px;
     column-gap: 40px;
     > div {
-      @include dFlex($g:8px, $jc: flex-start);
+      @include dFlex($g: 8px, $jc: flex-start);
       flex-direction: column;
       > div {
         height: 96px;
         aspect-ratio: 1;
         @include dFlex();
         &:hover {
-            img {
-                height: 96px;
-            }
+          img {
+            height: 96px;
+          }
         }
         img {
           height: 72px;
