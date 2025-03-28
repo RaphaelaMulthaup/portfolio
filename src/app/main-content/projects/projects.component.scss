@@ -1,19 +1,47 @@
-@import './../../../styles.scss';
+@import "./../../../styles.scss";
 
 #projects {
-    background-color: $cream;
-    > div {
-        padding-bottom: 12.22vh;
-        @include dFlex($jc: space-between, $ai: flex-start);
-        flex-direction: column;
-    }
+  background-color: $cream;
+  > div {
+    padding-bottom: 12.22vh;
+    @include dFlex($jc: space-between, $ai: flex-start, $g:2.8vh);
+    flex-direction: column;
+  }
 }
 
 .projectsUpperArea {
-    color: $black;
-    @include dFlex($jc: flex-start, $g: 5vw);
-    h2 {
-        white-space: nowrap;
+  color: $black;
+  @include dFlex($jc: flex-start, $g: 5vw);
+  h2 {
+    white-space: nowrap;
+  }
+  span {
+    width: 37vw;
+  }
+}
+
+.projectsLowerArea {
+  @include dFlex($jc: space-between);
+  width: 100%;
+  > div:first-child {
+    background-color: $yellow;
+    border-radius: $borderRadius;
+    border: 1px solid $black;
+    height: 100%;
+    aspect-ratio: 1;
+    @include dFlex($ai: flex-end, $jc: flex-start);
+    ::ng-deep app-hexagon {
+      height: 37%;
+      aspect-ratio: 1;
+      //   width: 37%;
+      svg {
+        height: 100%;
+        width: 100%;
+        polygon {
+          stroke: $darkOrange;
+          fill: $darkOrange;
+        }
+      }
     }
-    span {width: 37vw;}
+  }
 }

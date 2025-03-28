@@ -64,12 +64,10 @@
       height: 60%;
       top: 20%;
       left: 20%;
-
        svg {
         position: absolute;
         width: 100%;
         height: 100%;
-  
         transform: rotate(30deg);
         polygon {
           stroke: $yellow;
