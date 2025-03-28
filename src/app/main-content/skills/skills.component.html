@@ -8,7 +8,12 @@
     </div>
     <div class="skillsLowerArea">
       <div>
-        <img src="assets/img/hat.png" alt="hat" />
+        <img
+          src="assets/img/hat.png"
+          alt="hat"
+          (mouseenter)="hatIsHoverd = true"
+          (mouseleave)="hatIsHoverd = false"
+        />
         <app-hexagon class="hexagon"></app-hexagon>
       </div>
       <div>
@@ -20,6 +25,20 @@
           <span>{{ item.name }}</span>
         </div>
         }
+      </div>
+    </div>
+    <div class="overlay" [ngClass]="{'open': hatIsHoverd}">
+      <h4>{{ "skills.h4" | translate }}</h4>
+      <span>{{ "skills.feelFree" | translate }}</span>
+      <div>
+        <div>
+          <img src="assets/img/react.png" alt="React" />
+          <span>React</span>
+        </div>
+        <div>
+          <img src="assets/img/docker.png" alt="Docker" />
+          <span>Docker</span>
+        </div>
       </div>
     </div>
   </div>

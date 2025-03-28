@@ -3,6 +3,7 @@ import { HeaderComponent } from '../shared/header/header.component';
 import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 import { NavBulletsComponent } from '../shared/nav-bullets/nav-bullets.component';
 import { HexagonComponent } from "../shared/hexagon/hexagon.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-skills',
@@ -11,7 +12,8 @@ import { HexagonComponent } from "../shared/hexagon/hexagon.component";
     TranslatePipe,
     TranslateDirective,
     NavBulletsComponent,
-    HexagonComponent
+    HexagonComponent,
+    CommonModule
 ],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss',
@@ -60,4 +62,6 @@ export class SkillsComponent {
       path: 'assets/img/9_materialDesign.png',
     },
   ];
+  /** This variable indicates whether the hat is hovered over. */
+  hatIsHoverd: boolean = false;
 }

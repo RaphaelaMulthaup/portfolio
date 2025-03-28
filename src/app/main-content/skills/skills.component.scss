@@ -9,6 +9,37 @@
     @include dFlex($ai: flex-start, $jc: space-between);
     flex-direction: column;
     padding-bottom: 13vh;
+    > div:last-child {
+      background-color: $yellow;
+      border-color: $cream;
+      bottom: -500px;
+      left: calc(11vw + 120px);
+      padding: 32px;
+      @include dFlex($g: 8px);
+      flex-direction: column;
+      width: 21vw;
+      &.open {
+        transform: translateY(calc(-13vh - 500px));
+      }    
+      h4 {
+        margin-bottom: 8px;
+        text-align: center;
+        line-height: 120%;
+      }
+      > span {
+        text-align: justify;
+      }
+      > div {
+        @include dFlex($g: 40px);
+        > div {
+          @include dFlex($g: 2px);
+          flex-direction: column;
+          img {
+            height: 40px;
+          }
+        }
+      }
+    }
   }
 }
 
