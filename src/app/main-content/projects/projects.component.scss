@@ -2,4 +2,18 @@
 
 #projects {
     background-color: $cream;
+    > div {
+        padding-bottom: 12.22vh;
+        @include dFlex($jc: space-between, $ai: flex-start);
+        flex-direction: column;
+    }
+}
+
+.projectsUpperArea {
+    color: $black;
+    @include dFlex($jc: flex-start, $g: 5vw);
+    h2 {
+        white-space: nowrap;
+    }
+    span {width: 37vw;}
 }

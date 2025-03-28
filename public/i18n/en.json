@@ -40,5 +40,9 @@
     "text": "I develop dynamic, responsive applications such as games and business software that adapt seamlessly to different devices. By working with APIs and databases, I create interactive and data-driven applications. I have also worked in collaborative teams on several projects, contributing effectively to the development process. My experience ranges from simple static websites to complex, modern web applications.",
     "h4": "Don't see the skill you are looking for?",
     "feelFree": "Feel free to contact me. I look forward to expanding on my previous knowledge. Also I have a special interest in learning:"
+  },
+  "projects": {
+    "h2": "My work",
+    "explore": "Explore a selection of my work here. - Interact with the projects to see my skills in action."
   }
 }
