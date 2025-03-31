@@ -33,8 +33,10 @@
     ::ng-deep app-hexagon {
       height: 37%;
       aspect-ratio: 1;
-      //   width: 37%;
+      transform: translateX(0.5vh) !important;
+      margin-bottom: 0.5vh;
       svg {
+        animation: rotate 7s linear infinite;
         height: 100%;
         width: 100%;
         polygon {
