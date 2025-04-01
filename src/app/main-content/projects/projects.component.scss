@@ -4,7 +4,7 @@
   background-color: $cream;
   > div {
     padding-bottom: 12.22vh;
-    @include dFlex($jc: space-between, $ai: flex-start, $g:2.8vh);
+    @include dFlex($jc: space-between, $ai: flex-start);
     flex-direction: column;
   }
 }
@@ -27,14 +27,16 @@
     background-color: $yellow;
     border-radius: $borderRadius;
     border: 1px solid $black;
-    height: 100%;
-    aspect-ratio: 1;
-    @include dFlex($ai: flex-end, $jc: flex-start);
+    height: 54.22vh;
+    width: 54.22vh;
+    @include dFlex();
+    position: relative;
     ::ng-deep app-hexagon {
       height: 37%;
       aspect-ratio: 1;
-      transform: translateX(0.5vh) !important;
-      margin-bottom: 0.5vh;
+      position: absolute;
+      bottom: 0.5vh;
+      left: 0.5vh;
       svg {
         animation: rotate 7s linear infinite;
         height: 100%;
@@ -44,6 +46,11 @@
           fill: $darkOrange;
         }
       }
+    }
+    img {
+      width: 85%;
+      border-radius: $borderRadius;
+      z-index: 10;
     }
   }
 }

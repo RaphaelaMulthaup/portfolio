@@ -16,4 +16,16 @@ import { HexagonComponent } from '../shared/hexagon/hexagon.component';
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
 })
-export class ProjectsComponent {}
+export class ProjectsComponent {
+  displayedProject: 'join' | 'elPolloLoco' | 'dABubble' = 'join';
+  dataProjects : { [key: string]: { img: string; name: string } } = {
+    join: {
+      img: 'assets/img/join.png',
+      name: 'Join',
+    },
+    elPolloLoco: {
+      img: 'assets/img/elPolloLoco.png',
+      name: 'El Pollo Loco',
+    },
+  };
+}
