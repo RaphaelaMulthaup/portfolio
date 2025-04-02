@@ -43,6 +43,8 @@
   },
   "projects": {
     "h2": "My work",
-    "explore": "Explore a selection of my work here. - Interact with the projects to see my skills in action."
+    "explore": "Explore a selection of my work here. - Interact with the projects to see my skills in action.",
+    "previous": "<< Previous project",
+    "next": "Next project >>"
   }
 }

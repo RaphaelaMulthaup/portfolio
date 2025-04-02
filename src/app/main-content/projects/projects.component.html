@@ -9,9 +9,29 @@
     <div class="projectsLowerArea">
       <div>
         <app-hexagon></app-hexagon>
-        <img [src]="dataProjects[displayedProject].img" alt="screenshot project">
+        <div>
+          <img [src]="nextImg" alt="screenshot project"/>
+          <img [src]="currentImg" [class.fade-out]="isFadingOut" alt="screenshot project"/>
+        </div>
       </div>
-      <div>Projektbeschreibung</div>
+      <div>
+        <div class="projectInformations">
+          <div>
+            <div></div>
+            <span>JavaScript | HTML | CSS | Firebase</span>
+            <span></span>
+          </div>
+          <div></div>
+        </div>
+        <div>
+          <span (click)="changeProject('previous')">{{
+            "projects.previous" | translate
+          }}</span>
+          <span (click)="changeProject('next')">{{
+            "projects.next" | translate
+          }}</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>

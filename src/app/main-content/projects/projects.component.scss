@@ -23,14 +23,15 @@
 .projectsLowerArea {
   @include dFlex($jc: space-between);
   width: 100%;
+  height: 54.22vh;
   > div:first-child {
     background-color: $yellow;
     border-radius: $borderRadius;
     border: 1px solid $black;
-    height: 54.22vh;
-    width: 54.22vh;
-    @include dFlex();
+    height: 100%;
+    width: 34vw;
     position: relative;
+    @include dFlex();
     ::ng-deep app-hexagon {
       height: 37%;
       aspect-ratio: 1;
@@ -47,10 +48,49 @@
         }
       }
     }
-    img {
+    > div {
       width: 85%;
-      border-radius: $borderRadius;
-      z-index: 10;
+      position: relative;
+      img {
+        border-radius: $borderRadius;
+        z-index: 10;
+        width: 100%;
+        position: absolute;
+        transition: opacity 200ms ease-in-out;
+      }
+      img.fade-out {
+        animation: fadeOut 200ms forwards;
+      }
     }
   }
+  > div:last-child {
+    flex: 1;
+    margin: 3.67vh 2.78vw;
+    @include dFlex($g: 3.56vh);
+    flex-direction: column;
+    > div:last-child {
+      width: 100%;
+      @include dFlex($jc: space-between);
+      font-weight: 700;
+      color: $black;
+      span {
+        &:hover {
+          cursor: pointer;
+          color: $darkOrange;
+        }
+      }
+    }
+  }
+}
+
+.projectInformations {
+  height: 41vh;
+  width: 100%;
+  background-color: $black;
+  border-radius: $borderRadius;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
