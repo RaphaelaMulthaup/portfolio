@@ -49,6 +49,11 @@ export class ProjectsComponent {
     this.dataProjects[this.projects[this.indexDisplayedProject]].img;
   /** The next image that lies behind the current image. */
   nextImg = this.currentImg;
+  /** The currend image. */
+  currentJumpingImg: string =
+    this.dataProjects[this.projects[this.indexDisplayedProject]].jumpingImg;
+  /** The next image that lies behind the current image. */
+  nextJumpingImg = this.currentJumpingImg;
   /** This variable indicates whether the jumping image is hovered over. */
   jumpingImgIsHoverd: boolean = false;
 
@@ -60,12 +65,15 @@ export class ProjectsComponent {
   changeProject(direction: string) {
     const nextIndex = this.getIndexNextDisplayedProject(direction);
     this.nextImg = this.dataProjects[this.projects[nextIndex]].img;
+    this.nextJumpingImg =
+      this.dataProjects[this.projects[nextIndex]].jumpingImg;
     this.cdr.detectChanges();
     this.isFadingOut = true;
 
     setTimeout(() => {
       this.indexDisplayedProject = nextIndex;
       this.currentImg = this.nextImg;
+      this.currentJumpingImg = this.nextJumpingImg;
       this.cdr.detectChanges();
       this.isFadingOut = false;
     }, 200);

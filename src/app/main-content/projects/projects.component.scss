@@ -50,16 +50,11 @@
     }
     > div {
       width: 85%;
-      position: relative;
+      aspect-ratio: 1860 / 1080;
       img {
         border-radius: $borderRadius;
         z-index: 10;
         width: 100%;
-        position: absolute;
-        transition: opacity 200ms ease-in-out;
-      }
-      img.fade-out {
-        animation: fadeOut 200ms forwards;
       }
     }
   }
@@ -88,9 +83,29 @@
   width: 100%;
   background-color: $black;
   border-radius: $borderRadius;
+  .fadeWrapper {
+    img {
+      width: 32px;
+    }
+  }
+}
+
+.fadeWrapper {
+  position: relative;
+  img {
+    position: absolute;
+    transition: opacity 200ms ease-in-out;
+  }
+  img.fade-out {
+    animation: fadeOut 200ms forwards;
+  }
 }
 
 @keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
