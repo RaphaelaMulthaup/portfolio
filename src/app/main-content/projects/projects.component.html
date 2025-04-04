@@ -17,7 +17,17 @@
       <div>
         <div class="projectInformations">
           <div>
-            <div></div>
+            <div>
+              <h4></h4>
+              <div class="jumpingImg">
+                <img
+                  [src]="dataProjects[projects[indexDisplayedProject]].jumpingImg"
+                  alt="informations about development"
+                  (mouseenter)="jumpingImgIsHoverd = true"
+                  (mouseleave)="jumpingImgIsHoverd = false"
+                />
+              </div>    
+            </div>
             <span>JavaScript | HTML | CSS | Firebase</span>
             <span></span>
           </div>

@@ -23,30 +23,38 @@ export class ProjectsComponent {
   /** The currend displayed project. */
   indexDisplayedProject: number = 0;
   /** The data of the projects. */
-  dataProjects: { [key: string]: { img: string; name: string } } = {
+  dataProjects: {
+    [key: string]: { img: string; name: string; jumpingImg: string };
+  } = {
     join: {
       img: 'assets/img/join.png',
       name: 'Join',
+      jumpingImg: 'assets/img/checkMark.png',
     },
     elPolloLoco: {
       img: 'assets/img/elPolloLoco.png',
       name: 'El Pollo Loco',
+      jumpingImg: 'assets/img/chick.png',
     },
     dABubble: {
       img: 'assets/img/elPolloLoco.png',
       name: 'El Pollo Loco',
-    }
+      jumpingImg: 'assets/img/speechBubble.png',
+    },
   };
   /** Indicates whether the current image is currently fading out. */
   isFadingOut: boolean = false;
   /** The currend image. */
-  currentImg: string = this.dataProjects[this.projects[this.indexDisplayedProject]].img;
+  currentImg: string =
+    this.dataProjects[this.projects[this.indexDisplayedProject]].img;
   /** The next image that lies behind the current image. */
   nextImg = this.currentImg;
+  /** This variable indicates whether the jumping image is hovered over. */
+  jumpingImgIsHoverd: boolean = false;
 
   /**
    * This function cycles through the project images and provides a smooth animation. 'nextImg' receives the path of the next image. After that, 'currentImg' is faded out. Once this is done, the path of 'currentImg' is also updated, and its opacity is increased back to one. In between, the DOM is updated using change detection.
-   * 
+   *
    * @param direction the direction in which the index changes
    */
   changeProject(direction: string) {
@@ -57,7 +65,7 @@ export class ProjectsComponent {
 
     setTimeout(() => {
       this.indexDisplayedProject = nextIndex;
-      this.currentImg = this.nextImg;      
+      this.currentImg = this.nextImg;
       this.cdr.detectChanges();
       this.isFadingOut = false;
     }, 200);
@@ -65,13 +73,13 @@ export class ProjectsComponent {
 
   /**
    * This function returns the index of the next displayed project.
-   * 
+   *
    * @param direction the direction in which the index changes
    * @returns the index of the next displayed project
    */
-  getIndexNextDisplayedProject(direction: string){
-    return direction === "previous"
-    ? (this.indexDisplayedProject - 1 + 3) % 3
-    : (this.indexDisplayedProject + 1) % 3;
+  getIndexNextDisplayedProject(direction: string) {
+    return direction === 'previous'
+      ? (this.indexDisplayedProject - 1 + 3) % 3
+      : (this.indexDisplayedProject + 1) % 3;
   }
 }

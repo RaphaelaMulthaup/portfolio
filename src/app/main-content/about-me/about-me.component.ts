@@ -13,6 +13,6 @@ import { CommonModule } from '@angular/common';
 })
 export class AboutMeComponent {
   portfolioService = inject(PortfolioService);
-  /** This variable indicates whether the smiley is hovered over. */
-  smileyIsHoverd: boolean = false;
+  /** This variable indicates whether the jumping image is hovered over. */
+  jumpingImgIsHoverd: boolean = false;
 }

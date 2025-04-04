@@ -36,30 +36,6 @@
   }
 }
 
-.jumpingSmiley {
-  @include dFlex($ai: flex-end);
-  width: 40px;
-  aspect-ratio: 1;
-  img {
-    width: 28.4px;
-    height: fit-content;
-    animation: moveUpDown 450ms ease-in-out infinite alternate;
-    &:hover {
-      animation-play-state: paused;
-      cursor: pointer;
-    }
-  }
-}
-
-@keyframes moveUpDown {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-10px);
-  }
-}
-
 .moreAboutMe {
   background-color: $lightBlue;
   border-color: $black;

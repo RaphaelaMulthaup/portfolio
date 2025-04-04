@@ -5,7 +5,7 @@
     <div class="aboutMeLeftSide">
       <img src="" alt="" />
       <div>
-        <div class="overlay moreAboutMe" [ngClass]="{'open': smileyIsHoverd}">
+        <div class="overlay moreAboutMe" [ngClass]="{'open': jumpingImgIsHoverd}">
           <h4>{{ "aboutMe.moreAoutMe.moreAoutMe" | translate }}</h4>
           <ul>
             @for(item of [0,1,2,3,4,5,6]; track item; let index = $index){
@@ -27,12 +27,12 @@
           <button (click)="portfolioService.scrollToSection(5)">
             {{ "aboutMe.button" | translate }}
           </button>
-          <div class="jumpingSmiley">
+          <div class="jumpingImg">
             <img
               src="assets/img/smiley.png"
               alt="smiley"
-              (mouseenter)="smileyIsHoverd = true"
-              (mouseleave)="smileyIsHoverd = false"
+              (mouseenter)="jumpingImgIsHoverd = true"
+              (mouseleave)="jumpingImgIsHoverd = false"
             />
           </div>
         </div>
