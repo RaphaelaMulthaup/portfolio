@@ -7,7 +7,7 @@
       <span>{{ "projects.explore" | translate }}</span>
     </div>
     <div class="projectsLowerArea">
-      <div>
+      <div [ngClass]="dataProjects[projects[indexDisplayedProject]].bGroundColor">
         <app-hexagon></app-hexagon>
         <div class="fadeWrapper">
           <img [src]="nextImg" alt="screenshot project" />
@@ -22,7 +22,7 @@
         <div class="projectInformations">
           <div>
             <div>
-              <h4></h4>
+              <h4>{{dataProjects[projects[indexDisplayedProject]].name}}</h4>
               <div class="jumpingImg">
                 <div class="fadeWrapper">
                   <img

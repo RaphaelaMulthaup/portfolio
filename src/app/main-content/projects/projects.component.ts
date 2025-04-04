@@ -3,6 +3,7 @@ import { HeaderComponent } from '../shared/header/header.component';
 import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 import { NavBulletsComponent } from '../shared/nav-bullets/nav-bullets.component';
 import { HexagonComponent } from '../shared/hexagon/hexagon.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-projects',
@@ -12,6 +13,7 @@ import { HexagonComponent } from '../shared/hexagon/hexagon.component';
     TranslateDirective,
     NavBulletsComponent,
     HexagonComponent,
+    CommonModule
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
@@ -24,21 +26,24 @@ export class ProjectsComponent {
   indexDisplayedProject: number = 0;
   /** The data of the projects. */
   dataProjects: {
-    [key: string]: { img: string; name: string; jumpingImg: string };
+    [key: string]: { img: string; bGroundColor: string; name: string; jumpingImg: string };
   } = {
     join: {
       img: 'assets/img/join.png',
+      bGroundColor: 'bgYellow',
       name: 'Join',
       jumpingImg: 'assets/img/checkMark.png',
     },
     elPolloLoco: {
       img: 'assets/img/elPolloLoco.png',
+      bGroundColor: 'bgOrange',
       name: 'El Pollo Loco',
       jumpingImg: 'assets/img/chick.png',
     },
     dABubble: {
       img: 'assets/img/elPolloLoco.png',
-      name: 'El Pollo Loco',
+      bGroundColor: 'bgBlue',
+      name: 'DA Bubble',
       jumpingImg: 'assets/img/speechBubble.png',
     },
   };
