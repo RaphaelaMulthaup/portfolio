@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
     TranslateDirective,
     NavBulletsComponent,
     HexagonComponent,
-    CommonModule
+    CommonModule,
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
@@ -26,7 +26,12 @@ export class ProjectsComponent {
   indexDisplayedProject: number = 0;
   /** The data of the projects. */
   dataProjects: {
-    [key: string]: { img: string; bGroundColor: string; name: string; jumpingImg: string };
+    [key: string]: {
+      img: string;
+      bGroundColor: string;
+      name: string;
+      jumpingImg: string;
+    };
   } = {
     join: {
       img: 'assets/img/join.png',
@@ -74,9 +79,9 @@ export class ProjectsComponent {
       this.dataProjects[this.projects[nextIndex]].jumpingImg;
     this.cdr.detectChanges();
     this.isFadingOut = true;
+    this.indexDisplayedProject = nextIndex;
 
     setTimeout(() => {
-      this.indexDisplayedProject = nextIndex;
       this.currentImg = this.nextImg;
       this.currentJumpingImg = this.nextJumpingImg;
       this.cdr.detectChanges();
