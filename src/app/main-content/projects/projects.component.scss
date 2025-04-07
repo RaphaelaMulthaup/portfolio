@@ -43,8 +43,7 @@
         height: 100%;
         width: 100%;
         polygon {
-          stroke: $darkOrange;
-          fill: $darkOrange;
+          transition: stroke 200ms ease, fill 200ms ease;
         }
       }
     }
@@ -83,9 +82,27 @@
   width: 100%;
   background-color: $black;
   border-radius: $borderRadius;
-  .fadeWrapper {
-    img {
-      width: 32px;
+  @include dFlex($g: 3.56vh, $ai: flex-start);
+  flex-direction: column;
+  color: $cream;
+  padding: 0 2.22vw;
+  box-sizing: border-box;
+  > div:first-child {
+    @include dFlex($g: 1.78vh, $ai: flex-start);
+    flex-direction: column;
+    width: 100%;
+    > div:first-child {
+      @include dFlex($jc: space-between);
+      width: 100%;
+      .fadeWrapper {
+        width: 40px;
+        height: 40px;
+        img {
+          width: 32px;
+          bottom: 0;
+          left: 4px;
+        }
+      }
     }
   }
 }
@@ -108,4 +125,16 @@
   to {
     opacity: 0;
   }
+}
+
+.bgYellow {
+  background-color: $yellow;
+}
+
+.bgOrange {
+  background-color: $darkOrange;
+}
+
+.bgBlue {
+  background-color: $lightBlue;
 }

@@ -21,7 +21,7 @@ import { CommonModule } from '@angular/common';
 export class ProjectsComponent {
   constructor(private cdr: ChangeDetectorRef) {}
   /** An array with the names of the projects. */
-  projects: string[] = ['join', 'elPolloLoco', 'dABubble'];
+  projects: string[] = ['join', 'dABubble', 'elPolloLoco'];
   /** The currend displayed project. */
   indexDisplayedProject: number = 0;
   /** The data of the projects. */
@@ -29,6 +29,7 @@ export class ProjectsComponent {
     [key: string]: {
       img: string;
       bGroundColor: string;
+      colorHexagon: string;
       name: string;
       jumpingImg: string;
     };
@@ -36,18 +37,21 @@ export class ProjectsComponent {
     join: {
       img: 'assets/img/join.png',
       bGroundColor: 'bgYellow',
+      colorHexagon: 'hexagonOrange',
       name: 'Join',
       jumpingImg: 'assets/img/checkMark.png',
     },
     elPolloLoco: {
       img: 'assets/img/elPolloLoco.png',
       bGroundColor: 'bgOrange',
+      colorHexagon: 'hexagonYellow',
       name: 'El Pollo Loco',
       jumpingImg: 'assets/img/chick.png',
     },
     dABubble: {
       img: 'assets/img/elPolloLoco.png',
       bGroundColor: 'bgBlue',
+      colorHexagon: 'hexagonOrange',
       name: 'DA Bubble',
       jumpingImg: 'assets/img/speechBubble.png',
     },
@@ -80,6 +84,7 @@ export class ProjectsComponent {
     this.cdr.detectChanges();
     this.isFadingOut = true;
     this.indexDisplayedProject = nextIndex;
+    this.cdr.detectChanges();
 
     setTimeout(() => {
       this.currentImg = this.nextImg;

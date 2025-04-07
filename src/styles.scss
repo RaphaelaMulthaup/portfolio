@@ -106,17 +106,19 @@ app-nav-bullets {
   color: $cream;
 }
 
-.bgYellow {
-  background-color: $yellow;
+.hexagonOrange {
+  polygon {
+    stroke: $darkOrange;
+    fill: $darkOrange;
+  }
 }
 
-.bgOrange {
-  background-color: $darkOrange;
+.hexagonYellow {
+  polygon {
+    stroke: $yellow;
+    fill: $yellow;
+  }
 }
-.bgBlue {
-  background-color: $lightBlue;
-}
-
 
 .maxWidth {
   height: 100vh;
