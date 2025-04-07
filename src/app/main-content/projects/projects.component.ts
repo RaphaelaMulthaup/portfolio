@@ -32,6 +32,7 @@ export class ProjectsComponent {
       colorHexagon: string;
       name: string;
       jumpingImg: string;
+      description: string;
     };
   } = {
     join: {
@@ -40,13 +41,7 @@ export class ProjectsComponent {
       colorHexagon: 'hexagonOrange',
       name: 'Join',
       jumpingImg: 'assets/img/checkMark.png',
-    },
-    elPolloLoco: {
-      img: 'assets/img/elPolloLoco.png',
-      bGroundColor: 'bgOrange',
-      colorHexagon: 'hexagonYellow',
-      name: 'El Pollo Loco',
-      jumpingImg: 'assets/img/chick.png',
+      description: 'joinDescription',
     },
     dABubble: {
       img: 'assets/img/elPolloLoco.png',
@@ -54,7 +49,16 @@ export class ProjectsComponent {
       colorHexagon: 'hexagonOrange',
       name: 'DA Bubble',
       jumpingImg: 'assets/img/speechBubble.png',
+      description: 'dABubbleDescription',
     },
+    elPolloLoco: {
+      img: 'assets/img/elPolloLoco.png',
+      bGroundColor: 'bgOrange',
+      colorHexagon: 'hexagonYellow',
+      name: 'El Pollo Loco',
+      jumpingImg: 'assets/img/chick.png',
+      description: 'elPolloLocoDescription',
+    }
   };
   /** Indicates whether the current image is currently fading out. */
   isFadingOut: boolean = false;

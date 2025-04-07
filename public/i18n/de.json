@@ -44,6 +44,9 @@
   "projects": {
     "h2": "Meine Arbeit",
     "explore": "Hier kannst du eine Auswahl meiner Arbeiten entdecken. - Teste die Projekte, um meine Fähigkeiten live zu erleben.",
+    "joinDescription": "Aufgabenmanager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen, weise Benutzer und Kategorien zu.",
+    "dABubbleDescription": "Diese App ist ein Slack-Klon. Sie ermöglicht die Teamkommunikation und Zusammenarbeit durch eine intuitive Benutzeroberfläche, Echtzeitnachrichten und eine leistungsstarke Kanalorganisation.",
+    "elPolloLocoDescription": "Ein einfaches Jump-and-Run-Spiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Tabaskoflaschen zu finden, um gegen das Riesenhuhn zu kämpfen.",
     "previous": "<< Vorheriges Projekt",
     "next": "Nächstes Projekt >>"
   }

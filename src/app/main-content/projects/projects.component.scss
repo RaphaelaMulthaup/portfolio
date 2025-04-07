@@ -104,6 +104,9 @@
         }
       }
     }
+    > span:nth-child(2) {
+      color: $lightBlue;
+    }
   }
 }
 
