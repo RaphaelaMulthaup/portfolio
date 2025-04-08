@@ -108,6 +108,15 @@
       color: $lightBlue;
     }
   }
+  > div:last-child {
+    @include dFlex($g: 2.22vw, $jc: flex-start);
+    button {
+      @include dFlex($g:4px);
+      img {
+        height: 20px;
+      }
+    }
+  }
 }
 
 .fadeWrapper {

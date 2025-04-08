@@ -58,7 +58,7 @@ export class ProjectsComponent {
       name: 'El Pollo Loco',
       jumpingImg: 'assets/img/chick.png',
       description: 'elPolloLocoDescription',
-    }
+    },
   };
   /** Indicates whether the current image is currently fading out. */
   isFadingOut: boolean = false;
@@ -74,7 +74,10 @@ export class ProjectsComponent {
   nextJumpingImg = this.currentJumpingImg;
   /** This variable indicates whether the jumping image is hovered over. */
   jumpingImgIsHoverd: boolean = false;
-
+  /** This variable indicates whether the gitHub button is hovered over. */
+  btnGitHubIsHoverd: boolean = false;
+  /** This variable indicates whether the live test button is hovered over. */
+  btnLiveTsetIsHoverd: boolean = false;
   /**
    * This function cycles through the project images and provides a smooth animation. 'nextImg' receives the path of the next image. After that, 'currentImg' is faded out. Once this is done, the path of 'currentImg' is also updated, and its opacity is increased back to one. In between, the DOM is updated using change detection.
    *

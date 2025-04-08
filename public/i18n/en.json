@@ -47,6 +47,7 @@
     "joinDescription": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
     "dABubbleDescription": "This App is a Slack Clone App. It enables team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.",
     "elPolloLocoDescription": "A simple Jump-and-Run game based on an object-oriented approach. Help Pepe find coins and Tabasco bottles to fight against the giant chicken.",
+    "liveTest": "Live Test",
     "previous": "<< Previous project",
     "next": "Next project >>"
   }
