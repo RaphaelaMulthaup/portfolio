@@ -8,10 +8,10 @@
     </div>
     <div class="projectsLowerArea">
       <div
-        [ngClass]="dataProjects[projects[indexDisplayedProject]].bGroundColor"
+        [ngClass]="dataDisplayedProject.bGroundColor"
       >
         <app-hexagon
-          [ngClass]="dataProjects[projects[indexDisplayedProject]].colorHexagon"
+          [ngClass]="dataDisplayedProject.colorHexagon"
         ></app-hexagon>
         <div class="fadeWrapper">
           <img [src]="nextImg" alt="screenshot project" />
@@ -26,7 +26,7 @@
         <div class="projectInformations">
           <div>
             <div>
-              <h4>{{ dataProjects[projects[indexDisplayedProject]].name }}</h4>
+              <h4>{{ dataDisplayedProject.name }}</h4>
               <div class="jumpingImg">
                 <div class="fadeWrapper">
                   <img
@@ -46,7 +46,7 @@
             <span>JavaScript | HTML | CSS | Firebase</span>
             <span>{{
               "projects." +
-                dataProjects[projects[indexDisplayedProject]].description
+                dataDisplayedProject.description
                 | translate
             }}</span>
           </div>

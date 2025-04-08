@@ -4,6 +4,15 @@ import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 import { NavBulletsComponent } from '../shared/nav-bullets/nav-bullets.component';
 import { HexagonComponent } from '../shared/hexagon/hexagon.component';
 import { CommonModule } from '@angular/common';
+interface ProjectData {
+  img: string;
+  bGroundColor: string;
+  colorHexagon: string;
+  name: string;
+  jumpingImg: string;
+  description: string;
+  gitHub: string;
+}
 
 @Component({
   selector: 'app-projects',
@@ -25,17 +34,7 @@ export class ProjectsComponent {
   /** The currend displayed project. */
   indexDisplayedProject: number = 0;
   /** The data of the projects. */
-  dataProjects: {
-    [key: string]: {
-      img: string;
-      bGroundColor: string;
-      colorHexagon: string;
-      name: string;
-      jumpingImg: string;
-      description: string;
-      gitHub: string;
-    };
-  } = {
+  dataProjects: { [key: string]: ProjectData } = {
     join: {
       img: 'assets/img/join.png',
       bGroundColor: 'bgYellow',
@@ -43,7 +42,7 @@ export class ProjectsComponent {
       name: 'Join',
       jumpingImg: 'assets/img/checkMark.png',
       description: 'joinDescription',
-      gitHub: 'https://github.com/RaphaelaMulthaup/Join.git'
+      gitHub: 'https://github.com/RaphaelaMulthaup/Join.git',
     },
     dABubble: {
       img: 'assets/img/elPolloLoco.png',
@@ -52,7 +51,7 @@ export class ProjectsComponent {
       name: 'DA Bubble',
       jumpingImg: 'assets/img/speechBubble.png',
       description: 'dABubbleDescription',
-      gitHub: 'https://github.com/RaphaelaMulthaup/Join.git'
+      gitHub: 'https://github.com/RaphaelaMulthaup/Join.git',
     },
     elPolloLoco: {
       img: 'assets/img/elPolloLoco.png',
@@ -61,9 +60,12 @@ export class ProjectsComponent {
       name: 'El Pollo Loco',
       jumpingImg: 'assets/img/chick.png',
       description: 'elPolloLocoDescription',
-      gitHub: 'https://github.com/RaphaelaMulthaup/EL-POLLO-LOCO.git'
+      gitHub: 'https://github.com/RaphaelaMulthaup/EL-POLLO-LOCO.git',
     },
   };
+  /** The data set belonging to the currently displayed project. */
+  dataDisplayedProject: ProjectData =
+    this.dataProjects[this.projects[this.indexDisplayedProject]];
   /** Indicates whether the current image is currently fading out. */
   isFadingOut: boolean = false;
   /** The currend image. */
@@ -82,6 +84,7 @@ export class ProjectsComponent {
   btnGitHubIsHoverd: boolean = false;
   /** This variable indicates whether the live test button is hovered over. */
   btnLiveTsetIsHoverd: boolean = false;
+
   /**
    * This function cycles through the project images and provides a smooth animation. 'nextImg' receives the path of the next image. After that, 'currentImg' is faded out. Once this is done, the path of 'currentImg' is also updated, and its opacity is increased back to one. In between, the DOM is updated using change detection.
    *
@@ -95,6 +98,7 @@ export class ProjectsComponent {
     this.cdr.detectChanges();
     this.isFadingOut = true;
     this.indexDisplayedProject = nextIndex;
+    this.dataDisplayedProject = this.dataProjects[this.projects[this.indexDisplayedProject]];
     this.cdr.detectChanges();
 
     setTimeout(() => {
@@ -118,9 +122,12 @@ export class ProjectsComponent {
   }
 
   /**
-   *  This function opens the GitHub repository of the displayed project. 
+   *  This function opens the GitHub repository of the displayed project.
    */
-  openGitHub(){
-    window.open(this.dataProjects[this.projects[this.indexDisplayedProject]].gitHub, '_blank');
+  openGitHub() {
+    window.open(
+      this.dataProjects[this.projects[this.indexDisplayedProject]].gitHub,
+      '_blank'
+    );
   }
 }
