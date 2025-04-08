@@ -52,18 +52,33 @@
           </div>
           <div>
             <button
+              (click)="openGitHub()"
               (mouseenter)="btnGitHubIsHoverd = true"
               (mouseleave)="btnGitHubIsHoverd = false"
             >
               <span>GitHub</span>
-              <img [src]="btnGitHubIsHoverd ? 'assets/img/upwardArrow.png' : 'assets/img/arrow.png'" alt="arrow" />
+              <img
+                [src]="
+                  btnGitHubIsHoverd
+                    ? 'assets/img/upwardArrow.png'
+                    : 'assets/img/arrow.png'
+                "
+                alt="arrow"
+              />
             </button>
             <button
               (mouseenter)="btnLiveTsetIsHoverd = true"
               (mouseleave)="btnLiveTsetIsHoverd = false"
             >
               <span>{{ "projects.liveTest" | translate }}</span>
-              <img [src]="btnLiveTsetIsHoverd ? 'assets/img/upwardArrow.png' : 'assets/img/arrow.png'" alt="arrow" />
+              <img
+                [src]="
+                  btnLiveTsetIsHoverd
+                    ? 'assets/img/upwardArrow.png'
+                    : 'assets/img/arrow.png'
+                "
+                alt="arrow"
+              />
             </button>
           </div>
         </div>

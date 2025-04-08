@@ -33,6 +33,7 @@ export class ProjectsComponent {
       name: string;
       jumpingImg: string;
       description: string;
+      gitHub: string;
     };
   } = {
     join: {
@@ -42,6 +43,7 @@ export class ProjectsComponent {
       name: 'Join',
       jumpingImg: 'assets/img/checkMark.png',
       description: 'joinDescription',
+      gitHub: 'https://github.com/RaphaelaMulthaup/Join.git'
     },
     dABubble: {
       img: 'assets/img/elPolloLoco.png',
@@ -50,6 +52,7 @@ export class ProjectsComponent {
       name: 'DA Bubble',
       jumpingImg: 'assets/img/speechBubble.png',
       description: 'dABubbleDescription',
+      gitHub: 'https://github.com/RaphaelaMulthaup/Join.git'
     },
     elPolloLoco: {
       img: 'assets/img/elPolloLoco.png',
@@ -58,6 +61,7 @@ export class ProjectsComponent {
       name: 'El Pollo Loco',
       jumpingImg: 'assets/img/chick.png',
       description: 'elPolloLocoDescription',
+      gitHub: 'https://github.com/RaphaelaMulthaup/EL-POLLO-LOCO.git'
     },
   };
   /** Indicates whether the current image is currently fading out. */
@@ -111,5 +115,12 @@ export class ProjectsComponent {
     return direction === 'previous'
       ? (this.indexDisplayedProject - 1 + 3) % 3
       : (this.indexDisplayedProject + 1) % 3;
+  }
+
+  /**
+   *  This function opens the GitHub repository of the displayed project. 
+   */
+  openGitHub(){
+    window.open(this.dataProjects[this.projects[this.indexDisplayedProject]].gitHub, '_blank');
   }
 }
