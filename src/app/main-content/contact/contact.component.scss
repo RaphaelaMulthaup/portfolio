@@ -14,3 +14,16 @@
         }
     }
 }
+
+.contactRightSide {
+    width: 36.67vw;
+    @include dFlex($g:7.11vh);
+    h2 {
+        color: $yellow;
+    }
+    > div {
+        h4 {
+            color: $darkOrange;
+        }
+    }
+}
