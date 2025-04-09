@@ -2,4 +2,15 @@
 
 #contact {
     background-color: $black;
+    color: $cream;
+    > div:last-child {
+        @include dFlex();
+        flex-direction: column;
+        > div:first-child {
+            flex: 1;
+        }
+        app-footer {
+            width: 100%;
+        }
+    }
 }

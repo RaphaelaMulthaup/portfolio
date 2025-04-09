@@ -9,6 +9,9 @@
         "references": "References",
         "contactMe": "Contact me"
       }
+    },
+    "footer": {
+      "imprint": "Imprint"
     }
   },
   "landingPage": {
