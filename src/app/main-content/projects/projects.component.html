@@ -7,9 +7,7 @@
       <span>{{ "projects.explore" | translate }}</span>
     </div>
     <div class="projectsLowerArea">
-      <div
-        [ngClass]="dataDisplayedProject.bGroundColor"
-      >
+      <div [ngClass]="dataDisplayedProject.bGroundColor">
         <app-hexagon
           [ngClass]="dataDisplayedProject.colorHexagon"
         ></app-hexagon>
@@ -42,12 +40,15 @@
                   />
                 </div>
               </div>
+              <div class="overlay" [ngClass]="{ open: jumpingImgIsHoverd }">
+                <span>{{
+                  "projects." + dataDisplayedProject.development | translate
+                }}</span>
+              </div>
             </div>
-            <span>{{dataDisplayedProject.technologies}}</span>
+            <span>{{ dataDisplayedProject.technologies }}</span>
             <span>{{
-              "projects." +
-                dataDisplayedProject.description
-                | translate
+              "projects." + dataDisplayedProject.description | translate
             }}</span>
           </div>
           <div>

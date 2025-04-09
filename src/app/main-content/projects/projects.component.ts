@@ -12,6 +12,7 @@ interface ProjectData {
   technologies: string;
   jumpingImg: string;
   description: string;
+  development: string;
   gitHub: string;
 }
 
@@ -44,6 +45,7 @@ export class ProjectsComponent {
       technologies: 'JavaScript | Firebase | HTML | CSS',
       jumpingImg: 'assets/img/checkMark.png',
       description: 'joinDescription',
+      development: 'joinDevelopment',
       gitHub: 'https://github.com/RaphaelaMulthaup/Join.git',
     },
     dABubble: {
@@ -54,6 +56,7 @@ export class ProjectsComponent {
       technologies: 'Angular | TypeScript | Firebase | HTML | CSS',
       jumpingImg: 'assets/img/speechBubble.png',
       description: 'dABubbleDescription',
+      development: 'dABubbleDevelopment',
       gitHub: 'https://github.com/RaphaelaMulthaup/Join.git',
     },
     elPolloLoco: {
@@ -64,6 +67,7 @@ export class ProjectsComponent {
       technologies: 'JavaScript | HTML | CSS',
       jumpingImg: 'assets/img/chick.png',
       description: 'elPolloLocoDescription',
+      development: 'elPolloLocoDevelopment',
       gitHub: 'https://github.com/RaphaelaMulthaup/EL-POLLO-LOCO.git',
     },
   };
