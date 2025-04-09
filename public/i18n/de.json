@@ -50,5 +50,15 @@
     "liveTest": "Jetzt testen",
     "previous": "<< Vorheriges Projekt",
     "next": "Nächstes Projekt >>"
+  },
+  "references": {
+    "h2": "Was meine Kollegen über mich sagen",
+    "textMartens": "Raphaela ist eine großartige Teamplayerin. Sie ging Gruppenarbeiten stets mit einer positiven Einstellung und einem ausgeprägten Teamgeist an. Ihr gutes Auge für Details war ein großer Gewinn für unsere Projekte und sorgte dafür, dass unsere Arbeit stets sorgfältig und präzise war. Neben ihren technischen Fähigkeiten hat Raphaela ein natürliches Talent dafür, ein unterstützendes und produktives Lernumfeld zu schaffen. Ich bin mir sicher, dass sie für jedes Team eine wertvolle Bereicherung sein wird.",
+    "designationMartens": "Frontend-Entwickler",
+    "textNeußer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "designationNeußer": "Projektpartner",
+    "textPotter": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "designationPotter": "Frontend-Entwickler",
+    "linkedIn": "Zum LinkedIn-Profil >>"
   }
 }

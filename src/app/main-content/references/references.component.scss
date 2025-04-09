@@ -2,4 +2,36 @@
 
 #references {
     background-color: $lightBlue;
+    color: $cream;
+    > div:last-child {
+        @include dFlex($jc:space-between, $ai:flex-start, $g: 5.33vh);
+        flex-direction: column;
+    }
+}
+
+.referencesLowerArea{
+    @include dFlex($jc:space-between);
+    width: 100%;
+    margin-bottom: 14.22vh;
+    padding-right: 2.78vw;
+    box-sizing: border-box;
+    flex: 1;
+    div {
+        height: 100%;
+        width: 26.7vw;
+        app-reference{
+            width: 100%;
+            @include dFlex($g:2.22vh);
+            flex-direction: column;
+        }
+    }
+    > div:first-child{
+        @include dFlex($ai:flex-start);
+    }
+    > div:nth-child(2){
+        @include dFlex();
+    }
+    > div:last-child{
+        @include dFlex($ai:flex-end);
+    }
 }

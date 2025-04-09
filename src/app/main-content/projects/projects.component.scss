@@ -68,6 +68,7 @@
       font-weight: 700;
       color: $black;
       span {
+        transition: color 100ms ease-in;
         &:hover {
           cursor: pointer;
           color: $darkOrange;

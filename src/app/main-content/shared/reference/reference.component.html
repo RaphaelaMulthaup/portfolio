@@ -1,0 +1,19 @@
+<div
+  class="referenceDiv"
+  (mouseenter)="referenceDivIsHoverd = true"
+  (mouseleave)="referenceDivIsHoverd = false"
+>
+  <div>
+    <h4>{{ dataReferences[referenceProvider].name }}</h4>
+    <app-hexagon class="hexagonOrange" [ngClass]="{'hoverd': referenceDivIsHoverd}"></app-hexagon>
+  </div>
+  <span>{{
+    "references." + dataReferences[referenceProvider].text | translate
+  }}</span>
+  <span>{{
+    "references." + dataReferences[referenceProvider].designation | translate
+  }}</span>
+</div>
+<div>
+  <a href="{{ dataReferences[referenceProvider].linkedIn }}" target="_blank">{{ "references.linkedIn" | translate }}</a>
+</div>

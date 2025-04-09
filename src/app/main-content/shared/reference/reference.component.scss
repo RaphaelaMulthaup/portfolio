@@ -1,0 +1,50 @@
+@import "./../../../../styles.scss";
+
+.referenceDiv {
+  border: 1px solid $cream;
+  border-radius: $borderRadius;
+  padding: 32px;
+  @include dFlex($ai: flex-start, $g: 10px);
+  flex-direction: column;
+  > div:first-child {
+    width: 100%;
+    @include dFlex($jc: space-between);
+    ::ng-deep app-hexagon {
+      height: 40px;
+      width: 40px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 100ms ease-in, visibility 100ms ease-in;
+      &.hoverd {
+        opacity: 1;
+        visibility: visible;
+      }
+      svg {
+        height: 100%;
+        width: 100%;
+        transform: rotate(45deg);
+      }
+    }
+  }
+  > span:last-child {
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+
+.referenceDiv + div {
+  @include dFlex($jc: flex-end);
+  width: 100%;
+  a {
+    color: $cream;
+    text-decoration: none;
+    line-height: 120%;
+    font-weight: 700;
+    font-size: 18px;
+    transition: color 100ms ease-in;
+    &:hover {
+      cursor: pointer;
+      color: $darkOrange;
+    }
+  }
+}
