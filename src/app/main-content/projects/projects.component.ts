@@ -9,6 +9,7 @@ interface ProjectData {
   bGroundColor: string;
   colorHexagon: string;
   name: string;
+  technologies: string;
   jumpingImg: string;
   description: string;
   gitHub: string;
@@ -40,6 +41,7 @@ export class ProjectsComponent {
       bGroundColor: 'bgYellow',
       colorHexagon: 'hexagonOrange',
       name: 'Join',
+      technologies: 'JavaScript | Firebase | HTML | CSS',
       jumpingImg: 'assets/img/checkMark.png',
       description: 'joinDescription',
       gitHub: 'https://github.com/RaphaelaMulthaup/Join.git',
@@ -49,6 +51,7 @@ export class ProjectsComponent {
       bGroundColor: 'bgBlue',
       colorHexagon: 'hexagonOrange',
       name: 'DA Bubble',
+      technologies: 'Angular | TypeScript | Firebase | HTML | CSS',
       jumpingImg: 'assets/img/speechBubble.png',
       description: 'dABubbleDescription',
       gitHub: 'https://github.com/RaphaelaMulthaup/Join.git',
@@ -58,6 +61,7 @@ export class ProjectsComponent {
       bGroundColor: 'bgOrange',
       colorHexagon: 'hexagonYellow',
       name: 'El Pollo Loco',
+      technologies: 'JavaScript | HTML | CSS',
       jumpingImg: 'assets/img/chick.png',
       description: 'elPolloLocoDescription',
       gitHub: 'https://github.com/RaphaelaMulthaup/EL-POLLO-LOCO.git',
