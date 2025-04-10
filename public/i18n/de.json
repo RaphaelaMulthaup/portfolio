@@ -70,6 +70,18 @@
   "contact": {
     "h2": "Lass uns zusammen etwas Cooles bauen!",
     "gotAProblem": "Möchtest du ein Problem lösen?",
-    "getInTouch": "Dann melde dich bei mir und erzähl, wie ich dich unterstützen kann. Mit Struktur, Klarheit und einer Arbeitsweise, die Technik und Team harmonisch verbindet, entwickle ich Lösungen, die langfristig wirken."
+    "getInTouch": "Dann melde dich bei mir und erzähl, wie ich dich unterstützen kann. Mit Struktur, Klarheit und einer Arbeitsweise, die Technik und Team harmonisch verbindet, entwickle ich Lösungen, die langfristig wirken.",
+    "form": {
+      "name": "Wie heißt du?",
+      "namePlaceholder": "Dein Name",
+      "mail": "Wie lautet deine E-Mail-Adresse?",
+      "mailPlaceholder": "deinname@email.de",
+      "message": "Wie kann ich dir helfen?",
+      "messagePlaceholder": "Hallo Raphaela, ich interessiere mich für ...",
+      "privacyPolicy1": "Ich habe die",
+      "privacyPolicy2": "Datenschutzerklärung",
+      "privacyPolicy3": "gelesen und stimme der Verarbeitung meiner Daten zu.",
+      "button": "Nachricht senden"
+    }
   }
 }

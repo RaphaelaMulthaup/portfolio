@@ -1,1 +1,16 @@
-<p>form works!</p>
+<!-- <div class="container"> -->
+    <form (ngSubmit)="onSubmit()">
+  
+      <label for="name">{{ "contact.form.name" | translate }}</label>
+      <input [(ngModel)]="contactData.name" type="text" id="name" name="name" [placeholder]="'contact.form.namePlaceholder' | translate">
+  
+      <label for="email">{{ "contact.form.mail" | translate }}</label>
+      <input [(ngModel)]="contactData.email" type="email" id="email" name="email" [placeholder]="'contact.form.mailPlaceholder' | translate">
+    
+      <label for="message">{{ "contact.form.message" | translate }}</label>
+      <textarea [(ngModel)]="contactData.message" id="message" name="message" [placeholder]="'contact.form.messagePlaceholder' | translate"></textarea>
+  
+      <input type="submit" value="Submit">
+  
+    </form>
+  <!-- </div> -->

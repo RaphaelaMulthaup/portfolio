@@ -70,6 +70,18 @@
   "contact": {
     "h2": "Let's build something Cool together!",
     "gotAProblem": "Got a problem to solve?",
-    "getInTouch": "Then get in touch and tell me how I can support you. With structure, clarity, and a way of working that harmoniously connects technology and team, I develop solutions that have a lasting impact."
+    "getInTouch": "Then get in touch and tell me how I can support you. With structure, clarity, and a way of working that harmoniously connects technology and team, I develop solutions that have a lasting impact.",
+    "form": {
+      "name": "What's your name?",
+      "namePlaceholder": "Your name goes here",
+      "mail": "What's your email?",
+      "mailPlaceholder": "youremail@email.com",
+      "message": "How can I help you?",
+      "messagePlaceholder": "Hello Raphaela, I am interested in...",
+      "privacyPolicy1": "I've read the",
+      "privacyPolicy2": "privacy policy",
+      "privacyPolicy3": "and agree to the processing of my data.",
+      "button": "Drop a Line"
+    }
   }
 }
