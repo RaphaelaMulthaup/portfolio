@@ -8,6 +8,8 @@
         flex-direction: column;
         > div:first-child {
             flex: 1;
+            @include dFlex($jc:space-between);
+            width: 100%;
         }
         app-footer {
             width: 100%;
@@ -17,13 +19,23 @@
 
 .contactRightSide {
     width: 36.67vw;
-    @include dFlex($g:7.11vh);
+    height: 100%;
+    @include dFlex($g:7.11vh, $jc:flex-start);
+    flex-direction: column;
     h2 {
         color: $yellow;
     }
     > div {
+        @include dFlex($g:1.78vh, $ai: flex-start);
+        flex-direction: column;
         h4 {
             color: $darkOrange;
         }
     }
+}
+
+.contactLeftSide {
+    height: 100%;
+    @include dFlex($ai:flex-end);
+
 }
