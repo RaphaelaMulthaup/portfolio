@@ -74,13 +74,17 @@
     "form": {
       "name": "Wie heißt du?",
       "namePlaceholder": "Dein Name",
+      "nameNotValid": "Bitte gib deinen Namen ein.",
       "mail": "Wie lautet deine E-Mail-Adresse?",
       "mailPlaceholder": "deinname@email.de",
+      "mailNotValid": "Bitte gib deine E-Mail-Adresse ein.",
       "message": "Wie kann ich dir helfen?",
       "messagePlaceholder": "Hallo Raphaela, ich interessiere mich für ...",
-      "privacyPolicy1": "Ich habe die",
+      "messageNotValid": "Bitte gib eine Nachricht ein.",
+      "privacyPolicy1": "Ich habe die ",
       "privacyPolicy2": "Datenschutzerklärung",
-      "privacyPolicy3": "gelesen und stimme der Verarbeitung meiner Daten zu.",
+      "privacyPolicy3": " gelesen und stimme der Verarbeitung meiner Daten zu.",
+      "privacyPolicyValid": "Bitte stimme der Datenschutzerklärung zu.",
       "button": "Nachricht senden"
     }
   }

@@ -1,16 +1,77 @@
 <!-- <div class="container"> -->
-    <form (ngSubmit)="onSubmit()">
-  
+<form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+  <div>
+    <div>
       <label for="name">{{ "contact.form.name" | translate }}</label>
-      <input [(ngModel)]="contactData.name" type="text" id="name" name="name" [placeholder]="'contact.form.namePlaceholder' | translate">
-  
+      <input
+        #name="ngModel"
+        minlength="2"
+        [(ngModel)]="contactData.name"
+        type="text"
+        id="name"
+        name="name"
+        [placeholder]="'contact.form.namePlaceholder' | translate"
+        required
+      />
+
+      @if (!name.valid && name.touched) {
+      <span>{{ "contact.form.mailNotValid" | translate }}</span>
+      }
+    </div>
+    <div>
       <label for="email">{{ "contact.form.mail" | translate }}</label>
-      <input [(ngModel)]="contactData.email" type="email" id="email" name="email" [placeholder]="'contact.form.mailPlaceholder' | translate">
-    
-      <label for="message">{{ "contact.form.message" | translate }}</label>
-      <textarea [(ngModel)]="contactData.message" id="message" name="message" [placeholder]="'contact.form.messagePlaceholder' | translate"></textarea>
-  
-      <input type="submit" value="Submit">
-  
-    </form>
-  <!-- </div> -->
+      <input
+        #email="ngModel"
+        [(ngModel)]="contactData.email"
+        type="email"
+        id="email"
+        name="email"
+        [placeholder]="'contact.form.mailPlaceholder' | translate"
+        required
+        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+      />
+
+      @if (!email.valid && email.touched) {
+      <span>{{ "contact.form.mailNotValid" | translate }}</span>
+      }
+    </div>
+  </div>
+
+  <label for="message">{{ "contact.form.message" | translate }}</label>
+  <textarea
+    #message="ngModel"
+    minlength="4"
+    [(ngModel)]="contactData.message"
+    id="message"
+    name="message"
+    [placeholder]="'contact.form.messagePlaceholder' | translate"
+    required
+  ></textarea>
+
+  @if (!message.valid && message.touched) {
+  <span>{{ "contact.form.messageNotValid" | translate }}</span>
+  }
+
+  <div>
+    <input
+      #privacyPolicy="ngModel"
+      type="checkbox"
+      name="privacyPolicy"
+      [(ngModel)]="contactData.privacyPolicy"
+      required
+    />
+    <span>{{ "contact.form.privacyPolicy1" | translate }}</span>
+    <a href="">{{ "contact.form.privacyPolicy2" | translate }}</a>
+    <span>{{ "contact.form.privacyPolicy3" | translate }}</span>
+  </div>
+
+  @if (!privacyPolicy.valid && privacyPolicy.touched) {
+  <span>{{ "contact.form.privacyPolicyValid" | translate }}</span>
+  }
+
+  <button type="submit">
+    {{ "contact.form.button" | translate }}
+  </button>
+  <!-- <input type="submit" value="Submit" /> -->
+</form>
+<!-- </div> -->

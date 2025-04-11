@@ -36,6 +36,8 @@
 
 .contactLeftSide {
     height: 100%;
+    width: 41.67vw;
     @include dFlex($ai:flex-end);
-
+    padding-bottom: 8.67vh;
+    box-sizing: border-box;
 }
