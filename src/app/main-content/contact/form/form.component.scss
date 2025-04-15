@@ -1,28 +1,101 @@
-@import './../../../../styles.scss';
+@import "./../../../../styles.scss";
 
 form {
-    @include dFlex();
-    flex-direction: column;
-    > div:first-child {
-        @include dFlex();
-        div {
-            @include dFlex();
-            flex-direction: column;
-        }
+  @include dFlex();
+  flex-direction: column;
+  margin-right: 3.33vw;
+  > div {
+    width: 100%;
+    h4 {
+        margin-left: 16px;
     }
+  }
+  > div:first-child {
+    @include dFlex($g: 2.22vw);
+    margin-bottom: 6.22vh;
+    > div {
+      @include dFlex($ai: flex-start);
+      flex-direction: column;
+      flex: 1;
+    }
+  }
+  > div:nth-child(2) {
+    margin-bottom: 9vh;
+  }
+  > div:nth-child(3) {
+    margin-bottom: 5.56vh;
+  }
 }
 
+input,
+textarea {
+  box-sizing: border-box;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #f9af42;
+  color: $cream;
+  font-size: 16px;
+  width: 100%;
+  &::placeholder {
+    color: $cream;
+    font-size: 16px;
+  }
+  &:focus {
+    outline: none;     /* Entfernt den blauen Rand (bei vielen Browsern) */
+    border: none;      /* Entfernt den eigentlichen Rahmen */
+
+  }
+}
+
+input {
+  padding: 10px 16px 16px;
+  border-bottom: 1px solid #f9af42;
+&:focus {
+  border-bottom: 1px solid #f9af42;
+
+}
+
+}
+
+textarea {
+    resize: none;
+    padding: 8px 16px 16px;
+    margin-top: 8px;
+    border-bottom: 8px solid $black;
+    &:focus {
+      border-bottom: 8px solid $black;
+
+    }
+
+
+    // line-height: 1.5;         /* 24px pro Zeile */
+    // height: 24px;             /* 1 Zeile */
+    // max-height: 72px;         /* 3 Zeilen */
+    // // overflow-y: auto;         /* Scrollbar erscheint bei Bedarf */
+    // // scrollbar-width: none;    /* Firefox: Scrollbar unsichtbar */
+    // overflow-y: hidden;
+    // resize: none;
+    // outline: none;
+    // width: 100%;
+
+}
+
+.borderDummy {
+  width: 100%;
+  height: 1px;
+  background-color: #f9af42;
+}
 
 input[type="text"],
 [type="email"],
 select,
 textarea {
-//   width: 100%; /* Full width */
-//   padding: 12px; /* Some padding */
-//   border: 1px solid #ccc; /* Gray border */
-//   border-radius: 4px; /* Rounded borders */
-//   box-sizing: border-box; /* Make sure that padding and width stays in place */
-//   margin-top: 6px; /* Add a top margin */
-//   margin-bottom: 16px; /* Bottom margin */
-//   resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+  //   width: 100%; /* Full width */
+  //   padding: 12px; /* Some padding */
+  //   border: 1px solid #ccc; /* Gray border */
+  //   border-radius: 4px; /* Rounded borders */
+  //   box-sizing: border-box; /* Make sure that padding and width stays in place */
+  //   margin-top: 6px; /* Add a top margin */
+  //   margin-bottom: 16px; /* Bottom margin */
+  //   resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
 }

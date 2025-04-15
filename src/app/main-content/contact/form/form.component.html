@@ -2,7 +2,11 @@
 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
   <div>
     <div>
-      <label for="name">{{ "contact.form.name" | translate }}</label>
+      <label for="name">
+        <h4>
+          {{ "contact.form.name" | translate }}
+        </h4></label
+      >
       <input
         #name="ngModel"
         minlength="2"
@@ -19,7 +23,11 @@
       }
     </div>
     <div>
-      <label for="email">{{ "contact.form.mail" | translate }}</label>
+      <label for="email">
+        <h4>
+          {{ "contact.form.mail" | translate }}
+        </h4></label
+      >
       <input
         #email="ngModel"
         [(ngModel)]="contactData.email"
@@ -37,20 +45,28 @@
     </div>
   </div>
 
-  <label for="message">{{ "contact.form.message" | translate }}</label>
-  <textarea
-    #message="ngModel"
-    minlength="4"
-    [(ngModel)]="contactData.message"
-    id="message"
-    name="message"
-    [placeholder]="'contact.form.messagePlaceholder' | translate"
-    required
-  ></textarea>
+  <div>
+    <label for="message">
+      <h4>
+        {{ "contact.form.message" | translate }}
+      </h4></label
+    >
+    <textarea
+    rows="3"
+      #message="ngModel"
+      minlength="4"
+      [(ngModel)]="contactData.message"
+      id="message"
+      name="message"
+      [placeholder]="'contact.form.messagePlaceholder' | translate"
+      required
+    ></textarea>
+    <div class="borderDummy"></div>
 
-  @if (!message.valid && message.touched) {
-  <span>{{ "contact.form.messageNotValid" | translate }}</span>
-  }
+    @if (!message.valid && message.touched) {
+    <span>{{ "contact.form.messageNotValid" | translate }}</span>
+    }
+  </div>
 
   <div>
     <input
@@ -63,11 +79,10 @@
     <span>{{ "contact.form.privacyPolicy1" | translate }}</span>
     <a href="">{{ "contact.form.privacyPolicy2" | translate }}</a>
     <span>{{ "contact.form.privacyPolicy3" | translate }}</span>
+    @if (!privacyPolicy.valid && privacyPolicy.touched) {
+    <span>{{ "contact.form.privacyPolicyValid" | translate }}</span>
+    }
   </div>
-
-  @if (!privacyPolicy.valid && privacyPolicy.touched) {
-  <span>{{ "contact.form.privacyPolicyValid" | translate }}</span>
-  }
 
   <button type="submit">
     {{ "contact.form.button" | translate }}

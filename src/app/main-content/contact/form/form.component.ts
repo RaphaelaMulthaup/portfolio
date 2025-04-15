@@ -28,4 +28,9 @@ export class FormComponent {
       console.log(this.contactData);
     }
   }
+
+  // autoResize(textarea: HTMLTextAreaElement) {
+  //   textarea.style.height = "auto"; // Zurücksetzen
+  //   textarea.style.height = Math.min(textarea.scrollHeight, 72) + "px"; // max 3 Zeilen (3 * 24px)
+  // }
 }

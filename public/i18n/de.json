@@ -75,7 +75,7 @@
       "name": "Wie heißt du?",
       "namePlaceholder": "Dein Name",
       "nameNotValid": "Bitte gib deinen Namen ein.",
-      "mail": "Wie lautet deine E-Mail-Adresse?",
+      "mail": "Deine E-Mail-Adresse:",
       "mailPlaceholder": "deinname@email.de",
       "mailNotValid": "Bitte gib deine E-Mail-Adresse ein.",
       "message": "Wie kann ich dir helfen?",
