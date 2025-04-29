@@ -78,7 +78,7 @@
         required
       />
       <span class="checkbox-image"></span>
-    </label>  
+    </label>
     <span
       >{{ "contact.form.privacyPolicy1" | translate }}
       <a href="">{{ "contact.form.privacyPolicy2" | translate }}</a>
@@ -89,7 +89,7 @@
     }
   </div>
 
-  <button type="submit">
+  <button type="submit" [ngClass]="{ greyedOut: contactForm.invalid }" [disabled]="contactForm.invalid">
     {{ "contact.form.button" | translate }}
   </button>
   <!-- <input type="submit" value="Submit" /> -->

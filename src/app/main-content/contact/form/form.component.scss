@@ -153,3 +153,12 @@ textarea {
 .custom-checkbox:hover input:checked + .checkbox-image {
   background-image: url("../../../../assets/img/chackboxCheckedHover.png");
 }
+
+.greyedOut {
+  border-color: $grey;
+  color: $grey;
+  &:hover {
+    cursor: default;
+    background-color: transparent;
+  }
+}

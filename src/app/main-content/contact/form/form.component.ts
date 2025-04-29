@@ -1,10 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-form',
-  imports: [FormsModule, TranslatePipe],
+  imports: [FormsModule, TranslatePipe, CommonModule],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss',
 })
