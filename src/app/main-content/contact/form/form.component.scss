@@ -24,10 +24,24 @@ form {
   }
   > div:nth-child(3) {
     margin-bottom: 5.56vh;
+    @include dFlex($g:4.5px, $ai:flex-start);
+    width: 100%;
+    > span {
+      flex: 1;
+      > a {
+        text-decoration: none;
+        color: $darkOrange;
+        &:hover {
+          color: $cream;
+          font-weight: 700;
+        }
+      }
+    }
   }
 }
 
-input,
+input[type="text"],
+[type="email"],
 textarea {
   box-sizing: border-box;
   background-color: transparent;
@@ -99,3 +113,34 @@ textarea {
   //   margin-bottom: 16px; /* Bottom margin */
   //   resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
 }
+
+/* Versteckt die native Checkbox */
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+/* Standard-Zustand */
+.custom-checkbox .checkbox-image {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('../../../../assets/img/checkboxDefault.png');
+  background-size: cover;
+  transition: background-image 0.1s;
+}
+
+/* Hover (nicht checked) */
+.custom-checkbox:hover input:not(:checked) + .checkbox-image {
+  background-image: url('../../../../assets/img/checkboxDefaultHover.png');
+}
+
+/* Checked */
+.custom-checkbox input:checked + .checkbox-image {
+  background-image: url('../../../../assets/img/checkboxChecked.png');
+}
+
+/* Checked + Hover */
+.custom-checkbox:hover input:checked + .checkbox-image {
+  background-image: url('../../../../assets/img/chackboxCheckedHover.png');
+}
+

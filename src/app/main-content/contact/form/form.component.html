@@ -52,7 +52,7 @@
       </h4></label
     >
     <textarea
-    rows="3"
+      rows="3"
       #message="ngModel"
       minlength="4"
       [(ngModel)]="contactData.message"
@@ -69,16 +69,21 @@
   </div>
 
   <div>
-    <input
-      #privacyPolicy="ngModel"
-      type="checkbox"
-      name="privacyPolicy"
-      [(ngModel)]="contactData.privacyPolicy"
-      required
-    />
-    <span>{{ "contact.form.privacyPolicy1" | translate }}</span>
-    <a href="">{{ "contact.form.privacyPolicy2" | translate }}</a>
-    <span>{{ "contact.form.privacyPolicy3" | translate }}</span>
+    <label class="custom-checkbox">
+      <input
+        #privacyPolicy="ngModel"
+        type="checkbox"
+        name="privacyPolicy"
+        [(ngModel)]="contactData.privacyPolicy"
+        required
+      />
+      <span class="checkbox-image"></span>
+    </label>
+    <span
+      >{{ "contact.form.privacyPolicy1" | translate }}
+      <a href="">{{ "contact.form.privacyPolicy2" | translate }}</a>
+      {{ "contact.form.privacyPolicy3" | translate }}</span
+    >
     @if (!privacyPolicy.valid && privacyPolicy.touched) {
     <span>{{ "contact.form.privacyPolicyValid" | translate }}</span>
     }
