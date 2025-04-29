@@ -7,7 +7,7 @@ form {
   > div {
     width: 100%;
     h4 {
-        margin-left: 16px;
+      margin-left: 16px;
     }
   }
   > div:first-child {
@@ -17,14 +17,30 @@ form {
       @include dFlex($ai: flex-start);
       flex-direction: column;
       flex: 1;
+      &:hover {
+        h4 {
+          color: $darkOrange;
+        }
+        input {
+          border-color: $darkOrange;
+        }
+      }
     }
   }
   > div:nth-child(2) {
     margin-bottom: 9vh;
+    &:hover {
+      h4 {
+        color: $darkOrange;
+      }
+      > div {
+        background-color: $darkOrange;
+      }
+    }
   }
   > div:nth-child(3) {
     margin-bottom: 5.56vh;
-    @include dFlex($g:4.5px, $ai:flex-start);
+    @include dFlex($g: 4.5px, $ai: flex-start);
     width: 100%;
     > span {
       flex: 1;
@@ -55,48 +71,42 @@ textarea {
     font-size: 16px;
   }
   &:focus {
-    outline: none;     /* Entfernt den blauen Rand (bei vielen Browsern) */
-    border: none;      /* Entfernt den eigentlichen Rahmen */
-
+    outline: none; /* Entfernt den blauen Rand (bei vielen Browsern) */
+    border: none; /* Entfernt den eigentlichen Rahmen */
   }
 }
 
 input {
   padding: 10px 16px 16px;
   border-bottom: 1px solid #f9af42;
-&:focus {
-  border-bottom: 1px solid #f9af42;
-
-}
-
+  &:focus {
+    border-bottom: 1px solid #f9af42;
+  }
 }
 
 textarea {
-    resize: none;
-    padding: 8px 16px 16px;
-    margin-top: 8px;
+  resize: none;
+  padding: 8px 16px 16px;
+  margin-top: 8px;
+  border-bottom: 8px solid $black;
+  &:focus {
     border-bottom: 8px solid $black;
-    &:focus {
-      border-bottom: 8px solid $black;
+  }
 
-    }
-
-
-    // line-height: 1.5;         /* 24px pro Zeile */
-    // height: 24px;             /* 1 Zeile */
-    // max-height: 72px;         /* 3 Zeilen */
-    // // overflow-y: auto;         /* Scrollbar erscheint bei Bedarf */
-    // // scrollbar-width: none;    /* Firefox: Scrollbar unsichtbar */
-    // overflow-y: hidden;
-    // resize: none;
-    // outline: none;
-    // width: 100%;
-
+  // line-height: 1.5;         /* 24px pro Zeile */
+  // height: 24px;             /* 1 Zeile */
+  // max-height: 72px;         /* 3 Zeilen */
+  // // overflow-y: auto;         /* Scrollbar erscheint bei Bedarf */
+  // // scrollbar-width: none;    /* Firefox: Scrollbar unsichtbar */
+  // overflow-y: hidden;
+  // resize: none;
+  // outline: none;
+  // width: 100%;
 }
 
 .borderDummy {
   width: 100%;
-  height: 1px;
+  height: 0.5px;
   background-color: #f9af42;
 }
 
@@ -124,23 +134,22 @@ textarea {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-image: url('../../../../assets/img/checkboxDefault.png');
+  background-image: url("../../../../assets/img/checkboxDefault.png");
   background-size: cover;
   transition: background-image 0.1s;
 }
 
 /* Hover (nicht checked) */
 .custom-checkbox:hover input:not(:checked) + .checkbox-image {
-  background-image: url('../../../../assets/img/checkboxDefaultHover.png');
+  background-image: url("../../../../assets/img/checkboxDefaultHover.png");
 }
 
 /* Checked */
 .custom-checkbox input:checked + .checkbox-image {
-  background-image: url('../../../../assets/img/checkboxChecked.png');
+  background-image: url("../../../../assets/img/checkboxChecked.png");
 }
 
 /* Checked + Hover */
 .custom-checkbox:hover input:checked + .checkbox-image {
-  background-image: url('../../../../assets/img/chackboxCheckedHover.png');
+  background-image: url("../../../../assets/img/chackboxCheckedHover.png");
 }
-
