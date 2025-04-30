@@ -8,6 +8,7 @@
         </h4></label
       >
       <input
+        spellcheck="false"
         #name="ngModel"
         minlength="2"
         [(ngModel)]="contactData.name"
@@ -89,7 +90,11 @@
     }
   </div>
 
-  <button type="submit" [ngClass]="{ greyedOut: contactForm.invalid }" [disabled]="contactForm.invalid">
+  <button
+    type="submit"
+    [ngClass]="{ greyedOut: contactForm.invalid }"
+    [disabled]="contactForm.invalid"
+  >
     {{ "contact.form.button" | translate }}
   </button>
   <!-- <input type="submit" value="Submit" /> -->
