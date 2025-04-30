@@ -1,7 +1,7 @@
 <!-- <div class="container"> -->
 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
   <div>
-    <div>
+    <div class="formSection">
       <label for="name">
         <h4>
           {{ "contact.form.name" | translate }}
@@ -23,7 +23,7 @@
       <span>{{ "contact.form.mailNotValid" | translate }}</span>
       }
     </div>
-    <div>
+    <div class="formSection">
       <label for="email">
         <h4>
           {{ "contact.form.mail" | translate }}
@@ -46,7 +46,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="formSection">
     <label for="message">
       <h4>
         {{ "contact.form.message" | translate }}

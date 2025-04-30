@@ -89,6 +89,15 @@ input {
   }
 }
 
+.formSection:focus-within h4 {
+  color: $darkOrange; /* oder eine andere gewünschte Farbe */
+}
+
+.formSection:focus-within .borderDummy {
+  background-color: $darkOrange; /* oder eine andere gewünschte Farbe */
+}
+
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
