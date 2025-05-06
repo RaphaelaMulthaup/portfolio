@@ -68,16 +68,16 @@
     "linkedIn": "View LinkedIn profile >>"
   },
   "contact": {
-    "h2": "Let's build something Cool together!",
+    "h2": "Let's build something cool together!",
     "gotAProblem": "Got a problem to solve?",
     "getInTouch": "Then get in touch and tell me how I can support you. With structure, clarity, and a way of working that harmoniously connects technology and team, I develop solutions that have a lasting impact.",
     "form": {
       "name": "What's your name?",
       "namePlaceholder": "Your name goes here",
-      "nameNotValid": "Please enter your name",
+      "nameNotValid": "Oops! It seems your name is missing.",
       "mail": "What's your email?",
       "mailPlaceholder": "youremail@email.com",
-      "mailNotValid": "Please enter your email",
+      "mailNotValid": "Hoppla! Your email is required.",
       "message": "How can I help you?",
       "messagePlaceholder": "Hello Raphaela, I am interested in...",
       "messageNotValid": "Please enter a message",

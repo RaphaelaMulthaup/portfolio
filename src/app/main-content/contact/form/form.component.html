@@ -15,13 +15,13 @@
         type="text"
         id="name"
         name="name"
-        [placeholder]="'contact.form.namePlaceholder' | translate"
+        [placeholder]="
+          !name.valid && name.touched
+            ? ('contact.form.nameNotValid' | translate)
+            : ('contact.form.namePlaceholder' | translate)
+        "
         required
       />
-
-      @if (!name.valid && name.touched) {
-      <span>{{ "contact.form.mailNotValid" | translate }}</span>
-      }
     </div>
     <div class="formSection">
       <label for="email">
@@ -35,14 +35,14 @@
         type="email"
         id="email"
         name="email"
-        [placeholder]="'contact.form.mailPlaceholder' | translate"
+        [placeholder]="
+          !email.valid && email.touched
+            ? ('contact.form.mailNotValid' | translate)
+            : ('contact.form.mailPlaceholder' | translate)
+        "
         required
         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
       />
-
-      @if (!email.valid && email.touched) {
-      <span>{{ "contact.form.mailNotValid" | translate }}</span>
-      }
     </div>
   </div>
 
@@ -59,14 +59,14 @@
       [(ngModel)]="contactData.message"
       id="message"
       name="message"
-      [placeholder]="'contact.form.messagePlaceholder' | translate"
+      [placeholder]="
+        !message.valid && message.touched
+          ? ('contact.form.messageNotValid' | translate)
+          : ('contact.form.messagePlaceholder' | translate)
+      "
       required
     ></textarea>
     <div class="borderDummy"></div>
-
-    @if (!message.valid && message.touched) {
-    <span>{{ "contact.form.messageNotValid" | translate }}</span>
-    }
   </div>
 
   <div>

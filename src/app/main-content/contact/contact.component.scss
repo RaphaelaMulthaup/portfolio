@@ -3,13 +3,16 @@
 #contact {
     background-color: $black;
     color: $cream;
+    width: 100vw;
+    box-sizing: border-box;
     > div:last-child {
         @include dFlex();
         flex-direction: column;
         > div:first-child {
             flex: 1;
             @include dFlex($jc:space-between);
-            width: 100%;
+            // width: 100%;
+            margin-right: 3.33vw;
         }
         app-footer {
             width: 100%;
@@ -17,11 +20,13 @@
     }
 }
 
-.contactRightSide {
-    width: 36.67vw;
+.contactLeftSide {
+    // width: 50%;
+    flex: 1;
     height: 100%;
     @include dFlex($g:7.11vh, $jc:flex-start);
     flex-direction: column;
+    margin-right: 7vw;
     h2 {
         color: $yellow;
     }
@@ -34,10 +39,13 @@
     }
 }
 
-.contactLeftSide {
+.contactRightSide {
     height: 100%;
-    width: 41.67vw;
+    width: 48%;
     @include dFlex($ai:flex-end);
     padding-bottom: 8.67vh;
     box-sizing: border-box;
+    > app-form {
+        width: 100%;
+    }
 }
