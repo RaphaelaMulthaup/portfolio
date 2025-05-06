@@ -73,24 +73,34 @@
   </div>
 
   <div>
-    <label class="custom-checkbox">
-      <input
-        #privacyPolicy="ngModel"
-        type="checkbox"
-        name="privacyPolicy"
-        [(ngModel)]="contactData.privacyPolicy"
-        required
-      />
-      <span class="checkbox-image"></span>
-    </label>
+    <div>
+      <label class="custom-checkbox">
+        <input
+          #privacyPolicy="ngModel"
+          type="checkbox"
+          name="privacyPolicy"
+          [(ngModel)]="contactData.privacyPolicy"
+          required
+        />
+        <span class="checkbox-image"></span>
+      </label>
+      <span
+        >{{ "contact.form.privacyPolicy1" | translate }}
+        <a href="">{{ "contact.form.privacyPolicy2" | translate }}</a>
+        {{ "contact.form.privacyPolicy3" | translate }}</span
+      >
+    </div>
+    <!-- @if (!privacyPolicy.valid && (privacyPolicy.dirty || privacyPolicy.touched)) -->
+
     <span
-      >{{ "contact.form.privacyPolicy1" | translate }}
-      <a href="">{{ "contact.form.privacyPolicy2" | translate }}</a>
-      {{ "contact.form.privacyPolicy3" | translate }}</span
+      class="errorMessageCheckbox"
+      [style.visibility]="
+        !privacyPolicy.valid && (privacyPolicy.dirty || privacyPolicy.touched)
+          ? 'visible'
+          : 'hidden'
+      "
+      >{{ "contact.form.privacyPolicyValid" | translate }}</span
     >
-    @if (!privacyPolicy.valid && privacyPolicy.touched) {
-    <span>{{ "contact.form.privacyPolicyValid" | translate }}</span>
-    }
   </div>
 
   <button
