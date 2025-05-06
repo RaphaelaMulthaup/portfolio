@@ -63,6 +63,14 @@ export class MainContentComponent implements AfterViewInit {
    * @param event the wheel event
    */
   private handleScroll(event: WheelEvent) {
+    const target = event.target as HTMLElement;
+    const tagName = target.tagName.toLowerCase();
+    const isTextarea = ['textarea'].includes(tagName);
+
+    if (isTextarea) {
+      return; // Nicht reagieren, wenn z.B. in einer Textarea gescrollt wird
+    }
+
     if (this.isScrolling) return;
     this.isScrolling = true;
     setTimeout(() => (this.isScrolling = false), 800);

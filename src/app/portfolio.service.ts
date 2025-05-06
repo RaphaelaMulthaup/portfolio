@@ -64,7 +64,7 @@ export class PortfolioService {
     console.log(this.currentIndexMainComponents);
 
     this.mainComponents[index].nativeElement.scrollIntoView({
-      behavior: 'smooth',
+      behavior: 'smooth', block: 'end'
     });
     this.menuDisplayedSubject.next(false);
   }
