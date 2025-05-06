@@ -20,6 +20,7 @@
             ? ('contact.form.nameNotValid' | translate)
             : ('contact.form.namePlaceholder' | translate)
         "
+        [ngClass]="{ redPlaceholder: !name.valid && name.touched }"
         required
       />
     </div>
@@ -40,6 +41,7 @@
             ? ('contact.form.mailNotValid' | translate)
             : ('contact.form.mailPlaceholder' | translate)
         "
+        [ngClass]="{ redPlaceholder: !email.valid && email.touched }"
         required
         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
       />
@@ -64,6 +66,7 @@
           ? ('contact.form.messageNotValid' | translate)
           : ('contact.form.messagePlaceholder' | translate)
       "
+      [ngClass]="{ redPlaceholder: !message.valid && message.touched }"
       required
     ></textarea>
     <div class="borderDummy"></div>
