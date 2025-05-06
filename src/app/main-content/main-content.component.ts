@@ -48,7 +48,11 @@ export class MainContentComponent implements AfterViewInit {
    * This function passes the list of main components to 'portfolioService' to store it in a variable. In addition, an observable is created with the wheel events, of which only one is passed through per time interval (800 milliseconds) and is then passed as a parameter for the called handleScroll function.
    */
   ngAfterViewInit() {
+    history.scrollRestoration = 'manual';
     this.portfolioService.setMainComponents(this.mainComponents.toArray());
+
+    this.portfolioService.setCurrentIndex(0);
+    this.portfolioService.scrollToSection(0);
 
     fromEvent(window, 'wheel')
       .pipe(throttleTime(800))
