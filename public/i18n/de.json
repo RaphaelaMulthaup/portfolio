@@ -87,5 +87,8 @@
       "privacyPolicyValid": "Bitte stimme der Datenschutzerklärung zu.",
       "button": "Nachricht senden"
     }
+  },
+  "imprint": {
+    "h2": "Impressum"
   }
 }
