@@ -17,6 +17,19 @@ export class FormComponent {
     privacyPolicy: false,
   };
 
+  mailTest = true;
+
+  post = {
+    endPoint: 'https://deineDomain.de/sendMail.php',
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'text/plain',
+        responseType: 'text',
+      },
+    },
+  };
+
   onSubmit(ngForm: NgForm) {
     if (!ngForm.valid) {
       Object.values(ngForm.controls).forEach((control) => {
@@ -25,13 +38,20 @@ export class FormComponent {
       return;
     }
 
-    if (ngForm.valid && ngForm.submitted) {
-      console.log(this.contactData);
+    if (ngForm.submitted && ngForm.valid && !this.mailTest) {
+      // this.http
+      //   .post(this.post.endPoint, this.post.body(this.contactData))
+      //   .subscribe({
+      //     next: (response) => {
+      //       ngForm.resetForm();
+      //     },
+      //     error: (error) => {
+      //       console.error(error);
+      //     },
+      //     complete: () => console.info('send post complete'),
+      //   });
+    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+      ngForm.resetForm();
     }
   }
-
-  // autoResize(textarea: HTMLTextAreaElement) {
-  //   textarea.style.height = "auto"; // Zurücksetzen
-  //   textarea.style.height = Math.min(textarea.scrollHeight, 72) + "px"; // max 3 Zeilen (3 * 24px)
-  // }
 }
