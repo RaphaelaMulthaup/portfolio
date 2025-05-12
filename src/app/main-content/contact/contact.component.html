@@ -1,19 +1,41 @@
 <div id="contact" class="maxWidth">
-    <app-header class="cream" [headerClass]="'cream'"></app-header>
-    <app-nav-bullets></app-nav-bullets>
-    <div class="contentMainComponent">
+  <app-header class="cream" [headerClass]="'cream'"></app-header>
+  <app-nav-bullets></app-nav-bullets>
+  <div class="contentMainComponent">
+    <div>
+      <div class="contactLeftSide">
+        <h2>{{ "contact.h2" | translate }}</h2>
         <div>
-            <div class="contactLeftSide">
-                <h2>{{ "contact.h2" | translate }}</h2>
-                <div>
-                    <h4>{{ "contact.gotAProblem" | translate }}</h4>
-                    <span>{{ "contact.getInTouch" | translate }}</span>
-                </div>
-            </div>
-            <div class="contactRightSide">
-                <app-form></app-form>
-            </div>
+          <h4>{{ "contact.gotAProblem" | translate }}</h4>
+          <span>{{ "contact.getInTouch" | translate }}</span>
         </div>
-        <app-footer></app-footer>
+      </div>
+      <div class="contactRightSide">
+        <div class="svgWrapper" (click)="portfolioService.scrollToSection(0)">
+          <svg
+            width="30"
+            height="48"
+            viewBox="0 0 30 48"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path fill="#F8F7E5">
+              <animate
+                attributeName="d"
+                dur="2s"
+                repeatCount="indefinite"
+                values="
+                  M15.3536 31.6464C15.1583 31.4512 14.8417 31.4512 14.6464 31.6464L11.4645 34.8284C11.2692 35.0237 11.2692 35.3403 11.4645 35.5355C11.6597 35.7308 11.9763 35.7308 12.1716 35.5355L15 32.7071L17.8284 35.5355C18.0237 35.7308 18.3403 35.7308 18.5355 35.5355C18.7308 35.3403 18.7308 35.0237 18.5355 34.8284L15.3536 31.6464ZM14.5 48C14.5 48.2761 14.7239 48.5 15 48.5C15.2761 48.5 15.5 48.2761 15.5 48H14.5ZM14.5 32V48H15.5V32H14.5Z;
+          
+                  M15.3536 -0.353553C15.1583 -0.548816 14.8417 -0.548816 14.6464 -0.353553L11.4645 2.82843C11.2692 3.02369 11.2692 3.34027 11.4645 3.53553C11.6597 3.7308 11.9763 3.7308 12.1716 3.53553L15 0.707107L17.8284 3.53553C18.0237 3.7308 18.3403 3.7308 18.5355 3.53553C18.7308 3.34027 18.7308 3.02369 18.5355 2.82843L15.3536 -0.353553ZM14.5 24C14.5 24.2761 14.7239 24.5 15 24.5C15.2761 24.5 15.5 24.2761 15.5 24H14.5ZM14.5 0V24H15.5V0H14.5Z;
+          
+                  M15.3536 31.6464C15.1583 31.4512 14.8417 31.4512 14.6464 31.6464L11.4645 34.8284C11.2692 35.0237 11.2692 35.3403 11.4645 35.5355C11.6597 35.7308 11.9763 35.7308 12.1716 35.5355L15 32.7071L17.8284 35.5355C18.0237 35.7308 18.3403 35.7308 18.5355 35.5355C18.7308 35.3403 18.7308 35.0237 18.5355 34.8284L15.3536 31.6464ZM14.5 48C14.5 48.2761 14.7239 48.5 15 48.5C15.2761 48.5 15.5 48.2761 15.5 48H14.5ZM14.5 32V48H15.5V32H14.5Z"
+              />
+            </path>
+          </svg>
+        </div>
+        <app-form></app-form>
+      </div>
     </div>
+    <app-footer></app-footer>
+  </div>
 </div>

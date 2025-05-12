@@ -1,51 +1,78 @@
-@import './../../../styles.scss';
+@import "./../../../styles.scss";
 
 #contact {
-    background-color: $black;
-    color: $cream;
-    width: 100vw;
-    box-sizing: border-box;
-    > div:last-child {
-        @include dFlex();
-        flex-direction: column;
-        > div:first-child {
-            flex: 1;
-            @include dFlex($jc:space-between);
-            // width: 100%;
-            margin-right: 3.33vw;
-        }
-        app-footer {
-            width: 100%;
-        }
+  background-color: $black;
+  color: $cream;
+  width: 100vw;
+  box-sizing: border-box;
+  > div:last-child {
+    @include dFlex();
+    flex-direction: column;
+    > div:first-child {
+      flex: 1;
+      @include dFlex($jc: space-between);
     }
+    app-footer {
+      width: 100%;
+    }
+  }
 }
 
 .contactLeftSide {
-    // width: 50%;
-    flex: 1;
-    height: 100%;
-    @include dFlex($g:7.11vh, $jc:flex-start);
+  flex: 1;
+  height: 100%;
+  @include dFlex($g: 7.11vh, $jc: flex-start);
+  flex-direction: column;
+  margin-right: 7vw;
+  h2 {
+    color: $yellow;
+  }
+  > div {
+    @include dFlex($g: 1.78vh, $ai: flex-start);
     flex-direction: column;
-    margin-right: 7vw;
-    h2 {
-        color: $yellow;
+    h4 {
+      color: $darkOrange;
     }
-    > div {
-        @include dFlex($g:1.78vh, $ai: flex-start);
-        flex-direction: column;
-        h4 {
-            color: $darkOrange;
-        }
-    }
+  }
 }
 
 .contactRightSide {
-    height: 100%;
-    width: 48%;
-    @include dFlex($ai:flex-end);
-    padding-bottom: 8.67vh;
-    box-sizing: border-box;
-    > app-form {
-        width: 100%;
+  height: 100%;
+  width: 48%;
+  @include dFlex($ai: flex-end, $jc: space-between);
+  padding-bottom: 8.67vh;
+  box-sizing: border-box;
+  flex-direction: column;
+  .svgWrapper {
+    position: relative;
+    display: inline-block;
+    svg {
+      path {
+        transition: fill 100ms ease-in;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+      &:hover path {
+        fill: $darkOrange;
+      }
     }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.5px;
+      background-color: $black;
+      transition: background-color 100ms ease-in;
+    }
+    &:hover::after {
+        background-color: $darkOrange;
+    }
+  }
+  > app-form {
+    width: 100%;
+    margin-right: 3.33vw;
+  }
 }
