@@ -89,6 +89,10 @@
     }
   },
   "imprint": {
-    "h2": "Impressum"
+    "h2": "Impressum",
+    "legal_notice": "Angaben gemäß § 5 TMG:",
+    "name_address": "Raphaela Multhaup<br />Schloßhof 4d<br />37688 Beverungen",
+    "contact": "Kontakt:<br />Telefon: 0173 4680668<br />E-Mail: <a href=\"mailto:raphaelamulthaup@icloud.com\">raphaelamulthaup&#64;icloud.com</a>",
+    "content_responsibility": "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br />Raphaela Multhaup<br />Schloßhof 4d<br />37688 Beverungen"
   }
 }
