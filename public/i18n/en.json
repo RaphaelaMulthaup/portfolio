@@ -92,7 +92,9 @@
     "h2": "Legal Notice",
     "legal_notice": "Information according to § 5 TMG:",
     "name_address": "Raphaela Multhaup<br />Schloßhof 4d<br />37688 Beverungen<br />Germany",
-    "contact": "Contact:<br />Phone: +49 173 4680668<br />Email: <a href=\"mailto:raphaelamulthaup@icloud.com\">raphaelamulthaup&#64;icloud.com</a>",
+    "contact1": "Contact:",
+    "contact2": "Phone: ",
+    "contact3": "Email:",
     "content_responsibility": "Responsible for content according to § 55 para. 2 RStV:<br />Raphaela Multhaup<br />Schloßhof 4d<br />37688 Beverungen<br />Germany"
   }
 }
