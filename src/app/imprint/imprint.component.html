@@ -1,14 +1,17 @@
-<h2>{{ "imprint.h2" | translate }}</h2>
-<p>{{ "imprint.legal_notice" | translate }}</p>
-<p [innerHTML]="'imprint.name_address' | translate"></p>
-<p>
-  {{ "imprint.contact1" | translate }}<br />
-  {{ "imprint.contact2" | translate
-  }}<a href="tel:+491734680668" class="link">+49 173 4680668</a><br />
-  {{ "imprint.contact3" | translate }}
-  <a href="mailto:raphaelamulthaup@icloud.com" class="link">
-    raphaelamulthaup&#64; icloud.com
-  </a>
-</p>
-<p [innerHTML]="'imprint.content_responsibility' | translate"></p>
+<app-main-header></app-main-header>
+<div class="contentImprint">
+  <h2>{{ "imprint.h2" | translate }}</h2>
+  <p>{{ "imprint.legal_notice" | translate }}</p>
+  <p [innerHTML]="'imprint.name_address' | translate"></p>
+  <p>
+    {{ "imprint.contact1" | translate }}<br />
+    {{ "imprint.contact2" | translate
+    }}<a href="tel:+491734680668" class="link">+49 173 4680668</a><br />
+    {{ "imprint.contact3" | translate }}
+    <a href="mailto:raphaelamulthaup@icloud.com" class="link">
+      raphaelamulthaup&#64; icloud.com
+    </a>
+  </p>
+  <p [innerHTML]="'imprint.content_responsibility' | translate"></p>
+</div>
 <app-footer></app-footer>

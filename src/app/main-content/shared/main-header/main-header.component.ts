@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { PortfolioService } from '../../../portfolio.service';
 import { LogoNameComponent } from '../logo-name/logo-name.component';
 import { MiniMenuComponent } from '../mini-menu/mini-menu.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-header',
@@ -11,6 +12,14 @@ import { MiniMenuComponent } from '../mini-menu/mini-menu.component';
 })
 export class MainHeaderComponent {
   portfolioService = inject(PortfolioService);
+  /** This boolean indicates whether main header is on the imprint page. */
+  isImprintPage = false;
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.isImprintPage = this.router.url.includes('imprint');
+  }
 
   /** A boolean that indicates whether the gitHub button is hovered. */
   gitHubIsHovered: boolean = false;
