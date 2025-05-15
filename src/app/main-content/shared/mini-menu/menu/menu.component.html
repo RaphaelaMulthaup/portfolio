@@ -11,7 +11,7 @@
   </div>
   <div>
     @for (item of menuItems; track item; let index = $index) {
-    <div (click)="portfolioService.scrollToSection($index + 1)">
+    <div (click)="navigateFromMainHeader($index + 1)">
       <app-hexagon></app-hexagon>
       <span>{{
         "shared.miniMenu.menu." + item | translate

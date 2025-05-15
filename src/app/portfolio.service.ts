@@ -42,6 +42,15 @@ export class PortfolioService {
     this.currentIndexMainComponents.set(index);
   }
 
+  /**
+   * This function queries the index of the current main component.
+   * 
+   * @returns number current index
+   */
+  getCurrentIndex(): number {
+    return this.currentIndexMainComponents();
+  }
+
   /** a list of the main components */
   public mainComponents: ElementRef[] = [];
 
@@ -59,12 +68,13 @@ export class PortfolioService {
    *
    * @param index The index of the current main component.
    */
-  scrollToSection(index: number) {
+  scrollToSection(index: number, smooth: boolean = true) {
     this.setCurrentIndex(index);
     console.log(this.currentIndexMainComponents);
 
     this.mainComponents[index].nativeElement.scrollIntoView({
-      behavior: 'smooth', block: 'end'
+      behavior: smooth ? 'smooth' : 'auto',
+      block: 'end',
     });
     this.menuDisplayedSubject.next(false);
   }

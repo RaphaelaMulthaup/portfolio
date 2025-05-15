@@ -3,6 +3,7 @@ import { Component, Output, EventEmitter, Input, inject } from '@angular/core';
 import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 import { PortfolioService } from '../../../../portfolio.service';
 import { HexagonComponent } from '../../hexagon/hexagon.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -14,7 +15,7 @@ export class MenuComponent {
   portfolioService = inject(PortfolioService);
   /** an event emitter for closing the menu */
   @Output() menuClosed = new EventEmitter<void>();
-
+   constructor(private router: Router) {}
   /** the path for the standard close image */
   defaultICloseImagePath = 'assets/img/close.png';
   /** the path for the hoverd close image */
@@ -29,6 +30,8 @@ export class MenuComponent {
     'references',
     'contactMe',
   ];
+  /** This boolean indicates whether main header is on the imprint page. */
+  @Input() isImprintPage!: boolean;
 
   /**
    * This function changes the path of close image to hoverd close image.
@@ -49,5 +52,14 @@ export class MenuComponent {
    */
   hideMenu() {
     this.menuClosed.emit();
+  }
+
+  navigateFromMainHeader(index: number) {
+    if (this.isImprintPage) {
+      this.portfolioService.setCurrentIndex(index);
+      this.router.navigate(['/']);
+    } else {
+      this.portfolioService.scrollToSection(index);
+    }
   }
 }

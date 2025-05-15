@@ -18,11 +18,7 @@ import {
 
 @Component({
   selector: 'app-root',
-  imports: [
-    RouterOutlet,
-    TranslatePipe,
-    TranslateDirective
-  ],
+  imports: [RouterOutlet, TranslatePipe, TranslateDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -52,7 +48,10 @@ export class AppComponent implements AfterViewInit {
   updateHeaderHeight() {
     const header = document.querySelector('header');
     if (header) {
-      document.documentElement.style.setProperty('--header-height', `${header.clientHeight}px`);
+      document.documentElement.style.setProperty(
+        '--header-height',
+        `${header.clientHeight}px`
+      );
     }
   }
 }

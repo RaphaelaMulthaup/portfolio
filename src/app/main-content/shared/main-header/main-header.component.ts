@@ -15,11 +15,12 @@ export class MainHeaderComponent {
   /** This boolean indicates whether main header is on the imprint page. */
   isImprintPage = false;
 
-  constructor(private router: Router) {}
-
-  ngOnInit() {
+  constructor(private router: Router) {
     this.isImprintPage = this.router.url.includes('imprint');
   }
+
+  // ngOnInit() {
+  // }
 
   /** A boolean that indicates whether the gitHub button is hovered. */
   gitHubIsHovered: boolean = false;
@@ -50,15 +51,32 @@ export class MainHeaderComponent {
     },
   };
 
+  /**
+   * This function navigates you to the main content component when you are on the imprint page.
+   */
   goToMainContent() {
     if (this.isImprintPage) {
       this.router.navigate(['/']);
     }
   }
 
+  /**
+   * This function changes the boolean "logoNameIsHoveredImprint" when you hover over the logo name on the imprint page or leave the element with the mouse.
+   *
+   * @param entering boolean that shows if you enter or leave logo name
+   */
   hoverStatus(entering: boolean) {
     if (this.isImprintPage) {
       this.logoNameIsHoveredImprint = entering;
+    }
+  }
+
+  navigateFromMainHeader(index: number) {
+    if (this.isImprintPage) {
+      this.portfolioService.setCurrentIndex(index);
+      this.router.navigate(['/']);
+    } else {
+      this.portfolioService.scrollToSection(index);
     }
   }
 }

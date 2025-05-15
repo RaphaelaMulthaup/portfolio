@@ -22,7 +22,7 @@
       />
     </a>
     <img
-      (click)="portfolioService.scrollToSection(5)"
+      (click)="navigateFromMainHeader(5)"
       [src]="portfolioService.getImageSrc(mailIsHovered, images['mail'])"
       (mouseenter)="mailIsHovered = true"
       (mouseleave)="mailIsHovered = false"
@@ -36,5 +36,5 @@
     [isHoveredImprint]="logoNameIsHoveredImprint"
     [isLandingPage]="true"
   ></app-logo-name>
-  <app-mini-menu [headerClass]="'cream'"></app-mini-menu>
+  <app-mini-menu [headerClass]="'cream'" [isImprintPage]="isImprintPage"></app-mini-menu>
 </header>

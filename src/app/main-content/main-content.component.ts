@@ -4,6 +4,7 @@ import {
   ElementRef,
   HostListener,
   inject,
+  OnInit,
   QueryList,
   ViewChildren,
 } from '@angular/core';
@@ -16,6 +17,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ReferencesComponent } from './references/references.component';
 import { SkillsComponent } from './skills/skills.component';
 import { fromEvent, throttleTime } from 'rxjs';
+import { NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-content',
@@ -31,7 +33,7 @@ import { fromEvent, throttleTime } from 'rxjs';
   styleUrl: './main-content.component.scss',
 })
 export class MainContentComponent implements AfterViewInit {
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private router: Router) {
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('de');
     this.translate.use('de');
@@ -44,15 +46,28 @@ export class MainContentComponent implements AfterViewInit {
   /** a list of the main components */
   @ViewChildren('section') mainComponents!: QueryList<ElementRef>;
 
+  backClickFromImprint: boolean = false;
+
   /**
-   * This function passes the list of main components to 'portfolioService' to store it in a variable. In addition, an observable is created with the wheel events, of which only one is passed through per time interval (800 milliseconds) and is then passed as a parameter for the called handleScroll function.
+   * This function initializes the main content view:
+   *
+   * - It passes the list of main components to the 'portfolioService' for internal storage.
+   * - It checks whether a specific target index was previously set (e.g. from another route like the imprint page):
+   *   - If a non-zero index is present, the corresponding component is shown immediately (without smooth scrolling).
+   *   - Otherwise, the first section (index 0) is selected and scrolled to with default smooth scrolling.
+   * - Additionally, a scroll event listener is registered to detect wheel events,
+   *   which are throttled (max. one every 800 milliseconds) and handled via the `handleScroll()` function.
    */
   ngAfterViewInit() {
     history.scrollRestoration = 'manual';
     this.portfolioService.setMainComponents(this.mainComponents.toArray());
-
-    this.portfolioService.setCurrentIndex(0);
-    this.portfolioService.scrollToSection(0);
+    const targetIndex = this.portfolioService.getCurrentIndex();
+    if (targetIndex !== 0) {
+      this.portfolioService.scrollToSection(targetIndex, false);
+    } else {
+      this.portfolioService.setCurrentIndex(0);
+      this.portfolioService.scrollToSection(0);
+    }
 
     fromEvent(window, 'wheel')
       .pipe(throttleTime(800))
