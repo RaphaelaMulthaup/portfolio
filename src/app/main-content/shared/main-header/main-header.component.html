@@ -29,6 +29,12 @@
       alt="mail"
     />
   </div>
-  <app-logo-name [isLandingPage]="true"></app-logo-name>
+  <app-logo-name
+    (click)="goToMainContent()"
+    (mouseenter)="hoverStatus(true)"
+    (mouseleave)="hoverStatus(false)"
+    [isHoveredImprint]="logoNameIsHoveredImprint"
+    [isLandingPage]="true"
+  ></app-logo-name>
   <app-mini-menu [headerClass]="'cream'"></app-mini-menu>
 </header>

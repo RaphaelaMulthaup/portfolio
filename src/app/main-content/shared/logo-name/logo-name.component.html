@@ -1,6 +1,6 @@
 <div
   class="logoName"
-  [ngClass]="{ logoNameHover: !isLandingPage }"
+  [ngClass]="{ logoNameHover: !isLandingPage, logoNameIsHoveredImprint: isHoveredImprint }"
   (click)="!isLandingPage && portfolioService.scrollToSection(0)"
 >
   <svg

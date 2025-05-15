@@ -27,6 +27,8 @@ export class MainHeaderComponent {
   linkedinIsHovered: boolean = false;
   /** A boolean that indicates whether the mail button is hovered. */
   mailIsHovered: boolean = false;
+  /** A boolean that indicates whether the logo name is hovered. */
+  logoNameIsHoveredImprint = false;
 
   /**
    * The paths to different images.
@@ -47,4 +49,16 @@ export class MainHeaderComponent {
       hover: 'assets/img/mail_hover.png',
     },
   };
+
+  goToMainContent() {
+    if (this.isImprintPage) {
+      this.router.navigate(['/']);
+    }
+  }
+
+  hoverStatus(entering: boolean) {
+    if (this.isImprintPage) {
+      this.logoNameIsHoveredImprint = entering;
+    }
+  }
 }

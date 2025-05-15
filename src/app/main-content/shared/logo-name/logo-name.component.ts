@@ -13,4 +13,6 @@ export class LogoNameComponent {
   portfolioService = inject(PortfolioService);
   /** A boolean that indicates whether LogoNameComponent is included in LandingPageComponent. */
   @Input() isLandingPage: boolean = false;
+  /** Indicates whether LogoNameComponent is hovered on the imprint page. */
+  @Input() isHoveredImprint: boolean = false;
 }
