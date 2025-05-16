@@ -81,9 +81,10 @@ export class PortfolioService {
   }
 
   /**
-   * This function assigns the new index to the variable 'currentIndexMainComponents' and scrolls to the corresponding main component. And all subscribers of the menuDisplayed$ observable are sent the value false, which closes the menu.
+   * This function assigns the new index to the variable 'currentIndexMainComponents' and scrolls or jumps to the corresponding main component. And all subscribers of the menuDisplayed$ observable are sent the value false, which closes the menu.
    *
-   * @param index The index of the current main component.
+   * @param index (number) The index of the current main component.
+   * @param smooth (boolean) The boolean specifies whether to jump or scroll to the selected component.
    */
   scrollToSection(index: number, smooth: boolean = true) {
     this.setCurrentIndex(index);
