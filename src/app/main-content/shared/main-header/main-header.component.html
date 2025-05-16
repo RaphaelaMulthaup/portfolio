@@ -22,7 +22,7 @@
       />
     </a>
     <img
-      (click)="navigateFromMainHeader(5)"
+      (click)="portfolioService.navigateFromMainHeader(5, isImprintPage)"
       [src]="portfolioService.getImageSrc(mailIsHovered, images['mail'])"
       (mouseenter)="mailIsHovered = true"
       (mouseleave)="mailIsHovered = false"

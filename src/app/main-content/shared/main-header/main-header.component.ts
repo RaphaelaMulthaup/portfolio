@@ -19,8 +19,6 @@ export class MainHeaderComponent {
     this.isImprintPage = this.router.url.includes('imprint');
   }
 
-  // ngOnInit() {
-  // }
 
   /** A boolean that indicates whether the gitHub button is hovered. */
   gitHubIsHovered: boolean = false;
@@ -71,12 +69,12 @@ export class MainHeaderComponent {
     }
   }
 
-  navigateFromMainHeader(index: number) {
-    if (this.isImprintPage) {
-      this.portfolioService.setCurrentIndex(index);
-      this.router.navigate(['/']);
-    } else {
-      this.portfolioService.scrollToSection(index);
-    }
-  }
+  // navigateFromMainHeader(index: number) {
+  //   if (this.isImprintPage) {
+  //     this.portfolioService.setCurrentIndex(index);
+  //     this.router.navigate(['/']);
+  //   } else {
+  //     this.portfolioService.scrollToSection(index);
+  //   }
+  // }
 }

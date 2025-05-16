@@ -1,6 +1,7 @@
 import { ElementRef, Injectable, signal } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,7 @@ export class PortfolioService {
    *
    * @param translate The TranslateService, which manages the language translations.
    */
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private router: Router) {
     this.translate.setDefaultLang('de');
     this.translate.use('de');
   }
@@ -44,7 +45,7 @@ export class PortfolioService {
 
   /**
    * This function queries the index of the current main component.
-   * 
+   *
    * @returns number current index
    */
   getCurrentIndex(): number {
@@ -61,6 +62,15 @@ export class PortfolioService {
    */
   setMainComponents(mainComponents: ElementRef[]) {
     this.mainComponents = mainComponents;
+  }
+
+  navigateFromMainHeader(index: number, isImprintPage: boolean) {
+    if (isImprintPage) {
+      this.setCurrentIndex(index);
+      this.router.navigate(['/']);
+    } else {
+      this.scrollToSection(index);
+    }
   }
 
   /**
