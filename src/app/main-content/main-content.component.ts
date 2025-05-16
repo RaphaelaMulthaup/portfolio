@@ -17,7 +17,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ReferencesComponent } from './references/references.component';
 import { SkillsComponent } from './skills/skills.component';
 import { fromEvent, throttleTime } from 'rxjs';
-import { NavigationStart, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-content',
@@ -33,20 +33,25 @@ import { NavigationStart, Router } from '@angular/router';
   styleUrl: './main-content.component.scss',
 })
 export class MainContentComponent implements AfterViewInit {
+  portfolioService = inject(PortfolioService);
+
+  /**
+   * Initializes the language service and specifies the available languages. Sets German as the default and current language.
+   * 
+   * @param translate The TranslateService, which manages the language translations.
+   * @param router Angular's router service for navigation and URL analysis.
+   */
   constructor(private translate: TranslateService, private router: Router) {
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('de');
     this.translate.use('de');
   }
-  portfolioService = inject(PortfolioService);
 
   /** This variable stores whether scrolling is currently in progress. */
   private isScrolling = false;
 
   /** a list of the main components */
   @ViewChildren('section') mainComponents!: QueryList<ElementRef>;
-
-  backClickFromImprint: boolean = false;
 
   /**
    * This function initializes the main content view:

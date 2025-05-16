@@ -15,6 +15,11 @@ export class MainHeaderComponent {
   /** This boolean indicates whether main header is on the imprint page. */
   isImprintPage = false;
 
+  /**
+   * This function checks whether the user is currently on the imprint page.
+   * 
+   * @param router Angular's router service for navigation and URL analysis.
+   */
   constructor(private router: Router) {
     this.isImprintPage = this.router.url.includes('imprint');
   }
@@ -68,13 +73,4 @@ export class MainHeaderComponent {
       this.logoNameIsHoveredImprint = entering;
     }
   }
-
-  // navigateFromMainHeader(index: number) {
-  //   if (this.isImprintPage) {
-  //     this.portfolioService.setCurrentIndex(index);
-  //     this.router.navigate(['/']);
-  //   } else {
-  //     this.portfolioService.scrollToSection(index);
-  //   }
-  // }
 }

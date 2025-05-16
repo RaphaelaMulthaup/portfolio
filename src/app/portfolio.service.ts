@@ -11,6 +11,7 @@ export class PortfolioService {
    * This constructor sets German as the default language and activates it.
    *
    * @param translate The TranslateService, which manages the language translations.
+   * @param router Angular's router service for navigation and URL analysis.
    */
   constructor(private translate: TranslateService, private router: Router) {
     this.translate.setDefaultLang('de');
@@ -64,6 +65,12 @@ export class PortfolioService {
     this.mainComponents = mainComponents;
   }
 
+  /**
+   * This function navigates to the selected component on the main content page. If this is done from the imprint page, the corresponding component is displayed immediately; otherwise, the page scrolls to it.
+   * 
+   * @param index (number) The index of the component to be displayed.
+   * @param isImprintPage (boolean) This boolean indicates whether main header is on the imprint page.
+   */
   navigateFromMainHeader(index: number, isImprintPage: boolean) {
     if (isImprintPage) {
       this.setCurrentIndex(index);

@@ -31,7 +31,7 @@ export class MiniMenuComponent {
   menuDisplayed: boolean = false;
   /** Subscription object to track and manage the menuDisplayed$ observable subscription. */
   private menuDisplayedSubscription!: Subscription;
-
+  /** This boolean indicates whether main header is on the imprint page. */
   @Input() isImprintPage!: boolean;
 
   /** A reference is created that points to the DOM element of app-mini-menu. */

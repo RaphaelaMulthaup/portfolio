@@ -15,6 +15,9 @@ export class MenuComponent {
   portfolioService = inject(PortfolioService);
   /** an event emitter for closing the menu */
   @Output() menuClosed = new EventEmitter<void>();
+  /**
+   * @param router Angular's router service for navigation and URL analysis.
+   */
    constructor(private router: Router) {}
   /** the path for the standard close image */
   defaultICloseImagePath = 'assets/img/close.png';
@@ -53,13 +56,4 @@ export class MenuComponent {
   hideMenu() {
     this.menuClosed.emit();
   }
-
-  // navigateFromMainHeader(index: number) {
-  //   if (this.isImprintPage) {
-  //     this.portfolioService.setCurrentIndex(index);
-  //     this.router.navigate(['/']);
-  //   } else {
-  //     this.portfolioService.scrollToSection(index);
-  //   }
-  // }
 }
