@@ -15,4 +15,6 @@ export class LogoNameComponent {
   @Input() isLandingPage: boolean = false;
   /** Indicates whether LogoNameComponent is hovered on the imprint page. */
   @Input() isHoveredImprint: boolean = false;
+    /** This boolean indicates whether main header is on the imprint page. */
+  @Input() isImprintPage!: boolean;
 }
