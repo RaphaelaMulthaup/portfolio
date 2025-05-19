@@ -9,6 +9,9 @@
     @include dFlex($ai: flex-start, $jc: space-between);
     flex-direction: column;
     padding-bottom: 13vh;
+    @media (max-height: 820px) {
+      padding-bottom: 7vh;
+    }
     > div:last-child {
       background-color: $yellow;
       border-color: $cream;
@@ -20,7 +23,7 @@
       width: 21vw;
       &.open {
         transform: translateY(calc(-13vh - 500px));
-      }    
+      }
       h4 {
         margin-bottom: 8px;
         text-align: center;
@@ -46,6 +49,9 @@
 .skillsUpperArea {
   h2 {
     margin-bottom: 40px;
+    @media (max-height: 820px) {
+      margin-bottom: 30px;
+    }
   }
   > div {
     background-color: $lightBlue;

@@ -156,6 +156,10 @@ app-nav-bullets {
   padding: 8vh 5vw 0 7.78vw;
   @include dFlex();
   flex-grow: 1;
+      @media (max-height: 800px) {
+      padding-top: 4vh;
+    }
+
 }
 
 .overlay {
