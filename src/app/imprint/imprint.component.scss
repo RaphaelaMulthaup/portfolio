@@ -3,6 +3,7 @@
 .imprint {
   height: 100vh;
   width: 100vw;
+  max-width: 1920px;
   @include dFlex($ai: normal, $jc: space-between);
   flex-direction: column;
 }

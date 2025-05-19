@@ -21,7 +21,7 @@
 .contactLeftSide {
   flex: 1;
   height: 100%;
-  @include dFlex($g: 7.11vh, $jc: flex-start);
+  @include dFlex($g: 4vh, $jc: flex-start);
   flex-direction: column;
   margin-right: 7vw;
   h2 {
