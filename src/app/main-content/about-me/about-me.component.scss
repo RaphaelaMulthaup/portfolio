@@ -7,6 +7,9 @@
     h2 {
       margin-right: 1.67vw;
       color: $black;
+      @media (min-aspect-ratio: 55/24) {
+        margin-right: 5.5vw;
+      }
     }
   }
 }
@@ -39,7 +42,7 @@
 }
 
 .jumpingImg {
-  img{
+  img {
     width: 28.4px;
   }
 }
@@ -68,5 +71,9 @@
         margin-right: 8px;
       }
     }
+  }
+  @media (max-height: 800px) {
+    top: calc(70% + 400px);
+      left: 50%;
   }
 }
