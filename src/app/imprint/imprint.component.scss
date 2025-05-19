@@ -1,19 +1,38 @@
 @import "./../../styles.scss";
 
+.imprint {
+  height: 100vh;
+  width: 100vw;
+  @include dFlex($ai: normal, $jc: space-between);
+  flex-direction: column;
+}
+
+.marginLateral {
+  margin-left: 7.78vw;
+  margin-right: 5vw;
+}
+
+.contentImprint {
+  flex: 1;
+  > div {
+    margin-left: 2vw;
+  }
+}
+
 h2 {
-    color: $yellow;
+  color: $yellow;
+  padding: 5vh 0;
 }
 
 p {
-    color: $cream;
-    
+  color: $cream;
 }
 
 .link {
-    text-decoration: none;
-    color: $cream;
+  text-decoration: none;
+  color: $cream;
 }
 
 app-footer {
-    color: $cream;
+  color: $cream;
 }
