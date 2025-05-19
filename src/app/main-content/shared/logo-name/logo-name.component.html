@@ -1,6 +1,6 @@
 <div
   class="logoName"
-  [ngClass]="{ logoNameHover: !isLandingPage, logoNameIsHoveredImprint: isHoveredImprint }"
+  [ngClass]="{ 'logoNameOnImprint': isImprintPage }"
   (click)="!isLandingPage && portfolioService.scrollToSection(0)"
 >
   <svg
@@ -50,5 +50,5 @@
       stroke-width="25"
     />
   </svg>
-  <h4 [ngStyle]="isImprintPage ? { color: '#f8f7e5' } : null">Multhaup</h4>
+  <h4>Multhaup</h4>
 </div>

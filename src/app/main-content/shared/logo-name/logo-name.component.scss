@@ -6,17 +6,13 @@
   @include dFlex($g: 6%);
 }
 
-.logoNameHover {
+.logoNameOnImprint {
+  color: $cream;
+  transition: all 100ms ease-in;
   &:hover {
     color: $darkOrange;
     cursor: pointer;
-    transition: all 100ms ease-in;
   }
-}
-
-.logoNameIsHoveredImprint {
-  color: $darkOrange;
-  cursor: pointer;
 }
 
 .logo {
@@ -30,5 +26,3 @@
     stroke: $darkOrange;
   }
 }
-
-
