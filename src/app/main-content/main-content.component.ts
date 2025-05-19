@@ -59,21 +59,21 @@ export class MainContentComponent implements AfterViewInit {
    * - It passes the list of main components to the 'portfolioService' for internal storage.
    * - It checks whether a specific target index was previously set (e.g. from another route like the imprint page):
    *   - If a non-zero index is present, the corresponding component is shown immediately (without smooth scrolling).
-   *   - Otherwise, the first section (index 0) is selected and scrolled to with default smooth scrolling.
    * - Additionally, a scroll event listener is registered to detect wheel events,
    *   which are throttled (max. one every 800 milliseconds) and handled via the `handleScroll()` function.
    */
   ngAfterViewInit() {
     history.scrollRestoration = 'manual';
     this.portfolioService.setMainComponents(this.mainComponents.toArray());
+
     const targetIndex = this.portfolioService.getCurrentIndex();
     if (targetIndex !== 0) {
       this.portfolioService.scrollToSection(targetIndex, false);
-    } else {
-      this.portfolioService.setCurrentIndex(0);
-      this.portfolioService.scrollToSection(0);
     }
-
+    // else {
+    //   this.portfolioService.setCurrentIndex(0);
+    //   this.portfolioService.scrollToSection(0);
+    // }
     fromEvent(window, 'wheel')
       .pipe(throttleTime(800))
       .subscribe((event) => {
