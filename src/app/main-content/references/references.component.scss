@@ -10,7 +10,7 @@
 }
 
 .referencesLowerArea{
-    @include dFlex($jc:space-between);
+    @include dFlex($jc:space-between, $g:2vw);
     width: 100%;
     margin-bottom: 14.22vh;
     padding-right: 2.78vw;

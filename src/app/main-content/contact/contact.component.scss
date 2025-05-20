@@ -68,11 +68,15 @@
       transition: background-color 100ms ease-in;
     }
     &:hover::after {
-        background-color: $darkOrange;
+      background-color: $darkOrange;
     }
   }
   > app-form {
     width: 100%;
+    max-width: 650px;
     margin-right: 3.33vw;
+    @media (min-width: 1700px) {
+      margin-right: 6vw;
+    }
   }
 }
