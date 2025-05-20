@@ -3,11 +3,8 @@
 #landingPage {
   background-color: $lightBlue;
   > :last-child {
+    flex: 1;
     justify-content: space-between;
-    padding-bottom: calc((100vh - var(--header-height)) * 0.12);
-    @media (max-height: 800px) {
-      padding-bottom: 7vh;
-    }
   }
 }
 
@@ -15,6 +12,11 @@
   @include dFlex($ai: flex-start, $jc: space-between);
   flex-direction: column;
   height: 100%;
+  padding-bottom: calc((100vh - var(--header-height)) * 0.12);
+  box-sizing: border-box;
+  @media (max-height: 800px) {
+    padding-bottom: 7vh;
+  }
   div:first-child {
     @include dFlex($g: 3.56vh, $ai: flex-start);
     flex-direction: column;
@@ -67,7 +69,7 @@
     left: 36.855%;
   }
   @media (max-height: 800px) {
-      width: 120px;
+    width: 120px;
   }
 }
 
@@ -75,27 +77,34 @@
   height: 100%;
   margin-right: 3.17%;
   position: relative;
+  flex: 1;
+  @include dFlex($ai: flex-end);
+  >div {
+    position: relative;
+    @include dFlex($ai: flex-end)
+  }
   ::ng-deep app-hexagon {
-    // z-index: 10;
     height: 68%;
     width: auto;
     aspect-ratio: 1 / 1;
     position: absolute;
     top: 0;
-    right: 0;
-
+    right: -50px;
     svg {
       position: absolute;
       top: 0;
       right: 0;
       width: 100%;
       height: 100%;
-      // Ausprobieren ob 15 30 oder 45 gut sind
       transform: rotate(45deg);
       polygon {
         fill: $darkOrange;
         stroke: $darkOrange;
       }
     }
+  }
+  img {
+    height: 82vh;
+    position: relative;
   }
 }
