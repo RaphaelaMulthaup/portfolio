@@ -12,13 +12,13 @@
   @include dFlex($ai: flex-start, $jc: space-between);
   flex-direction: column;
   height: 100%;
-  padding-bottom: calc((100vh - var(--header-height)) * 0.12);
+  padding-bottom: calc((100dvh - var(--header-height)) * 0.12);
   box-sizing: border-box;
   @media (max-height: 800px) {
-    padding-bottom: 7vh;
+    padding-bottom: 7dvh;
   }
   div:first-child {
-    @include dFlex($g: 3.56vh, $ai: flex-start);
+    @include dFlex($g: 3.56dvh, $ai: flex-start);
     flex-direction: column;
     div {
       @include dFlex($g: 8px, $ai: flex-start);
@@ -104,7 +104,7 @@
     }
   }
   img {
-    height: 82vh;
+    height: 82dvh;
     position: relative;
   }
 }

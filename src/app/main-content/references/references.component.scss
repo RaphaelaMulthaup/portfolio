@@ -4,7 +4,7 @@
     background-color: $lightBlue;
     color: $cream;
     > div:last-child {
-        @include dFlex($jc:space-between, $ai:flex-start, $g: 5.33vh);
+        @include dFlex($jc:space-between, $ai:flex-start, $g: 5.33dvh);
         flex-direction: column;
     }
 }
@@ -12,7 +12,7 @@
 .referencesLowerArea{
     @include dFlex($jc:space-between, $g:2vw);
     width: 100%;
-    margin-bottom: 14.22vh;
+    margin-bottom: 14.22dvh;
     padding-right: 2.78vw;
     box-sizing: border-box;
     flex: 1;
@@ -21,7 +21,7 @@
         width: 26.7vw;
         app-reference{
             width: 100%;
-            @include dFlex($g:2.22vh);
+            @include dFlex($g:2.22dvh);
             flex-direction: column;
         }
     }

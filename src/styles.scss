@@ -81,12 +81,12 @@ button {
 app-nav-bullets {
   position: absolute;
   right: 5vw;
-  top: calc((100vh - 148px) / 2);
+  top: calc((100dvh - 148px) / 2);
   z-index: 100;
 }
 
 @mixin fullDisplay() {
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
 }
 
@@ -131,7 +131,7 @@ app-nav-bullets {
 }
 
 .maxWidth {
-  height: 100vh;
+  height: 100dvh;
   max-width: 1920px;
   position: relative;
   @include dFlex($ai: normal);
@@ -139,7 +139,7 @@ app-nav-bullets {
 }
 
 .header {
-  height: 10vh;
+  height: 10dvh;
   min-height: 72px;
   max-height: 88px;
   margin: 0 5% 0 5%;
@@ -153,11 +153,11 @@ app-nav-bullets {
 }
 
 .contentMainComponent {
-  padding: 8vh 5vw 0 7.78vw;
+  padding: 8dvh 5vw 0 7.78vw;
   @include dFlex();
   flex-grow: 1;
       @media (max-height: 800px) {
-      padding-top: 4vh;
+      padding-top: 4dvh;
     }
 
 }

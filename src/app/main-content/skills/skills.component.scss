@@ -8,9 +8,9 @@
   > div {
     @include dFlex($ai: flex-start, $jc: space-between);
     flex-direction: column;
-    padding-bottom: 13vh;
+    padding-bottom: 13dvh;
     @media (max-height: 820px) {
-      padding-bottom: 7vh;
+      padding-bottom: 7dvh;
     }
     > div:last-child {
       background-color: $yellow;
@@ -22,7 +22,7 @@
       flex-direction: column;
       width: 21vw;
       &.open {
-        transform: translateY(calc(-13vh - 500px));
+        transform: translateY(calc(-13dvh - 500px));
       }
       h4 {
         margin-bottom: 8px;

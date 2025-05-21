@@ -1,7 +1,7 @@
 @import "./../../../../styles.scss";
 
 footer {
-  height: 8.33vh;
+  height: 8.33dvh;
   position: relative;
   width: 100%;
   @include dFlex($ai: flex-start);
@@ -28,8 +28,8 @@ footer {
   left: 0;
   > ::ng-deep app-hexagon:first-child {
     animation: rotate 7s linear infinite;
-    height: 20vh;
-    width: 20vh;
+    height: 20dvh;
+    width: 20dvh;
     display: block;
     position: absolute;
     left: 0;
@@ -43,10 +43,10 @@ footer {
   
     animation: rotateCounterclockwise 7s linear infinite;
     display: block;
-    height: 29.22vh;
-    width: 29.22vh;
+    height: 29.22dvh;
+    width: 29.22dvh;
     position: absolute;
-    left: 11vh;
+    left: 11dvh;
     bottom: 0;
     > svg {
       width: 100%;

@@ -3,7 +3,7 @@
 #projects {
   background-color: $cream;
   > div {
-    padding-bottom: 12.22vh;
+    padding-bottom: 12.22dvh;
     @include dFlex($jc: space-between, $ai: flex-start);
     flex-direction: column;
   }
@@ -23,7 +23,7 @@
 .projectsLowerArea {
   @include dFlex($jc: space-between);
   width: 100%;
-  height: 54.22vh;
+  height: 54.22dvh;
   > div:first-child {
     border-radius: $borderRadius;
     border: 1px solid $black;
@@ -36,8 +36,8 @@
       height: 37%;
       aspect-ratio: 1;
       position: absolute;
-      bottom: 0.5vh;
-      left: 0.5vh;
+      bottom: 0.5dvh;
+      left: 0.5dvh;
       svg {
         animation: rotate 7s linear infinite;
         height: 100%;
@@ -59,8 +59,8 @@
   }
   > div:last-child {
     flex: 1;
-    margin: 3.67vh 2.78vw;
-    @include dFlex($g: 3.56vh);
+    margin: 3.67dvh 2.78vw;
+    @include dFlex($g: 3.56dvh);
     flex-direction: column;
     > div:last-child {
       width: 100%;
@@ -79,17 +79,17 @@
 }
 
 .projectInformations {
-  height: 41vh;
+  height: 41dvh;
   width: 100%;
   background-color: $black;
   border-radius: $borderRadius;
-  @include dFlex($g: 3.56vh, $ai: flex-start);
+  @include dFlex($g: 3.56dvh, $ai: flex-start);
   flex-direction: column;
   color: $cream;
   padding: 0 2.22vw;
   box-sizing: border-box;
   > div:first-child {
-    @include dFlex($g: 1.78vh, $ai: flex-start);
+    @include dFlex($g: 1.78dvh, $ai: flex-start);
     flex-direction: column;
     width: 100%;
     > div:first-child {
@@ -107,7 +107,7 @@
       }
       > div:last-child {
         position: absolute;
-        bottom: 6.67vh;
+        bottom: 6.67dvh;
         right: 0;
         width: 83.33%;
         background-color: $lightBlue;

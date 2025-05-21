@@ -1,7 +1,7 @@
 @import "./../../styles.scss";
 
 .imprint {
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
   max-width: 1920px;
   @include dFlex($ai: normal, $jc: space-between);
@@ -22,7 +22,7 @@
 
 h2 {
   color: $yellow;
-  padding: 5vh 0 2vh;
+  padding: 5dvh 0 2dvh;
 }
 
 p {

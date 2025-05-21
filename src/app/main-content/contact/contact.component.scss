@@ -21,14 +21,14 @@
 .contactLeftSide {
   flex: 1;
   height: 100%;
-  @include dFlex($g: 4vh, $jc: flex-start);
+  @include dFlex($g: 4dvh, $jc: flex-start);
   flex-direction: column;
   margin-right: 7vw;
   h2 {
     color: $yellow;
   }
   > div {
-    @include dFlex($g: 1.78vh, $ai: flex-start);
+    @include dFlex($g: 1.78dvh, $ai: flex-start);
     flex-direction: column;
     h4 {
       color: $darkOrange;
@@ -40,7 +40,7 @@
   height: 100%;
   width: 48%;
   @include dFlex($ai: flex-end, $jc: space-between);
-  padding-bottom: 8.67vh;
+  padding-bottom: 8.67dvh;
   box-sizing: border-box;
   flex-direction: column;
   .svgWrapper {
