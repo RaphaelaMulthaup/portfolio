@@ -36,6 +36,10 @@
     @include dFlex($ai: flex-start, $g: 32px);
     flex-direction: column;
     border-radius: $borderRadius;
+    @media (max-width: 1450px) {
+      top: 18%;
+    }
+
     > div:last-child {
       @include dFlex($jc: space-between);
       width: 100%;
@@ -59,6 +63,21 @@
   flex-direction: column;
   color: $cream;
   width: max-content;
+  @media (max-height: 800px) {
+    top: calc(70% + 400px);
+    left: 50%;
+  }
+  @media (max-width: 2000px) {
+    left: 40%;
+  }
+  @media (max-width: 1650px) {
+    left: 34%;
+    top: calc(90% + 400px);
+  }
+  @media (max-width: 1450px) {
+    top: calc(95% + 400px);
+  }
+
   &.open {
     transform: translateY(-400px);
   }
@@ -73,9 +92,5 @@
         margin-right: 8px;
       }
     }
-  }
-  @media (max-height: 800px) {
-    top: calc(70% + 400px);
-      left: 50%;
   }
 }
