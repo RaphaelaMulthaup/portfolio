@@ -4,7 +4,7 @@ $black: #1d1d1d;
 $darkOrange: #ff834f;
 $yellow: #f9af42;
 $grey: #858585;
-$red: #EC7B7BCC;
+$red: #ec7b7bcc;
 $borderRadius: 4px;
 
 ::-webkit-scrollbar {
@@ -40,6 +40,9 @@ h2 {
   font-size: 72px;
   margin: 0;
   line-height: 100%;
+  @media (max-width: 1450px) {
+    font-size: 59px;
+  }
 }
 
 h3 {
@@ -156,10 +159,9 @@ app-nav-bullets {
   padding: 8dvh 5vw 0 7.78vw;
   @include dFlex();
   flex-grow: 1;
-      @media (max-height: 800px) {
-      padding-top: 4dvh;
-    }
-
+  @media (max-height: 800px) {
+    padding-top: 4dvh;
+  }
 }
 
 .overlay {
