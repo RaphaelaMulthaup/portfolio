@@ -93,6 +93,10 @@
     position: absolute;
     top: 0;
     right: -50px;
+    @media (max-width: 1250px) and (min-height: 850px) {
+    right: -30px;
+    }
+
     svg {
       position: absolute;
       top: 0;

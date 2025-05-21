@@ -39,6 +39,9 @@
     @media (max-width: 1450px) {
       top: 18%;
     }
+    @media (max-width: 1300px) and (min-height: 830px) {
+    width: 43vw;
+    }
 
     > div:last-child {
       @include dFlex($jc: space-between);

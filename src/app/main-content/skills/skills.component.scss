@@ -22,7 +22,10 @@
       flex-direction: column;
       width: 21vw;
       @media (max-width: 1400px) {
-      bottom: -540px;
+        bottom: -540px;
+      }
+      @media (max-width: 1400px) and (min-height: 820px) {
+      bottom: -500px;
       }
 
       &.open {
