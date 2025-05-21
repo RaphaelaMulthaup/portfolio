@@ -40,7 +40,7 @@
       top: 18%;
     }
     @media (max-width: 1300px) and (min-height: 830px) {
-    width: 43vw;
+      width: 43vw;
     }
 
     > div:last-child {
@@ -66,10 +66,10 @@
   flex-direction: column;
   color: $cream;
   width: max-content;
-  @media (max-height: 800px) {
-    top: calc(70% + 400px);
-    left: 50%;
-  }
+  // @media (max-height: 800px) {
+  //   top: calc(70% + 400px);
+  //   left: 50%;
+  // }
   @media (max-width: 2000px) {
     left: 40%;
   }
@@ -80,7 +80,10 @@
   @media (max-width: 1450px) {
     top: calc(95% + 400px);
   }
-
+  @media (max-height: 785px) {
+    top: calc(75% + 400px);
+    left: 5%;
+  }
   &.open {
     transform: translateY(-400px);
   }
