@@ -21,6 +21,10 @@
       @include dFlex($g: 8px);
       flex-direction: column;
       width: 21vw;
+      @media (max-width: 1400px) {
+      bottom: -540px;
+      }
+
       &.open {
         transform: translateY(calc(-13dvh - 500px));
       }
@@ -28,6 +32,9 @@
         margin-bottom: 8px;
         text-align: center;
         line-height: 120%;
+        @media (max-width: 1450px) {
+          font-size: 20px;
+        }
       }
       > span {
         text-align: justify;
