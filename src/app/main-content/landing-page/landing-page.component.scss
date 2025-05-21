@@ -79,9 +79,12 @@
   position: relative;
   flex: 1;
   @include dFlex($ai: flex-end);
-  >div {
+  @media (max-width: 1420px) {
+    margin-left: -15vw;
+  }
+  > div {
     position: relative;
-    @include dFlex($ai: flex-end)
+    @include dFlex($ai: flex-end);
   }
   ::ng-deep app-hexagon {
     height: 68%;
