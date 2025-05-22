@@ -48,6 +48,10 @@
       width: 43vw;
     }
 
+    @media (max-width: 1220px) and (min-height: 713px) {
+      left: 67%;
+    }
+
     > div:last-child {
       @include dFlex($jc: space-between);
       width: 100%;
