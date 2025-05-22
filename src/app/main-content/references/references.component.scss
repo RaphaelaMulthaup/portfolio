@@ -6,6 +6,9 @@
   > div:last-child {
     @include dFlex($jc: space-between, $ai: flex-start, $g: 5.33dvh);
     flex-direction: column;
+    @media (max-height: 800px) {
+      gap: 3.56dvh;
+    }
   }
 }
 
@@ -17,7 +20,7 @@
   box-sizing: border-box;
   flex: 1;
   @media (max-width: 1300px) {
-  margin-bottom: 9dvh;
+    margin-bottom: 9dvh;
   }
 
   div {
