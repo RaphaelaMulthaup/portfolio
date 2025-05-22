@@ -43,6 +43,9 @@
   padding-bottom: 8.67dvh;
   box-sizing: border-box;
   flex-direction: column;
+  @media (max-width: 1200px) {
+    width: 53%;
+  }
   .svgWrapper {
     position: relative;
     display: inline-block;
