@@ -25,7 +25,10 @@
         bottom: -540px;
       }
       @media (max-width: 1400px) and (min-height: 820px) {
-      bottom: -500px;
+        bottom: -500px;
+      }
+      @media (max-width: 1180px) {
+        width: 24vw;
       }
 
       &.open {
@@ -69,6 +72,9 @@
     padding: 24px;
     text-align: justify;
     width: 56%;
+    @media (max-width: 1251px) {
+      width: 79%;
+    }
   }
 }
 
