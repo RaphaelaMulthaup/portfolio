@@ -94,7 +94,10 @@
     top: 0;
     right: -50px;
     @media (max-width: 1250px) and (min-height: 850px) {
-    right: -30px;
+      right: -30px;
+    }
+    @media (max-width: 1024px) and (min-height: 700px) {
+      right: -25px;
     }
 
     svg {

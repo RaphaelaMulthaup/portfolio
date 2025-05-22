@@ -36,6 +36,9 @@ h1 {
   @media (max-width: 1150px) {
     font-size: 88px;
   }
+  @media (max-width: 1024px) and (min-height: 700px) {
+    font-size: 80px;
+  }
 }
 
 h2 {
@@ -58,6 +61,9 @@ h3 {
   line-height: 100%;
   @media (max-width: 1150px) {
     font-size: 40px;
+  }
+  @media (max-width: 1024px) and (min-height: 700px) {
+    font-size: 32px;
   }
 }
 
