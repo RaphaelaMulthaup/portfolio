@@ -7,12 +7,17 @@
   @include dFlex($ai: flex-start, $g: 10px);
   flex-direction: column;
   @media (max-height: 800px) {
-  padding: 16px;
+    padding: 16px;
   }
 
   > div:first-child {
     width: 100%;
     @include dFlex($jc: space-between);
+    > h4 {
+      @media (max-width: 1220px) {
+        font-size: 20px;
+      }
+    }
     ::ng-deep app-hexagon {
       height: 40px;
       width: 40px;
@@ -33,6 +38,9 @@
   > span:last-child {
     font-size: 18px;
     font-weight: 700;
+    @media (max-width: 1220px) {
+      font-size: 16px;
+    }
   }
 }
 
