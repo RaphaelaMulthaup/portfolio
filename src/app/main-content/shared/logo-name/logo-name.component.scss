@@ -4,11 +4,18 @@
   height: 100%;
   width: fit-content;
   @include dFlex($g: 6%);
+  transition: all 100ms ease-in;
+}
+
+.logoNameHover {
+  &:hover {
+    color: $darkOrange;
+    cursor: pointer;
+  }
 }
 
 .logoNameOnImprint {
   color: $cream;
-  transition: all 100ms ease-in;
   &:hover {
     color: $darkOrange;
     cursor: pointer;
