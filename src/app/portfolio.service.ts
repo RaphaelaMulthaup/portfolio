@@ -96,13 +96,18 @@ export class PortfolioService {
     const targetMainComponent = this.mainComponents[index]?.nativeElement;
     if (!targetMainComponent) return;
 
-   targetMainComponent.scrollIntoView({
+    targetMainComponent.scrollIntoView({
       behavior: smooth ? 'smooth' : 'auto',
       block: 'end',
     });
     this.menuDisplayedSubject.next(false);
 
-    setTimeout(() => this.scrollingThroughFunktion.set(false), 1000);
+    setTimeout(
+      () => {
+        this.scrollingThroughFunktion.set(false);
+      },
+      smooth ? 1000 : 100
+    );
   }
 
   /**

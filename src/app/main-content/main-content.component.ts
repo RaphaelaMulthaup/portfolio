@@ -62,8 +62,7 @@ export class MainContentComponent implements AfterViewInit {
    * - It checks the screen with to decide if free scrolling should occur.
    * - It checks whether a specific target index was previously set (e.g. from another route like the imprint page):
    *   - If a non-zero index is present, the corresponding component is shown immediately (without smooth scrolling).
-   * - Additionally, if free scrolling shouldn't occur a scroll event listener is registered to detect wheel events,
-   *   which are throttled (max. one every 800 milliseconds) and handled via the `handleScroll()` function.
+   * - Two functions are called. They initiate the scroll behavior and the intersection observer.
    */
   ngAfterViewInit() {
     history.scrollRestoration = 'manual';
@@ -75,10 +74,15 @@ export class MainContentComponent implements AfterViewInit {
     if (targetIndex !== 0) {
       this.portfolioService.scrollToSection(targetIndex, false);
     }
-    // else {
-    //   this.portfolioService.setCurrentIndex(0);
-    //   this.portfolioService.scrollToSection(0);
-    // }
+
+    this.initScrollBehavior();
+    this.initIntersectionObserver();
+  }
+
+  /**
+   * If free scrolling shouldn't occur a scroll event listener is registered to detect wheel events, which are throttled (max. one every 800 milliseconds) and handled via the `handleScroll()` function.
+   */
+  private initScrollBehavior() {
     if (!this.freeScroll) {
       fromEvent(window, 'wheel')
         .pipe(throttleTime(800))
@@ -86,6 +90,33 @@ export class MainContentComponent implements AfterViewInit {
           this.handleScroll(event as WheelEvent);
         });
     }
+  }
+
+  /**
+   * Initializes an IntersectionObserver that observes each main component in the view and triggers whenever at least 50% of a section is visible, during manual scrolling and update the current index accordingly in the PortfolioService. If scrolling through a function is active the observer does nothing.
+   */
+  private initIntersectionObserver() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (this.portfolioService.scrollingThroughFunktion()) return;
+
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+            const index = this.mainComponents
+              .toArray()
+              .findIndex((el) => el.nativeElement === entry.target);
+            if (index !== -1) {
+              this.portfolioService.setCurrentIndex(index);
+            }
+          }
+        });
+      },
+      {
+        threshold: [0.5],
+      }
+    );
+
+    this.mainComponents.forEach((ref) => observer.observe(ref.nativeElement));
   }
 
   /**
@@ -159,7 +190,7 @@ export class MainContentComponent implements AfterViewInit {
     const wasFreeScroll = this.freeScroll;
     this.freeScroll = window.innerWidth < 1024;
     if (wasFreeScroll !== this.freeScroll) {
-    location.reload(); // Nur bei Modus-Wechsel neuladen
-  }
+      location.reload(); // Nur bei Modus-Wechsel neuladen
+    }
   }
 }
