@@ -67,7 +67,7 @@ export class PortfolioService {
 
   /**
    * This function navigates to the selected component on the main content page. If this is done from the imprint page, the corresponding component is displayed immediately; otherwise, the page scrolls to it.
-   * 
+   *
    * @param index (number) The index of the component to be displayed.
    * @param isImprintPage (boolean) This boolean indicates whether main header is on the imprint page.
    */
@@ -80,21 +80,29 @@ export class PortfolioService {
     }
   }
 
+  /** This variable indicates whether scrolling is currently carried out, triggered by a function call. */
+  public scrollingThroughFunktion = signal(false);
+
   /**
-   * This function assigns the new index to the variable 'currentIndexMainComponents' and scrolls or jumps to the corresponding main component. And all subscribers of the menuDisplayed$ observable are sent the value false, which closes the menu.
+   * This function sets the variable 'scrollingThroughFunktion' to true, assigns the new index to the variable 'currentIndexMainComponents' and scrolls or jumps to the corresponding main component. And all subscribers of the menuDisplayed$ observable are sent the value false, which closes the menu. After a timeout 'scrollingThroughFunktion' is set to false again.
    *
    * @param index (number) The index of the current main component.
    * @param smooth (boolean) The boolean specifies whether to jump or scroll to the selected component.
    */
   scrollToSection(index: number, smooth: boolean = true) {
+    this.scrollingThroughFunktion.set(true);
     this.setCurrentIndex(index);
-    console.log(this.currentIndexMainComponents);
 
-    this.mainComponents[index].nativeElement.scrollIntoView({
+    const targetMainComponent = this.mainComponents[index]?.nativeElement;
+    if (!targetMainComponent) return;
+
+   targetMainComponent.scrollIntoView({
       behavior: smooth ? 'smooth' : 'auto',
       block: 'end',
     });
     this.menuDisplayedSubject.next(false);
+
+    setTimeout(() => this.scrollingThroughFunktion.set(false), 1000);
   }
 
   /**

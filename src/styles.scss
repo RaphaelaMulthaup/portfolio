@@ -24,7 +24,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden; /* Normales Scrollen verhindern */
+  overflow: hidden;
   background-color: #1d1d1d;
   @media (max-width: 1024px) {
     overflow: visible;
