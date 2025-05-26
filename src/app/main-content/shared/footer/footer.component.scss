@@ -5,19 +5,19 @@ footer {
   position: relative;
   width: 100%;
   @include dFlex($ai: flex-start);
-  > div:last-child{
+  > div:last-child {
     position: absolute;
     top: 0;
     right: 0;
-    @include dFlex($g:2.22vw);
+    @include dFlex($g: 2.22vw);
     a {
-        text-decoration: none;
-        color: $cream;
-        line-height: 120%;
-        &:hover {
-            color: $darkOrange;
-            cursor: pointer;
-        }
+      text-decoration: none;
+      color: $cream;
+      line-height: 120%;
+      &:hover {
+        color: $darkOrange;
+        cursor: pointer;
+      }
     }
   }
 }
@@ -26,6 +26,9 @@ footer {
   position: absolute;
   bottom: 0;
   left: 0;
+  overflow: hidden;
+  height: 29.22dvh;
+  width: 40dvh;
   > ::ng-deep app-hexagon:first-child {
     animation: rotate 7s linear infinite;
     height: 20dvh;
@@ -40,7 +43,6 @@ footer {
     }
   }
   > ::ng-deep app-hexagon:last-child {
-  
     animation: rotateCounterclockwise 7s linear infinite;
     display: block;
     height: 29.22dvh;

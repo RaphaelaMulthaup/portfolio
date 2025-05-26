@@ -1,5 +1,5 @@
 <div class="navBullets" [ngClass]="bGroundBulletPoints">
-  @for (item of bulletArray; track bulletArray; let index = $index){
+  @for (item of bulletArray; track index; let index = $index){
   <div
     [ngClass]="{
       activeBullet: index === currentIndexMainComponents(),
