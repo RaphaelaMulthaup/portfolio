@@ -24,7 +24,6 @@ import {
 })
 export class AppComponent implements AfterViewInit {
   title = 'portfolio';
-
   /**
    * After a timeout that ensures that the browser has fully rendered the DOM, this function calls updateHeaderHeight().
    */
