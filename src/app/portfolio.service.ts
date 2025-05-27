@@ -2,20 +2,35 @@ import { ElementRef, Injectable, signal } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PortfolioService {
+  /** This Boolean specifies whether the mobile design should be shown. */
+  mobileScreen: boolean = false;
+
   /**
-   * This constructor sets German as the default language and activates it.
+   * This constructor sets German as the default language and activates it. The screen size is also checked to display the design for mobile screens if necessary.
    *
    * @param translate The TranslateService, which manages the language translations.
    * @param router Angular's router service for navigation and URL analysis.
+   * @param breakpointObserver A service from the Angular CDK that monitors media queries and provides notifications when the screen size changes.
    */
-  constructor(private translate: TranslateService, private router: Router) {
+  constructor(
+    private translate: TranslateService,
+    private router: Router,
+    private breakpointObserver: BreakpointObserver
+  ) {
     this.translate.setDefaultLang('de');
     this.translate.use('de');
+
+    this.breakpointObserver
+      .observe(['(max-width: 1023px)'])
+      .subscribe((result) => {
+        this.mobileScreen = result.matches;
+      });
   }
 
   /** a subject to control the menu display state */

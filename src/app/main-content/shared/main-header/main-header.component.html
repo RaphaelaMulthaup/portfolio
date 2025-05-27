@@ -1,4 +1,5 @@
 <header class="header">
+  @if (!portfolioService.mobileScreen) {
   <div class="socialMediaButtons">
     <a href="https://github.com/RaphaelaMulthaup" target="_blank">
       <img
@@ -29,6 +30,7 @@
       alt="mail"
     />
   </div>
+  }
   <app-logo-name
     (click)="goToMainContent()"
     (mouseenter)="hoverStatus(true)"
@@ -37,5 +39,8 @@
     [isLandingPage]="true"
     [isImprintPage]="isImprintPage"
   ></app-logo-name>
-  <app-mini-menu [headerClass]="'cream'" [isImprintPage]="isImprintPage"></app-mini-menu>
+  <app-mini-menu
+    [headerClass]="'cream'"
+    [isImprintPage]="isImprintPage"
+  ></app-mini-menu>
 </header>
