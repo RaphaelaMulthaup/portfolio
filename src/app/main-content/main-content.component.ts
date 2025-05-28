@@ -188,7 +188,7 @@ export class MainContentComponent implements AfterViewInit {
   @HostListener('window:resize')
   onResize() {
     const wasFreeScroll = this.freeScroll;
-    this.freeScroll = window.innerWidth < 1024;
+    this.freeScroll = window.innerWidth <= 1024;
     if (wasFreeScroll !== this.freeScroll) {
       location.reload(); // Nur bei Modus-Wechsel neuladen
     }

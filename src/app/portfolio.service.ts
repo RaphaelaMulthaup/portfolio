@@ -27,7 +27,7 @@ export class PortfolioService {
     this.translate.use('de');
 
     this.breakpointObserver
-      .observe(['(max-width: 1023px)'])
+      .observe(['(max-width: 1024px)'])
       .subscribe((result) => {
         this.mobileScreen = result.matches;
       });

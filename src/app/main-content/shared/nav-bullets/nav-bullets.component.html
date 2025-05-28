@@ -1,3 +1,4 @@
+@if (!portfolioService.mobileScreen) {
 <div class="navBullets" [ngClass]="bGroundBulletPoints">
   @for (item of bulletArray; track index; let index = $index){
   <div
@@ -7,7 +8,11 @@
         index === currentIndexMainComponents() && (index === 1 || index === 5),
       passiveBullet: index !== currentIndexMainComponents()
     }"
-    (click)="index !== currentIndexMainComponents() && portfolioService.scrollToSection(index)"
+    (click)="
+      index !== currentIndexMainComponents() &&
+        portfolioService.scrollToSection(index)
+    "
   ></div>
   }
 </div>
+}
