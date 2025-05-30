@@ -11,8 +11,11 @@ export class PortfolioService {
   /** This Boolean specifies whether the mobile design should be shown. */
   mobileScreen: boolean = false;
 
+  /** This boolean indicates whether the device is a touchscreen. */
+  public readonly touchScreen: boolean;
+
   /**
-   * This constructor sets German as the default language and activates it. The screen size is also checked to display the design for mobile screens if necessary.
+   * This constructor sets German as the default language and activates it, checks whether it is a touchscreen and the screen size is also checked to display the design for mobile screens if necessary.
    *
    * @param translate The TranslateService, which manages the language translations.
    * @param router Angular's router service for navigation and URL analysis.
@@ -25,6 +28,12 @@ export class PortfolioService {
   ) {
     this.translate.setDefaultLang('de');
     this.translate.use('de');
+
+    this.touchScreen =
+      typeof window !== 'undefined' &&
+      ('ontouchstart' in window ||
+        navigator.maxTouchPoints > 0 ||
+        (navigator as any).msMaxTouchPoints > 0);
 
     this.breakpointObserver
       .observe(['(max-width: 1024px)'])
