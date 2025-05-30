@@ -127,6 +127,9 @@
     img {
       height: 82dvh;
       position: relative;
+      @media (min-height: 700px) and (max-width: 1120px) {
+        height: 70dvh;
+      }
       @media (max-width: 1024px) {
         max-height: 60vh;
       }

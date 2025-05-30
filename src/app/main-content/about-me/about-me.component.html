@@ -1,5 +1,7 @@
 <div id="aboutMe" class="maxWidth">
+  @if (!portfolioService.mobileScreen) {
   <app-header class="black" [headerClass]="'black'"></app-header>
+  }
   <app-nav-bullets bGroundBulletPoints="bGroundBlack"></app-nav-bullets>
   <div class="contentMainComponent">
     <div class="aboutMeLeftSide">
