@@ -8,7 +8,7 @@
   //   max-height: 88px;
   //   // flex-shrink: 0;
   // }
-  > :last-child {
+  > .contentMainComponent {
     flex: 1;
     justify-content: space-between;
     @media (max-width: 1024px) {
@@ -48,6 +48,19 @@
   position: relative;
   width: 144px;
   aspect-ratio: 1;
+  @media (max-height: 800px) {
+    width: 120px;
+  }
+  @media (max-width: 1024px) {
+    position: absolute;
+    bottom: 3dvh;
+    left: 3dvh;
+    background-color: #679aac;
+    border-radius: 50%;
+    border: 7px;
+    border-color: #679aac;
+    border-style: solid;
+  }
   div {
     animation: rotate 7s linear infinite;
     svg:first-child {
@@ -84,9 +97,6 @@
     position: absolute;
     top: 35%;
     left: 36.855%;
-  }
-  @media (max-height: 800px) {
-    width: 120px;
   }
 }
 
