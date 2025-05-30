@@ -8,7 +8,7 @@
       <div>
         <div
           class="overlay moreAboutMe"
-          [ngClass]="{ open: jumpingImgIsHoverd }"
+          [ngClass]="{ open: (jumpingImgIsHoverd && !portfolioService.touchScreen) || overlayMoreAboutMeCalled}"
         >
           <h4>{{ "aboutMe.moreAoutMe.moreAoutMe" | translate }}</h4>
           <ul>
@@ -35,6 +35,7 @@
             class="jumpingImg"
             (mouseenter)="jumpingImgIsHoverd = true"
             (mouseleave)="jumpingImgIsHoverd = false"
+            (click)="openOverlay()"
           >
             <img src="assets/img/smiley.png" alt="smiley" />
           </div>
