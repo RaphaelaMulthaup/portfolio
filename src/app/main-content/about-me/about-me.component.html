@@ -8,9 +8,16 @@
       <div>
         <div
           class="overlay moreAboutMe"
-          [ngClass]="{ open: (jumpingImgIsHoverd && !portfolioService.touchScreen) || overlayMoreAboutMeCalled}"
+          [ngClass]="{
+            open:
+              (jumpingImgIsHoverd && !portfolioService.touchScreen) ||
+              overlayMoreAboutMeCalled
+          }"
         >
-          <h4>{{ "aboutMe.moreAoutMe.moreAoutMe" | translate }}</h4>
+          <div>
+            <h4>{{ "aboutMe.moreAoutMe.moreAoutMe" | translate }}</h4>
+            <img [ngStyle]="{ display: !portfolioService.touchScreen ? 'none' : 'block' }" src="assets/img/closeCream.png" alt="close" />
+          </div>
           <ul>
             @for(item of [0,1,2,3,4,5,6]; track item; let index = $index){
             <li>

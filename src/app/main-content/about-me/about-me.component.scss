@@ -90,10 +90,6 @@
   flex-direction: column;
   color: $cream;
   width: max-content;
-  // @media (max-height: 800px) {
-  //   top: calc(70% + 400px);
-  //   left: 50%;
-  // }
   @media (max-width: 2000px) {
     left: 40%;
   }
@@ -104,12 +100,23 @@
   @media (max-width: 1450px) {
     top: calc(95% + 400px);
   }
+  @media (max-width: 1024px) {
+    top: calc(125% + 400px);
+    left: 12%;
+  }
   @media (max-height: 785px) {
     top: calc(75% + 400px);
     left: 5%;
   }
   &.open {
     transform: translateY(-400px);
+  }
+  > div {
+    width: 100%;
+    @include dFlex($jc:space-between);
+    > img {
+      height: 32px;
+    }
   }
   ul {
     list-style-type: none;
