@@ -105,30 +105,20 @@
     justify-content: flex-end;
     margin-left: 0;
     margin-right: 0;
+    min-height: 0;
   }
 
   > div {
     position: relative;
     @include dFlex($ai: flex-end);
     @media (max-width: 1024px) {
-      height: auto;
-      flex: 1;
-      min-height: 0;
       margin-right: 2vw;
     }
     img {
       height: 82dvh;
       position: relative;
       @media (max-width: 1024px) {
-        // height: auto;
-        // // max-height: 46.8dvh;
-        // width: 100%;
-        object-fit: contain;
-        max-height: 100%;
-        height: auto;
-        width: auto;
-        max-width: 100%;
-        display: block;
+        max-height: 60vh;
       }
     }
     ::ng-deep app-hexagon {
