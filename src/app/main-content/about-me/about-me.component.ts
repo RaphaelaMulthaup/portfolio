@@ -29,4 +29,10 @@ export class AboutMeComponent {
       this.overlayMoreAboutMeCalled = true;
     }
   }
+
+  closeOverlay(): void {
+    if (this.portfolioService.touchScreen) {
+      this.overlayMoreAboutMeCalled = false;
+    }
+  }
 }
