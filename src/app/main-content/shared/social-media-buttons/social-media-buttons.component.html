@@ -1,0 +1,30 @@
+  <div class="socialMediaButtons">
+    <a href="https://github.com/RaphaelaMulthaup" target="_blank">
+      <img
+        [src]="portfolioService.getImageSrc(gitHubIsHovered, images['gitHub'])"
+        (mouseenter)="gitHubIsHovered = true"
+        (mouseleave)="gitHubIsHovered = false"
+        alt="gitHub"
+      />
+    </a>
+    <a
+      href="https://www.linkedin.com/in/raphaela-multhaup-096aba353"
+      target="_blank"
+    >
+      <img
+        [src]="
+          portfolioService.getImageSrc(linkedinIsHovered, images['linkedin'])
+        "
+        (mouseenter)="linkedinIsHovered = true"
+        (mouseleave)="linkedinIsHovered = false"
+        alt="linkedin"
+      />
+    </a>
+    <img
+      (click)="portfolioService.navigateFromMainHeader(5, isImprintPage)"
+      [src]="portfolioService.getImageSrc(mailIsHovered, images['mail'])"
+      (mouseenter)="mailIsHovered = true"
+      (mouseleave)="mailIsHovered = false"
+      alt="mail"
+    />
+  </div>

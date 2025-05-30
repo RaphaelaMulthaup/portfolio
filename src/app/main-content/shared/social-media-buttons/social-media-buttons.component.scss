@@ -1,0 +1,20 @@
+@import "./../../../../styles.scss";
+
+.socialMediaButtons {
+  @include dFlex($g: 24px);
+  a {
+    @include dFlex();
+  }
+  img {
+    cursor: pointer;
+  }
+  img:first-child {
+    height: 18.17px;
+  }
+  img:nth-child(2) {
+    height: 16px;
+  }
+  img:nth-child(3) {
+    height: 17.78px;
+  }
+}
