@@ -7,6 +7,7 @@
     <div class="aboutMeLeftSide">
       <div>
         <div
+          #overlayMoreAboutMe
           class="overlay moreAboutMe"
           [ngClass]="{
             open:
@@ -49,7 +50,7 @@
             class="jumpingImg"
             (mouseenter)="jumpingImgIsHoverd = true"
             (mouseleave)="jumpingImgIsHoverd = false"
-            (click)="openOverlay()"
+            (click)="openOverlay($event)"
           >
             <img src="assets/img/smiley.png" alt="smiley" />
           </div>

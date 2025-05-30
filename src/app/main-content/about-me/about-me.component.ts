@@ -1,4 +1,10 @@
-import { Component, inject } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  inject,
+  ViewChild,
+} from '@angular/core';
 import { HeaderComponent } from '../shared/header/header.component';
 import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 import { NavBulletsComponent } from '../shared/nav-bullets/nav-bullets.component';
@@ -23,16 +29,47 @@ export class AboutMeComponent {
   jumpingImgIsHoverd: boolean = false;
   /** This variable indicates whether the overlay moreAboutMe was called on a touch screen. */
   overlayMoreAboutMeCalled: boolean = false;
+  /** This variable stores which element was clicked when JumpingImg is clicked. */
+  private lastClickedElement: EventTarget | null = null;
 
-  openOverlay(): void {
+  /**
+   * If it is a touch screen, this function stores which element was clicked and sets the variable overlayMoreAboutMeCalled to true, which opens the overlay.
+   * 
+   * @param event The click event on jumpingImg.
+   */
+  openOverlay(event: MouseEvent): void {
     if (this.portfolioService.touchScreen) {
+      this.lastClickedElement = event.target;
       this.overlayMoreAboutMeCalled = true;
     }
   }
-
+  /**
+   * This function sets the variable overlayMoreAboutMeCalled to false, which closes the overlay.
+   */
   closeOverlay(): void {
-    if (this.portfolioService.touchScreen) {
-      this.overlayMoreAboutMeCalled = false;
+    this.overlayMoreAboutMeCalled = false;
+  }
+  /**
+   * This detector looks for the overlay moreAboutMe.
+   */
+  @ViewChild('overlayMoreAboutMe') overlayElementRef!: ElementRef;
+  /**
+   * This host listener checks whether mouse events have occurred on JumpingImg. If so, it returns. If not, it checks whether the click was on the overlay. If that wasn't the case, closeOverlay() is called.
+   * 
+   * @param event a clickEvent
+   * @returns The return aborts the function.
+   */
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    if (this.lastClickedElement && this.lastClickedElement === event.target) {
+      this.lastClickedElement = null;
+      return;
+    }
+    const clickedInside = this.overlayElementRef?.nativeElement.contains(
+      event.target
+    );
+    if (!clickedInside) {
+      this.closeOverlay();
     }
   }
 }
