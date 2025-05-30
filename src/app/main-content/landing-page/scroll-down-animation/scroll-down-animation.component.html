@@ -1,0 +1,20 @@
+      <div class="scrollDownAnimation">
+        <div class="rotatingDiv">
+          <svg viewBox="0 0 300 300" id="svg-circle">
+            <path
+              id="circle-path"
+              d="M150,22 a128,128 0 1,1 0,256 a128,128 0 1,1 0,-256"
+              fill="none"
+            />
+            <text id="circle-text">
+              <textPath href="#circle-path" startOffset="0">
+                @for (item of [0, 1, 2 ,3]; track $index) {
+                {{ "landingPage.scrollDown" | translate }}
+                }
+              </textPath>
+            </text>
+          </svg>
+          <app-hexagon></app-hexagon>
+        </div>
+        <img src="assets/img/arrowDown.png" alt="arrow down" />
+      </div>
