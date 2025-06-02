@@ -33,14 +33,18 @@ export class AboutMeComponent {
   private lastClickedElement: EventTarget | null = null;
 
   /**
-   * If it is a touch screen, this function stores which element was clicked and sets the variable overlayMoreAboutMeCalled to true, which opens the overlay.
-   * 
+   * If the device is a touchscreen, this function checks whether the overlay is already open and closes it if so. Otherwise, this function stores which element was clicked and sets the variable overlayMoreAboutMeCalled to true, which opens the overlay.
+   *
    * @param event The click event on jumpingImg.
    */
   openOverlay(event: MouseEvent): void {
     if (this.portfolioService.touchScreen) {
-      this.lastClickedElement = event.target;
-      this.overlayMoreAboutMeCalled = true;
+      if (this.overlayMoreAboutMeCalled) {
+        this.closeOverlay();
+      } else {
+        this.lastClickedElement = event.target;
+        this.overlayMoreAboutMeCalled = true;
+      }
     }
   }
   /**
@@ -55,7 +59,7 @@ export class AboutMeComponent {
   @ViewChild('overlayMoreAboutMe') overlayElementRef!: ElementRef;
   /**
    * This host listener checks whether mouse events have occurred on JumpingImg. If so, it returns. If not, it checks whether the click was on the overlay. If that wasn't the case, closeOverlay() is called.
-   * 
+   *
    * @param event a clickEvent
    * @returns The return aborts the function.
    */
