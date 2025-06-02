@@ -4,10 +4,11 @@ import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 import { PortfolioService } from '../../../../portfolio.service';
 import { HexagonComponent } from '../../hexagon/hexagon.component';
 import { Router } from '@angular/router';
+import { SocialMediaButtonsComponent } from "../../social-media-buttons/social-media-buttons.component";
 
 @Component({
   selector: 'app-menu',
-  imports: [TranslatePipe, TranslateDirective, CommonModule, HexagonComponent],
+  imports: [TranslatePipe, TranslateDirective, CommonModule, HexagonComponent, SocialMediaButtonsComponent],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss',
 })

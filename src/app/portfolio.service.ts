@@ -148,10 +148,22 @@ export class PortfolioService {
   getImageSrc(
     hoverState: boolean,
     imageSet:
-      | { normal: string; hover: string }
-      | { [key: string]: { normal: string; hover: string } },
+      | { normal: string; hover: string; touch?: string }
+      | { [key: string]: { normal: string; hover: string; touch?: string } },
     headerClass?: string
   ): string {
+    if (this.touchScreen) {
+    if (
+      headerClass &&
+      typeof imageSet === 'object' &&
+      headerClass in imageSet &&
+      (imageSet as any)[headerClass].touch
+    ) {
+      return (imageSet as any)[headerClass].touch;
+    } else if ((imageSet as any).touch) {
+      return (imageSet as any).touch;
+    }
+  }
     if (
       headerClass &&
       typeof imageSet === 'object' &&

@@ -2,6 +2,10 @@
 
 .socialMediaButtons {
   @include dFlex($g: 24px);
+  @media (max-width: 1024px) {
+    justify-content: flex-start;
+    margin-top: 22.7px;
+  }
   a {
     @include dFlex();
   }

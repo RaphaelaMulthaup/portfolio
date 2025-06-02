@@ -22,20 +22,23 @@ export class SocialMediaButtonsComponent {
   /**
    * The paths to different images.
    */
-  public images: {
-    [key: string]: { normal: string; hover: string };
-  } = {
-    gitHub: {
-      normal: 'assets/img/gitHub.png',
-      hover: 'assets/img/gitHub_hover.png',
-    },
-    linkedin: {
-      normal: 'assets/img/linkedIn.png',
-      hover: 'assets/img/linkedIn_hover.png',
-    },
-    mail: {
-      normal: 'assets/img/mail.png',
-      hover: 'assets/img/mail_hover.png',
-    },
-  };
+public images: {
+  [key: string]: { normal: string; hover: string; touch?: string };
+} = {
+  gitHub: {
+    normal: 'assets/img/gitHub.png',
+    hover: 'assets/img/gitHub_hover.png',
+    touch: 'assets/img/gitHubBlack.png',
+  },
+  linkedin: {
+    normal: 'assets/img/linkedIn.png',
+    hover: 'assets/img/linkedIn_hover.png',
+    touch: 'assets/img/linkedinBlack.png',
+  },
+  mail: {
+    normal: 'assets/img/mail.png',
+    hover: 'assets/img/mail_hover.png',
+    touch: 'assets/img/mailBlack.png',
+  },
+};
 }
