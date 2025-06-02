@@ -34,6 +34,12 @@
   @media (max-width: 1024px) {
     height: 64dvh;
   }
+  @media (max-width: 870px) {
+    height: 56dvh;
+  }
+  @media (max-width: 800px) {
+    height: 50dvh;
+  }
   > div {
     background-color: $black;
     width: 46vw;
@@ -58,7 +64,16 @@
       left: 80%;
       width: 41vw;
     }
-
+    @media (max-width: 870px) {
+      left: 82%;
+      width: 38vw;
+      top: 50%;
+    }
+    @media (max-width: 800px) {
+      left: 75%;
+      width: 38vw;
+      top: 60%;
+    }
     @media (max-width: 1300px) and (min-height: 830px) {
       width: 43vw;
     }
@@ -104,6 +119,15 @@
     top: calc(125% + 400px);
     left: 12%;
   }
+  @media (max-width: 870px) {
+    top: calc(81% + 400px);
+    left: -35%;
+  }
+  @media (max-width: 800px) {
+    top: calc(65% + 400px);
+    left: -41%;
+  }
+
   @media (max-height: 785px) {
     top: calc(75% + 400px);
     left: 5%;
@@ -113,7 +137,7 @@
   }
   > div {
     width: 100%;
-    @include dFlex($jc:space-between);
+    @include dFlex($jc: space-between);
     > img {
       height: 32px;
     }
