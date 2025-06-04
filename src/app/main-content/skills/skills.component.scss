@@ -9,6 +9,11 @@
     @include dFlex($ai: flex-start, $jc: space-between);
     flex-direction: column;
     padding-bottom: 13dvh;
+    @media (max-width: 1024px) {
+      justify-content: flex-start;
+      padding-left: 5vw;
+      padding-bottom: 5vw;
+    }
     @media (max-height: 820px) {
       padding-bottom: 7dvh;
     }
@@ -75,17 +80,30 @@
     @media (max-width: 1251px) {
       width: 79%;
     }
+    @media (max-width: 1024px) {
+      width: 100%;
+      box-sizing: border-box;
+    }
   }
 }
 
 .skillsLowerArea {
   @include dFlex($jc: space-between, $ai: flex-end);
   width: 100%;
+  @media (max-width: 1024px) {
+    flex-direction: column-reverse;
+    flex: 1;
+    align-items: flex-start;
+  }
   > div:first-child {
     position: relative;
     width: 120px;
     aspect-ratio: 1;
     @include dFlex();
+    @media (max-width: 1024px) {
+      margin-bottom: 5vw;
+      margin-left: 5vw;
+    }
     img {
       position: absolute;
       z-index: 10;
@@ -117,6 +135,12 @@
     grid-auto-rows: auto;
     row-gap: 16px;
     column-gap: 40px;
+    @media (max-width: 1024px) {
+      margin-right: 0;
+      margin-top: 50px;
+      width: 100%;
+      justify-content: center;
+    }
     > div {
       @include dFlex($g: 8px, $jc: flex-start);
       flex-direction: column;
@@ -124,20 +148,36 @@
         height: 96px;
         aspect-ratio: 1;
         @include dFlex();
-        &:hover {
-          img {
-            height: 96px;
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            img {
+              height: 96px;
+            }
           }
         }
         img {
           height: 72px;
           transition: height 200ms ease-in;
         }
+        @media (hover: none) {
+          img {
+            animation: pulseHeight 1.5s ease-in-out infinite;
+          }
+        }
       }
       span {
         text-align: center;
       }
     }
+  }
+}
+
+@keyframes pulseHeight {
+  0%, 100% {
+    height: 72px;
+  }
+  50% {
+    height: 64px;
   }
 }
 
