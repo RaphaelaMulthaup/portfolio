@@ -15,17 +15,34 @@
     padding-bottom: 12.22dvh;
     @include dFlex($jc: space-between, $ai: flex-start);
     flex-direction: column;
+    @media (max-width: 1024px) {
+      gap: 32px;
+      padding-left: 7vw;
+      padding-right: 7vw;
+      > div {
+        flex-direction: column;
+      }
+    }
   }
 }
 
 .projectsUpperArea {
   color: $black;
   @include dFlex($jc: flex-start, $g: 5vw);
+
   h2 {
     white-space: nowrap;
   }
   span {
     width: 37vw;
+  }
+  @media (max-width: 1024px) {
+    gap: 0;
+    align-items: flex-start;
+    width: 100%;
+    span {
+      width: auto;
+    }
   }
 }
 
@@ -85,6 +102,18 @@
       }
     }
   }
+  @media (max-width: 1024px) {
+    height: auto;
+    justify-content: flex-start;
+    gap: 32px;
+    > div:first-child {
+      width: 100%;
+      aspect-ratio: 1;
+    }
+    > div:last-child {
+      margin: 0;
+    }
+  }
 }
 
 .projectInformations {
@@ -142,6 +171,9 @@
         height: 20px;
       }
     }
+  }
+  @media (max-width: 1024px) {
+    height: auto;
   }
 }
 
