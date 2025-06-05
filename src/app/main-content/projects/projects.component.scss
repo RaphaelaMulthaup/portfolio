@@ -1,7 +1,16 @@
 @import "./../../../styles.scss";
 
+:host {
+  @media (max-width: 1024px) {
+    height: auto !important;
+  }
+}
+
 #projects {
   background-color: $cream;
+  @media (max-width: 1024px) {
+    height: auto;
+  }
   > div {
     padding-bottom: 12.22dvh;
     @include dFlex($jc: space-between, $ai: flex-start);
