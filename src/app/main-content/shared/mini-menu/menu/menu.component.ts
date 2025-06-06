@@ -57,10 +57,16 @@ export class MenuComponent {
     this.closeImagePath = this.defaultCloseImagePath;
   }
 
+  /**
+   * This function changes the path of close image to a orange version.
+   */
   onPressStart() {
     this.closeImagePath = this.hoverICloseImagePath;
   }
 
+  /**
+   * This function changes the path of close image back to default close image and calls the hideMenu function.
+   */
   onPressEnd() {
     this.closeImagePath = this.defaultCloseImagePath;
     this.hideMenu();

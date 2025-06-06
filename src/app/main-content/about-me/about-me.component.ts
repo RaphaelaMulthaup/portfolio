@@ -47,6 +47,28 @@ export class AboutMeComponent {
       }
     }
   }
+  /** The default close image path. */
+  closeImgDefault = 'assets/img/closeCream.png';
+  /** The touched version of close image path. */
+  closeImgTouched = 'assets/img/close_hover.png';
+  /** The current path of close image. */
+  closeImgPath = this.closeImgDefault;
+
+  /**
+   * This function changes the path of close image to a orange version.
+   */
+  onCloseTouchStart() {
+    this.closeImgPath = this.closeImgTouched;
+  }
+
+  /**
+   * This function changes the path of close image back to default close image and calls the closeOverlay function.
+   */
+  onCloseTouchEnd() {
+    this.closeImgPath = this.closeImgDefault;
+    this.closeOverlay();
+  }
+
   /**
    * This function sets the variable overlayMoreAboutMeCalled to false, which closes the overlay.
    */

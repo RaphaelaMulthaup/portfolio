@@ -19,9 +19,10 @@
               [ngStyle]="{
                 display: !portfolioService.touchScreen ? 'none' : 'block'
               }"
-              src="assets/img/closeCream.png"
+              [src]="closeImgPath"
               alt="close"
-              (click)="closeOverlay()"
+              (touchstart)="onCloseTouchStart()"
+              (touchend)="onCloseTouchEnd()"
             />
           </div>
           <ul>
