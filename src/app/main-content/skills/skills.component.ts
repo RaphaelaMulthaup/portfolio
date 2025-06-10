@@ -12,6 +12,10 @@ import { HexagonComponent } from '../shared/hexagon/hexagon.component';
 import { CommonModule } from '@angular/common';
 import { OverlayController, PortfolioService } from '../../portfolio.service';
 
+/**
+ * The SkillsComponent displays a visual representation of technical skills
+ * with interactive elements and overlay functionality.
+ */
 @Component({
   selector: 'app-skills',
   imports: [
@@ -26,40 +30,73 @@ import { OverlayController, PortfolioService } from '../../portfolio.service';
   styleUrl: './skills.component.scss',
 })
 export class SkillsComponent {
+  /** Injected instance of PortfolioService for shared functionality */
   portfolioService = inject(PortfolioService);
 
+  /** Indicates whether the hat icon is currently being hovered */
+  hatIsHoverd: boolean = false;
+
+  /** Controller instance for managing overlay behavior */
   overlayController: OverlayController;
 
   constructor() {
+    // Initialize overlay controller from portfolio service
     this.overlayController = this.portfolioService.createOverlayController();
   }
 
+  /**
+   * Sets the overlay element reference when view child is available.
+   * 
+   * @param ref The ElementRef of the skills overlay container
+   */
   @ViewChild('overlaySkills') set overlaySkillsRef(ref: ElementRef) {
     this.overlayController.overlayElementRef = ref;
   }
 
+  /**
+   * Opens the skills overlay or toggles its state on touch devices.
+   * 
+   * @param event The mouse event that triggered the action
+   */
   openOverlay(event: MouseEvent) {
     this.overlayController.openOverlay(event);
   }
 
+  /**
+   * Handles touch start event on the overlay close button.
+   */
   onCloseTouchStart() {
     this.overlayController.onCloseTouchStart();
   }
 
+  /**
+   * Handles touch end event on the overlay close button.
+   */
   onCloseTouchEnd() {
     this.overlayController.onCloseTouchEnd();
   }
 
+  /**
+   * Closes the skills overlay explicitly.
+   */
   closeOverlay() {
     this.overlayController.closeOverlay();
   }
 
+  /**
+   * Listens for document clicks to handle overlay closing when clicking outside.
+   * 
+   * @param event The mouse click event
+   */
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) {
     this.overlayController.handleDocumentClick(event);
   }
 
-  /** An array with the names and image paths for the displayed skills. */
+  /** 
+   * Array containing skill definitions with names and image paths.
+   * Ordered and structured for consistent display in hexagon pattern.
+   */
   skillList: { name: string; path: string }[] = [
     {
       name: 'HTML',
@@ -102,81 +139,4 @@ export class SkillsComponent {
       path: 'assets/img/9_materialDesign.png',
     },
   ];
-  /** This variable indicates whether the hat is hovered over. */
-  hatIsHoverd: boolean = false;
-
-  // /** This variable indicates whether the overlay was called on a touch screen. */
-  // overlayCalled: boolean = false;
-  // /** This variable stores which element was clicked when the hat image is clicked. */
-  // private lastClickedElement: EventTarget | null = null;
-
-  // /**
-  //  * If the device is a touchscreen, this function checks whether the overlay is already open and closes it if so. Otherwise, this function stores which element was clicked and sets the variable overlayMoreAboutMeCalled to true, which opens the overlay.
-  //  *
-  //  * @param event The click event on the hat image.
-  //  */
-  // openOverlay(event: MouseEvent): void {
-  //   if (this.portfolioService.touchScreen) {
-  //     if (this.overlayCalled) {
-  //       this.closeOverlay();
-  //     } else {
-  //       this.lastClickedElement = event.target;
-  //       this.overlayCalled = true;
-  //     }
-  //   }
-  // }
-
-  // /** The default close image path. */
-  // closeImgDefault = 'assets/img/closeCream.png';
-  // /** The touched version of close image path. */
-  // closeImgTouched = 'assets/img/close_hover.png';
-  // /** The current path of close image. */
-  // closeImgPath = this.closeImgDefault;
-
-  // /**
-  //  * This function changes the path of close image to a orange version.
-  //  */
-  // onCloseTouchStart() {
-  //   this.closeImgPath = this.closeImgTouched;
-  // }
-
-  // /**
-  //  * This function changes the path of close image back to default close image and calls the closeOverlay function.
-  //  */
-  // onCloseTouchEnd() {
-  //   this.closeImgPath = this.closeImgDefault;
-  //   this.closeOverlay();
-  // }
-
-  // /**
-  //  * This function sets the variable overlayCalled to false, which closes the overlay.
-  //  */
-  // closeOverlay(): void {
-  //   this.overlayCalled = false;
-  // }
-
-  /**
-   * This detector looks for the overlay.
-   */
-  // @ViewChild('overlaySkills') overlayElementRef!: ElementRef;
-
-  // /**
-  //  * This host listener checks whether mouse events have occurred on the hat. If so, it returns. If not, it checks whether the click was on the overlay. If that wasn't the case, closeOverlay() is called.
-  //  *
-  //  * @param event a clickEvent
-  //  * @returns The return aborts the function.
-  //  */
-  // @HostListener('document:click', ['$event'])
-  // onDocumentClick(event: MouseEvent) {
-  //   if (this.lastClickedElement && this.lastClickedElement === event.target) {
-  //     this.lastClickedElement = null;
-  //     return;
-  //   }
-  //   const clickedInside = this.overlayElementRef?.nativeElement.contains(
-  //     event.target
-  //   );
-  //   if (!clickedInside) {
-  //     this.closeOverlay();
-  //   }
-  // }
 }

@@ -194,22 +194,44 @@ export class PortfolioService {
 
 
 /**
- * Helper class for Overlay-Handling
+ * Helper class for managing overlay states and behavior.
  */
 export class OverlayController {
+  /** Whether the overlay is currently active */
   overlayCalled = false;
+  
+  /** The last clicked element that triggered the overlay */
   lastClickedElement: EventTarget | null = null;
+  
+  /** Default close button image path */
   closeImgDefault = 'assets/img/closeCream.png';
+  
+  /** Close button image path when touched */
   closeImgTouched = 'assets/img/close_hover.png';
+  
+  /** Current close button image path */
   closeImgPath = this.closeImgDefault;
+  
+  /** Whether the device is a touchscreen */
   touchScreen: boolean;
 
+  /** Reference to the overlay element */
   overlayElementRef?: ElementRef;
 
+  /**
+   * Creates an OverlayController instance.
+   * 
+   * @param touchScreen Whether the device is a touchscreen
+   */
   constructor(touchScreen: boolean) {
     this.touchScreen = touchScreen;
   }
 
+  /**
+   * Opens the overlay or closes it if already open (touchscreen behavior).
+   * 
+   * @param event The mouse event that triggered the action
+   */
   openOverlay(event: MouseEvent): void {
     if (this.touchScreen) {
       if (this.overlayCalled) {
@@ -221,19 +243,33 @@ export class OverlayController {
     }
   }
 
+  /**
+   * Handles touch start event on close button.
+   */
   onCloseTouchStart() {
     this.closeImgPath = this.closeImgTouched;
   }
 
+  /**
+   * Handles touch end event on close button.
+   */
   onCloseTouchEnd() {
     this.closeImgPath = this.closeImgDefault;
     this.closeOverlay();
   }
 
+  /**
+   * Closes the overlay.
+   */
   closeOverlay(): void {
     this.overlayCalled = false;
   }
 
+  /**
+   * Handles document clicks to close overlay when clicking outside.
+   * 
+   * @param event The click event
+   */
   handleDocumentClick(event: MouseEvent) {
     if (this.lastClickedElement && this.lastClickedElement === event.target) {
       this.lastClickedElement = null;
