@@ -1,8 +1,17 @@
 @import "./../../../styles.scss";
 
+:host {
+  @media (max-width: 1024px) {
+    height: auto !important;
+  }
+}
+
 #references {
   background-color: $lightBlue;
   color: $cream;
+    @media (max-width: 1024px) {
+    height: auto;
+  }
   > div:last-child {
     @include dFlex($jc: space-between, $ai: flex-start, $g: 5.33dvh);
     flex-direction: column;
