@@ -4,8 +4,9 @@
   <div class="contentMainComponent">
     <div class="skillsUpperArea">
       <h2>{{ "skills.h2" | translate }}</h2>
-      <div>      <div>{{ "skills.text" | translate }}</div>
-</div>
+      <div>
+        <div>{{ "skills.text" | translate }}</div>
+      </div>
     </div>
     <div class="skillsLowerArea">
       <div>
@@ -14,6 +15,7 @@
           alt="hat"
           (mouseenter)="hatIsHoverd = true"
           (mouseleave)="hatIsHoverd = false"
+          (click)="openOverlay($event)"
         />
         <app-hexagon class="hexagon"></app-hexagon>
       </div>
@@ -28,7 +30,25 @@
         }
       </div>
     </div>
-    <div class="overlay" [ngClass]="{'open': hatIsHoverd}">
+    <div
+      #overlaySkills
+      class="overlay"
+      [ngClass]="{
+        open: (hatIsHoverd && !portfolioService.touchScreen) || overlayCalled
+      }"
+    >
+      <div
+        [ngStyle]="{
+          display: !portfolioService.touchScreen ? 'none' : 'flex'
+        }"
+      >
+        <img
+          [src]="closeImgPath"
+          alt="close"
+          (touchstart)="onCloseTouchStart()"
+          (touchend)="onCloseTouchEnd()"
+        />
+      </div>
       <h4>{{ "skills.h4" | translate }}</h4>
       <span>{{ "skills.feelFree" | translate }}</span>
       <div>

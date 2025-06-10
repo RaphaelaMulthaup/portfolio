@@ -79,6 +79,7 @@ export class AboutMeComponent {
    * This detector looks for the overlay moreAboutMe.
    */
   @ViewChild('overlayMoreAboutMe') overlayElementRef!: ElementRef;
+  
   /**
    * This host listener checks whether mouse events have occurred on JumpingImg. If so, it returns. If not, it checks whether the click was on the overlay. If that wasn't the case, closeOverlay() is called.
    *
