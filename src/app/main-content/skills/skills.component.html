@@ -34,7 +34,7 @@
       #overlaySkills
       class="overlay"
       [ngClass]="{
-        open: (hatIsHoverd && !portfolioService.touchScreen) || overlayCalled
+        open: (hatIsHoverd && !portfolioService.touchScreen) || overlayController.overlayCalled
       }"
     >
       <div
@@ -43,7 +43,7 @@
         }"
       >
         <img
-          [src]="closeImgPath"
+          [src]="overlayController.closeImgPath"
           alt="close"
           (touchstart)="onCloseTouchStart()"
           (touchend)="onCloseTouchEnd()"

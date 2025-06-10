@@ -10,7 +10,7 @@
           [ngClass]="{
             open:
               (jumpingImgIsHoverd && !portfolioService.touchScreen) ||
-              overlayMoreAboutMeCalled
+              overlayController.overlayCalled
           }"
         >
           <div>
@@ -19,7 +19,7 @@
               [ngStyle]="{
                 display: !portfolioService.touchScreen ? 'none' : 'block'
               }"
-              [src]="closeImgPath"
+              [src]="overlayController.closeImgPath"
               alt="close"
               (touchstart)="onCloseTouchStart()"
               (touchend)="onCloseTouchEnd()"

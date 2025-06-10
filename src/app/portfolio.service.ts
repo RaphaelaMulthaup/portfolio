@@ -42,6 +42,15 @@ export class PortfolioService {
       });
   }
 
+  /**
+   * OverlayController encapsulates the state & methods for an overlay.
+   * 
+   * @returns the OverlayController class which contains the logic for overlays
+   */
+  createOverlayController() {
+    return new OverlayController(this.touchScreen);
+  }
+
   /** a subject to control the menu display state */
   private menuDisplayedSubject = new Subject<boolean>();
   /** here the subject is converted into an observable */
@@ -180,5 +189,61 @@ export class PortfolioService {
     return hoverState
       ? (imageSet as { normal: string; hover: string }).hover
       : (imageSet as { normal: string; hover: string }).normal;
+  }
+}
+
+
+/**
+ * Helper class for Overlay-Handling
+ */
+export class OverlayController {
+  overlayCalled = false;
+  lastClickedElement: EventTarget | null = null;
+  closeImgDefault = 'assets/img/closeCream.png';
+  closeImgTouched = 'assets/img/close_hover.png';
+  closeImgPath = this.closeImgDefault;
+  touchScreen: boolean;
+
+  overlayElementRef?: ElementRef;
+
+  constructor(touchScreen: boolean) {
+    this.touchScreen = touchScreen;
+  }
+
+  openOverlay(event: MouseEvent): void {
+    if (this.touchScreen) {
+      if (this.overlayCalled) {
+        this.closeOverlay();
+      } else {
+        this.lastClickedElement = event.target;
+        this.overlayCalled = true;
+      }
+    }
+  }
+
+  onCloseTouchStart() {
+    this.closeImgPath = this.closeImgTouched;
+  }
+
+  onCloseTouchEnd() {
+    this.closeImgPath = this.closeImgDefault;
+    this.closeOverlay();
+  }
+
+  closeOverlay(): void {
+    this.overlayCalled = false;
+  }
+
+  handleDocumentClick(event: MouseEvent) {
+    if (this.lastClickedElement && this.lastClickedElement === event.target) {
+      this.lastClickedElement = null;
+      return;
+    }
+    if (
+      this.overlayElementRef &&
+      !this.overlayElementRef.nativeElement.contains(event.target)
+    ) {
+      this.closeOverlay();
+    }
   }
 }
