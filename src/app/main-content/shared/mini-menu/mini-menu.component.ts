@@ -5,15 +5,15 @@ import {
   HostListener,
   ElementRef,
 } from '@angular/core';
-import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 import { PortfolioService } from '../../../portfolio.service';
 import { MenuComponent } from './menu/menu.component';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { TouchImageDirective } from '../directives/touch-image.directive';
 
 @Component({
   selector: 'app-mini-menu',
-  imports: [TranslatePipe, TranslateDirective, MenuComponent, CommonModule],
+  imports: [MenuComponent, CommonModule, TouchImageDirective],
   templateUrl: './mini-menu.component.html',
   styleUrl: './mini-menu.component.scss',
 })
@@ -21,10 +21,6 @@ export class MiniMenuComponent {
   portfolioService = inject(PortfolioService);
   /** The name of a class that specifies the color of the elements in the header. */
   @Input() headerClass: string = '';
-  /** A boolean that indicates whether the language change button is hovered. */
-  languageIsHovered: boolean = false;
-  /** A boolean that indicates whether the burger menu is hovered. */
-  burgermenuIsHovered: boolean = false;
   /** The variable specifies which image set is used for the language button. */
   currentLanguageButtonImgSet: 'imagesEN' | 'imagesDE' = 'imagesEN';
   /** This variable indicates whether the menu is currently shown. */
@@ -88,6 +84,18 @@ export class MiniMenuComponent {
     this.menuDisplayed = false;
   }
 
+  /** A boolean that indicates whether the language change button is hovered. */
+  languageIsHovered: boolean = false;
+
+  /**
+   * Sets the state of languageIsHovered depending on whether the image is touched or not.
+   *
+   * @param state  - A boolean indicating whether the language image is touched (true) or not (false).
+   */
+  setLanguageHovered = (state: boolean) => {
+    this.languageIsHovered = state;
+  };
+
   /** The paths to different colored language change to EN buttons. */
   public imagesEN: { [key: string]: { normal: string; hover: string } } = {
     black: {
@@ -110,6 +118,18 @@ export class MiniMenuComponent {
       normal: 'assets/img/DE_cream.png',
       hover: 'assets/img/DE_cream_hover.png',
     },
+  };
+
+  /** A boolean that indicates whether the burger menu is hovered. */
+  burgermenuIsHovered: boolean = false;
+
+  /**
+   * Sets the state of burgermenuIsHovered depending on whether the image is touched or not.
+   *
+   * @param state  - A boolean indicating whether the burger menu is touched (true) or not (false).
+   */
+  setBurgerMenuHovered = (state: boolean) => {
+    this.burgermenuIsHovered = state;
   };
 
   /**

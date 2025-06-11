@@ -2,18 +2,30 @@
   <img
     (click)="changeLanguage()"
     class="languageButton"
-    [src]="portfolioService.getImageSrc(languageIsHovered, this[currentLanguageButtonImgSet][headerClass])"
+    [src]="
+      portfolioService.getImageSrc(
+        languageIsHovered,
+        this[currentLanguageButtonImgSet][headerClass]
+      )
+    "
     alt="language"
     (mouseenter)="languageIsHovered = true"
     (mouseleave)="languageIsHovered = false"
+    [appTouchImage]="setLanguageHovered"
   />
   <img
     (click)="displayMenu()"
     class="burgerMenu"
-    [src]="portfolioService.getImageSrc(burgermenuIsHovered, imagesBurgermenu[headerClass])"
+    [src]="
+      portfolioService.getImageSrc(
+        burgermenuIsHovered,
+        imagesBurgermenu[headerClass]
+      )
+    "
     alt="menu"
     (mouseenter)="burgermenuIsHovered = true"
     (mouseleave)="burgermenuIsHovered = false"
+    [appTouchImage]="setBurgerMenuHovered"
   />
   <app-menu
     (menuClosed)="hideMenu()"

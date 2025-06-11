@@ -53,6 +53,7 @@
           </div>
           <div>
             <button
+              [appTouchImage]="setbtnGitHubHovered"
               appTouchHover
               (click)="openGitHub()"
               (mouseenter)="btnGitHubIsHoverd = true"
@@ -69,14 +70,15 @@
               />
             </button>
             <button
+              [appTouchImage]="setbtnLiveTestHovered"
               appTouchHover
-              (mouseenter)="btnLiveTsetIsHoverd = true"
-              (mouseleave)="btnLiveTsetIsHoverd = false"
+              (mouseenter)="btnLiveTestIsHoverd = true"
+              (mouseleave)="btnLiveTestIsHoverd = false"
             >
               <span>{{ "projects.liveTest" | translate }}</span>
               <img
                 [src]="
-                  btnLiveTsetIsHoverd
+                  btnLiveTestIsHoverd
                     ? 'assets/img/upwardArrow.png'
                     : 'assets/img/arrow.png'
                 "

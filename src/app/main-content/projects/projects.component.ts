@@ -1,10 +1,11 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { HeaderComponent } from '../shared/header/header.component';
-import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { NavBulletsComponent } from '../shared/nav-bullets/nav-bullets.component';
 import { HexagonComponent } from '../shared/hexagon/hexagon.component';
 import { CommonModule } from '@angular/common';
 import { TouchHoverDirective } from '../shared/directives/touch-hover.directive';
+import { TouchImageDirective } from '../shared/directives/touch-image.directive';
 interface ProjectData {
   img: string;
   bGroundColor: string;
@@ -22,11 +23,11 @@ interface ProjectData {
   imports: [
     HeaderComponent,
     TranslatePipe,
-    TranslateDirective,
     NavBulletsComponent,
     HexagonComponent,
     CommonModule,
-    TouchHoverDirective
+    TouchHoverDirective,
+    TouchImageDirective
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
@@ -90,10 +91,27 @@ export class ProjectsComponent {
   nextJumpingImg = this.currentJumpingImg;
   /** This variable indicates whether the jumping image is hovered over. */
   jumpingImgIsHoverd: boolean = false;
+
   /** This variable indicates whether the gitHub button is hovered over. */
   btnGitHubIsHoverd: boolean = false;
+  /**
+   * Sets the state of btnGitHubIsHoverd depending on whether the button is touched or not.
+   *
+   * @param state  - A boolean indicating whether the gitHub button is touched (true) or not (false).
+   */
+  setbtnGitHubHovered = (state: boolean) => {
+    this.btnGitHubIsHoverd = state;
+  };
   /** This variable indicates whether the live test button is hovered over. */
-  btnLiveTsetIsHoverd: boolean = false;
+  btnLiveTestIsHoverd: boolean = false;
+  /**
+   * Sets the state of btnLiveTestIsHoverd depending on whether the button is touched or not.
+   *
+   * @param state  - A boolean indicating whether the live test button is touched (true) or not (false).
+   */
+  setbtnLiveTestHovered = (state: boolean) => {
+    this.btnLiveTestIsHoverd = state;
+  };
 
   /**
    * This function cycles through the project images and provides a smooth animation. 'nextImg' receives the path of the next image. After that, 'currentImg' is faded out. Once this is done, the path of 'currentImg' is also updated, and its opacity is increased back to one. In between, the DOM is updated using change detection.
@@ -108,7 +126,8 @@ export class ProjectsComponent {
     this.cdr.detectChanges();
     this.isFadingOut = true;
     this.indexDisplayedProject = nextIndex;
-    this.dataDisplayedProject = this.dataProjects[this.projects[this.indexDisplayedProject]];
+    this.dataDisplayedProject =
+      this.dataProjects[this.projects[this.indexDisplayedProject]];
     this.cdr.detectChanges();
 
     setTimeout(() => {
