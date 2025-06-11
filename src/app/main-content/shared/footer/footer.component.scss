@@ -14,7 +14,8 @@ footer {
       text-decoration: none;
       color: $cream;
       line-height: 120%;
-      &:hover {
+      &:hover,
+      &.hoverEffect {
         color: $darkOrange;
         cursor: pointer;
       }

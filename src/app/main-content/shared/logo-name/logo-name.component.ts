@@ -1,11 +1,11 @@
 import { Component, inject, Input } from '@angular/core';
 import { PortfolioService } from '../../../portfolio.service';
-import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
+import { TouchHoverDirective } from '../directives/touch-hover.directive';
 
 @Component({
   selector: 'app-logo-name',
-  imports: [TranslatePipe, TranslateDirective, CommonModule],
+  imports: [CommonModule, TouchHoverDirective],
   templateUrl: './logo-name.component.html',
   styleUrl: './logo-name.component.scss'
 })

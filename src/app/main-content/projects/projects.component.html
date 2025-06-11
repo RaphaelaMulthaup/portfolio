@@ -53,6 +53,7 @@
           </div>
           <div>
             <button
+              appTouchHover
               (click)="openGitHub()"
               (mouseenter)="btnGitHubIsHoverd = true"
               (mouseleave)="btnGitHubIsHoverd = false"
@@ -68,6 +69,7 @@
               />
             </button>
             <button
+              appTouchHover
               (mouseenter)="btnLiveTsetIsHoverd = true"
               (mouseleave)="btnLiveTsetIsHoverd = false"
             >
@@ -84,10 +86,10 @@
           </div>
         </div>
         <div>
-          <span (click)="changeProject('previous')">{{
+          <span appTouchHover (click)="changeProject('previous')">{{
             "projects.previous" | translate
           }}</span>
-          <span (click)="changeProject('next')">{{
+          <span appTouchHover (click)="changeProject('next')">{{
             "projects.next" | translate
           }}</span>
         </div>

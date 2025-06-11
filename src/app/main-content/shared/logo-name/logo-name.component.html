@@ -1,6 +1,10 @@
 <div
+  appTouchHover
   class="logoName"
-  [ngClass]="{ 'logoNameHover': !isLandingPage, 'logoNameOnImprint': isImprintPage }"
+  [ngClass]="{
+    logoNameHover: !isLandingPage,
+    logoNameOnImprint: isImprintPage
+  }"
   (click)="!isLandingPage && portfolioService.scrollToSection(0)"
 >
   <svg

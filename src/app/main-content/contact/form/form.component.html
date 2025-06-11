@@ -1,4 +1,3 @@
-<!-- <div class="container"> -->
 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
   <div>
     <div class="formSection">
@@ -47,7 +46,6 @@
       />
     </div>
   </div>
-
   <div class="formSection">
     <label for="message">
       <h4>
@@ -71,7 +69,6 @@
     ></textarea>
     <div class="borderDummy"></div>
   </div>
-
   <div>
     <div>
       <label class="custom-checkbox">
@@ -102,7 +99,6 @@
       >{{ "contact.form.privacyPolicyValid" | translate }}</span
     >
   </div>
-
   <button
     type="submit"
     [ngClass]="{ greyedOut: contactForm.invalid }"

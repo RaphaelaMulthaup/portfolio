@@ -2,10 +2,15 @@
   class="referenceDiv"
   (mouseenter)="referenceDivIsHoverd = true"
   (mouseleave)="referenceDivIsHoverd = false"
+  (touchstart)="referenceDivIsHoverd = true"
+  (touchend)="setHoveredFalseDelayed()"
 >
   <div>
     <h4>{{ dataReferences[referenceProvider].name }}</h4>
-    <app-hexagon class="hexagonOrange" [ngClass]="{'hoverd': referenceDivIsHoverd}"></app-hexagon>
+    <app-hexagon
+      class="hexagonOrange"
+      [ngClass]="{ hoverd: referenceDivIsHoverd }"
+    ></app-hexagon>
   </div>
   <span>{{
     "references." + dataReferences[referenceProvider].text | translate
@@ -15,5 +20,10 @@
   }}</span>
 </div>
 <div>
-  <a href="{{ dataReferences[referenceProvider].linkedIn }}" target="_blank">{{ "references.linkedIn" | translate }}</a>
+  <a
+    appTouchHover
+    href="{{ dataReferences[referenceProvider].linkedIn }}"
+    target="_blank"
+    >{{ "references.linkedIn" | translate }}</a
+  >
 </div>

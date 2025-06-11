@@ -31,7 +31,8 @@
     > div {
       @include dFlex($jc: flex-start);
       transition: gap 100ms ease-in, color 100ms ease-in;
-      &:hover {
+      &:hover,
+      &.hoverEffect {
         cursor: pointer;
         color: $lightBlue;
         gap: 6px;

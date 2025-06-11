@@ -66,7 +66,8 @@
       &:hover {
         cursor: pointer;
       }
-      &:hover path {
+      &:hover path,
+      &.hoverEffect path {
         fill: $darkOrange;
       }
     }
@@ -80,7 +81,8 @@
       background-color: $black;
       transition: background-color 100ms ease-in;
     }
-    &:hover::after {
+    &:hover::after,
+    &.hoverEffect::after {
       background-color: $darkOrange;
     }
   }

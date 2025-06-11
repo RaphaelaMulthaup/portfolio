@@ -10,6 +10,7 @@ import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 import { NavBulletsComponent } from '../shared/nav-bullets/nav-bullets.component';
 import { OverlayController, PortfolioService } from '../../portfolio.service';
 import { CommonModule } from '@angular/common';
+import { TouchHoverDirective } from '../shared/directives/touch-hover.directive';
 
 /**
  * The AboutMeComponent displays personal information and an interactive "About Me" section
@@ -23,6 +24,7 @@ import { CommonModule } from '@angular/common';
     TranslateDirective,
     NavBulletsComponent,
     CommonModule,
+    TouchHoverDirective
   ],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss',

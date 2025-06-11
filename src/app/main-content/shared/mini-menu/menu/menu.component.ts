@@ -5,6 +5,7 @@ import { PortfolioService } from '../../../../portfolio.service';
 import { HexagonComponent } from '../../hexagon/hexagon.component';
 import { Router } from '@angular/router';
 import { SocialMediaButtonsComponent } from '../../social-media-buttons/social-media-buttons.component';
+import { TouchHoverDirective } from '../../directives/touch-hover.directive';
 
 @Component({
   selector: 'app-menu',
@@ -14,6 +15,7 @@ import { SocialMediaButtonsComponent } from '../../social-media-buttons/social-m
     CommonModule,
     HexagonComponent,
     SocialMediaButtonsComponent,
+    TouchHoverDirective
   ],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss',

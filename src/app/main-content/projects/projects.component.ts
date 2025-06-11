@@ -4,6 +4,7 @@ import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 import { NavBulletsComponent } from '../shared/nav-bullets/nav-bullets.component';
 import { HexagonComponent } from '../shared/hexagon/hexagon.component';
 import { CommonModule } from '@angular/common';
+import { TouchHoverDirective } from '../shared/directives/touch-hover.directive';
 interface ProjectData {
   img: string;
   bGroundColor: string;
@@ -25,6 +26,7 @@ interface ProjectData {
     NavBulletsComponent,
     HexagonComponent,
     CommonModule,
+    TouchHoverDirective
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',

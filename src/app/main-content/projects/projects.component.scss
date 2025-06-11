@@ -95,7 +95,8 @@
       color: $black;
       span {
         transition: color 100ms ease-in;
-        &:hover {
+        &:hover,
+        &.hoverEffect {
           cursor: pointer;
           color: $darkOrange;
         }

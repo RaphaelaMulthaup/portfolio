@@ -16,7 +16,8 @@
 
 .logoNameOnImprint {
   color: $cream;
-  &:hover {
+  &:hover,
+  &.hoverEffect {
     color: $darkOrange;
     cursor: pointer;
   }

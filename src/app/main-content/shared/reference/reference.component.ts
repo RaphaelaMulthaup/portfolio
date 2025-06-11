@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { HexagonComponent } from '../hexagon/hexagon.component';
 import { CommonModule } from '@angular/common';
+import { TouchHoverDirective } from '../directives/touch-hover.directive';
 interface ReferenceData {
   name: string;
   text: string;
@@ -11,7 +12,7 @@ interface ReferenceData {
 
 @Component({
   selector: 'app-reference',
-  imports: [TranslatePipe, HexagonComponent, CommonModule],
+  imports: [TranslatePipe, HexagonComponent, CommonModule, TouchHoverDirective],
   templateUrl: './reference.component.html',
   styleUrl: './reference.component.scss',
 })
@@ -40,6 +41,16 @@ export class ReferenceComponent {
       linkedIn: 'string',
     },
   };
+
   /** This variable indicates whether the referenceDiv is hovered. */
   referenceDivIsHoverd: boolean = false;
+
+  /**
+   * Sets `referenceDivIsHoverd` to false after a short delay.
+   */
+  setHoveredFalseDelayed() {
+    setTimeout(() => {
+      this.referenceDivIsHoverd = false;
+    }, 200);
+  }
 }

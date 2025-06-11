@@ -6,6 +6,7 @@ import { PortfolioService } from '../../portfolio.service';
 import { HexagonComponent } from '../shared/hexagon/hexagon.component';
 import { MainHeaderComponent } from '../shared/main-header/main-header.component';
 import { ScrollDownAnimationComponent } from './scroll-down-animation/scroll-down-animation.component';
+import { TouchHoverDirective } from '../shared/directives/touch-hover.directive';
 
 @Component({
   selector: 'app-landing-page',
@@ -16,7 +17,8 @@ import { ScrollDownAnimationComponent } from './scroll-down-animation/scroll-dow
     NavBulletsComponent,
     HexagonComponent,
     MainHeaderComponent,
-    ScrollDownAnimationComponent
+    ScrollDownAnimationComponent,
+    TouchHoverDirective
   ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
