@@ -3,7 +3,7 @@ import {
   ElementRef,
   HostListener,
   Input,
-  Renderer2,
+  // Renderer2,
   inject,
 } from '@angular/core';
 import { PortfolioService } from '../../../portfolio.service';
