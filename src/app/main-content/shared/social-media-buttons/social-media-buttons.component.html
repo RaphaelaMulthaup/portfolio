@@ -5,7 +5,7 @@
       (mouseenter)="gitHubIsHovered = true"
       (mouseleave)="gitHubIsHovered = false"
       alt="gitHub"
-      [appTouchImage]="setGitHubHovered"
+      [appTouchImage]="getHoverHandler('gitHub')"
     />
   </a>
   <a
@@ -19,7 +19,7 @@
       (mouseenter)="linkedinIsHovered = true"
       (mouseleave)="linkedinIsHovered = false"
       alt="linkedin"
-      [appTouchImage]="setLinkedInHovered"
+      [appTouchImage]="getHoverHandler('linkedin')"
     />
   </a>
   <img
@@ -28,6 +28,6 @@
     (mouseenter)="mailIsHovered = true"
     (mouseleave)="mailIsHovered = false"
     alt="mail"
-    [appTouchImage]="setMailHovered"
+      [appTouchImage]="getHoverHandler('mail')"
   />
 </div>

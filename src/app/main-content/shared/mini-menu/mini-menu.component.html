@@ -11,7 +11,7 @@
     alt="language"
     (mouseenter)="languageIsHovered = true"
     (mouseleave)="languageIsHovered = false"
-    [appTouchImage]="setLanguageHovered"
+    [appTouchImage]="getHoverHandler('language')"
   />
   <img
     (click)="displayMenu()"
@@ -25,7 +25,7 @@
     alt="menu"
     (mouseenter)="burgermenuIsHovered = true"
     (mouseleave)="burgermenuIsHovered = false"
-    [appTouchImage]="setBurgerMenuHovered"
+    [appTouchImage]="getHoverHandler('burgermenu')"
   />
   <app-menu
     (menuClosed)="hideMenu()"

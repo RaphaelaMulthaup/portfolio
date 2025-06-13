@@ -16,36 +16,44 @@ export class SocialMediaButtonsComponent {
   /** A boolean that indicates whether the gitHub button is hovered. */
   gitHubIsHovered: boolean = false;
 
-  /**
-   * Sets the state of gitHubIsHovered depending on whether the image is touched or not.
-   *
-   * @param state  - A boolean indicating whether the gitHub image is touched (true) or not (false).
-   */
-  setGitHubHovered = (state: boolean) => {
-    this.gitHubIsHovered = state;
-  };
+  // /**
+  //  * Sets the state of gitHubIsHovered depending on whether the image is touched or not.
+  //  *
+  //  * @param state  - A boolean indicating whether the gitHub image is touched (true) or not (false).
+  //  */
+  // setGitHubHovered = (state: boolean) => {
+  //   this.gitHubIsHovered = state;
+  // };
 
   /** A boolean that indicates whether the linkedin button is hovered. */
   linkedinIsHovered: boolean = false;
-  /**
-   * Sets the state of linkedinIsHovered depending on whether the image is touched or not.
-   *
-   * @param state  - A boolean indicating whether the linkedIn image is touched (true) or not (false).
-   */
-  setLinkedInHovered = (state: boolean) => {
-    this.linkedinIsHovered = state;
-  };
+  // /**
+  //  * Sets the state of linkedinIsHovered depending on whether the image is touched or not.
+  //  *
+  //  * @param state  - A boolean indicating whether the linkedIn image is touched (true) or not (false).
+  //  */
+  // setLinkedInHovered = (state: boolean) => {
+  //   this.linkedinIsHovered = state;
+  // };
 
   /** A boolean that indicates whether the mail button is hovered. */
   mailIsHovered: boolean = false;
-  /**
-   * Sets the state of mailIsHovered depending on whether the image is touched or not.
-   *
-   * @param state  - A boolean indicating whether the mail image is touched (true) or not (false).
-   */
-  setMailHovered = (state: boolean) => {
-    this.mailIsHovered = state;
-  };
+  // /**
+  //  * Sets the state of mailIsHovered depending on whether the image is touched or not.
+  //  *
+  //  * @param state  - A boolean indicating whether the mail image is touched (true) or not (false).
+  //  */
+  // setMailHovered = (state: boolean) => {
+  //   this.mailIsHovered = state;
+  // };
+
+  getHoverHandler(imageName: string): (state: boolean) => void {
+    return (state: boolean) => this.setHoverState(imageName, state);
+  }
+
+  setHoverState(imageName: string, state: boolean) {
+    (this as any)[imageName + 'IsHovered'] = state;
+  }
 
   /**
    * The paths to different images.

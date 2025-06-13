@@ -87,14 +87,25 @@ export class MiniMenuComponent {
   /** A boolean that indicates whether the language change button is hovered. */
   languageIsHovered: boolean = false;
 
-  /**
-   * Sets the state of languageIsHovered depending on whether the image is touched or not.
-   *
-   * @param state  - A boolean indicating whether the language image is touched (true) or not (false).
-   */
-  setLanguageHovered = (state: boolean) => {
-    this.languageIsHovered = state;
-  };
+  /** A boolean that indicates whether the burger menu is hovered. */
+  burgermenuIsHovered: boolean = false;
+
+  getHoverHandler(imageName: string): (state: boolean) => void {
+    return (state: boolean) => this.setHoverState(imageName, state);
+  }
+
+  setHoverState(imageName: string, state: boolean) {
+    (this as any)[imageName + 'IsHovered'] = state;
+  }
+
+  // /**
+  //  * Sets the state of languageIsHovered depending on whether the image is touched or not.
+  //  *
+  //  * @param state  - A boolean indicating whether the language image is touched (true) or not (false).
+  //  */
+  // setLanguageHovered = (state: boolean) => {
+  //   this.languageIsHovered = state;
+  // };
 
   /** The paths to different colored language change to EN buttons. */
   public imagesEN: { [key: string]: { normal: string; hover: string } } = {
@@ -120,17 +131,14 @@ export class MiniMenuComponent {
     },
   };
 
-  /** A boolean that indicates whether the burger menu is hovered. */
-  burgermenuIsHovered: boolean = false;
-
-  /**
-   * Sets the state of burgermenuIsHovered depending on whether the image is touched or not.
-   *
-   * @param state  - A boolean indicating whether the burger menu is touched (true) or not (false).
-   */
-  setBurgerMenuHovered = (state: boolean) => {
-    this.burgermenuIsHovered = state;
-  };
+  // /**
+  //  * Sets the state of burgermenuIsHovered depending on whether the image is touched or not.
+  //  *
+  //  * @param state  - A boolean indicating whether the burger menu is touched (true) or not (false).
+  //  */
+  // setBurgerMenuHovered = (state: boolean) => {
+  //   this.burgermenuIsHovered = state;
+  // };
 
   /**
    * The paths to different colored burger menu images.
