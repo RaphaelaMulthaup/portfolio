@@ -34,13 +34,13 @@
                   <img
                     [src]="currentJumpingImg"
                     [class.fade-out]="isFadingOut"
-                    (mouseenter)="jumpingImgIsHoverd = true"
-                    (mouseleave)="jumpingImgIsHoverd = false"
+                    (mouseenter)="jumpingImgIsHovered = true"
+                    (mouseleave)="jumpingImgIsHovered = false"
                     alt="informations about development"
                   />
                 </div>
               </div>
-              <div class="overlay" [ngClass]="{ open: jumpingImgIsHoverd }">
+              <div class="overlay" [ngClass]="{ open: jumpingImgIsHovered }">
                 <span>{{
                   "projects." + dataDisplayedProject.development | translate
                 }}</span>
@@ -56,13 +56,13 @@
               [appTouchImage]="setbtnGitHubHovered"
               appTouchHover
               (click)="openGitHub()"
-              (mouseenter)="btnGitHubIsHoverd = true"
-              (mouseleave)="btnGitHubIsHoverd = false"
+              (mouseenter)="btnGitHubIsHovered = true"
+              (mouseleave)="btnGitHubIsHovered = false"
             >
               <span>GitHub</span>
               <img
                 [src]="
-                  btnGitHubIsHoverd
+                  btnGitHubIsHovered
                     ? 'assets/img/upwardArrow.png'
                     : 'assets/img/arrow.png'
                 "
@@ -72,13 +72,13 @@
             <button
               [appTouchImage]="setbtnLiveTestHovered"
               appTouchHover
-              (mouseenter)="btnLiveTestIsHoverd = true"
-              (mouseleave)="btnLiveTestIsHoverd = false"
+              (mouseenter)="btnLiveTestIsHovered = true"
+              (mouseleave)="btnLiveTestIsHovered = false"
             >
               <span>{{ "projects.liveTest" | translate }}</span>
               <img
                 [src]="
-                  btnLiveTestIsHoverd
+                  btnLiveTestIsHovered
                     ? 'assets/img/upwardArrow.png'
                     : 'assets/img/arrow.png'
                 "

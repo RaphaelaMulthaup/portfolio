@@ -9,7 +9,7 @@
           class="overlay moreAboutMe"
           [ngClass]="{
             open:
-              (jumpingImgIsHoverd && !portfolioService.touchScreen) ||
+              (jumpingImgIsHovered && !portfolioService.touchScreen) ||
               overlayController.overlayCalled
           }"
         >
@@ -47,8 +47,8 @@
           </button>
           <div
             class="jumpingImg"
-            (mouseenter)="jumpingImgIsHoverd = true"
-            (mouseleave)="jumpingImgIsHoverd = false"
+            (mouseenter)="jumpingImgIsHovered = true"
+            (mouseleave)="jumpingImgIsHovered = false"
             (click)="openOverlay($event)"
           >
             <img src="assets/img/smiley.png" alt="smiley" />

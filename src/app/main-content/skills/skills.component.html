@@ -13,8 +13,8 @@
         <img
           src="assets/img/hat.png"
           alt="hat"
-          (mouseenter)="hatIsHoverd = true"
-          (mouseleave)="hatIsHoverd = false"
+          (mouseenter)="hatIsHovered = true"
+          (mouseleave)="hatIsHovered = false"
           (click)="openOverlay($event)"
         />
         <app-hexagon class="hexagon"></app-hexagon>
@@ -34,7 +34,7 @@
       #overlaySkills
       class="overlay"
       [ngClass]="{
-        open: (hatIsHoverd && !portfolioService.touchScreen) || overlayController.overlayCalled
+        open: (hatIsHovered && !portfolioService.touchScreen) || overlayController.overlayCalled
       }"
     >
       <div

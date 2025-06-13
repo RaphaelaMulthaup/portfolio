@@ -43,14 +43,14 @@ export class ReferenceComponent {
   };
 
   /** This variable indicates whether the referenceDiv is hovered. */
-  referenceDivIsHoverd: boolean = false;
+  referenceDivIsHovered: boolean = false;
 
   /**
-   * Sets `referenceDivIsHoverd` to false after a short delay.
+   * Sets `referenceDivIsHovered` to false after a short delay.
    */
   setHoveredFalseDelayed() {
     setTimeout(() => {
-      this.referenceDivIsHoverd = false;
+      this.referenceDivIsHovered = false;
     }, 200);
   }
 }

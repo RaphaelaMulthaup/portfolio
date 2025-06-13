@@ -34,7 +34,7 @@ export class AboutMeComponent {
   portfolioService = inject(PortfolioService);
 
   /** Indicates whether the jumping image is currently being hovered */
-  jumpingImgIsHoverd: boolean = false;
+  jumpingImgIsHovered: boolean = false;
 
   /** Controller instance for managing overlay behavior */
   overlayController: OverlayController;

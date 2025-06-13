@@ -34,7 +34,7 @@ export class SkillsComponent {
   portfolioService = inject(PortfolioService);
 
   /** Indicates whether the hat icon is currently being hovered */
-  hatIsHoverd: boolean = false;
+  hatIsHovered: boolean = false;
 
   /** Controller instance for managing overlay behavior */
   overlayController: OverlayController;

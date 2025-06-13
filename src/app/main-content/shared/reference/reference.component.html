@@ -1,15 +1,15 @@
 <div
   class="referenceDiv"
-  (mouseenter)="referenceDivIsHoverd = true"
-  (mouseleave)="referenceDivIsHoverd = false"
-  (touchstart)="referenceDivIsHoverd = true"
+  (mouseenter)="referenceDivIsHovered = true"
+  (mouseleave)="referenceDivIsHovered = false"
+  (touchstart)="referenceDivIsHovered = true"
   (touchend)="setHoveredFalseDelayed()"
 >
   <div>
     <h4>{{ dataReferences[referenceProvider].name }}</h4>
     <app-hexagon
       class="hexagonOrange"
-      [ngClass]="{ hoverd: referenceDivIsHoverd }"
+      [ngClass]="{ hoverd: referenceDivIsHovered }"
     ></app-hexagon>
   </div>
   <span>{{

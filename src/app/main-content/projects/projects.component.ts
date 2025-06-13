@@ -90,27 +90,27 @@ export class ProjectsComponent {
   /** The next image that lies behind the current image. */
   nextJumpingImg = this.currentJumpingImg;
   /** This variable indicates whether the jumping image is hovered over. */
-  jumpingImgIsHoverd: boolean = false;
+  jumpingImgIsHovered: boolean = false;
 
   /** This variable indicates whether the gitHub button is hovered over. */
-  btnGitHubIsHoverd: boolean = false;
+  btnGitHubIsHovered: boolean = false;
   /**
-   * Sets the state of btnGitHubIsHoverd depending on whether the button is touched or not.
+   * Sets the state of btnGitHubIsHovered depending on whether the button is touched or not.
    *
    * @param state  - A boolean indicating whether the gitHub button is touched (true) or not (false).
    */
   setbtnGitHubHovered = (state: boolean) => {
-    this.btnGitHubIsHoverd = state;
+    this.btnGitHubIsHovered = state;
   };
   /** This variable indicates whether the live test button is hovered over. */
-  btnLiveTestIsHoverd: boolean = false;
+  btnLiveTestIsHovered: boolean = false;
   /**
-   * Sets the state of btnLiveTestIsHoverd depending on whether the button is touched or not.
+   * Sets the state of btnLiveTestIsHovered depending on whether the button is touched or not.
    *
    * @param state  - A boolean indicating whether the live test button is touched (true) or not (false).
    */
   setbtnLiveTestHovered = (state: boolean) => {
-    this.btnLiveTestIsHoverd = state;
+    this.btnLiveTestIsHovered = state;
   };
 
   /**
