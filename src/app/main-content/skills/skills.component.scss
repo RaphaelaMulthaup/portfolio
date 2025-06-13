@@ -1,5 +1,7 @@
 @import "./../../../styles.scss";
 
+// $gapSkillIkons: 40px;
+
 #skills {
   background-color: $black;
   color: $cream;
@@ -199,3 +201,7 @@
     height: 64px;
   }
 }
+
+// @media (max-width: 600px) {
+//     $gapSkillIkons: 12px;
+// }
