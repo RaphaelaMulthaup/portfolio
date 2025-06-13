@@ -53,7 +53,7 @@
           </div>
           <div>
             <button
-              [appTouchImage]="setbtnGitHubHovered"
+              [appTouchImage]="getHoverHandler('btnGitHub')"
               appTouchHover
               (click)="openGitHub()"
               (mouseenter)="btnGitHubIsHovered = true"
@@ -70,7 +70,7 @@
               />
             </button>
             <button
-              [appTouchImage]="setbtnLiveTestHovered"
+              [appTouchImage]="getHoverHandler('btnLiveTest')"
               appTouchHover
               (mouseenter)="btnLiveTestIsHovered = true"
               (mouseleave)="btnLiveTestIsHovered = false"
@@ -99,3 +99,4 @@
     </div>
   </div>
 </div>
+

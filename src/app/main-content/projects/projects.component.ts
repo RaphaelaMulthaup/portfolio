@@ -27,7 +27,7 @@ interface ProjectData {
     HexagonComponent,
     CommonModule,
     TouchHoverDirective,
-    TouchImageDirective
+    TouchImageDirective,
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
@@ -94,24 +94,32 @@ export class ProjectsComponent {
 
   /** This variable indicates whether the gitHub button is hovered over. */
   btnGitHubIsHovered: boolean = false;
-  /**
-   * Sets the state of btnGitHubIsHovered depending on whether the button is touched or not.
-   *
-   * @param state  - A boolean indicating whether the gitHub button is touched (true) or not (false).
-   */
-  setbtnGitHubHovered = (state: boolean) => {
-    this.btnGitHubIsHovered = state;
-  };
+  // /**
+  //  * Sets the state of btnGitHubIsHovered depending on whether the button is touched or not.
+  //  *
+  //  * @param state  - A boolean indicating whether the gitHub button is touched (true) or not (false).
+  //  */
+  // setbtnGitHubHovered = (state: boolean) => {
+  //   this.btnGitHubIsHovered = state;
+  // };
   /** This variable indicates whether the live test button is hovered over. */
   btnLiveTestIsHovered: boolean = false;
-  /**
-   * Sets the state of btnLiveTestIsHovered depending on whether the button is touched or not.
-   *
-   * @param state  - A boolean indicating whether the live test button is touched (true) or not (false).
-   */
-  setbtnLiveTestHovered = (state: boolean) => {
-    this.btnLiveTestIsHovered = state;
-  };
+  // /**
+  //  * Sets the state of btnLiveTestIsHovered depending on whether the button is touched or not.
+  //  *
+  //  * @param state  - A boolean indicating whether the live test button is touched (true) or not (false).
+  //  */
+  // setbtnLiveTestHovered = (state: boolean) => {
+  //   this.btnLiveTestIsHovered = state;
+  // };
+
+  getHoverHandler(imageName: string): (state: boolean) => void {
+    return (state: boolean) => this.setHoverState(imageName, state);
+  }
+
+  setHoverState(imageName: string, state: boolean) {
+    (this as any)[imageName + 'IsHovered'] = state;
+  }
 
   /**
    * This function cycles through the project images and provides a smooth animation. 'nextImg' receives the path of the next image. After that, 'currentImg' is faded out. Once this is done, the path of 'currentImg' is also updated, and its opacity is increased back to one. In between, the DOM is updated using change detection.
