@@ -22,23 +22,39 @@ export class SocialMediaButtonsComponent {
   /**
    * The paths to different images.
    */
-public images: {
-  [key: string]: { normal: string; hover: string; touch?: string };
-} = {
-  gitHub: {
-    normal: 'assets/img/gitHub.png',
-    hover: 'assets/img/gitHub_hover.png',
-    touch: 'assets/img/gitHubBlack.png',
-  },
-  linkedin: {
-    normal: 'assets/img/linkedIn.png',
-    hover: 'assets/img/linkedIn_hover.png',
-    touch: 'assets/img/linkedinBlack.png',
-  },
-  mail: {
-    normal: 'assets/img/mail.png',
-    hover: 'assets/img/mail_hover.png',
-    touch: 'assets/img/mailBlack.png',
-  },
-};
+  public images: {
+    [key: string]: { normal: string; hover: string; touch?: string };
+  } = {
+    gitHub: {
+      normal: 'assets/img/gitHub.png',
+      hover: 'assets/img/gitHub_hover.png',
+      touch: 'assets/img/gitHubBlack.png',
+    },
+    linkedin: {
+      normal: 'assets/img/linkedIn.png',
+      hover: 'assets/img/linkedIn_hover.png',
+      touch: 'assets/img/linkedinBlack.png',
+    },
+    mail: {
+      normal: 'assets/img/mail.png',
+      hover: 'assets/img/mail_hover.png',
+      touch: 'assets/img/mailBlack.png',
+    },
+  };
+
+  touchStart(event: TouchEvent, contactOption: string) {
+    // event.preventDefault(); // Verhindert Standardverhalten (z. B. Scrollen)
+    const touchedImg = event.target as HTMLImageElement;
+    touchedImg.src = 'assets/img/' + contactOption + '_touch.png';
+  }
+
+  touchEnd(event: TouchEvent, contactOption: string) {
+    const touchedImg = event.target as HTMLImageElement;
+    setTimeout(() => {
+      touchedImg.src = this.portfolioService.getImageSrc(
+        this.gitHubIsHovered,
+        this.images[contactOption]
+      );
+    }, 300);
+  }
 }
