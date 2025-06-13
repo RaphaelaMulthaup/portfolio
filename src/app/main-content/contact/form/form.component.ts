@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
+import { TouchHoverDirective } from '../../shared/directives/touch-hover.directive';
 
 @Component({
   selector: 'app-form',
-  imports: [FormsModule, TranslatePipe, CommonModule],
+  imports: [FormsModule, TranslatePipe, CommonModule, TouchHoverDirective],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss',
 })

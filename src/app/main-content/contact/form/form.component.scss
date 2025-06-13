@@ -154,7 +154,8 @@ textarea {
 }
 
 /* Hover (nicht checked) */
-.customCheckbox:hover input:not(:checked) + .checkbox-image {
+.customCheckbox:hover input:not(:checked) + .checkbox-image,
+.customCheckbox.hoverEffect input:not(:checked) + .checkbox-image {
   background-image: url("../../../../assets/img/checkboxDefaultHover.png");
 }
 
@@ -164,7 +165,8 @@ textarea {
 }
 
 /* Checked + Hover */
-.customCheckbox:hover input:checked + .checkbox-image {
+.customCheckbox:hover input:checked + .checkbox-image,
+.customCheckbox.hoverEffect input:checked + .checkbox-image {
   background-image: url("../../../../assets/img/chackboxCheckedHover.png");
 }
 
