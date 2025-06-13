@@ -135,12 +135,12 @@ textarea {
 }
 
 /* Versteckt die native Checkbox */
-.custom-checkbox input[type="checkbox"] {
+.customCheckbox input[type="checkbox"] {
   display: none;
 }
 
 /* Standard-Zustand */
-.custom-checkbox .checkbox-image {
+.customCheckbox .checkbox-image {
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -149,18 +149,22 @@ textarea {
   transition: background-image 0.1s;
 }
 
+.customCheckbox:hover {
+  cursor: pointer;
+}
+
 /* Hover (nicht checked) */
-.custom-checkbox:hover input:not(:checked) + .checkbox-image {
+.customCheckbox:hover input:not(:checked) + .checkbox-image {
   background-image: url("../../../../assets/img/checkboxDefaultHover.png");
 }
 
 /* Checked */
-.custom-checkbox input:checked + .checkbox-image {
+.customCheckbox input:checked + .checkbox-image {
   background-image: url("../../../../assets/img/checkboxChecked.png");
 }
 
 /* Checked + Hover */
-.custom-checkbox:hover input:checked + .checkbox-image {
+.customCheckbox:hover input:checked + .checkbox-image {
   background-image: url("../../../../assets/img/chackboxCheckedHover.png");
 }
 
