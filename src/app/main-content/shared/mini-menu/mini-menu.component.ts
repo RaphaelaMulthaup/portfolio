@@ -90,22 +90,34 @@ export class MiniMenuComponent {
   /** A boolean that indicates whether the burger menu is hovered. */
   burgermenuIsHovered: boolean = false;
 
+  /**
+   * Creates a hover state handler function for the specified element.
+   *
+   * @param {string} imageName - The base name of the element to create the handler for (e.g., 'gitHub', 'mail').
+   * @returns {(state: boolean) => void} - A function that accepts a boolean state and updates the corresponding hover state.
+   *
+   * @example
+   * // Returns a function that updates gitHubIsHovered when called
+   * getHoverHandler('gitHub');
+   */
   getHoverHandler(imageName: string): (state: boolean) => void {
     return (state: boolean) => this.setHoverState(imageName, state);
   }
 
+  /**
+   * Updates the hover state for the specified element by dynamically constructing the property name.
+   * The property name is constructed by appending 'IsHovered' to the provided imageName.
+   *
+   * @param {string} imageName - The base name of the element to update (e.g., 'gitHub' becomes 'gitHubIsHovered').
+   * @param {boolean} state - The new hover state (true = hovered, false = not hovered).
+   *
+   * @example
+   * // Sets gitHubIsHovered to true
+   * setHoverState('gitHub', true);
+   */
   setHoverState(imageName: string, state: boolean) {
     (this as any)[imageName + 'IsHovered'] = state;
   }
-
-  // /**
-  //  * Sets the state of languageIsHovered depending on whether the image is touched or not.
-  //  *
-  //  * @param state  - A boolean indicating whether the language image is touched (true) or not (false).
-  //  */
-  // setLanguageHovered = (state: boolean) => {
-  //   this.languageIsHovered = state;
-  // };
 
   /** The paths to different colored language change to EN buttons. */
   public imagesEN: { [key: string]: { normal: string; hover: string } } = {
@@ -130,15 +142,6 @@ export class MiniMenuComponent {
       hover: 'assets/img/DE_cream_hover.png',
     },
   };
-
-  // /**
-  //  * Sets the state of burgermenuIsHovered depending on whether the image is touched or not.
-  //  *
-  //  * @param state  - A boolean indicating whether the burger menu is touched (true) or not (false).
-  //  */
-  // setBurgerMenuHovered = (state: boolean) => {
-  //   this.burgermenuIsHovered = state;
-  // };
 
   /**
    * The paths to different colored burger menu images.

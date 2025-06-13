@@ -16,45 +16,39 @@ export class SocialMediaButtonsComponent {
   /** A boolean that indicates whether the gitHub button is hovered. */
   gitHubIsHovered: boolean = false;
 
-  // /**
-  //  * Sets the state of gitHubIsHovered depending on whether the image is touched or not.
-  //  *
-  //  * @param state  - A boolean indicating whether the gitHub image is touched (true) or not (false).
-  //  */
-  // setGitHubHovered = (state: boolean) => {
-  //   this.gitHubIsHovered = state;
-  // };
-
   /** A boolean that indicates whether the linkedin button is hovered. */
   linkedinIsHovered: boolean = false;
-  // /**
-  //  * Sets the state of linkedinIsHovered depending on whether the image is touched or not.
-  //  *
-  //  * @param state  - A boolean indicating whether the linkedIn image is touched (true) or not (false).
-  //  */
-  // setLinkedInHovered = (state: boolean) => {
-  //   this.linkedinIsHovered = state;
-  // };
-
   /** A boolean that indicates whether the mail button is hovered. */
   mailIsHovered: boolean = false;
-  // /**
-  //  * Sets the state of mailIsHovered depending on whether the image is touched or not.
-  //  *
-  //  * @param state  - A boolean indicating whether the mail image is touched (true) or not (false).
-  //  */
-  // setMailHovered = (state: boolean) => {
-  //   this.mailIsHovered = state;
-  // };
 
+  /**
+   * Creates a hover state handler function for the specified element.
+   *
+   * @param {string} imageName - The base name of the element to create the handler for (e.g., 'gitHub', 'mail').
+   * @returns {(state: boolean) => void} - A function that accepts a boolean state and updates the corresponding hover state.
+   *
+   * @example
+   * // Returns a function that updates gitHubIsHovered when called
+   * getHoverHandler('gitHub');
+   */
   getHoverHandler(imageName: string): (state: boolean) => void {
     return (state: boolean) => this.setHoverState(imageName, state);
   }
 
+  /**
+   * Updates the hover state for the specified element by dynamically constructing the property name.
+   * The property name is constructed by appending 'IsHovered' to the provided imageName.
+   *
+   * @param {string} imageName - The base name of the element to update (e.g., 'gitHub' becomes 'gitHubIsHovered').
+   * @param {boolean} state - The new hover state (true = hovered, false = not hovered).
+   *
+   * @example
+   * // Sets gitHubIsHovered to true
+   * setHoverState('gitHub', true);
+   */
   setHoverState(imageName: string, state: boolean) {
     (this as any)[imageName + 'IsHovered'] = state;
   }
-
   /**
    * The paths to different images.
    */
@@ -85,20 +79,4 @@ export class SocialMediaButtonsComponent {
       narrowScreenTouch: 'assets/img/mail_touch.png',
     },
   };
-
-  // touchStart(event: TouchEvent, contactOption: string) {
-  //   // event.preventDefault(); // Verhindert Standardverhalten (z. B. Scrollen)
-  //   const touchedImg = event.target as HTMLImageElement;
-  //   touchedImg.src = 'assets/img/' + contactOption + '_touch.png';
-  // }
-
-  // touchEnd(event: TouchEvent, contactOption: string) {
-  //   const touchedImg = event.target as HTMLImageElement;
-  //   setTimeout(() => {
-  //     touchedImg.src = this.portfolioService.getImageSrc(
-  //       this.gitHubIsHovered,
-  //       this.images[contactOption]
-  //     );
-  //   }, 300);
-  // }
 }

@@ -113,14 +113,34 @@ export class ProjectsComponent {
   //   this.btnLiveTestIsHovered = state;
   // };
 
+  /**
+   * Creates a hover state handler function for the specified element.
+   *
+   * @param {string} imageName - The base name of the element to create the handler for (e.g., 'gitHub', 'mail').
+   * @returns {(state: boolean) => void} - A function that accepts a boolean state and updates the corresponding hover state.
+   *
+   * @example
+   * // Returns a function that updates gitHubIsHovered when called
+   * getHoverHandler('gitHub');
+   */
   getHoverHandler(imageName: string): (state: boolean) => void {
     return (state: boolean) => this.setHoverState(imageName, state);
   }
 
+  /**
+   * Updates the hover state for the specified element by dynamically constructing the property name.
+   * The property name is constructed by appending 'IsHovered' to the provided imageName.
+   *
+   * @param {string} imageName - The base name of the element to update (e.g., 'gitHub' becomes 'gitHubIsHovered').
+   * @param {boolean} state - The new hover state (true = hovered, false = not hovered).
+   *
+   * @example
+   * // Sets gitHubIsHovered to true
+   * setHoverState('gitHub', true);
+   */
   setHoverState(imageName: string, state: boolean) {
     (this as any)[imageName + 'IsHovered'] = state;
   }
-
   /**
    * This function cycles through the project images and provides a smooth animation. 'nextImg' receives the path of the next image. After that, 'currentImg' is faded out. Once this is done, the path of 'currentImg' is also updated, and its opacity is increased back to one. In between, the DOM is updated using change detection.
    *
