@@ -44,7 +44,7 @@ export class PortfolioService {
 
   /**
    * OverlayController encapsulates the state & methods for an overlay.
-   *
+   * 
    * @returns the OverlayController class which contains the logic for overlays
    */
   createOverlayController() {
@@ -157,36 +157,22 @@ export class PortfolioService {
   getImageSrc(
     hoverState: boolean,
     imageSet:
-      | {
-          normal: string;
-          hover: string;
-          touchScreen?: string;
-        }
-      | {
-          [key: string]: {
-            normal: string;
-            hover: string;
-            touchScreen?: string;
-            touchScreenTouched?: string;
-          };
-        },
-    headerClass?: string,
-    touchScreenHandOver?: boolean
+      | { normal: string; hover: string; touch?: string }
+      | { [key: string]: { normal: string; hover: string; touch?: string } },
+    headerClass?: string
   ): string {
     if (this.touchScreen) {
-      if (
-        headerClass &&
-        typeof imageSet === 'object' &&
-        headerClass in imageSet &&
-        (imageSet as any)[headerClass].touchScreen
-      ) {
-        return (imageSet as any)[headerClass].touchScreen;
-      } else if (touchScreenHandOver && (imageSet as any).touchScreenHandover) {
-        return (imageSet as any).touchScreenHandover;
-      } else if ((imageSet as any).touchScreen) {
-        return (imageSet as any).touchScreen;
-      }
+    if (
+      headerClass &&
+      typeof imageSet === 'object' &&
+      headerClass in imageSet &&
+      (imageSet as any)[headerClass].touch
+    ) {
+      return (imageSet as any)[headerClass].touch;
+    } else if ((imageSet as any).touch) {
+      return (imageSet as any).touch;
     }
+  }
     if (
       headerClass &&
       typeof imageSet === 'object' &&
@@ -206,35 +192,6 @@ export class PortfolioService {
   }
 }
 
-//         const variant = (imageSet as any)[headerClass];
-//         if (touchScreenTouched && variant.touchScreenTouched) {
-//           return variant.touchScreenTouched;
-//         } else if (variant.touchScreen) {
-//           return variant.touchScreen;
-//         }
-//       } else {
-//         if (touchScreenTouched && (imageSet as any).touchScreenTouched) {
-//           return (imageSet as any).touchScreenTouched;
-//         } else if ((imageSet as any).touchScreen) {
-//           return (imageSet as any).touchScreen;
-//         }
-//       }
-//     }
-
-//     if (
-//       headerClass &&
-//       typeof imageSet === 'object' &&
-//       headerClass in imageSet
-//     ) {
-//       return hoverState
-//         ? (imageSet as any)[headerClass].hover
-//         : (imageSet as any)[headerClass].normal;
-//     }
-//     return hoverState
-//       ? (imageSet as any).hover
-//       : (imageSet as any).normal;
-//   }
-// }
 
 /**
  * Helper class for managing overlay states and behavior.
@@ -242,19 +199,19 @@ export class PortfolioService {
 export class OverlayController {
   /** Whether the overlay is currently active */
   overlayCalled = false;
-
+  
   /** The last clicked element that triggered the overlay */
   lastClickedElement: EventTarget | null = null;
-
+  
   /** Default close button image path */
   closeImgDefault = 'assets/img/closeCream.png';
-
+  
   /** Close button image path when touched */
   closeImgTouched = 'assets/img/close_hover.png';
-
+  
   /** Current close button image path */
   closeImgPath = this.closeImgDefault;
-
+  
   /** Whether the device is a touchscreen */
   touchScreen: boolean;
 
@@ -263,7 +220,7 @@ export class OverlayController {
 
   /**
    * Creates an OverlayController instance.
-   *
+   * 
    * @param touchScreen Whether the device is a touchscreen
    */
   constructor(touchScreen: boolean) {
@@ -272,7 +229,7 @@ export class OverlayController {
 
   /**
    * Opens the overlay or closes it if already open (touchscreen behavior).
-   *
+   * 
    * @param event The mouse event that triggered the action
    */
   openOverlay(event: MouseEvent): void {
@@ -310,7 +267,7 @@ export class OverlayController {
 
   /**
    * Handles document clicks to close overlay when clicking outside.
-   *
+   * 
    * @param event The click event
    */
   handleDocumentClick(event: MouseEvent) {
