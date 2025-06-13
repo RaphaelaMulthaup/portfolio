@@ -4,9 +4,8 @@
       [src]="portfolioService.getImageSrc(gitHubIsHovered, images['gitHub'])"
       (mouseenter)="gitHubIsHovered = true"
       (mouseleave)="gitHubIsHovered = false"
-      (touchstart)="touchStart($event, 'gitHub')"
-      (touchend)="touchEnd($event, 'gitHub')"
       alt="gitHub"
+      [appTouchImage]="setGitHubHovered"
     />
   </a>
   <a
@@ -19,9 +18,8 @@
       "
       (mouseenter)="linkedinIsHovered = true"
       (mouseleave)="linkedinIsHovered = false"
-      (touchstart)="touchStart($event, 'linkedIn')"
-      (touchend)="touchEnd($event, 'linkedin')"
       alt="linkedin"
+      [appTouchImage]="setLinkedInHovered"
     />
   </a>
   <img
@@ -29,8 +27,19 @@
     [src]="portfolioService.getImageSrc(mailIsHovered, images['mail'])"
     (mouseenter)="mailIsHovered = true"
     (mouseleave)="mailIsHovered = false"
-    (touchstart)="touchStart($event, 'mail')"
-    (touchend)="touchEnd($event, 'mail')"
     alt="mail"
+    [appTouchImage]="setMailHovered"
   />
 </div>
+
+
+      <!-- (touchstart)="touchStart($event, 'gitHub')"
+      (touchend)="touchEnd($event, 'gitHub')" 
+      
+            (touchstart)="touchStart($event, 'linkedIn')"
+      (touchend)="touchEnd($event, 'linkedin')"
+
+          (touchstart)="touchStart($event, 'mail')"
+    (touchend)="touchEnd($event, 'mail')"
+
+-->

@@ -4,6 +4,16 @@ import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { BreakpointObserver } from '@angular/cdk/layout';
 
+type ImgSetMenuIcons = { normal: string; hover: string };
+type ImgSetSocialMediaButtons = {
+  [key: string]: {
+    normal: string;
+    hover: string;
+    narrowScreen?: string;
+    narrowScreenTouch?: string;
+  };
+};
+
 @Injectable({
   providedIn: 'root',
 })
@@ -44,7 +54,7 @@ export class PortfolioService {
 
   /**
    * OverlayController encapsulates the state & methods for an overlay.
-   * 
+   *
    * @returns the OverlayController class which contains the logic for overlays
    */
   createOverlayController() {
@@ -144,47 +154,24 @@ export class PortfolioService {
   }
 
   /**
-   * Returns the correct image path based on the hover state and (optional) header class.
+   * Returns the correct image path based on the hover state and the screen.
    *
-   * @param hoverState - A boolean indicating whether the image is hovered.
+   * @param hoverState - A boolean indicating whether the image is hovered/touched.
    * @param imageSet - Either:
-   *   - An object containing `normal` and `hover` image paths.
-   *   - An object where each key corresponds to a different image variation (e.g. different color themes),
-   *     with each variation containing `normal` and `hover` image paths.
-   * @param headerClass - (Optional) A string specifying which image variation to use (if `imageSet` contains multiple variations).
+   *   - An object containing `normal` and `hover` image paths (ImgSetMenuIcons).
+   *   - An object where each key corresponds to a different image variation (e.g. different social media images) (ImgSetSocialMediaButtons),
+   *     with each variation containing `normal`, `hover`, `narrowScreen` and `narrowScreenTouch` image paths.
    * @returns The path to the correct image.
    */
   getImageSrc(
     hoverState: boolean,
-    imageSet:
-      | { normal: string; hover: string; touch?: string }
-      | { [key: string]: { normal: string; hover: string; touch?: string } },
-    headerClass?: string
+    imageSet: ImgSetMenuIcons | ImgSetSocialMediaButtons
   ): string {
-    if (this.touchScreen) {
-    if (
-      headerClass &&
-      typeof imageSet === 'object' &&
-      headerClass in imageSet &&
-      (imageSet as any)[headerClass].touch
-    ) {
-      return (imageSet as any)[headerClass].touch;
-    } else if ((imageSet as any).touch) {
-      return (imageSet as any).touch;
-    }
-  }
-    if (
-      headerClass &&
-      typeof imageSet === 'object' &&
-      headerClass in imageSet
-    ) {
-      return hoverState
-        ? (imageSet as { [key: string]: { normal: string; hover: string } })[
-            headerClass
-          ].hover
-        : (imageSet as { [key: string]: { normal: string; hover: string } })[
-            headerClass
-          ].normal;
+    if (this.mobileScreen && (imageSet as any).narrowScreen) {
+      if (hoverState) {
+        return (imageSet as any).narrowScreenTouch;
+      }
+      return (imageSet as any).narrowScreen;
     }
     return hoverState
       ? (imageSet as { normal: string; hover: string }).hover
@@ -192,26 +179,25 @@ export class PortfolioService {
   }
 }
 
-
 /**
  * Helper class for managing overlay states and behavior.
  */
 export class OverlayController {
   /** Whether the overlay is currently active */
   overlayCalled = false;
-  
+
   /** The last clicked element that triggered the overlay */
   lastClickedElement: EventTarget | null = null;
-  
+
   /** Default close button image path */
   closeImgDefault = 'assets/img/closeCream.png';
-  
+
   /** Close button image path when touched */
   closeImgTouched = 'assets/img/close_hover.png';
-  
+
   /** Current close button image path */
   closeImgPath = this.closeImgDefault;
-  
+
   /** Whether the device is a touchscreen */
   touchScreen: boolean;
 
@@ -220,7 +206,7 @@ export class OverlayController {
 
   /**
    * Creates an OverlayController instance.
-   * 
+   *
    * @param touchScreen Whether the device is a touchscreen
    */
   constructor(touchScreen: boolean) {
@@ -229,7 +215,7 @@ export class OverlayController {
 
   /**
    * Opens the overlay or closes it if already open (touchscreen behavior).
-   * 
+   *
    * @param event The mouse event that triggered the action
    */
   openOverlay(event: MouseEvent): void {
@@ -267,7 +253,7 @@ export class OverlayController {
 
   /**
    * Handles document clicks to close overlay when clicking outside.
-   * 
+   *
    * @param event The click event
    */
   handleDocumentClick(event: MouseEvent) {
