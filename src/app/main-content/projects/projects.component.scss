@@ -158,6 +158,11 @@
         @media (max-width: 1200px) {
           width: 118%;
         }
+        @media (max-width: 1024px) {
+          width: 100%;
+          right: -16px;
+          bottom: 54px;
+        }
       }
     }
     > span:nth-child(2) {

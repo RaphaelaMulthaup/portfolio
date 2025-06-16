@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, HostListener, inject, ViewChild } from '@angular/core';
 import { HeaderComponent } from '../shared/header/header.component';
 import { TranslatePipe } from '@ngx-translate/core';
 import { NavBulletsComponent } from '../shared/nav-bullets/nav-bullets.component';
@@ -6,6 +6,7 @@ import { HexagonComponent } from '../shared/hexagon/hexagon.component';
 import { CommonModule } from '@angular/common';
 import { TouchHoverDirective } from '../shared/directives/touch-hover.directive';
 import { TouchImageDirective } from '../shared/directives/touch-image.directive';
+import { OverlayController, PortfolioService } from '../../portfolio.service';
 interface ProjectData {
   img: string;
   bGroundColor: string;
@@ -33,7 +34,13 @@ interface ProjectData {
   styleUrl: './projects.component.scss',
 })
 export class ProjectsComponent {
-  constructor(private cdr: ChangeDetectorRef) {}
+  portfolioService = inject(PortfolioService);
+  /** Controller instance for managing overlay behavior */
+  overlayController: OverlayController;
+  constructor(private cdr: ChangeDetectorRef) {
+    // Initialize overlay controller from portfolio service
+    this.overlayController = this.portfolioService.createOverlayController();
+  }
   /** An array with the names of the projects. */
   projects: string[] = ['join', 'dABubble', 'elPolloLoco'];
   /** The currend displayed project. */
@@ -186,5 +193,54 @@ export class ProjectsComponent {
       this.dataProjects[this.projects[this.indexDisplayedProject]].gitHub,
       '_blank'
     );
+  }
+
+  /**
+   * Sets the overlay element reference when view child is available.
+   *
+   * @param ref The ElementRef of the projects overlay container
+   */
+  @ViewChild('overlayProjects') set _(ref: ElementRef) {
+    this.overlayController.overlayElementRef = ref;
+  }
+
+  /**
+   * Opens the skills overlay or toggles its state on touch devices.
+   *
+   * @param event The mouse event that triggered the action
+   */
+  openOverlay(event: MouseEvent) {
+    this.overlayController.openOverlay(event);
+  }
+
+  /**
+   * Handles touch start event on the overlay close button.
+   */
+  onCloseTouchStart() {
+    this.overlayController.onCloseTouchStart();
+  }
+
+  /**
+   * Handles touch end event on the overlay close button.
+   */
+  onCloseTouchEnd() {
+    this.overlayController.onCloseTouchEnd();
+  }
+
+  /**
+   * Closes the skills overlay explicitly.
+   */
+  closeOverlay() {
+    this.overlayController.closeOverlay();
+  }
+
+  /**
+   * Listens for document clicks to handle overlay closing when clicking outside.
+   *
+   * @param event The mouse click event
+   */
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    this.overlayController.handleDocumentClick(event);
   }
 }

@@ -49,7 +49,7 @@ export class SkillsComponent {
    * 
    * @param ref The ElementRef of the skills overlay container
    */
-  @ViewChild('overlaySkills') set overlaySkillsRef(ref: ElementRef) {
+  @ViewChild('overlaySkills') set _(ref: ElementRef) {
     this.overlayController.overlayElementRef = ref;
   }
 

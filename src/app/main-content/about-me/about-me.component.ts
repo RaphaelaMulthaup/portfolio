@@ -6,7 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { HeaderComponent } from '../shared/header/header.component';
-import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { NavBulletsComponent } from '../shared/nav-bullets/nav-bullets.component';
 import { OverlayController, PortfolioService } from '../../portfolio.service';
 import { CommonModule } from '@angular/common';
@@ -21,7 +21,6 @@ import { TouchHoverDirective } from '../shared/directives/touch-hover.directive'
   imports: [
     HeaderComponent,
     TranslatePipe,
-    TranslateDirective,
     NavBulletsComponent,
     CommonModule,
     TouchHoverDirective
@@ -49,7 +48,7 @@ export class AboutMeComponent {
    * 
    * @param ref The ElementRef of the overlay container
    */
-  @ViewChild('overlayMoreAboutMe') set overlayMoreAboutMeRef(ref: ElementRef) {
+  @ViewChild('overlayMoreAboutMe') set _(ref: ElementRef) {
     this.overlayController.overlayElementRef = ref;
   }
 

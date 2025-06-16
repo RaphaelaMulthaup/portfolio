@@ -36,11 +36,32 @@
                     [class.fade-out]="isFadingOut"
                     (mouseenter)="jumpingImgIsHovered = true"
                     (mouseleave)="jumpingImgIsHovered = false"
+                    (click)="openOverlay($event)"
                     alt="informations about development"
                   />
                 </div>
               </div>
-              <div class="overlay" [ngClass]="{ open: jumpingImgIsHovered }">
+              <div
+                #overlayProjects
+                class="overlay"
+                [ngClass]="{
+                  open:
+                    (jumpingImgIsHovered && !portfolioService.touchScreen) ||
+                    overlayController.overlayCalled
+                }"
+              >
+                <div
+                  [ngStyle]="{
+                    display: !portfolioService.touchScreen ? 'none' : 'flex'
+                  }"
+                >
+                  <img
+                    [src]="overlayController.closeImgPath"
+                    alt="close"
+                    (touchstart)="onCloseTouchStart()"
+                    (touchend)="onCloseTouchEnd()"
+                  />
+                </div>
                 <span>{{
                   "projects." + dataDisplayedProject.development | translate
                 }}</span>
@@ -99,4 +120,3 @@
     </div>
   </div>
 </div>
-
