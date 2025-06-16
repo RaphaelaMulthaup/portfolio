@@ -15,7 +15,7 @@
           alt="hat"
           (mouseenter)="hatIsHovered = true"
           (mouseleave)="hatIsHovered = false"
-          (click)="openOverlay($event)"
+          (click)="overlayController.openOverlay($event)"
         />
         <app-hexagon class="hexagon"></app-hexagon>
       </div>
@@ -34,7 +34,9 @@
       #overlaySkills
       class="overlay"
       [ngClass]="{
-        open: (hatIsHovered && !portfolioService.touchScreen) || overlayController.overlayCalled
+        open:
+          (hatIsHovered && !portfolioService.touchScreen) ||
+          overlayController.overlayCalled
       }"
     >
       <div
@@ -45,8 +47,8 @@
         <img
           [src]="overlayController.closeImgPath"
           alt="close"
-          (touchstart)="onCloseTouchStart()"
-          (touchend)="onCloseTouchEnd()"
+          (touchstart)="overlayController.onCloseTouchStart()"
+          (touchend)="overlayController.onCloseTouchEnd()"
         />
       </div>
       <h4>{{ "skills.h4" | translate }}</h4>

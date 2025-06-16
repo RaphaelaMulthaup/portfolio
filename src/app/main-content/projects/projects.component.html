@@ -36,7 +36,7 @@
                     [class.fade-out]="isFadingOut"
                     (mouseenter)="jumpingImgIsHovered = true"
                     (mouseleave)="jumpingImgIsHovered = false"
-                    (click)="openOverlay($event)"
+                    (click)="overlayController.openOverlay($event)"
                     alt="informations about development"
                   />
                 </div>
@@ -58,8 +58,8 @@
                   <img
                     [src]="overlayController.closeImgPath"
                     alt="close"
-                    (touchstart)="onCloseTouchStart()"
-                    (touchend)="onCloseTouchEnd()"
+                    (touchstart)="overlayController.onCloseTouchStart()"
+                    (touchend)="overlayController.onCloseTouchEnd()"
                   />
                 </div>
                 <span>{{

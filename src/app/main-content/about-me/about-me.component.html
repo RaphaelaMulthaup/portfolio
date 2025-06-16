@@ -21,8 +21,8 @@
               }"
               [src]="overlayController.closeImgPath"
               alt="close"
-              (touchstart)="onCloseTouchStart()"
-              (touchend)="onCloseTouchEnd()"
+              (touchstart)="overlayController.onCloseTouchStart()"
+              (touchend)="overlayController.onCloseTouchEnd()"
             />
           </div>
           <ul>
@@ -49,7 +49,7 @@
             class="jumpingImg"
             (mouseenter)="jumpingImgIsHovered = true"
             (mouseleave)="jumpingImgIsHovered = false"
-            (click)="openOverlay($event)"
+            (click)="overlayController.openOverlay($event)"
           >
             <img src="assets/img/smiley.png" alt="smiley" />
           </div>

@@ -54,36 +54,6 @@ export class SkillsComponent {
   }
 
   /**
-   * Opens the skills overlay or toggles its state on touch devices.
-   * 
-   * @param event The mouse event that triggered the action
-   */
-  openOverlay(event: MouseEvent) {
-    this.overlayController.openOverlay(event);
-  }
-
-  /**
-   * Handles touch start event on the overlay close button.
-   */
-  onCloseTouchStart() {
-    this.overlayController.onCloseTouchStart();
-  }
-
-  /**
-   * Handles touch end event on the overlay close button.
-   */
-  onCloseTouchEnd() {
-    this.overlayController.onCloseTouchEnd();
-  }
-
-  /**
-   * Closes the skills overlay explicitly.
-   */
-  closeOverlay() {
-    this.overlayController.closeOverlay();
-  }
-
-  /**
    * Listens for document clicks to handle overlay closing when clicking outside.
    * 
    * @param event The mouse click event
