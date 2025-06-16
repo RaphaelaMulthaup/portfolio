@@ -70,8 +70,15 @@ export class MenuComponent {
    */
   onPressEnd(event?: TouchEvent) {
     event?.preventDefault();
-    this.closeImagePath = this.defaultCloseImagePath;
-    this.hideMenu();
+    if (event) {
+      setTimeout(() => {
+        this.closeImagePath = this.defaultCloseImagePath;
+        this.hideMenu();
+      }, 200);
+    } else {
+      this.closeImagePath = this.defaultCloseImagePath;
+      this.hideMenu();
+    }
   }
 
   /**
