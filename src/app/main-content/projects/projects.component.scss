@@ -162,6 +162,14 @@
           width: 100%;
           right: -16px;
           bottom: 54px;
+          padding: 16px;
+        }
+        > div {
+          @include dFlex($jc: flex-end);
+          > img {
+            height: 17.53px;
+            margin: 7.23px;
+          }
         }
       }
     }
