@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Output, EventEmitter, Input, inject } from '@angular/core';
-import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { PortfolioService } from '../../../../portfolio.service';
 import { HexagonComponent } from '../../hexagon/hexagon.component';
 import { Router } from '@angular/router';
@@ -11,11 +11,10 @@ import { TouchHoverDirective } from '../../directives/touch-hover.directive';
   selector: 'app-menu',
   imports: [
     TranslatePipe,
-    TranslateDirective,
     CommonModule,
     HexagonComponent,
     SocialMediaButtonsComponent,
-    TouchHoverDirective
+    TouchHoverDirective,
   ],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss',
@@ -69,7 +68,8 @@ export class MenuComponent {
   /**
    * This function changes the path of close image back to default close image and calls the hideMenu function.
    */
-  onPressEnd() {
+  onPressEnd(event?: TouchEvent) {
+    event?.preventDefault();
     this.closeImagePath = this.defaultCloseImagePath;
     this.hideMenu();
   }
