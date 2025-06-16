@@ -240,8 +240,10 @@ export class OverlayController {
    * Handles touch end event on close button.
    */
   onCloseTouchEnd() {
-    this.closeImgPath = this.closeImgDefault;
-    this.closeOverlay();
+    setTimeout(() => {
+      this.closeImgPath = this.closeImgDefault;
+      this.closeOverlay();
+    }, 200);
   }
 
   /**
