@@ -5,6 +5,9 @@ form {
   flex-direction: column;
   > div {
     width: 100%;
+    // @media (max-width: 1024px) {
+    //   flex-direction: column;
+    // }
     h4 {
       margin-left: 16px;
       @media (max-width: 1350px) {
@@ -62,6 +65,12 @@ form {
       }
     }
   }
+   > div:first-child,
+   > div:nth-child(2) {
+    @media (max-width: 1024px) {
+      margin-bottom: 40px;
+    }
+   }
 }
 
 input[type="text"],

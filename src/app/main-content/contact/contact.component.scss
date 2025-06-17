@@ -14,13 +14,19 @@
   @media (max-width: 1024px) {
     height: auto;
   }
-
   > div:last-child {
     @include dFlex();
     flex-direction: column;
+    @media (max-width: 1024px) {
+      padding: 80px 7vw 0 7vw;
+    }
     > div:first-child {
       flex: 1;
       @include dFlex($jc: space-between);
+      @media (max-width: 1024px) {
+        flex-direction: column;
+        gap: 100px;
+      }
     }
     app-footer {
       width: 100%;
@@ -34,8 +40,15 @@
   @include dFlex($g: 4dvh, $jc: flex-start);
   flex-direction: column;
   margin-right: 7vw;
+  @media (max-width: 1024px) {
+    margin: 0;
+    gap: 56px;
+  }
   h2 {
     color: $yellow;
+    @media (max-width: 1024px) {
+      margin-bottom: 0;
+    }
   }
   > div {
     @include dFlex($g: 1.78dvh, $ai: flex-start);
@@ -56,9 +69,17 @@
   @media (max-width: 1200px) {
     width: 53%;
   }
+  @media (max-width: 1024px) {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
   .svgWrapper {
     position: relative;
     display: inline-block;
+    @media (max-width: 1024px) {
+      margin-top: -44px;
+    }
     svg {
       path {
         transition: fill 100ms ease-in;
@@ -92,6 +113,10 @@
     margin-right: 3.33vw;
     @media (min-width: 1700px) {
       margin-right: 6vw;
+    }
+    @media (max-width: 1024px) {
+      margin-right: 0;
+      max-width: none;
     }
   }
 }
