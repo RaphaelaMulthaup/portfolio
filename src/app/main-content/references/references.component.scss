@@ -9,7 +9,7 @@
 #references {
   background-color: $lightBlue;
   color: $cream;
-    @media (max-width: 1024px) {
+  @media (max-width: 1024px) {
     height: auto;
   }
   > div:last-child {
@@ -17,6 +17,10 @@
     flex-direction: column;
     @media (max-height: 800px) {
       gap: 3.56dvh;
+    }
+    @media (max-width: 1024px) {
+      padding: 80px 7vw;
+      gap: 0;
     }
   }
 }
@@ -34,14 +38,27 @@
   @media (max-width: 1220px) {
     margin-bottom: 6dvh;
   }
-
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    padding: 0;
+    gap: 24px;
+    margin-bottom: 0;
+  }
   div {
     height: 100%;
     width: 26.7vw;
+    @media (max-width: 1024px) {
+      height: auto;
+      width: auto;
+    }
+
     app-reference {
       width: 100%;
       @include dFlex($g: 2.22dvh);
       flex-direction: column;
+      @media (max-width: 1024px) {
+        gap: 32px;
+      }
     }
   }
   > div:first-child {
