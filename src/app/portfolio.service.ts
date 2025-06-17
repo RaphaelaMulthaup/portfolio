@@ -141,7 +141,7 @@ export class PortfolioService {
 
     targetMainComponent.scrollIntoView({
       behavior: smooth ? 'smooth' : 'auto',
-      block: 'end',
+      block: 'start',
     });
     this.menuDisplayedSubject.next(false);
 
