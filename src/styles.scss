@@ -104,6 +104,14 @@ button {
   }
 }
 
+a {
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  @media (hover: none) and (pointer: coarse) {
+    cursor: default;
+  }
+}
+
 app-nav-bullets {
   position: absolute;
   right: 5vw;
