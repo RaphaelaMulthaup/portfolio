@@ -2,8 +2,9 @@
   <app-header class="black" [headerClass]="'black'"></app-header>
   <app-nav-bullets bGroundBulletPoints="bGroundBlack"></app-nav-bullets>
   <div class="contentMainComponent">
+    @if (!portfolioService.mobileScreen) {
     <div class="aboutMeLeftSide">
-      <div>
+      <div class="textAboutMe">
         <div
           #overlayMoreAboutMe
           class="overlay moreAboutMe"
@@ -56,6 +57,66 @@
         </div>
       </div>
     </div>
+    }
     <h2>{{ "aboutMe.h2" | translate }}</h2>
+    @if (portfolioService.mobileScreen) {
+    <div>
+      <div><div class="aboutMeLeftSide"></div></div>
+      <div>
+        <div class="textAboutMe">
+          <div
+            #overlayMoreAboutMe
+            class="overlay moreAboutMe"
+            [ngClass]="{
+              open:
+                (jumpingImgIsHovered && !portfolioService.touchScreen) ||
+                overlayController.overlayCalled
+            }"
+          >
+            <div>
+              <h4>{{ "aboutMe.moreAoutMe.moreAoutMe" | translate }}</h4>
+              <img
+                [ngStyle]="{
+                  display: !portfolioService.touchScreen ? 'none' : 'block'
+                }"
+                [src]="overlayController.closeImgPath"
+                alt="close"
+                (touchstart)="overlayController.onCloseTouchStart()"
+                (touchend)="overlayController.onCloseTouchEnd()"
+              />
+            </div>
+            <ul>
+              @for(item of [0,1,2,3,4,5,6]; track item; let index = $index){
+              <li>
+                <img src="assets/img/check_circle.png" alt="check" />{{
+                  "aboutMe.moreAoutMe.ul." + index | translate
+                }}
+              </li>
+              }
+            </ul>
+          </div>
+          <div>
+            <span>{{ "aboutMe.heyIm" | translate }}</span>
+            <br />
+            <br />
+            <span>{{ "aboutMe.letsWork" | translate }}</span>
+          </div>
+          <div>
+            <button appTouchHover (click)="portfolioService.scrollToSection(5)">
+              {{ "aboutMe.button" | translate }}
+            </button>
+            <div
+              class="jumpingImg"
+              (mouseenter)="jumpingImgIsHovered = true"
+              (mouseleave)="jumpingImgIsHovered = false"
+              (click)="overlayController.openOverlay($event)"
+            >
+              <img src="assets/img/smiley.png" alt="smiley" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
   </div>
 </div>
