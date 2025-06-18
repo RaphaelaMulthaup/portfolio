@@ -43,6 +43,9 @@ h1 {
   @media (max-width: 1024px) and (min-height: 700px) {
     font-size: 80px;
   }
+  @media (max-width: 768px) {
+    font-size: 72px;
+  }
 }
 
 h2 {
@@ -178,6 +181,9 @@ app-nav-bullets {
   max-height: 88px;
   margin: 0 5% 0 5%;
   @include dFlex($jc: space-between);
+  @media (max-width: 768px) {
+    height: 72px;
+  }
   app-logo-name {
     height: 100%;
   }

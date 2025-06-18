@@ -5,7 +5,7 @@
 #skills {
   background-color: $black;
   color: $cream;
-  > div {
+  > .contentMainComponent {
     @include dFlex($ai: flex-start, $jc: space-between);
     flex-direction: column;
     padding-bottom: 13dvh;

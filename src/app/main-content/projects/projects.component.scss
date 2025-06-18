@@ -11,7 +11,7 @@
   @media (max-width: 1024px) {
     height: auto;
   }
-  > div {
+  > .contentMainComponent {
     padding-bottom: 12.22dvh;
     @include dFlex($jc: space-between, $ai: flex-start);
     flex-direction: column;

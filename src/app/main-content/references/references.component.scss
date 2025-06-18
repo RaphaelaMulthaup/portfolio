@@ -12,7 +12,7 @@
   @media (max-width: 1024px) {
     height: auto;
   }
-  > div:last-child {
+  > .contentMainComponent {
     @include dFlex($jc: space-between, $ai: flex-start, $g: 5.33dvh);
     flex-direction: column;
     @media (max-height: 875px) {

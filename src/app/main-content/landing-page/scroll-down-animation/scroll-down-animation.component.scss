@@ -11,11 +11,15 @@
     position: absolute;
     bottom: 3dvh;
     left: 3dvh;
-    background-color: #679aac;
+    background-color: $lightBlue;
     border-radius: 50%;
-    border: 7px;
-    border-color: #679aac;
-    border-style: solid;
+    border: 7px solid $lightBlue;
+  }
+  @media (max-width: 768px) {
+    width: 80px;
+    border-width: 4px;
+    bottom: 5px;
+    left: 9px;
   }
   div {
     animation: rotate 7s linear infinite;

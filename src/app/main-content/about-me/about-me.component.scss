@@ -2,7 +2,7 @@
 
 #aboutMe {
   background-color: $cream;
-  > div {
+  > .contentMainComponent {
     @include dFlex($jc: space-between, $ai: flex-start);
     @media (max-width: 1024px) {
       flex-direction: column-reverse;

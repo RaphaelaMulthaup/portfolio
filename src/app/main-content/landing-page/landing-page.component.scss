@@ -15,7 +15,10 @@
       flex-direction: column;
       padding-top: 4.74dvh;
       min-height: 0;
-      // flex-grow: 1;
+    }
+    @media (max-width: 768px) {
+      gap: 41px;
+      padding: 0;
     }
   }
 }
@@ -34,6 +37,10 @@
   @media (max-height: 800px) and (min-width: 1024px) {
     padding-bottom: 7dvh;
   }
+  @media (max-width: 768px) {
+    padding: 40px 16px 0 16px;
+  }
+
   div:first-child {
     @include dFlex($g: 3.56dvh, $ai: flex-start);
     flex-direction: column;
@@ -43,7 +50,6 @@
     }
   }
 }
-
 
 .landingPageRightSide {
   height: 100%;
@@ -62,12 +68,22 @@
     margin-right: 0;
     min-height: 0;
   }
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+  @media (max-width: 768px) and (max-height: 750px) {
+    justify-content: flex-end;
+    margin-right: 60px;
+  }
 
   > div {
     position: relative;
     @include dFlex($ai: flex-end);
     @media (max-width: 1024px) {
       margin-right: 2vw;
+    }
+    @media (max-width: 768px) {
+      margin-right: 0;
     }
     img {
       height: 82dvh;
@@ -77,6 +93,9 @@
       }
       @media (max-width: 1024px) {
         max-height: 60vh;
+      }
+      @media (max-width: 768px) {
+        height: 48dvh;
       }
     }
     ::ng-deep app-hexagon {
