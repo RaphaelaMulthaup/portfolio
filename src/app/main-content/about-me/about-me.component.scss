@@ -6,8 +6,9 @@
     @include dFlex($jc: space-between, $ai: flex-start);
     @media (max-width: 1024px) {
       flex-direction: column;
-      padding-left: 7vw;
-      padding-right: 7vw;
+      padding: 8dvh 7vw;
+      // padding-left: 7vw;
+      // padding-right: 7vw;
       justify-content: flex-start;
       align-items: flex-end;
       > div {
@@ -20,9 +21,16 @@
         }
         > div:first-child {
           justify-content: flex-start;
-          margin-bottom: -20dvh;
+          margin-bottom: -40dvh;
+          @media (min-height: 950px) {
+            margin-bottom: -26dvh;
+          }
+          @media (min-height: 1050px) {
+            margin-bottom: -20dvh;
+          }
+
           > div {
-            width: 44dvh;
+            width: 51.5vw;
           }
         }
         > div:nth-child(2) {
@@ -30,9 +38,22 @@
         }
       }
     }
-    // @media (max-width: 768px) {
-    //   padding: 80px 16px 0 16px;
-    // }
+    @media (max-width: 768px) {
+      padding: 80px 16px 80px 16px;
+      align-items: flex-start;
+      > div {
+        flex-direction: column-reverse;
+        > div:first-child {
+          margin-bottom: 0;
+          margin-top: -18dvh;
+        }
+        > div:nth-child(2) {
+          > div {
+            min-width: 260px;
+          }
+        }
+      }
+    }
 
     h2 {
       margin-right: 1.67vw;
@@ -94,9 +115,11 @@
   @media (max-width: 1024px) {
     left: 0;
     top: 0;
-    width: 44dvh;
-
+    width: 51.5vw;
     position: relative;
+  }
+  @media (max-width: 768px) {
+    padding: 16px;
   }
   // @media (max-width: 870px) {
   //   left: 82%;
