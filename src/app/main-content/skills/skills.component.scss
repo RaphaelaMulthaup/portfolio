@@ -120,10 +120,10 @@
     width: 120px;
     aspect-ratio: 1;
     @include dFlex();
-    @media (max-width: 1024px) {
-      margin-bottom: 5vw;
-      margin-left: 5vw;
-    }
+    // @media (max-width: 1024px) {
+    //   margin-bottom: 5vw;
+    //   margin-left: 5vw;
+    // }
     img {
       position: absolute;
       z-index: 10;
@@ -171,6 +171,9 @@
         height: 96px;
         aspect-ratio: 1;
         @include dFlex();
+        @media (max-width: 1024px) {
+          height: 72px;
+        }
         @media (hover: hover) and (pointer: fine) {
           &:hover {
             img {
