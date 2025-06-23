@@ -68,7 +68,7 @@ export class MainContentComponent implements AfterViewInit {
     history.scrollRestoration = 'manual';
     this.portfolioService.setMainComponents(this.mainComponents.toArray());
 
-    this.freeScroll = window.innerWidth < 1024;
+    this.freeScroll = window.innerWidth <= 1024;
 
     const targetIndex = this.portfolioService.getCurrentIndex();
     if (targetIndex !== 0) {

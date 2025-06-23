@@ -1,6 +1,11 @@
 @import "./../../styles.scss";
 
 :host {
+  > div:nth-child(2) {
+    @media (max-width: 1024px) {
+      height: auto;
+    }
+  }
   > div:nth-last-child(-n + 3) {
     @media (max-width: 1024px) {
       height: auto;
