@@ -1,16 +1,16 @@
 @import "./../../../styles.scss";
 
-:host {
-  @media (max-width: 1024px) {
-    height: auto !important;
-  }
-}
+// :host {
+//   @media (max-width: 1024px) {
+//     height: auto !important;
+//   }
+// }
 
 #aboutMe {
   background-color: $cream;
-  @media (max-width: 1024px) {
-    height: auto;
-  }
+  // @media (max-width: 1024px) {
+  //   height: auto;
+  // }
   > .contentMainComponent {
     @include dFlex($jc: space-between, $ai: flex-start);
     @media (max-width: 1024px) {
@@ -54,13 +54,32 @@
       padding: 80px 16px 80px 16px;
       > div {
         > div:first-child {
-          margin-top: -18dvh;
+          margin-top: -30dvh;
         }
         > div:nth-child(2) {
           > div {
             min-width: 260px;
           }
         }
+      }
+    }
+    @media (max-width: 768px) and (min-height: 950px) {
+      > div {
+        > div:first-child {
+          margin-top: -24dvh;
+        }
+      }
+    }
+    @media (max-width: 768px) and (min-height: 1000px) {
+      > div {
+        > div:first-child {
+          margin-top: -18dvh;
+        }
+      }
+    }
+    @media (max-width: 768px) and (min-height: 1050px) {
+      > div {
+        margin-top: 50px;
       }
     }
 
@@ -90,9 +109,17 @@
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
-  // @media (max-width: 1024px) {
-  //   height: 64dvh;
-  // }
+  @media (max-width: 1024px) {
+    aspect-ratio: 1.2;
+    background-position: 0 69%;
+  }
+  @media (max-width: 1024px) and (min-height: 750px) {
+    aspect-ratio: 1;
+  }
+  @media (orientation: portrait) {
+    aspect-ratio: 0.714;
+  }
+
   // @media (max-width: 870px) {
   //   height: 56dvh;
   // }
@@ -192,7 +219,7 @@
     top: calc(95% + 400px);
   }
   @media (max-width: 1024px) {
-    top: calc(106% + 400px);
+    top: calc(101% + 400px);
   }
   @media (max-width: 948px) {
     left: 5%;
