@@ -52,6 +52,10 @@
     }
     @media (max-width: 768px) {
       padding: 80px 16px 80px 16px;
+      @media (max-height: 796px) {
+        padding-top: 70px;
+        padding-bottom: 70px;
+      }
       > div {
         > div:first-child {
           margin-top: -30dvh;
@@ -63,6 +67,7 @@
         }
       }
     }
+
     @media (max-width: 768px) and (min-height: 950px) {
       > div {
         > div:first-child {
@@ -80,6 +85,48 @@
     @media (max-width: 768px) and (min-height: 1050px) {
       > div {
         margin-top: 50px;
+      }
+    }
+    @media (max-width: 600px) {
+      > div {
+        > div:first-child {
+          margin-top: -18dvh;
+        }
+      }
+    }
+    @media (min-height: 871px) {
+      > div {
+        > div:first-child {
+          margin-top: -22dvh;
+        }
+      }
+    }
+    @media (max-height: 870px) {
+      > div {
+        > div:first-child {
+          margin-top: -28dvh;
+        }
+      }
+    }
+    @media (max-height: 830px) {
+      > div {
+        > div:first-child {
+          margin-top: -34dvh;
+        }
+      }
+    }
+    @media (max-height: 790px) {
+      > div {
+        > div:first-child {
+          margin-top: -40dvh;
+        }
+      }
+    }
+    @media (max-height: 796px) {
+      > div {
+        > div:first-child {
+          margin-top: -48dvh;
+        }
       }
     }
 
@@ -224,6 +271,20 @@
   @media (max-width: 948px) {
     left: 5%;
   }
+  @media (max-width: 768px) {
+    left: -28%;
+  }
+  @media (max-width: 550px) {
+    left: -45%;
+    top: calc(64% + 400px);
+  }
+  @media (min-height: 760px) {
+    top: calc(74% + 400px);
+  }
+  @media (min-height: 870px) {
+    top: calc(88% + 400px);
+  }
+
   // @media (max-width: 800px) {
   //   top: calc(65% + 400px);
   //   left: -41%;
