@@ -39,12 +39,17 @@ export class PortfolioService {
     this.translate.setDefaultLang('de');
     this.translate.use('de');
 
-    this.touchScreen =
-      typeof window !== 'undefined' &&
-      ('ontouchstart' in window ||
+    this.touchScreen = (() => {
+      if (typeof window === 'undefined' || typeof navigator === 'undefined') {
+        return false;
+      }
+      return (
+        'ontouchstart' in window ||
         navigator.maxTouchPoints > 0 ||
-        (navigator as any).msMaxTouchPoints > 0);
-
+        (navigator as any).msMaxTouchPoints > 0
+      );
+    })();
+    
     this.breakpointObserver
       .observe(['(max-width: 1024px)'])
       .subscribe((result) => {
