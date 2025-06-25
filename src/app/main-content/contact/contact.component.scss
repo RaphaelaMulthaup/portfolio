@@ -27,6 +27,13 @@
         flex-direction: column;
         gap: 100px;
       }
+      @media (max-width: 480px) {
+        gap: 48px;
+      }
+    }
+    @media (max-width: 480px) {
+      padding-left: 16px;
+      padding-right: 16px;
     }
     app-footer {
       width: 100%;
@@ -44,6 +51,10 @@
     margin: 0;
     gap: 56px;
   }
+  @media (max-width: 480px) {
+    gap: 32px;
+  }
+
   h2 {
     color: $yellow;
     @media (max-width: 1024px) {
@@ -51,10 +62,14 @@
     }
   }
   > div {
-    @include dFlex($g: 1.78dvh, $ai: flex-start);
+    @include dFlex($ai: flex-start);
+    gap: clamp(16px, 1.78dvh, 1.78dvh);
     flex-direction: column;
     h4 {
       color: $darkOrange;
+      @media (max-width: 480px) {
+        font-size: 20px;
+      }
     }
   }
 }

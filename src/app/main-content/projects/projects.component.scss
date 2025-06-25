@@ -89,7 +89,8 @@
   > div:last-child {
     flex: 1;
     margin: 3.67dvh 2.78vw;
-    @include dFlex($g: 3.56dvh);
+    @include dFlex();
+    gap: clamp(32px, 3.56dvh, 3.56dvh);
     flex-direction: column;
     > div:last-child {
       width: 100%;
@@ -132,7 +133,8 @@
   padding: 0 2.22vw;
   box-sizing: border-box;
   > div:first-child {
-    @include dFlex($g: 1.78dvh, $ai: flex-start);
+    @include dFlex($ai: flex-start);
+    gap: clamp(16px, 1.78dvh, 1.78dvh);
     flex-direction: column;
     width: 100%;
     > div:first-child {
