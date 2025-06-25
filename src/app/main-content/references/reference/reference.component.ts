@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
-import { HexagonComponent } from '../hexagon/hexagon.component';
 import { CommonModule } from '@angular/common';
-import { TouchHoverDirective } from '../directives/touch-hover.directive';
+import { TouchHoverDirective } from '../../shared/directives/touch-hover.directive';
+import { HexagonComponent } from '../../shared/hexagon/hexagon.component';
 interface ReferenceData {
   name: string;
   text: string;

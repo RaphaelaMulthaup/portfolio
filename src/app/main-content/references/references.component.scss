@@ -26,6 +26,9 @@
       padding: 80px 7vw;
       gap: 0;
     }
+    @media (max-width: 480px) {
+      padding: 80px 16px;
+    }
   }
 }
 

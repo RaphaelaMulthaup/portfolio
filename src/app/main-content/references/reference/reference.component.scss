@@ -9,6 +9,9 @@
   @media (max-height: 800px) {
     padding: 16px;
   }
+  @media (max-width: 420px) {
+    padding: 16px;
+  }
 
   > div:first-child {
     width: 100%;
@@ -38,9 +41,9 @@
   > span:last-child {
     font-size: 18px;
     font-weight: 700;
-    @media (max-width: 1220px) {
-      font-size: 16px;
-    }
+    // @media (max-width: 1220px) {
+    //   font-size: 16px;
+    // }
   }
 }
 
