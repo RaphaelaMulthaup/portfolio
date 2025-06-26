@@ -40,13 +40,21 @@
   @media (max-width: 768px) {
     padding: 40px 16px 0 16px;
   }
-
+  @media (max-width: 370px) {
+    padding-top: 20px;
+    @media (max-height: 650px) {
+      padding-top: 0;
+    }
+  }
   div:first-child {
     @include dFlex($g: 3.56dvh, $ai: flex-start);
     flex-direction: column;
     div {
       @include dFlex($g: 8px, $ai: flex-start);
       flex-direction: column;
+      @media (max-width: 400px) {
+        gap: 4px;
+      }
     }
   }
 }
@@ -96,6 +104,9 @@
       }
       @media (max-width: 768px) {
         height: 48dvh;
+        @media (max-height: 650px) {
+          height: 45dvh;
+        }
       }
     }
     ::ng-deep app-hexagon {
@@ -108,9 +119,12 @@
       @media (max-width: 1250px) and (min-height: 850px) {
         right: -30px;
       }
-      @media (max-width: 1024px) and (min-height: 700px) {
+      @media (max-width: 1024px) {
         right: -25px;
       }
+      //       @media (max-width: 1024px) and (min-height: 700px) {
+      //   right: -25px;
+      // }
 
       svg {
         position: absolute;
