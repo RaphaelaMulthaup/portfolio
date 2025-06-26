@@ -44,8 +44,8 @@ footer {
   height: 29.22dvh;
   width: 40dvh;
   @media (max-width: 1024px) {
-    left: calc(50% - 185px);
-    width: 370px;
+    left: calc(50% - 175px);
+    width: 350px;
     height: 251.75px;
   }
   > ::ng-deep app-hexagon:first-child {
@@ -73,9 +73,10 @@ footer {
     position: absolute;
     left: 11dvh;
     bottom: 0;
-        @media (max-width: 1024px) {
+    @media (max-width: 1024px) {
       width: 251.75px;
       height: 251.75px;
+      left: 100px;
     }
     > svg {
       width: 100%;

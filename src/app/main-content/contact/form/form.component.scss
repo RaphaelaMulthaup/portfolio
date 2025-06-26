@@ -21,10 +21,18 @@ form {
   > div:first-child {
     @include dFlex($g: 2.22vw);
     margin-bottom: 6.22dvh;
+    @media (max-width: 560px) {
+      flex-direction: column;
+      gap: 56px;
+    }
     > div {
       @include dFlex($ai: flex-start);
       flex-direction: column;
       flex: 1;
+      @media (max-width: 560px) {
+        width: 100%;
+      }
+
       &:hover {
         h4 {
           color: $darkOrange;
@@ -65,12 +73,12 @@ form {
       }
     }
   }
-   > div:first-child,
-   > div:nth-child(2) {
+  > div:first-child,
+  > div:nth-child(2) {
     @media (max-width: 1024px) {
       margin-bottom: 40px;
     }
-   }
+  }
 }
 
 input[type="text"],
