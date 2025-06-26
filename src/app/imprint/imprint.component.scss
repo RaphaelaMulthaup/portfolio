@@ -11,10 +11,14 @@
 .marginLateral {
   margin-left: 7.78vw;
   margin-right: 5vw;
+  @media (max-width: 1024px) {
+    margin-left: 5vw;
+  }
 }
 
 .contentImprint {
   flex: 1;
+  min-height: 480px;
   > div {
     margin-left: 2vw;
   }
