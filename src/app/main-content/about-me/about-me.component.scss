@@ -331,6 +331,10 @@
       font-size: 22px;
     }
   }
+  @media (max-width: 900px) and (max-height: 480px) {
+    top: calc(56% + 400px);
+  }
+
   // @media (max-width: 350px) {
   //   left: -4%;
   // }
