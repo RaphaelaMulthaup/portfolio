@@ -100,6 +100,9 @@
       span {
         font-size: 18px;
         transition: color 100ms ease-in;
+        @media (max-width: 410px) {
+          font-size: 13px;
+        }
         &:hover,
         &.hoverEffect {
           cursor: pointer;
@@ -190,6 +193,13 @@
       img {
         height: 20px;
       }
+    }
+    @media (max-width: 390px) {
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 8px;
     }
   }
   @media (max-width: 1024px) {
