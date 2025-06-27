@@ -71,6 +71,10 @@ h2 {
   @media (max-width: 768px) {
     font-size: 40px;
   }
+  @media (max-width: 480px) {
+    font-size: 32px;
+    // margin-bottom: 20px;
+  }
 }
 
 h3 {
