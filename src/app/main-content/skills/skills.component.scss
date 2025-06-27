@@ -6,12 +6,18 @@
   @media (max-width: 480px) {
     height: auto !important;
   }
+  @media (max-width: 900px) and (max-height: 480px) {
+    height: auto !important;
+  }
 }
 
 #skills {
   background-color: $black;
   color: $cream;
   @media (max-width: 480px) {
+    height: auto;
+  }
+  @media (max-width: 900px) and (max-height: 480px) {
     height: auto;
   }
 
@@ -33,6 +39,10 @@
         padding-top: 40px;
       }
     }
+    @media (max-width: 900px) and (max-height: 480px) {
+      padding: 12dvh 7vw 8dvh;
+    }
+
     > div:last-child {
       background-color: $yellow;
       border-color: $cream;

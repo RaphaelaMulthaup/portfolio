@@ -20,6 +20,14 @@
     @media (max-width: 1024px) {
       padding: 80px 7vw 0 7vw;
     }
+    @media (max-width: 480px) {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    @media (max-width: 900px) and (max-height: 480px) {
+      padding: 12dvh 7vw 0 7vw;
+    }
+
     > div:first-child {
       flex: 1;
       @include dFlex($jc: space-between);
@@ -30,10 +38,6 @@
       @media (max-width: 480px) {
         gap: 48px;
       }
-    }
-    @media (max-width: 480px) {
-      padding-left: 16px;
-      padding-right: 16px;
     }
     app-footer {
       width: 100%;

@@ -26,6 +26,9 @@
     @media (max-width: 480px) {
       padding: 80px 16px;
     }
+    @media (max-width: 900px) and (max-height: 480px) {
+      padding: 12dvh 7vw 8dvh;
+    }
   }
 }
 

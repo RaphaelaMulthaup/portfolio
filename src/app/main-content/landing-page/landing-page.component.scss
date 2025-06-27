@@ -20,6 +20,9 @@
       gap: 41px;
       padding: 0;
     }
+    @media (max-width: 900px) and (max-height: 480px) {
+      padding-left: 7vw;
+    }
   }
 }
 

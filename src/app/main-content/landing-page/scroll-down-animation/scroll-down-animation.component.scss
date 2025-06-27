@@ -21,6 +21,11 @@
     bottom: 5px;
     left: 9px;
   }
+  @media (max-width: 900px) and (max-height: 480px) {
+    bottom: 60dvh;
+    left: 107dvh;
+  }
+
   div {
     animation: rotate 7s linear infinite;
     svg:first-child {
