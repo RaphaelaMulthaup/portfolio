@@ -2,9 +2,19 @@
 
 // $gapSkillIkons: 40px;
 
+:host {
+  @media (max-width: 480px) {
+    height: auto !important;
+  }
+}
+
 #skills {
   background-color: $black;
   color: $cream;
+  @media (max-width: 480px) {
+    height: auto;
+  }
+
   > .contentMainComponent {
     @include dFlex($ai: flex-start, $jc: space-between);
     flex-direction: column;
@@ -204,6 +214,10 @@
           height: 56px;
           animation: pulseHeightSmallDesktop 1.5s ease-in-out infinite;
         }
+      }
+      @media (max-width: 370px) {
+        font-size: 14px;
+        column-gap: 12px;
       }
       > :nth-child(9) {
         grid-column: 2;
