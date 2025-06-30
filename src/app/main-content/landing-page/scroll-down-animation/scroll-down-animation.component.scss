@@ -2,22 +2,17 @@
 
 .scrollDownAnimation {
   position: relative;
-  width: 144px;
+  width: clamp(80px, 12vw, 144px);
   aspect-ratio: 1;
-  @media (max-height: 800px) {
-    width: 120px;
-  }
   @media (max-width: 1024px) {
     position: absolute;
     bottom: 3dvh;
     left: 3dvh;
     background-color: $lightBlue;
     border-radius: 50%;
-    border: 7px solid $lightBlue;
+    border: clamp(4px, 0.7vw, 7px) solid $lightBlue;
   }
   @media (max-width: 768px) {
-    width: 80px;
-    border-width: 4px;
     bottom: 5px;
     left: 9px;
   }
@@ -31,40 +26,41 @@
     left: 257px;
   }
 
-  div {
-    animation: rotate 7s linear infinite;
-    svg:first-child {
-      text {
-        fill: $cream;
-        font-size: 31.5px;
-        textPath {
-          font-family: "Eczar";
-          font-weight: 700;
-        }
-      }
-    }
-    ::ng-deep app-hexagon {
-      position: absolute;
-      width: 60%;
-      height: 60%;
-      top: 20%;
-      left: 20%;
-      svg {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        transform: rotate(30deg);
-        polygon {
-          stroke: $yellow;
-          fill: $yellow;
-        }
-      }
-    }
-  }
   img {
     height: 30%;
     position: absolute;
     top: 35%;
     left: 36.855%;
+  }
+}
+
+.rotatingDiv {
+  animation: rotate 7s linear infinite;
+  svg:first-child {
+    text {
+      fill: $cream;
+      font-size: 31.5px;
+      textPath {
+        font-family: "Eczar";
+        font-weight: 700;
+      }
+    }
+  }
+  ::ng-deep app-hexagon {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    svg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform: rotate(30deg);
+      polygon {
+        stroke: $yellow;
+        fill: $yellow;
+      }
+    }
   }
 }
