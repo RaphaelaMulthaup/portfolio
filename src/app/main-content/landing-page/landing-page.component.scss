@@ -16,12 +16,18 @@
       padding-top: 4.74dvh;
       min-height: 0;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 768px) and (orientation: portrait) {
       gap: 41px;
       padding: 0;
     }
     @media (max-width: 900px) and (max-height: 480px) {
       padding-left: 7vw;
+    }
+    @media (max-width: 680px) and (max-height: 410px) {
+      padding-top: 0;
+    }
+    @media (max-width: 560px) and (max-height: 410px) {
+      padding-right: 0;
     }
   }
 }
@@ -40,7 +46,7 @@
   @media (max-height: 800px) and (min-width: 1024px) {
     padding-bottom: 7dvh;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 768px) and (orientation: portrait) {
     padding: 40px 16px 0 16px;
   }
   @media (max-width: 370px) {
@@ -50,7 +56,8 @@
     }
   }
   div:first-child {
-    @include dFlex($g: 3.56dvh, $ai: flex-start);
+    @include dFlex($ai: flex-start);
+    gap: clamp(18px, 3.56dvh, 3.56dvh);
     flex-direction: column;
     div {
       @include dFlex($g: 8px, $ai: flex-start);
@@ -110,6 +117,13 @@
         @media (max-height: 650px) {
           height: 45dvh;
         }
+      }
+      @media (max-width: 680px) and (max-height: 410px) {
+        max-height: 100%;
+        height: 80dvh;
+      }
+      @media (max-width: 530px) and (max-height: 410px) {
+        height: 72dvh;
       }
     }
     ::ng-deep app-hexagon {

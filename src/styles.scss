@@ -52,6 +52,9 @@ h1 {
       font-size: 48px;
     }
   }
+  @media (max-width: 680px) and (max-height: 410px) {
+    font-size: 48px;
+  }
 }
 
 h2 {
@@ -98,6 +101,9 @@ h3 {
     @media (max-height: 650px) {
       font-size: 20px;
     }
+  }
+    @media (max-width: 680px) and (max-height: 410px) {
+    font-size: 22px;
   }
 }
 

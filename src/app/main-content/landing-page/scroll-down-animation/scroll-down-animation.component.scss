@@ -25,6 +25,16 @@
     bottom: 60dvh;
     left: 107dvh;
   }
+  @media (max-width: 680px) and (max-height: 410px) {
+    bottom: auto;
+    top: 26px;
+    left: 257px;
+  }
+  // @media (max-width: 530px) and (max-height: 410px) {
+  //   bottom: auto;
+  //   top: 22px;
+  //   left: 225px;
+  // }
 
   div {
     animation: rotate 7s linear infinite;
