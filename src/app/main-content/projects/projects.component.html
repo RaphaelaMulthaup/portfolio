@@ -7,7 +7,7 @@
       <span>{{ "projects.explore" | translate }}</span>
     </div>
     <div class="projectsLowerArea">
-      <div [ngClass]="dataDisplayedProject.bGroundColor">
+      <div class="projectsGraphicRepresentation" [ngClass]="dataDisplayedProject.bGroundColor">
         <app-hexagon
           [ngClass]="dataDisplayedProject.colorHexagon"
         ></app-hexagon>
@@ -20,10 +20,10 @@
           />
         </div>
       </div>
-      <div>
+      <div class="projectsLowerAreaRightArea">
         <div class="projectInformations">
-          <div>
-            <div>
+          <div class="readableProjectInformations">
+            <div class="headerProjectInformations">
               <h4>{{ dataDisplayedProject.name }}</h4>
               <div class="jumpingImg">
                 <div class="fadeWrapper">
@@ -43,14 +43,14 @@
               </div>
               <div
                 #overlayProjects
-                class="overlay"
+                class="overlay overlayProjects"
                 [ngClass]="{
                   open:
                     (jumpingImgIsHovered && !portfolioService.touchScreen) ||
                     overlayController.overlayCalled
                 }"
               >
-                <div
+                <div class="closeOverlayProjects"
                   [ngStyle]="{
                     display: !portfolioService.touchScreen ? 'none' : 'flex'
                   }"
@@ -72,7 +72,7 @@
               "projects." + dataDisplayedProject.description | translate
             }}</span>
           </div>
-          <div>
+          <div class="buttonsFurtherProjectInformations">
             <button
               [appTouchImage]="getHoverHandler('btnGitHub')"
               appTouchHover
@@ -108,7 +108,7 @@
             </button>
           </div>
         </div>
-        <div>
+        <div class="projectChangeButtons">
           <span appTouchHover (click)="changeProject('previous')">{{
             "projects.previous" | translate
           }}</span>
