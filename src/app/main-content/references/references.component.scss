@@ -12,26 +12,26 @@
   @media (max-width: 1024px) {
     height: auto;
   }
-  > .contentMainComponent {
-    @include dFlex($jc: space-between, $ai: flex-start, $g: 5.33dvh);
-    flex-direction: column;
-    @media (max-height: 875px) {
-      padding-top: 4dvh;
-    }
+}
 
-    @media (max-height: 800px) {
-      gap: 3.56dvh;
-    }
-    @media (max-width: 1024px) {
-      padding: 80px 7vw;
-      gap: 0;
-    }
-    @media (max-width: 480px) {
-      padding: 80px 16px;
-    }
-    @media (max-width: 900px) and (max-height: 480px) {
-      padding: 12dvh 7vw 8dvh;
-    }
+.contentMainComponent {
+  @include dFlex($jc: space-between, $ai: flex-start, $g: 5.33dvh);
+  flex-direction: column;
+  @media (max-height: 875px) {
+    padding-top: 4dvh;
+  }
+  @media (max-height: 800px) {
+    gap: 3.56dvh;
+  }
+  @media (max-width: 1024px) {
+    padding: 80px 7vw;
+    gap: 0;
+  }
+  @media (max-width: 480px) {
+    padding: 80px 16px;
+  }
+  @media (max-width: 900px) and (max-height: 480px) {
+    padding: 12dvh 7vw 8dvh;
   }
 }
 
@@ -54,23 +54,6 @@
     gap: 24px;
     margin-bottom: 0;
   }
-  div {
-    height: 100%;
-    width: 26.7vw;
-    @media (max-width: 1024px) {
-      height: auto;
-      width: auto;
-    }
-
-    app-reference {
-      width: 100%;
-      @include dFlex($g: 2.22dvh);
-      flex-direction: column;
-      @media (max-width: 1024px) {
-        gap: 32px;
-      }
-    }
-  }
   > div:first-child {
     @include dFlex($ai: flex-start);
   }
@@ -79,5 +62,23 @@
   }
   > div:last-child {
     @include dFlex($ai: flex-end);
+  }
+}
+
+.reference {
+  height: 100%;
+  width: 26.7vw;
+  @media (max-width: 1024px) {
+    height: auto;
+    width: auto;
+  }
+
+  app-reference {
+    width: 100%;
+    @include dFlex($g: 2.22dvh);
+    flex-direction: column;
+    @media (max-width: 1024px) {
+      gap: 32px;
+    }
   }
 }
