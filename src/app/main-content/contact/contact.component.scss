@@ -14,34 +14,32 @@
   @media (max-width: 1024px) {
     height: auto;
   }
-  > .contentMainComponent {
-    @include dFlex();
-    flex-direction: column;
-    @media (max-width: 1024px) {
-      padding: 80px 7vw 0 7vw;
-    }
-    @media (max-width: 480px) {
-      padding-left: 16px;
-      padding-right: 16px;
-    }
-    @media (max-width: 900px) and (max-height: 480px) {
-      padding: 12dvh 7vw 0 7vw;
-    }
+}
 
-    > div:first-child {
-      flex: 1;
-      @include dFlex($jc: space-between);
-      @media (max-width: 1024px) {
-        flex-direction: column;
-        gap: 100px;
-      }
-      @media (max-width: 480px) {
-        gap: 48px;
-      }
-    }
-    app-footer {
-      width: 100%;
-    }
+.contentMainComponent {
+  @include dFlex();
+  flex-direction: column;
+  @media (max-width: 1024px) {
+    padding: 80px 7vw 0 7vw;
+  }
+  @media (max-width: 480px) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  @media (max-width: 900px) and (max-height: 480px) {
+    padding: 12dvh 7vw 0 7vw;
+  }
+  app-footer {
+    width: 100%;
+  }
+}
+
+.contentContact {
+  flex: 1;
+  @include dFlex($jc: space-between);
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: clamp(48px, 10vw, 100px);
   }
 }
 
@@ -53,27 +51,24 @@
   margin-right: 7vw;
   @media (max-width: 1024px) {
     margin: 0;
-    gap: 56px;
+    gap: clamp(32px, 6vw, 56px);
   }
-  @media (max-width: 480px) {
-    gap: 32px;
-  }
-
   h2 {
     color: $yellow;
     @media (max-width: 1024px) {
       margin-bottom: 0;
     }
   }
-  > div {
-    @include dFlex($ai: flex-start);
-    gap: clamp(16px, 1.78dvh, 1.78dvh);
-    flex-direction: column;
-    h4 {
-      color: $darkOrange;
-      @media (max-width: 480px) {
-        font-size: 20px;
-      }
+}
+
+.contactText {
+  @include dFlex($ai: flex-start);
+  gap: clamp(16px, 1.78dvh, 1.78dvh);
+  flex-direction: column;
+  h4 {
+    color: $darkOrange;
+    @media (max-width: 480px) {
+      font-size: 20px;
     }
   }
 }
