@@ -4,12 +4,12 @@
   <div class="contentMainComponent">
     <div class="skillsUpperArea">
       <h2>{{ "skills.h2" | translate }}</h2>
-      <div>
-        <div>{{ "skills.text" | translate }}</div>
+      <div class="wrapperSkillsText">
+        <div class="skillsText">{{ "skills.text" | translate }}</div>
       </div>
     </div>
     <div class="skillsLowerArea">
-      <div>
+      <div class="hexagonWithHat">
         <img
           src="assets/img/hat.png"
           alt="hat"
@@ -19,10 +19,10 @@
         />
         <app-hexagon class="hexagon"></app-hexagon>
       </div>
-      <div>
+      <div class="skillsIcons">
         @for (item of skillList; track item.name) {
-        <div>
-          <div>
+        <div class="skill">
+          <div class="wrapperImg">
             <img [src]="item.path" [alt]="item.name" />
           </div>
           <span>{{ item.name }}</span>
@@ -32,14 +32,14 @@
     </div>
     <div
       #overlaySkills
-      class="overlay"
+      class="overlay overlayFutureSkills"
       [ngClass]="{
         open:
           (hatIsHovered && !portfolioService.touchScreen) ||
           overlayController.overlayCalled
       }"
     >
-      <div
+      <div class="wrapperCloseButton"
         [ngStyle]="{
           display: !portfolioService.touchScreen ? 'none' : 'flex'
         }"
@@ -53,12 +53,12 @@
       </div>
       <h4>{{ "skills.h4" | translate }}</h4>
       <span>{{ "skills.feelFree" | translate }}</span>
-      <div>
-        <div>
+      <div class="iconsFutureSkills">
+        <div class="futureSkill">
           <img src="assets/img/react.png" alt="React" />
           <span>React</span>
         </div>
-        <div>
+        <div class="futureSkill">
           <img src="assets/img/docker.png" alt="Docker" />
           <span>Docker</span>
         </div>
