@@ -14,7 +14,7 @@
               overlayController.overlayCalled
           }"
         >
-          <div>
+          <div class="moreAboutMeHeader">
             <h4>{{ "aboutMe.moreAoutMe.moreAoutMe" | translate }}</h4>
             <img
               [ngStyle]="{
@@ -42,7 +42,7 @@
           <br />
           <span>{{ "aboutMe.letsWork" | translate }}</span>
         </div>
-        <div>
+        <div class="textAboutMeInteractive">
           <button appTouchHover (click)="portfolioService.scrollToSection(5)">
             {{ "aboutMe.button" | translate }}
           </button>
@@ -60,9 +60,9 @@
     }
     <h2>{{ "aboutMe.h2" | translate }}</h2>
     @if (portfolioService.mobileScreen) {
-    <div>
-      <div><div class="aboutMeLeftSide"></div></div>
-      <div>
+    <div class="imgAndText">
+      <div class="wrapperImgDiv"><div class="aboutMeLeftSide"></div></div>
+      <div class="wrapperTextAboutMe">
         <div class="textAboutMe">
           <div
             #overlayMoreAboutMe
@@ -73,7 +73,7 @@
                 overlayController.overlayCalled
             }"
           >
-            <div>
+            <div class="moreAboutMeHeader">
               <h4>{{ "aboutMe.moreAoutMe.moreAoutMe" | translate }}</h4>
               <img
                 [ngStyle]="{
@@ -101,7 +101,7 @@
             <br />
             <span>{{ "aboutMe.letsWork" | translate }}</span>
           </div>
-          <div>
+          <div class="textAboutMeInteractive">
             <button appTouchHover (click)="portfolioService.scrollToSection(5)">
               {{ "aboutMe.button" | translate }}
             </button>
