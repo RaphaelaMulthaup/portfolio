@@ -1,39 +1,40 @@
-@import './../../../../styles.scss';
+@import "./../../../../styles.scss";
 
 .navBullets {
-    @include dFlex($g: 20px);
-    flex-direction: column;
-    div {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        transform: rotate(45deg);
-    }
+  @include dFlex($g: 20px);
+  flex-direction: column;
+}
+
+.navBullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transform: rotate(45deg);
 }
 
 .bGroundBlack {
-    div {
-        background-color: $black;
-    }
+  .navBullet {
+    background-color: $black;
+  }
 }
 
 .bGroundCreme {
-    div {
-        background-color: $cream;
-    }
+  .navBullet {
+    background-color: $cream;
+  }
 }
 
 .activeBullet {
-    border-radius: 0 !important;
-    background-color: $yellow !important;
+  border-radius: 0 !important;
+  background-color: $yellow !important;
 }
 
 .darkOrangeBGround {
-    background-color: $darkOrange !important;
+  background-color: $darkOrange !important;
 }
 
 .passiveBullet {
-    &:hover {
-        cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
+  }
 }

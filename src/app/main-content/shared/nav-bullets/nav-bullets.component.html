@@ -1,7 +1,7 @@
 @if (!portfolioService.mobileScreen) {
 <div class="navBullets" [ngClass]="bGroundBulletPoints">
   @for (item of bulletArray; track index; let index = $index){
-  <div
+  <div class="navBullet"
     [ngClass]="{
       activeBullet: index === currentIndexMainComponents(),
       darkOrangeBGround:
