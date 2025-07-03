@@ -1,7 +1,7 @@
 @import "./../../../styles.scss";
 
 :host {
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     height: auto !important;
   }
 }
@@ -11,7 +11,7 @@
   color: $cream;
   width: 100vw;
   box-sizing: border-box;
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     height: auto;
   }
 }
@@ -19,14 +19,14 @@
 .contentMainComponent {
   @include dFlex();
   flex-direction: column;
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     padding: 80px 7vw 0 7vw;
   }
-  @media (max-width: 480px) {
+  @include respond-to(mobile-portrait) {
     padding-left: 16px;
     padding-right: 16px;
   }
-  @media (max-width: 900px) and (max-height: 480px) {
+  @include respond-to(mobile-landscape) {
     padding: 12dvh 7vw 0 7vw;
   }
   app-footer {
@@ -37,7 +37,7 @@
 .contentContact {
   flex: 1;
   @include dFlex($jc: space-between);
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     flex-direction: column;
     gap: clamp(48px, 10vw, 100px);
   }
@@ -49,13 +49,13 @@
   @include dFlex($g: 4dvh, $jc: flex-start);
   flex-direction: column;
   margin-right: 7vw;
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     margin: 0;
     gap: clamp(32px, 6vw, 56px);
   }
   h2 {
     color: $yellow;
-    @media (max-width: 1024px) {
+    @include respond-to(tablet-landscape) {
       margin-bottom: 0;
     }
   }
@@ -67,7 +67,7 @@
   flex-direction: column;
   h4 {
     color: $darkOrange;
-    @media (max-width: 480px) {
+    @include respond-to(mobile-portrait) {
       font-size: 20px;
     }
   }
@@ -83,19 +83,19 @@
   @media (max-width: 1200px) {
     width: 53%;
   }
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     flex-direction: column-reverse;
     width: 100%;
     padding-bottom: 96px;
   }
-  @media (max-width: 480px) {
+  @include respond-to(mobile-portrait) {
     padding-bottom: 24px;
   }
 
   .svgWrapper {
     position: relative;
     display: inline-block;
-    @media (max-width: 1024px) {
+    @include respond-to(tablet-landscape) {
       margin-top: -44px;
     }
     svg {
@@ -129,10 +129,10 @@
     width: 100%;
     max-width: 650px;
     margin-right: 3.33vw;
-    @media (min-width: 1700px) {
+    @include respond-to(large-desktop) {
       margin-right: 6vw;
     }
-    @media (max-width: 1024px) {
+    @include respond-to(tablet-landscape) {
       margin-right: 0;
       max-width: none;
     }

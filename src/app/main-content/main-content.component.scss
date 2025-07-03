@@ -8,7 +8,7 @@
     }
   }
 
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     > div:nth-last-child(-n + 3) {
       height: auto;
     }

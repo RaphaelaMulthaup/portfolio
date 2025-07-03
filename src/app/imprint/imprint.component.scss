@@ -11,7 +11,7 @@
 .marginLateral {
   margin-left: 7.78vw;
   margin-right: 5vw;
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     margin-left: 5vw;
   }
 }

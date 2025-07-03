@@ -26,7 +26,7 @@ body {
   height: 100%;
   overflow: hidden;
   background-color: #1d1d1d;
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     overflow: visible;
     overflow-y: auto;
   }
@@ -43,7 +43,7 @@ h1 {
   @media (max-width: 1024px) and (min-height: 700px) {
     font-size: 80px;
   }
-  @media (max-width: 768px) {
+  @include respond-to(tablet) {
     font-size: 72px;
   }
   @media (max-width: 400px) {
@@ -68,15 +68,14 @@ h2 {
   @media (max-width: 1220px) {
     font-size: 50px;
   }
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     margin-bottom: 32px;
   }
-  @media (max-width: 768px) {
+  @include respond-to(tablet) {
     font-size: 40px;
   }
-  @media (max-width: 480px) {
+  @include respond-to(mobile-portrait) {
     font-size: 32px;
-    // margin-bottom: 20px;
   }
 }
 
@@ -88,14 +87,9 @@ h3 {
   @media (max-width: 1150px) {
     font-size: 40px;
   }
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     font-size: 32px;
   }
-  //   @media (max-width: 1024px) and (min-height: 700px)
-  // {
-  //   font-size: 32px;
-  // }
-
   @media (max-width: 400px) {
     font-size: 24px;
     @media (max-height: 650px) {
@@ -164,6 +158,53 @@ app-nav-bullets {
   gap: $g;
 }
 
+@mixin respond-to($device) {
+  @if $device == mobile-portrait {
+    @media (max-width: 480px) {
+      @content;
+    }
+  } @else if $device == mobile-landscape {
+    @media (max-width: 900px) and (max-height: 480px) {
+      @content;
+    }
+  } @else if $device == tablet-portrait {
+    @media (max-width: 768px) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $device == tablet {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $device == tablet-landscape {
+    @include respond-to(tablet-landscape) {
+      @content;
+    }
+  } @else if $device == small-desktop {
+    @media (max-width: 1300px) {
+      @content;
+    }
+  } @else if $device == large-desktop {
+    @media (min-width: 1700px) {
+      @content;
+    }
+    
+  } @else if $device == short-height {
+    @media (max-height: 800px) {
+      @content;
+    }
+  } @else if $device == very-short-height {
+    @media (max-height: 740px) {
+      @content;
+    }
+  } @else if $device == ultra-wide {
+    @media (min-aspect-ratio: 55/24) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown device `#{$device}` in respond-to mixin.";
+  }
+}
+
 .dNone {
   display: none;
 }
@@ -211,7 +252,7 @@ app-nav-bullets {
   max-height: 88px;
   margin: 0 5% 0 5%;
   @include dFlex($jc: space-between);
-  @media (max-width: 768px) {
+  @include respond-to(tablet) {
     height: 72px;
   }
   app-logo-name {
@@ -226,7 +267,7 @@ app-nav-bullets {
   padding: 8dvh 5vw 0 7.78vw;
   @include dFlex();
   flex-grow: 1;
-  @media (max-height: 800px) {
+  @include respond-to(short-height) {
     padding-top: 4dvh;
   }
 }
@@ -288,14 +329,6 @@ app-nav-bullets {
   }
 }
 
-/* quicksand-300 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Quicksand";
-  font-style: normal;
-  font-weight: 300;
-  src: url("./assets/fonts/quicksand-v31-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
 /* quicksand-regular - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -303,22 +336,6 @@ app-nav-bullets {
   font-style: normal;
   font-weight: 400;
   src: url("./assets/fonts/quicksand-v31-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* quicksand-500 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Quicksand";
-  font-style: normal;
-  font-weight: 500;
-  src: url("./assets/fonts/quicksand-v31-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* quicksand-600 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Quicksand";
-  font-style: normal;
-  font-weight: 600;
-  src: url("./assets/fonts/quicksand-v31-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* quicksand-700 - latin */
 @font-face {
@@ -336,22 +353,6 @@ app-nav-bullets {
   font-weight: 400;
   src: url("./assets/fonts/eczar-v22-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-/* eczar-500 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Eczar";
-  font-style: normal;
-  font-weight: 500;
-  src: url("./assets/fonts/eczar-v22-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* eczar-600 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Eczar";
-  font-style: normal;
-  font-weight: 600;
-  src: url("./assets/fonts/eczar-v22-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
 /* eczar-700 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -359,12 +360,4 @@ app-nav-bullets {
   font-style: normal;
   font-weight: 700;
   src: url("./assets/fonts/eczar-v22-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* eczar-800 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Eczar";
-  font-style: normal;
-  font-weight: 800;
-  src: url("./assets/fonts/eczar-v22-latin-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }

@@ -1,7 +1,7 @@
 @import "./../../../styles.scss";
 
 :host {
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     height: auto !important;
   }
 }
@@ -9,7 +9,7 @@
 #references {
   background-color: $lightBlue;
   color: $cream;
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     height: auto;
   }
 }
@@ -20,17 +20,17 @@
   @media (max-height: 875px) {
     padding-top: 4dvh;
   }
-  @media (max-height: 800px) {
+  @include respond-to(short-height) {
     gap: 3.56dvh;
   }
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     padding: 80px 7vw;
     gap: 0;
   }
-  @media (max-width: 480px) {
+  @include respond-to(mobile-portrait) {
     padding: 80px 16px;
   }
-  @media (max-width: 900px) and (max-height: 480px) {
+  @include respond-to(mobile-landscape) {
     padding: 12dvh 7vw 8dvh;
   }
 }
@@ -42,13 +42,13 @@
   padding-right: 2.78vw;
   box-sizing: border-box;
   flex: 1;
-  @media (max-width: 1300px) {
+  @include respond-to(small-desktop) {
     margin-bottom: 9dvh;
   }
   @media (max-width: 1220px) {
     margin-bottom: 6dvh;
   }
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     flex-direction: column;
     padding: 0;
     gap: 24px;
@@ -68,7 +68,7 @@
 .reference {
   height: 100%;
   width: 26.7vw;
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     height: auto;
     width: auto;
   }
@@ -77,7 +77,7 @@
     width: 100%;
     @include dFlex($g: 2.22dvh);
     flex-direction: column;
-    @media (max-width: 1024px) {
+    @include respond-to(tablet-landscape) {
       gap: 32px;
     }
   }

@@ -7,16 +7,16 @@
 .contentMainComponent {
   flex: 1;
   justify-content: space-between;
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     flex-direction: column;
     padding-top: 4.74dvh;
     min-height: 0;
   }
-  @media (max-width: 768px) and (orientation: portrait) {
+  @include respond-to(tablet-portrait) {
     gap: 41px;
     padding: 0;
   }
-  @media (max-width: 900px) and (max-height: 480px) {
+  @include respond-to(mobile-landscape) {
     padding-left: 7vw;
   }
   @media (max-width: 680px) and (max-height: 410px) {
@@ -33,7 +33,7 @@
   height: 100%;
   padding-bottom: calc((100dvh - var(--header-height)) * 0.12);
   box-sizing: border-box;
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     height: auto;
     padding-bottom: 0;
     width: 100%;
@@ -41,7 +41,7 @@
   @media (max-height: 800px) and (min-width: 1024px) {
     padding-bottom: 7dvh;
   }
-  @media (max-width: 768px) and (orientation: portrait) {
+  @include respond-to(tablet-portrait) {
     padding: 40px 16px 0 16px;
   }
   @media (max-width: 370px) {
@@ -73,7 +73,7 @@
   @media (max-width: 1420px) {
     margin-left: -15vw;
   }
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     height: auto;
     width: 100%;
     justify-content: flex-end;
@@ -81,7 +81,7 @@
     margin-right: 0;
     min-height: 0;
   }
-  @media (max-width: 768px) {
+  @include respond-to(tablet) {
     justify-content: center;
   }
   @media (max-width: 768px) and (max-height: 750px) {
@@ -93,10 +93,10 @@
 .hexagonAndImg {
   position: relative;
   @include dFlex($ai: flex-end);
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     margin-right: 2vw;
   }
-  @media (max-width: 768px) {
+  @include respond-to(tablet) {
     margin-right: 0;
   }
   img {
@@ -105,10 +105,10 @@
     @media (min-height: 700px) and (max-width: 1120px) {
       height: 70dvh;
     }
-    @media (max-width: 1024px) {
+    @include respond-to(tablet-landscape) {
       max-height: 60vh;
     }
-    @media (max-width: 768px) {
+    @include respond-to(tablet) {
       height: 48dvh;
       @media (max-height: 650px) {
         height: 45dvh;
@@ -132,7 +132,7 @@
     @media (max-width: 1250px) and (min-height: 850px) {
       right: -30px;
     }
-    @media (max-width: 1024px) {
+    @include respond-to(tablet-landscape) {
       right: -25px;
     }
 

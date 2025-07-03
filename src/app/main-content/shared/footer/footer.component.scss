@@ -5,7 +5,7 @@ footer {
   position: relative;
   width: 100%;
   @include dFlex($ai: flex-start);
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     flex-direction: column;
     height: 356px;
     align-items: center;
@@ -24,7 +24,7 @@ footer {
   overflow: hidden;
   height: 29.22dvh;
   width: 40dvh;
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     left: calc(50% - 175px);
     width: 350px;
     height: 251.75px;
@@ -41,7 +41,7 @@ footer {
     position: absolute;
     left: 0;
     bottom: 0;
-    @media (max-width: 1024px) {
+    @include respond-to(tablet-landscape) {
       width: 172.3px;
       height: 172.3px;
     }
@@ -62,7 +62,7 @@ footer {
     position: absolute;
     left: 11dvh;
     bottom: 0;
-    @media (max-width: 1024px) {
+    @include respond-to(tablet-landscape) {
       width: 251.75px;
       height: 251.75px;
       left: 100px;
@@ -85,7 +85,7 @@ footer {
   top: 0;
   right: 0;
   @include dFlex($g: 2.22vw);
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     position: relative;
     width: 100%;
     justify-content: space-between;

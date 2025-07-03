@@ -2,7 +2,7 @@
 
 .socialMediaButtons {
   @include dFlex($g: 24px);
-  @media (max-width: 1024px) {
+  @include respond-to(tablet-landscape) {
     justify-content: flex-start;
     margin-top: 22.7px;
   }

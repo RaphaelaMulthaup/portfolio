@@ -21,7 +21,7 @@
       visibility 200ms ease-in;
     opacity: 0;
     visibility: hidden;
-    @media (max-width: 480px) {
+    @include respond-to(mobile-portrait) {
       right: calc(-5vw - 200px);
     }
     &.open {

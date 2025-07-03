@@ -14,7 +14,7 @@ form {
   }
   .formSectionNameMail,
   .formSectionMessage {
-    @media (max-width: 1024px) {
+    @include respond-to(tablet-landscape) {
       margin-bottom: 40px;
     }
   }
