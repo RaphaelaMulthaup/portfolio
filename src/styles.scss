@@ -7,6 +7,65 @@ $grey: #858585;
 $red: #ec7b7bcc;
 $borderRadius: 4px;
 
+@mixin fullDisplay() {
+  height: 100dvh;
+  width: 100vw;
+}
+
+@mixin dFlex($jc: center, $ai: center, $g: 0) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+}
+
+@mixin respond-to($device) {
+  @if $device == mobile-portrait {
+    @media (max-width: 480px) {
+      @content;
+    }
+  } @else if $device == mobile-landscape {
+    @media (max-width: 900px) and (max-height: 480px) {
+      @content;
+    }
+  } @else if $device == tablet-portrait {
+    @media (max-width: 768px) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $device == tablet {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $device == tablet-landscape {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $device == small-desktop {
+    @media (max-width: 1300px) {
+      @content;
+    }
+  } @else if $device == large-desktop {
+    @media (min-width: 1700px) {
+      @content;
+    }
+    
+  } @else if $device == short-height {
+    @media (max-height: 800px) {
+      @content;
+    }
+  } @else if $device == very-short-height {
+    @media (max-height: 740px) {
+      @content;
+    }
+  } @else if $device == ultra-wide {
+    @media (min-aspect-ratio: 55/24) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown device `#{$device}` in respond-to mixin.";
+  }
+}
+
 ::-webkit-scrollbar {
   display: none; /* Für Chrome, Edge, Safari */
 }
@@ -146,64 +205,6 @@ app-nav-bullets {
   z-index: 100;
 }
 
-@mixin fullDisplay() {
-  height: 100dvh;
-  width: 100vw;
-}
-
-@mixin dFlex($jc: center, $ai: center, $g: 0) {
-  display: flex;
-  justify-content: $jc;
-  align-items: $ai;
-  gap: $g;
-}
-
-@mixin respond-to($device) {
-  @if $device == mobile-portrait {
-    @media (max-width: 480px) {
-      @content;
-    }
-  } @else if $device == mobile-landscape {
-    @media (max-width: 900px) and (max-height: 480px) {
-      @content;
-    }
-  } @else if $device == tablet-portrait {
-    @media (max-width: 768px) and (orientation: portrait) {
-      @content;
-    }
-  } @else if $device == tablet {
-    @media (max-width: 768px) {
-      @content;
-    }
-  } @else if $device == tablet-landscape {
-    @include respond-to(tablet-landscape) {
-      @content;
-    }
-  } @else if $device == small-desktop {
-    @media (max-width: 1300px) {
-      @content;
-    }
-  } @else if $device == large-desktop {
-    @media (min-width: 1700px) {
-      @content;
-    }
-    
-  } @else if $device == short-height {
-    @media (max-height: 800px) {
-      @content;
-    }
-  } @else if $device == very-short-height {
-    @media (max-height: 740px) {
-      @content;
-    }
-  } @else if $device == ultra-wide {
-    @media (min-aspect-ratio: 55/24) {
-      @content;
-    }
-  } @else {
-    @warn "Unknown device `#{$device}` in respond-to mixin.";
-  }
-}
 
 .dNone {
   display: none;

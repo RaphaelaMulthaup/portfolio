@@ -30,15 +30,22 @@
       @include dFlex();
       flex-direction: column-reverse;
       width: 100%;
-    }
-    .wrapperImgDiv {
-      justify-content: flex-start;
-      margin-top: -36dvh;
-      margin-bottom: 0;
-    }
-    .wrapperTextAboutMe {
-      justify-content: flex-end;
-      min-width: 260px;
+      > div {
+        @include dFlex();
+        width: 100%;
+      }
+      .wrapperImgDiv {
+        justify-content: flex-start;
+        margin-top: -36dvh;
+        margin-bottom: 0;
+        @include respond-to(mobile-portrait) {
+          margin-top: 16px;
+        }
+      }
+      .wrapperTextAboutMe {
+        justify-content: flex-end;
+        min-width: 260px;
+      }
     }
   }
   @include respond-to(tablet) {
@@ -88,17 +95,6 @@
   @media (max-height: 790px) and (max-width: 1024px) {
     .wrapperImgDiv {
       margin-top: -40dvh;
-    }
-  }
-  @include respond-to(mobile-portrait) {
-    .imgAndText {
-      > div {
-        @include dFlex();
-        width: 100%;
-      }
-    }
-    .wrapperImgDiv {
-      margin-top: 16px;
     }
   }
   @include respond-to(mobile-landscape) {
