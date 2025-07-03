@@ -1,7 +1,7 @@
 @import "./../../../styles.scss";
 
 :host {
-  @include respond-to(mobile-portrait) {
+  @include respond-to(tablet-landscape) {
     height: auto !important;
   }
   @include respond-to(mobile-landscape) {
@@ -12,7 +12,7 @@
 #skills {
   background-color: $black;
   color: $cream;
-  @include respond-to(mobile-portrait) {
+  @include respond-to(tablet-landscape) {
     height: auto;
   }
   @include respond-to(mobile-landscape) {
@@ -237,7 +237,8 @@
     bottom: -550px;
   }
   @media (max-width: 550px) {
-    left: calc(10vw + 120px);
+    left: 16px;
+    width: calc(100% - 64px);
   }
   &.open {
     transform: translateY(calc(-13dvh - 500px));

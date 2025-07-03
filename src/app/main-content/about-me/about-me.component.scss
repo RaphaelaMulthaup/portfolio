@@ -1,7 +1,7 @@
 @import "./../../../styles.scss";
 
 :host {
-  @include respond-to(mobile-portrait) {
+  @include respond-to(tablet-landscape) {
     height: auto !important;
   }
   @include respond-to(mobile-landscape) {
@@ -11,7 +11,7 @@
 
 #aboutMe {
   background-color: $cream;
-  @include respond-to(mobile-portrait) {
+  @include respond-to(tablet-landscape) {
     height: auto;
   }
   @include respond-to(mobile-landscape) {

@@ -1,7 +1,7 @@
 @import "./../../styles.scss";
 
 :host {
-  @include respond-to(mobile-portrait) {
+  @include respond-to(tablet-landscape) {
     > div:nth-child(2),
     div:nth-child(3) {
       height: auto;
@@ -14,7 +14,7 @@
       height: auto;
     }
   }
-  
+
   @include respond-to(tablet-landscape) {
     > div:nth-last-child(-n + 3) {
       height: auto;
