@@ -14,14 +14,14 @@
   @include respond-to(mobile-portrait) {
     height: auto;
   }
-   @include respond-to(mobile-landscape) {
+  @include respond-to(mobile-landscape) {
     height: auto;
   }
 }
 
 .contentMainComponent {
   @include dFlex($jc: space-between, $ai: flex-start);
-   @include respond-to(tablet-landscape) {
+  @include respond-to(tablet-landscape) {
     flex-direction: column;
     padding: 8dvh 7vw;
     justify-content: flex-start;
@@ -30,10 +30,6 @@
       @include dFlex();
       flex-direction: column-reverse;
       width: 100%;
-      > div {
-        @include dFlex();
-        width: 100%;
-      }
     }
     .wrapperImgDiv {
       justify-content: flex-start;
@@ -94,24 +90,25 @@
       margin-top: -40dvh;
     }
   }
-   @include respond-to(mobile-portrait) {
+  @include respond-to(mobile-portrait) {
     .imgAndText {
       > div {
-        justify-content: center;
+        @include dFlex();
+        width: 100%;
       }
     }
     .wrapperImgDiv {
       margin-top: 16px;
     }
   }
-   @include respond-to(mobile-landscape) {
+  @include respond-to(mobile-landscape) {
     padding: 12dvh 7vw 8dvh;
   }
 
   h2 {
     margin-right: 1.67vw;
     color: $black;
-     @include respond-to(ultra-wide) {
+    @include respond-to(ultra-wide) {
       margin-right: 5.5vw;
     }
     @include respond-to(tablet-landscape) {
