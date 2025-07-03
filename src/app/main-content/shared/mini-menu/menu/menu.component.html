@@ -1,5 +1,5 @@
 <div class="menu">
-  <div>
+  <div class="header">
     <h4>{{ "shared.miniMenu.menu.menu" | translate }}</h4>
     <img
       [src]="closeImagePath"
@@ -11,9 +11,9 @@
       alt="close"
     />
   </div>
-  <div>
+  <div class="menuItems">
     @for (item of menuItems; track item; let index = $index) {
-    <div
+    <div class="menuItem"
       appTouchHover
       (click)="
         portfolioService.navigateFromMainHeader($index + 1, isImprintPage)
