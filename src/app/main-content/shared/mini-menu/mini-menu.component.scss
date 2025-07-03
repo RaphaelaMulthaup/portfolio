@@ -10,13 +10,6 @@
       cursor: pointer;
     }
   }
-  .burgerMenu {
-    height: 40%;
-  }
-  .languageButton {
-    border-radius: 50%;
-    height: 100%;
-  }
   app-menu {
     position: absolute;
     z-index: 100;
@@ -39,4 +32,11 @@
       visibility: visible;
     }
   }
+}
+.burgerMenu {
+  height: 40%;
+}
+.languageButton {
+  border-radius: 50%;
+  height: 100%;
 }
