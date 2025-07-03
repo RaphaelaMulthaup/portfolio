@@ -1,13 +1,20 @@
 @import "./../../styles.scss";
 
 :host {
-  @media (max-width: 480px), (max-width: 900px) and (max-height: 480px) {
+  @include respond-to(mobile-portrait) {
     > div:nth-child(2),
     div:nth-child(3) {
       height: auto;
     }
   }
 
+  @include respond-to(mobile-landscape) {
+    > div:nth-child(2),
+    div:nth-child(3) {
+      height: auto;
+    }
+  }
+  
   @include respond-to(tablet-landscape) {
     > div:nth-last-child(-n + 3) {
       height: auto;
