@@ -19,9 +19,10 @@
 .contentImprint {
   flex: 1;
   min-height: 480px;
-  > div {
-    margin-left: 2vw;
-  }
+}
+
+.contentImprintText {
+  margin-left: 2vw;
 }
 
 h2 {
