@@ -5,45 +5,47 @@ form {
   flex-direction: column;
   > div {
     width: 100%;
-    // @media (max-width: 1024px) {
-    //   flex-direction: column;
-    // }
     h4 {
       margin-left: 16px;
       @media (max-width: 1350px) {
-        font-size: 21px;
-      }
-      @media (max-width: 1200px) {
         font-size: 20px;
       }
     }
   }
-  > div:first-child {
-    @include dFlex($g: 2.22vw);
-    margin-bottom: 6.22dvh;
-    @media (max-width: 560px) {
-      flex-direction: column;
-      gap: 56px;
+  .formSectionNameMail,
+  .formSectionMessage {
+    @media (max-width: 1024px) {
+      margin-bottom: 40px;
     }
-    > div {
-      @include dFlex($ai: flex-start);
-      flex-direction: column;
-      flex: 1;
-      @media (max-width: 560px) {
-        width: 100%;
-      }
+  }
+}
 
-      &:hover {
-        h4 {
-          color: $darkOrange;
-        }
-        input {
-          border-color: $darkOrange;
-        }
+.formSectionNameMail {
+  @include dFlex($g: 2.22vw);
+  margin-bottom: 6.22dvh;
+  @media (max-width: 560px) {
+    flex-direction: column;
+    gap: 56px;
+  }
+  > .formSection {
+    @include dFlex($ai: flex-start);
+    flex-direction: column;
+    flex: 1;
+    @media (max-width: 560px) {
+      width: 100%;
+    }
+
+    &:hover {
+      h4 {
+        color: $darkOrange;
+      }
+      input {
+        border-color: $darkOrange;
       }
     }
   }
-  > div:nth-child(2) {
+}
+  .formSectionMessage {
     margin-bottom: 9dvh;
     &:hover {
       h4 {
@@ -54,9 +56,10 @@ form {
       }
     }
   }
-  > div:nth-child(3) {
+
+  .formSectionCheckbox {
     margin-bottom: 16px;
-    > div {
+    .privacyPolicyQuery {
       margin-bottom: 8px;
       @include dFlex($g: 4.5px, $ai: flex-start);
       width: 100%;
@@ -73,17 +76,12 @@ form {
       }
     }
   }
-  > div:first-child,
-  > div:nth-child(2) {
-    @media (max-width: 1024px) {
-      margin-bottom: 40px;
-    }
-  }
-}
+
 
 input[type="text"],
 [type="email"],
 textarea {
+  padding: 10px 16px 16px;
   box-sizing: border-box;
   background-color: transparent;
   border: none;
@@ -103,13 +101,13 @@ textarea {
   }
 }
 
-input {
-  padding: 10px 16px 16px;
-  border-bottom: 1px solid $yellow;
-  &:focus {
-    border-bottom: 1px solid $yellow;
-  }
-}
+// input {
+//   padding: 10px 16px 16px;
+//   border-bottom: 1px solid $yellow;
+//   &:focus {
+//     border-bottom: 1px solid $yellow;
+//   }
+// }
 
 .redPlaceholder {
   &::placeholder {
@@ -118,11 +116,11 @@ input {
 }
 
 .formSection:focus-within h4 {
-  color: $darkOrange; /* oder eine andere gewünschte Farbe */
+  color: $darkOrange;
 }
 
 .formSection:focus-within .borderDummy {
-  background-color: $darkOrange; /* oder eine andere gewünschte Farbe */
+  background-color: $darkOrange;
 }
 
 input:-webkit-autofill,

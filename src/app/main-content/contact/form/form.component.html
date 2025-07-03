@@ -1,5 +1,5 @@
 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-  <div>
+  <div class="formSectionNameMail">
     <div class="formSection">
       <label for="name">
         <h4>
@@ -46,7 +46,7 @@
       />
     </div>
   </div>
-  <div class="formSection">
+  <div class="formSection formSectionMessage">
     <label for="message">
       <h4>
         {{ "contact.form.message" | translate }}
@@ -69,8 +69,8 @@
     ></textarea>
     <div class="borderDummy"></div>
   </div>
-  <div>
-    <div>
+  <div class="formSectionCheckbox">
+    <div class="privacyPolicyQuery">
       <label class="customCheckbox" appTouchHover>
         <input
           #privacyPolicy="ngModel"
