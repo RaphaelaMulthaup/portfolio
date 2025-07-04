@@ -4,6 +4,7 @@
   position: relative;
   width: clamp(80px, 12vw, 144px);
   aspect-ratio: 1;
+  // margin-bottom: 10.67dvh;
    @include respond-to(tablet-landscape) {
     position: absolute;
     bottom: 3dvh;
