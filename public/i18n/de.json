@@ -96,5 +96,61 @@
     "contact2": "Telefon: ",
     "contact3": "E-Mail:",
     "content_responsibility": "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br />Raphaela Multhaup<br />Schloßhof 4d<br />37688 Beverungen"
+  },
+  "privacy": {
+    "h2": "Datenschutzerklärung",
+    "responsible": {
+      "title": "1. Verantwortlicher",
+      "text1": "Verantwortlich für die Datenverarbeitung auf dieser Website ist:"
+    },
+    "general": {
+      "title": "2. Allgemeines zur Datenverarbeitung",
+      "text1": "Ich nehme den Schutz Ihrer persönlichen Daten sehr ernst. Personenbezogene Daten werden vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung behandelt."
+    },
+    "hosting": {
+      "title": "3. Hosting bei ALL-INKL.COM",
+      "text1": "Diese Website wird bei",
+      "text2": "gehostet. Beim Aufruf der Website werden automatisch Daten erfasst, die Ihr Browser übermittelt. Diese beinhalten:",
+      "data": {
+        "ip": "IP-Adresse",
+        "datetime": "Datum und Uhrzeit der Anfrage",
+        "gmt": "Zeitzonendifferenz zur GMT",
+        "request": "Inhalt der Anforderung (konkrete Seite)",
+        "status": "Zugriffsstatus/HTTP-Statuscode",
+        "amount": "übertragene Datenmenge",
+        "referrer": "Referrer-URL",
+        "browser": "Browsertyp und -version",
+        "os": "Betriebssystem und Oberfläche",
+        "lang": "Sprache und Version der Browsersoftware"
+      },
+      "text3": "Die Verarbeitung erfolgt zur Gewährleistung der Sicherheit und Stabilität der Website (Art. 6 Abs. 1 lit. f DSGVO). Ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO wurde mit dem Hosting-Anbieter geschlossen."
+    },
+    "contact": {
+      "title": "4. Kontaktformular",
+      "text1": "Wenn Sie mir über das Kontaktformular Anfragen senden, werden Ihre Angaben inklusive der von Ihnen angegebenen Kontaktdaten zur Bearbeitung der Anfrage gespeichert.",
+      "text2": "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Verarbeitung zur Durchführung vorvertraglicher Maßnahmen)."
+    },
+    "disclosure": {
+      "title": "5. Weitergabe von Daten",
+      "text1": "Eine Übermittlung Ihrer personenbezogenen Daten an Dritte erfolgt nur, wenn:",
+      "point1": "Sie Ihre ausdrückliche Einwilligung erteilt haben (Art. 6 Abs. 1 lit. a DSGVO),",
+      "point2": "die Weitergabe zur Vertragserfüllung erforderlich ist (Art. 6 Abs. 1 lit. b DSGVO), oder",
+      "point3": "ein berechtigtes Interesse besteht und keine überwiegenden schutzwürdigen Interessen entgegenstehen (Art. 6 Abs. 1 lit. f DSGVO)."
+    },
+    "rights": {
+      "title": "6. Ihre Rechte",
+      "text1": "Sie haben jederzeit das Recht auf:",
+      "access": "Auskunft (Art. 15 DSGVO),",
+      "rectification": "Berichtigung (Art. 16 DSGVO),",
+      "erasure": "Löschung (Art. 17 DSGVO),",
+      "restriction": "Einschränkung der Verarbeitung (Art. 18 DSGVO),",
+      "portability": "Datenübertragbarkeit (Art. 20 DSGVO),",
+      "objection": "Widerspruch gegen die Verarbeitung (Art. 21 DSGVO),",
+      "complaint": "Beschwerde bei einer Aufsichtsbehörde (Art. 77 DSGVO)."
+    },
+    "ssl": {
+      "title": "7. SSL-/TLS-Verschlüsselung",
+      "text1": "Diese Website nutzt eine SSL- bzw. TLS-Verschlüsselung zum Schutz der Übertragung vertraulicher Inhalte, z. B. bei der Nutzung des Kontaktformulars. Eine verschlüsselte Verbindung erkennen Sie an „https://“ in der Adresszeile Ihres Browsers."
+    }
   }
 }

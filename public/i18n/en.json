@@ -96,5 +96,61 @@
     "contact2": "Phone: ",
     "contact3": "Email:",
     "content_responsibility": "Responsible for content according to § 55 para. 2 RStV:<br />Raphaela Multhaup<br />Schloßhof 4d<br />37688 Beverungen<br />Germany"
+  },
+  "privacy": {
+    "h2": "Privacy Policy",
+    "responsible": {
+      "title": "1. Responsible Party",
+      "text1": "The person responsible for data processing on this website is:"
+    },
+    "general": {
+      "title": "2. General Information on Data Processing",
+      "text1": "I take the protection of your personal data very seriously. Personal data is treated confidentially and in accordance with legal data protection regulations and this privacy policy."
+    },
+    "hosting": {
+      "title": "3. Hosting with ALL-INKL.COM",
+      "text1": "This website is hosted by",
+      "text2": ". When you visit the website, data that your browser transmits is automatically collected. This includes:",
+      "data": {
+        "ip": "IP address",
+        "datetime": "Date and time of the request",
+        "gmt": "Time zone difference to GMT",
+        "request": "Content of the request (specific page)",
+        "status": "Access status/HTTP status code",
+        "amount": "Amount of data transferred",
+        "referrer": "Referrer URL",
+        "browser": "Browser type and version",
+        "os": "Operating system and interface",
+        "lang": "Language and version of the browser software"
+      },
+      "text3": "The processing is carried out to ensure the security and stability of the website (Art. 6 para. 1 lit. f GDPR). A data processing agreement pursuant to Art. 28 GDPR has been concluded with the hosting provider."
+    },
+    "contact": {
+      "title": "4. Contact Form",
+      "text1": "If you send me inquiries via the contact form, your details, including the contact information you provide, will be stored for processing the inquiry.",
+      "text2": "Legal basis: Art. 6 para. 1 lit. b GDPR (processing for the performance of pre-contractual measures)."
+    },
+    "disclosure": {
+      "title": "5. Disclosure of Data",
+      "text1": "Your personal data will only be transmitted to third parties if:",
+      "point1": "You have given your explicit consent (Art. 6 para. 1 lit. a GDPR),",
+      "point2": "the disclosure is necessary to fulfill a contract (Art. 6 para. 1 lit. b GDPR), or",
+      "point3": "there is a legitimate interest and no overriding legitimate interests exist (Art. 6 para. 1 lit. f GDPR)."
+    },
+    "rights": {
+      "title": "6. Your Rights",
+      "text1": "You have the right at any time to:",
+      "access": "Access (Art. 15 GDPR),",
+      "rectification": "Rectification (Art. 16 GDPR),",
+      "erasure": "Erasure (Art. 17 GDPR),",
+      "restriction": "Restriction of processing (Art. 18 GDPR),",
+      "portability": "Data portability (Art. 20 GDPR),",
+      "objection": "Objection to processing (Art. 21 GDPR),",
+      "complaint": "Complaint to a supervisory authority (Art. 77 GDPR)."
+    },
+    "ssl": {
+      "title": "7. SSL/TLS Encryption",
+      "text1": "This website uses SSL or TLS encryption to protect the transmission of confidential content, such as when using the contact form. You can recognize an encrypted connection by “https://” in your browser’s address bar."
+    }
   }
 }

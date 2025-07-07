@@ -1,100 +1,73 @@
 <div class="privacyPolicy">
   <app-main-header></app-main-header>
   <div class="contentPrivacyPolicy marginLateral">
-    <h2>Datenschutzerklärung</h2>
+    <h2>{{ "privacy.h2" | translate }}</h2>
 
-    <h4>1. Verantwortlicher</h4>
+    <h4>{{ "privacy.responsible.title" | translate }}</h4>
     <p>
-      Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br />
+      {{ "privacy.responsible.text1" | translate }}<br />
       <strong>Raphaela Multhaup</strong><br />
-      Schloßhof 4d 37688 Beverungen<br />
-      raphaelamulthaup{{ '@' }}icloud.com<br />
+      Schloßhof 4d<br />37688 Beverungen<br />
+      raphaelamulthaup{{ "@" }}icloud.com<br />
       0173/4680668
     </p>
 
-    <h4>2. Allgemeines zur Datenverarbeitung</h4>
+    <h4>{{ "privacy.general.title" | translate }}</h4>
     <p>
-      Ich nehme den Schutz Ihrer persönlichen Daten sehr ernst. Personenbezogene
-      Daten werden vertraulich und entsprechend der gesetzlichen
-      Datenschutzvorschriften sowie dieser Datenschutzerklärung behandelt.
+      {{ "privacy.general.text1" | translate }}
     </p>
 
-    <h4>3. Hosting bei ALL-INKL.COM</h4>
+    <h4>{{ "privacy.hosting.title" | translate }}</h4>
     <p>
-      Diese Website wird bei
+      {{ "privacy.hosting.text1" | translate }}
       <strong
         >ALL-INKL.COM – Neue Medien Münnich, Hauptstraße 68, 02742
         Friedersdorf</strong
       >
-      gehostet. Beim Aufruf der Website werden automatisch Daten erfasst, die
-      Ihr Browser übermittelt. Diese beinhalten:
+      {{ "privacy.hosting.text2" | translate }}
     </p>
     <ul>
-      <li>IP-Adresse</li>
-      <li>Datum und Uhrzeit der Anfrage</li>
-      <li>Zeitzonendifferenz zur GMT</li>
-      <li>Inhalt der Anforderung (konkrete Seite)</li>
-      <li>Zugriffsstatus/HTTP-Statuscode</li>
-      <li>übertragene Datenmenge</li>
-      <li>Referrer-URL</li>
-      <li>Browsertyp und -version</li>
-      <li>Betriebssystem und Oberfläche</li>
-      <li>Sprache und Version der Browsersoftware</li>
+      <li>{{ "privacy.hosting.data.ip" | translate }}</li>
+      <li>{{ "privacy.hosting.data.datetime" | translate }}</li>
+      <li>{{ "privacy.hosting.data.gmt" | translate }}</li>
+      <li>{{ "privacy.hosting.data.request" | translate }}</li>
+      <li>{{ "privacy.hosting.data.status" | translate }}</li>
+      <li>{{ "privacy.hosting.data.amount" | translate }}</li>
+      <li>{{ "privacy.hosting.data.referrer" | translate }}</li>
+      <li>{{ "privacy.hosting.data.browser" | translate }}</li>
+      <li>{{ "privacy.hosting.data.os" | translate }}</li>
+      <li>{{ "privacy.hosting.data.lang" | translate }}</li>
     </ul>
+    <p>{{ "privacy.hosting.text3" | translate }}</p>
+
+    <h4>{{ "privacy.contact.title" | translate }}</h4>
     <p>
-      Die Verarbeitung erfolgt zur Gewährleistung der Sicherheit und Stabilität
-      der Website (Art. 6 Abs. 1 lit. f DSGVO). Ein Auftragsverarbeitungsvertrag
-      gemäß Art. 28 DSGVO wurde mit dem Hosting-Anbieter geschlossen.
+      {{ "privacy.contact.text1" | translate }}<br />
+      {{ "privacy.contact.text2" | translate }}
     </p>
 
-    <h4>4. Kontaktformular</h4>
-    <p>
-      Wenn Sie mir über das Kontaktformular Anfragen senden, werden Ihre Angaben
-      inklusive der von Ihnen angegebenen Kontaktdaten zur Bearbeitung der
-      Anfrage gespeichert.<br />
-      Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Verarbeitung zur Durchführung
-      vorvertraglicher Maßnahmen).
-    </p>
-
-    <h4>5. Weitergabe von Daten</h4>
-    <p>
-      Eine Übermittlung Ihrer personenbezogenen Daten an Dritte erfolgt nur,
-      wenn:
-    </p>
+    <h4>{{ "privacy.disclosure.title" | translate }}</h4>
+    <p>{{ "privacy.disclosure.text1" | translate }}</p>
     <ul>
-      <li>
-        Sie Ihre ausdrückliche Einwilligung erteilt haben (Art. 6 Abs. 1 lit. a
-        DSGVO),
-      </li>
-      <li>
-        die Weitergabe zur Vertragserfüllung erforderlich ist (Art. 6 Abs. 1
-        lit. b DSGVO), oder
-      </li>
-      <li>
-        ein berechtigtes Interesse besteht und keine überwiegenden
-        schutzwürdigen Interessen entgegenstehen (Art. 6 Abs. 1 lit. f DSGVO).
-      </li>
+      <li>{{ "privacy.disclosure.point1" | translate }}</li>
+      <li>{{ "privacy.disclosure.point2" | translate }}</li>
+      <li>{{ "privacy.disclosure.point3" | translate }}</li>
     </ul>
 
-    <h4>6. Ihre Rechte</h4>
-    <p>Sie haben jederzeit das Recht auf:</p>
+    <h4>{{ "privacy.rights.title" | translate }}</h4>
+    <p>{{ "privacy.rights.text1" | translate }}</p>
     <ul>
-      <li>Auskunft (Art. 15 DSGVO),</li>
-      <li>Berichtigung (Art. 16 DSGVO),</li>
-      <li>Löschung (Art. 17 DSGVO),</li>
-      <li>Einschränkung der Verarbeitung (Art. 18 DSGVO),</li>
-      <li>Datenübertragbarkeit (Art. 20 DSGVO),</li>
-      <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO),</li>
-      <li>Beschwerde bei einer Aufsichtsbehörde (Art. 77 DSGVO).</li>
+      <li>{{ "privacy.rights.access" | translate }}</li>
+      <li>{{ "privacy.rights.rectification" | translate }}</li>
+      <li>{{ "privacy.rights.erasure" | translate }}</li>
+      <li>{{ "privacy.rights.restriction" | translate }}</li>
+      <li>{{ "privacy.rights.portability" | translate }}</li>
+      <li>{{ "privacy.rights.objection" | translate }}</li>
+      <li>{{ "privacy.rights.complaint" | translate }}</li>
     </ul>
 
-    <h4>7. SSL-/TLS-Verschlüsselung</h4>
-    <p>
-      Diese Website nutzt eine SSL- bzw. TLS-Verschlüsselung zum Schutz der
-      Übertragung vertraulicher Inhalte, z. B. bei der Nutzung des
-      Kontaktformulars. Eine verschlüsselte Verbindung erkennen Sie an
-      „https://“ in der Adresszeile Ihres Browsers.
-    </p>
+    <h4>{{ "privacy.ssl.title" | translate }}</h4>
+    <p>{{ "privacy.ssl.text1" | translate }}</p>
   </div>
   <app-footer class="marginLateral"></app-footer>
 </div>
