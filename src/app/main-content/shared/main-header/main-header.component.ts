@@ -17,12 +17,13 @@ export class MainHeaderComponent {
   isImprintPage = false;
 
   /**
-   * This function checks whether the user is currently on the imprint page.
+   * This function checks whether the user is currently on the imprint page or the privacy policy page.
    * 
    * @param router Angular's router service for navigation and URL analysis.
    */
   constructor(private router: Router) {
     this.isImprintPage = this.router.url.includes('imprint');
+    this.isImprintPage = this.router.url.includes('privacyPolicy');    
   }
 
 

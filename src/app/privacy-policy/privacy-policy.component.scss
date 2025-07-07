@@ -1,0 +1,24 @@
+@import "./../../styles.scss";
+
+h2 {
+  color: $yellow;
+  margin: 4vh 0;
+}
+
+h4 {
+  color: $cream;
+  margin-top: 32px;
+}
+
+p {
+  color: $cream;
+}
+
+li {
+  color: $cream;
+}
+
+app-footer {
+  color: $cream;
+  margin-top: 200px;
+}

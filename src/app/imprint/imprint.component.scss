@@ -8,14 +8,6 @@
   flex-direction: column;
 }
 
-.marginLateral {
-  margin-left: 7.78vw;
-  margin-right: 5vw;
-  @include respond-to(tablet-landscape) {
-    margin-left: 5vw;
-  }
-}
-
 .contentImprint {
   flex: 1;
   min-height: 480px;
@@ -42,3 +34,4 @@ p {
 app-footer {
   color: $cream;
 }
+
