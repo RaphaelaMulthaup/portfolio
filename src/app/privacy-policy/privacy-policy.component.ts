@@ -11,13 +11,13 @@ import { FooterComponent } from '../main-content/shared/footer/footer.component'
 export class PrivacyPolicyComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
-    document.body.classList.add('overfowVisible');
-    document.documentElement.classList.add('overfowVisible');
+    document.body.classList.add('overflowVisible');
+    document.documentElement.classList.add('overflowVisible');
   }
 
   ngOnDestroy(): void {
-    document.body.classList.remove('overfowVisible');
-    document.documentElement.classList.remove('overfowVisible');
+    document.body.classList.remove('overflowVisible');
+    document.documentElement.classList.remove('overflowVisible');
   }
 
 }
