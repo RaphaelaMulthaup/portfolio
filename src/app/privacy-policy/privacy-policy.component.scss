@@ -3,11 +3,17 @@
 h2 {
   color: $yellow;
   margin: 4vh 0;
+  @media (max-width: 380px) {
+    font-size: 27px;
+  }
 }
 
 h4 {
   color: $cream;
   margin-top: 32px;
+  @media (max-width: 380px) {
+    font-size: 20px;
+  }
 }
 
 p {
@@ -20,10 +26,13 @@ li {
 
 app-footer {
   color: $cream;
-  margin-top: 250px;
+  margin-top: 30dvh;
   display: flex;
+  @include respond-to(tablet-landscape) {
+    margin-top: 70px;
+  }
 }
 
 .contentPrivacyPolicy {
-    max-width: 800px;
+  max-width: 800px;
 }
