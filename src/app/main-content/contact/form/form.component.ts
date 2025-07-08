@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
 import { TouchHoverDirective } from '../../shared/directives/touch-hover.directive';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-form',
@@ -11,6 +12,9 @@ import { TouchHoverDirective } from '../../shared/directives/touch-hover.directi
   styleUrl: './form.component.scss',
 })
 export class FormComponent {
+
+  http = inject(HttpClient);
+
   contactData = {
     name: '',
     email: '',
@@ -18,10 +22,10 @@ export class FormComponent {
     privacyPolicy: false,
   };
 
-  mailTest = true;
+  mailTest = false;
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://raphaela-multhaup.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -40,17 +44,17 @@ export class FormComponent {
     }
 
     if (ngForm.submitted && ngForm.valid && !this.mailTest) {
-      // this.http
-      //   .post(this.post.endPoint, this.post.body(this.contactData))
-      //   .subscribe({
-      //     next: (response) => {
-      //       ngForm.resetForm();
-      //     },
-      //     error: (error) => {
-      //       console.error(error);
-      //     },
-      //     complete: () => console.info('send post complete'),
-      //   });
+      this.http
+        .post(this.post.endPoint, this.post.body(this.contactData))
+        .subscribe({
+          next: (response) => {
+            ngForm.resetForm();
+          },
+          error: (error) => {
+            console.error(error);
+          },
+          complete: () => console.info('send post complete'),
+        });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       ngForm.resetForm();
     }
