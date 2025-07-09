@@ -85,14 +85,12 @@ body {
   overflow: hidden;
   background-color: #1d1d1d;
   @include respond-to(tablet-landscape) {
-    overflow: visible;
-    overflow-y: auto;
+    overflow-y: visible;
   }
 }
 
 .overflowVisible {
-  overflow: visible;
-  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 h1 {
