@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { PortfolioService } from '../../../portfolio.service';
 import { TouchImageDirective } from '../directives/touch-image.directive';
 
@@ -12,6 +12,8 @@ export class SocialMediaButtonsComponent {
   portfolioService = inject(PortfolioService);
   /** This boolean indicates whether main header is on the imprint page. */
   @Input() isImprintPage!: boolean;
+
+  @Output() menuClosed = new EventEmitter<void>();
 
   /** A boolean that indicates whether the gitHub button is hovered. */
   gitHubIsHovered: boolean = false;
@@ -79,4 +81,10 @@ export class SocialMediaButtonsComponent {
       narrowScreenTouch: 'assets/img/mail_touch.png',
     },
   };
+
+  closeMenu() {
+    setTimeout(() => {
+      this.menuClosed.emit();
+    }, 200);
+  }
 }

@@ -25,6 +25,6 @@
     }
   </div>
   @if (portfolioService.mobileScreen) {
-  <app-social-media-buttons></app-social-media-buttons>
+  <app-social-media-buttons (menuClosed)="hideMenu()"></app-social-media-buttons>
   }
 </div>

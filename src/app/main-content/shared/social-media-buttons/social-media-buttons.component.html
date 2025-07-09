@@ -1,5 +1,9 @@
 <div class="socialMediaButtons">
-  <a href="https://github.com/RaphaelaMulthaup" target="_blank">
+  <a
+    href="https://github.com/RaphaelaMulthaup"
+    target="_blank"
+    (click)="closeMenu()"
+  >
     <img
       [src]="portfolioService.getImageSrc(gitHubIsHovered, images['gitHub'])"
       (mouseenter)="gitHubIsHovered = true"
@@ -11,6 +15,7 @@
   <a
     href="https://www.linkedin.com/in/raphaela-multhaup-096aba353"
     target="_blank"
+    (click)="closeMenu()"
   >
     <img
       [src]="
@@ -23,7 +28,7 @@
     />
   </a>
   <img
-    (click)="portfolioService.navigateFromMainHeader(5, isImprintPage)"
+    (click)="portfolioService.navigateFromMainHeader(5, isImprintPage); closeMenu()"
     [src]="portfolioService.getImageSrc(mailIsHovered, images['mail'])"
     (mouseenter)="mailIsHovered = true"
     (mouseleave)="mailIsHovered = false"
