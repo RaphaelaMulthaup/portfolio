@@ -13,6 +13,7 @@ export class SocialMediaButtonsComponent {
   /** This boolean indicates whether main header is on the imprint page. */
   @Input() isImprintPage!: boolean;
 
+  /** This output event allows the component to notify its parent component when the menu should be closed. */
   @Output() menuClosed = new EventEmitter<void>();
 
   /** A boolean that indicates whether the gitHub button is hovered. */
@@ -82,6 +83,9 @@ export class SocialMediaButtonsComponent {
     },
   };
 
+  /**
+   * This method emits the menuClosed event after a delay of 200 milliseconds.
+   */
   closeMenu() {
     setTimeout(() => {
       this.menuClosed.emit();
