@@ -102,14 +102,27 @@
       path {
         transition: fill 100ms ease-in;
       }
-      &:hover {
-        cursor: pointer;
+
+      // Nur auf Geräten mit Maus und feinem Pointer aktivieren wir :hover
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          cursor: pointer;
+        }
+
+        &:hover path {
+          fill: $darkOrange;
+        }
       }
-      &:hover path,
-      &.hoverEffect path {
-        fill: $darkOrange;
+
+      &.hoverEffect {
+        cursor: pointer;
+
+        path {
+          fill: $darkOrange;
+        }
       }
     }
+
     &::after {
       content: "";
       position: absolute;
@@ -120,11 +133,18 @@
       background-color: $black;
       transition: background-color 100ms ease-in;
     }
-    &:hover::after,
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover::after {
+        background-color: $darkOrange;
+      }
+    }
+
     &.hoverEffect::after {
       background-color: $darkOrange;
     }
   }
+
   > app-form {
     width: 100%;
     max-width: 650px;

@@ -210,10 +210,16 @@
     @media (max-width: 410px) {
       font-size: 13px;
     }
-    &:hover,
+    // &:hover,
     &.hoverEffect {
       cursor: pointer;
       color: $darkOrange;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: $darkOrange;
+        cursor: pointer;
+      }
     }
   }
 }
