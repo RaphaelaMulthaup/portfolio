@@ -300,12 +300,16 @@ app-nav-bullets {
 .jumpingImg {
   @include dFlex($ai: flex-end);
   width: 40px;
-  aspect-ratio: 1;
+  height: 40px;
   > * {
     animation: moveUpDown 450ms ease-in-out infinite alternate;
   }
   img {
-    height: fit-content;
+    width: 100%;
+    height: 100%;
+    // height: fit-content;
+    object-fit: contain;
+    display: block;
   }
   &:hover > * {
     animation-play-state: paused;
