@@ -34,49 +34,49 @@ form {
     @media (max-width: 560px) {
       width: 100%;
     }
-
-    &:hover {
-      h4 {
-        color: $darkOrange;
-      }
-      input {
-        border-color: $darkOrange;
-      }
-    }
   }
 }
-  .formSectionMessage {
-    margin-bottom: 9dvh;
-    &:hover {
-      h4 {
-        color: $darkOrange;
-      }
-      > div {
-        background-color: $darkOrange;
-      }
-    }
+.formSectionMessage {
+  margin-bottom: 9dvh;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .formSection:hover h4 {
+    color: $darkOrange;
   }
 
-  .formSectionCheckbox {
-    margin-bottom: 16px;
-    .privacyPolicyQuery {
-      margin-bottom: 8px;
-      @include dFlex($g: 4.5px, $ai: flex-start);
-      width: 100%;
-      > span {
-        flex: 1;
-        > a {
-          text-decoration: none;
-          color: $darkOrange;
-          &:hover {
-            color: $cream;
-            font-weight: 700;
-          }
+  .formSection:hover input {
+    border-color: $darkOrange;
+  }
+
+  .formSectionMessage:hover h4 {
+    color: $darkOrange;
+  }
+
+  .formSectionMessage:hover > div {
+    background-color: $darkOrange;
+  }
+}
+
+.formSectionCheckbox {
+  margin-bottom: 16px;
+  .privacyPolicyQuery {
+    margin-bottom: 8px;
+    @include dFlex($g: 4.5px, $ai: flex-start);
+    width: 100%;
+    > span {
+      flex: 1;
+      > a {
+        text-decoration: none;
+        color: $darkOrange;
+        &:hover {
+          color: $cream;
+          font-weight: 700;
         }
       }
     }
   }
-
+}
 
 input[type="text"],
 [type="email"],
@@ -100,14 +100,6 @@ textarea {
     border-bottom: 1px solid $darkOrange;
   }
 }
-
-// input {
-//   padding: 10px 16px 16px;
-//   border-bottom: 1px solid $yellow;
-//   &:focus {
-//     border-bottom: 1px solid $yellow;
-//   }
-// }
 
 .redPlaceholder {
   &::placeholder {
