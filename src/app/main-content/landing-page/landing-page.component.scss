@@ -44,6 +44,9 @@
   @include respond-to(tablet-portrait) {
     padding: 40px 16px 0 16px;
   }
+  @include respond-to(mobile-portrait) {
+    padding-top: 30px;
+  }
   @media (max-width: 370px) {
     padding-top: 20px;
     @media (max-height: 650px) {
