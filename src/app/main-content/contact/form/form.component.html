@@ -83,7 +83,9 @@
       </label>
       <span
         >{{ "contact.form.privacyPolicy1" | translate }}
-        <a href="privacyPolicy">{{ "contact.form.privacyPolicy2" | translate }}</a>
+        <a href="privacyPolicy">{{
+          "contact.form.privacyPolicy2" | translate
+        }}</a>
         {{ "contact.form.privacyPolicy3" | translate }}</span
       >
     </div>
@@ -100,6 +102,7 @@
     >
   </div>
   <button
+    appTouchHover
     type="submit"
     [ngClass]="{ greyedOut: contactForm.invalid }"
     [disabled]="contactForm.invalid"

@@ -1,6 +1,5 @@
-import { AfterViewInit, Component, inject, Input } from '@angular/core';
-import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
-import { HeaderComponent } from '../shared/header/header.component';
+import { Component, inject } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { NavBulletsComponent } from '../shared/nav-bullets/nav-bullets.component';
 import { PortfolioService } from '../../portfolio.service';
 import { HexagonComponent } from '../shared/hexagon/hexagon.component';
@@ -11,9 +10,7 @@ import { TouchHoverDirective } from '../shared/directives/touch-hover.directive'
 @Component({
   selector: 'app-landing-page',
   imports: [
-    HeaderComponent,
     TranslatePipe,
-    TranslateDirective,
     NavBulletsComponent,
     HexagonComponent,
     MainHeaderComponent,
