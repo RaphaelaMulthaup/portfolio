@@ -3,8 +3,7 @@
 .scrollDownAnimation {
   position: relative;
   width: clamp(80px, 12vw, 144px);
-  aspect-ratio: 1;
-  // margin-bottom: 10.67dvh;
+  height: clamp(80px, 12vw, 144px);
   @include respond-to(tablet-landscape) {
     position: absolute;
     bottom: 3dvh;
@@ -33,8 +32,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
   }
 }
 
@@ -54,10 +51,11 @@
   }
   ::ng-deep app-hexagon {
     position: absolute;
+    top: 50%;
+    left: 50%;
     width: 60%;
     height: 60%;
-    top: 20%;
-    left: 20%;
+    transform: translate(-50%, -50%);
     svg {
       position: absolute;
       width: 100%;
@@ -70,3 +68,4 @@
     }
   }
 }
+
