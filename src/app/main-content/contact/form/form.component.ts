@@ -12,12 +12,15 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './form.component.scss',
 })
 export class FormComponent {
+  /** Input refs to blur after submission */
   @ViewChild('nameInput') nameInput!: ElementRef;
   @ViewChild('emailInput') emailInput!: ElementRef;
   @ViewChild('messageInput') messageInput!: ElementRef;
 
+  /** Injected HTTP client */
   http = inject(HttpClient);
 
+  /** Contact form data */
   contactData = {
     name: '',
     email: '',
@@ -25,8 +28,10 @@ export class FormComponent {
     privacyPolicy: false,
   };
 
+  /** Enables test mode for skipping request */
   mailTest = false;
 
+  /** POST request config */
   post = {
     endPoint: 'https://raphaela-multhaup.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
@@ -38,11 +43,16 @@ export class FormComponent {
     },
   };
 
+  /**
+   * Sends contact data via HTTP POST.
+   * If form is invalid, all controls are marked as touched.
+   * In test mode, only resets the form.
+   */
   onSubmit(ngForm: NgForm) {
     if (!ngForm.valid) {
-      Object.values(ngForm.controls).forEach((control) => {
-        control.markAsTouched();
-      });
+      Object.values(ngForm.controls).forEach((control) =>
+        control.markAsTouched()
+      );
       return;
     }
 
@@ -50,34 +60,27 @@ export class FormComponent {
       this.http
         .post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
-          next: (response) => {
-            ngForm.resetForm();
-          },
-          error: (error) => {
-            console.error(error);
-          },
+          next: () => ngForm.resetForm(),
+          error: (error) => console.error(error),
           complete: () => console.info('send post complete'),
         });
       this.nameInput?.nativeElement.blur();
       this.emailInput?.nativeElement.blur();
       this.messageInput?.nativeElement.blur();
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+    } else if (ngForm.submitted && ngForm.valid && this.mailTest) {
       ngForm.resetForm();
     }
   }
 
+  /**
+   * Cursor fix via repaint on input focus
+   */
   onInputFocus(input: HTMLInputElement) {
     const isIOS = /iPhone|iPod|iPad/.test(navigator.userAgent);
     if (!isIOS) {
-      // Cursor-Fix durch Repaint
       const val = input.value;
       input.value = '';
       input.value = val;
     }
-
-    // // Optional: Cursor an Ende setzen
-    // requestAnimationFrame(() => {
-    //   input.setSelectionRange(val.length, val.length);
-    // });
   }
 }
