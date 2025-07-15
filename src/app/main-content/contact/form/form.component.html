@@ -22,6 +22,7 @@
         "
         [ngClass]="{ redPlaceholder: !name.valid && name.touched }"
         required
+        (focus)="onInputFocus(nameInput)"
       />
     </div>
     <div class="formSection">
@@ -45,6 +46,7 @@
         [ngClass]="{ redPlaceholder: !email.valid && email.touched }"
         required
         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+        (focus)="onInputFocus(emailInput)"
       />
     </div>
   </div>

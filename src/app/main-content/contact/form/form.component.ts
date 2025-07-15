@@ -65,4 +65,19 @@ export class FormComponent {
       ngForm.resetForm();
     }
   }
+
+  onInputFocus(input: HTMLInputElement) {
+    const isIOS = /iPhone|iPod|iPad/.test(navigator.userAgent);
+    if (!isIOS) {
+      // Cursor-Fix durch Repaint
+      const val = input.value;
+      input.value = '';
+      input.value = val;
+    }
+
+    // // Optional: Cursor an Ende setzen
+    // requestAnimationFrame(() => {
+    //   input.setSelectionRange(val.length, val.length);
+    // });
+  }
 }
