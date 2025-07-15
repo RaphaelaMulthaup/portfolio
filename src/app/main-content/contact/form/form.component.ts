@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, inject, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
 import { TouchHoverDirective } from '../../shared/directives/touch-hover.directive';
@@ -12,6 +12,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './form.component.scss',
 })
 export class FormComponent {
+  @ViewChild('nameInput') nameInput!: ElementRef;
+  @ViewChild('emailInput') emailInput!: ElementRef;
+  @ViewChild('messageInput') messageInput!: ElementRef;
 
   http = inject(HttpClient);
 
@@ -55,6 +58,9 @@ export class FormComponent {
           },
           complete: () => console.info('send post complete'),
         });
+      this.nameInput?.nativeElement.blur();
+      this.emailInput?.nativeElement.blur();
+      this.messageInput?.nativeElement.blur();
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       ngForm.resetForm();
     }
