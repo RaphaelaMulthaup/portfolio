@@ -7,7 +7,10 @@
       <span>{{ "projects.explore" | translate }}</span>
     </div>
     <div class="projectsLowerArea">
-      <div class="projectsGraphicRepresentation" [ngClass]="dataDisplayedProject.bGroundColor">
+      <div
+        class="projectsGraphicRepresentation"
+        [ngClass]="dataDisplayedProject.bGroundColor"
+      >
         <app-hexagon
           [ngClass]="dataDisplayedProject.colorHexagon"
         ></app-hexagon>
@@ -50,7 +53,8 @@
                     overlayController.overlayCalled
                 }"
               >
-                <div class="closeOverlayProjects"
+                <div
+                  class="closeOverlayProjects"
                   [ngStyle]="{
                     display: !portfolioService.touchScreen ? 'none' : 'flex'
                   }"
@@ -91,6 +95,7 @@
               />
             </button>
             <button
+              (click)="openProject(dataDisplayedProject.subdomain)"
               [appTouchImage]="getHoverHandler('btnLiveTest')"
               appTouchHover
               (mouseenter)="btnLiveTestIsHovered = true"

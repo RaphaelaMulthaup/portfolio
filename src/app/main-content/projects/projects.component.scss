@@ -217,7 +217,7 @@
     }
     @media (hover: hover) and (pointer: fine) {
       &:hover {
-        background-color: $darkOrange;
+        color: $darkOrange;
         cursor: pointer;
       }
     }

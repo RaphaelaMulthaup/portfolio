@@ -1,4 +1,11 @@
-import { ChangeDetectorRef, Component, ElementRef, HostListener, inject, ViewChild } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  HostListener,
+  inject,
+  ViewChild,
+} from '@angular/core';
 import { HeaderComponent } from '../shared/header/header.component';
 import { TranslatePipe } from '@ngx-translate/core';
 import { NavBulletsComponent } from '../shared/nav-bullets/nav-bullets.component';
@@ -16,6 +23,7 @@ interface ProjectData {
   jumpingImg: string;
   description: string;
   development: string;
+  subdomain: string;
   gitHub: string;
 }
 
@@ -56,6 +64,7 @@ export class ProjectsComponent {
       jumpingImg: 'assets/img/checkMark.png',
       description: 'joinDescription',
       development: 'joinDevelopment',
+      subdomain: 'join',
       gitHub: 'https://github.com/RaphaelaMulthaup/Join.git',
     },
     dABubble: {
@@ -67,6 +76,7 @@ export class ProjectsComponent {
       jumpingImg: 'assets/img/speechBubble.png',
       description: 'dABubbleDescription',
       development: 'dABubbleDevelopment',
+      subdomain: 'da-bubble',
       gitHub: 'https://github.com/RaphaelaMulthaup/Join.git',
     },
     elPolloLoco: {
@@ -78,6 +88,7 @@ export class ProjectsComponent {
       jumpingImg: 'assets/img/chick.png',
       description: 'elPolloLocoDescription',
       development: 'elPolloLocoDevelopment',
+      subdomain: 'el-pollo-loco',
       gitHub: 'https://github.com/RaphaelaMulthaup/EL-POLLO-LOCO.git',
     },
   };
@@ -196,5 +207,11 @@ export class ProjectsComponent {
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) {
     this.overlayController.handleDocumentClick(event);
+  }
+
+  openProject(projectName: string) {
+    const baseDomain = 'raphaela-multhaup.de';
+    const url = `https://${projectName}.${baseDomain}`;
+    window.open(url, '_blank'); // öffnet die Subdomain in einem neuen Tab
   }
 }
