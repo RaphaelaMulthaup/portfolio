@@ -34,8 +34,10 @@
   }
 }
 .burgerMenu {
+  touch-action: manipulation;
   height: 40%;
 }
+
 .languageButton {
   border-radius: 50%;
   height: 100%;

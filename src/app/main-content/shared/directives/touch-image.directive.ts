@@ -3,7 +3,6 @@ import {
   ElementRef,
   HostListener,
   Input,
-  Renderer2,
   inject,
 } from '@angular/core';
 import { PortfolioService } from '../../../portfolio.service';
@@ -14,7 +13,6 @@ import { PortfolioService } from '../../../portfolio.service';
 })
 export class TouchImageDirective {
   private portfolioService = inject(PortfolioService);
-  // private renderer = inject(Renderer2);
   /** Reference to the image element this directive is applied to. */
   private el = inject(ElementRef<HTMLImageElement>);
 
