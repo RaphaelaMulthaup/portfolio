@@ -190,3 +190,13 @@ textarea {
     background-color: transparent;
   }
 }
+
+.overlayForm {
+  @include dFlex($g: 8px);
+  flex-direction: column;
+  background-color: $yellow;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 24px;
+  width: auto !important;
+}

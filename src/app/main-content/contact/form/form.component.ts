@@ -17,6 +17,8 @@ export class FormComponent {
   @ViewChild('emailInput') emailInput!: ElementRef;
   @ViewChild('messageInput') messageInput!: ElementRef;
 
+  overlayOpen: boolean = false;
+
   /** Injected HTTP client */
   http = inject(HttpClient);
 
@@ -67,6 +69,8 @@ export class FormComponent {
       this.nameInput?.nativeElement.blur();
       this.emailInput?.nativeElement.blur();
       this.messageInput?.nativeElement.blur();
+      this.overlayOpen = true;
+      setTimeout(() => (this.overlayOpen = false), 3000);
     } else if (ngForm.submitted && ngForm.valid && this.mailTest) {
       ngForm.resetForm();
     }

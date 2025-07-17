@@ -85,7 +85,9 @@
       "privacyPolicy2": "Datenschutzerklärung",
       "privacyPolicy3": " gelesen und stimme der Verarbeitung meiner Daten zu.",
       "privacyPolicyValid": "Bitte stimme der Datenschutzerklärung zu.",
-      "button": "Nachricht senden"
+      "button": "Nachricht senden",
+      "overlay1": "Danke für deine Nachricht.",
+      "overlay2": "Ich melde mich bald bei dir!"
     }
   },
   "imprint": {

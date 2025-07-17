@@ -85,7 +85,9 @@
       "privacyPolicy2": "privacy policy",
       "privacyPolicy3": " and agree to the processing of my data.",
       "privacyPolicyValid": "Please agree to the privacy policy.",
-      "button": "Drop a Line"
+      "button": "Drop a Line",
+      "overlay1": "Thanks for your message.",
+      "overlay2": "I’ll get back to you soon!"
     }
   },
   "imprint": {

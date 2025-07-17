@@ -93,7 +93,6 @@
         {{ "contact.form.privacyPolicy3" | translate }}</span
       >
     </div>
-    <!-- @if (!privacyPolicy.valid && (privacyPolicy.dirty || privacyPolicy.touched)) -->
 
     <span
       class="errorMessageCheckbox"
@@ -113,6 +112,8 @@
   >
     {{ "contact.form.button" | translate }}
   </button>
-  <!-- <input type="submit" value="Submit" /> -->
+  <div class="overlay overlayForm" [ngClass]="{ 'open': overlayOpen }">
+    <span> {{ "contact.form.overlay1" | translate }} </span
+    ><span> {{ "contact.form.overlay2" | translate }} </span>
+  </div>
 </form>
-<!-- </div> -->
