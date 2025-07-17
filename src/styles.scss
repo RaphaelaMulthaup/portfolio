@@ -187,7 +187,6 @@ button {
   color: $cream;
   background: inherit;
   transition: background-color 100ms ease-in;
-  // &:hover,
   &.hoverEffect {
     cursor: pointer;
     background-color: $darkOrange;
