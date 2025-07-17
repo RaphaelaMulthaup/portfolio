@@ -56,7 +56,7 @@ export class ProjectsComponent {
   /** The data of the projects. */
   dataProjects: { [key: string]: ProjectData } = {
     join: {
-      img: 'assets/img/join.jpg',
+      img: 'assets/img/join.png',
       bGroundColor: 'bgYellow',
       colorHexagon: 'hexagonOrange',
       name: 'Join',
