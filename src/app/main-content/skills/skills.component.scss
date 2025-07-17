@@ -188,9 +188,6 @@
   @include respond-to(tablet-landscape) {
     gap: 16px;
   }
-  // @media (max-width: 768px) and (max-height: 740px) {
-  //   gap: 4px;
-  // }
   span {
     text-align: center;
   }

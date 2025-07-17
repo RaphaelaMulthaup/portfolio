@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from '../shared/header/header.component';
-import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { NavBulletsComponent } from '../shared/nav-bullets/nav-bullets.component';
 import { ReferenceComponent } from './reference/reference.component';
 @Component({
@@ -8,7 +8,6 @@ import { ReferenceComponent } from './reference/reference.component';
   imports: [
     HeaderComponent,
     TranslatePipe,
-    TranslateDirective,
     NavBulletsComponent,
     ReferenceComponent,
   ],

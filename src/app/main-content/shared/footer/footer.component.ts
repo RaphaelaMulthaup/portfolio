@@ -7,8 +7,6 @@ import { TouchHoverDirective } from '../directives/touch-hover.directive';
   selector: 'app-footer',
   imports: [HexagonComponent, TranslatePipe, TouchHoverDirective],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  styleUrl: './footer.component.scss',
 })
-export class FooterComponent {
-
-}
+export class FooterComponent {}

@@ -4,7 +4,16 @@ import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { BreakpointObserver } from '@angular/cdk/layout';
 
+/**
+ * Defines the image paths for a menu icon in normal and hover state.
+ */
 type ImgSetMenuIcons = { normal: string; hover: string };
+
+/**
+ * Defines the image sets for social media buttons.
+ * Keys represent platform names (e.g. 'facebook', 'instagram').
+ * Optional fields allow responsive variations.
+ */
 type ImgSetSocialMediaButtons = {
   [key: string]: {
     normal: string;
@@ -14,6 +23,9 @@ type ImgSetSocialMediaButtons = {
   };
 };
 
+/**
+ * Marks the service as injectable and available app-wide.
+ */
 @Injectable({
   providedIn: 'root',
 })
@@ -25,7 +37,8 @@ export class PortfolioService {
   public readonly touchScreen: boolean;
 
   /**
-   * This constructor sets German as the default language and activates it, checks whether it is a touchscreen and the screen size is also checked to display the design for mobile screens if necessary.
+   * This constructor sets German as the default language, initializes touch detection,
+   * and observes screen size changes to toggle mobile layout handling.
    *
    * @param translate The TranslateService, which manages the language translations.
    * @param router Angular's router service for navigation and URL analysis.
@@ -36,20 +49,39 @@ export class PortfolioService {
     private router: Router,
     private breakpointObserver: BreakpointObserver
   ) {
+    this.initTranslations();
+    this.touchScreen = this.detectTouchScreen();
+    this.initScreenSizeObserver();
+  }
+
+  /**
+   * Sets the default language and activates it.
+   */
+  private initTranslations(): void {
     this.translate.setDefaultLang('de');
     this.translate.use('de');
+  }
 
-    this.touchScreen = (() => {
-      if (typeof window === 'undefined' || typeof navigator === 'undefined') {
-        return false;
-      }
-      return (
-        'ontouchstart' in window ||
-        navigator.maxTouchPoints > 0 ||
-        (navigator as any).msMaxTouchPoints > 0
-      );
-    })();
-    
+  /**
+   * Detects if the current device supports touch input.
+   *
+   * @returns True if the device is a touchscreen.
+   */
+  private detectTouchScreen(): boolean {
+    if (typeof window === 'undefined' || typeof navigator === 'undefined') {
+      return false;
+    }
+    return (
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0 ||
+      (navigator as any).msMaxTouchPoints > 0
+    );
+  }
+
+  /**
+   * Observes screen width and updates the mobile screen flag for responsive layout.
+   */
+  private initScreenSizeObserver(): void {
     this.breakpointObserver
       .observe(['(max-width: 1024px)'])
       .subscribe((result) => {
@@ -132,24 +164,43 @@ export class PortfolioService {
   public scrollingThroughFunktion = signal(false);
 
   /**
-   * This function sets the variable 'scrollingThroughFunktion' to true, assigns the new index to the variable 'currentIndexMainComponents' and scrolls or jumps to the corresponding main component. And all subscribers of the menuDisplayed$ observable are sent the value false, which closes the menu. After a timeout 'scrollingThroughFunktion' is set to false again.
+   * Scrolls or jumps to the main component at the specified index,
+   * manages scrolling state and closes the menu during the scroll.
    *
-   * @param index (number) The index of the current main component.
-   * @param smooth (boolean) The boolean specifies whether to jump or scroll to the selected component.
+   * @param index The index of the main component to scroll to.
+   * @param smooth Whether to scroll smoothly (true) or jump instantly (false).
    */
   scrollToSection(index: number, smooth: boolean = true) {
     this.scrollingThroughFunktion.set(true);
     this.setCurrentIndex(index);
+    this.menuDisplayedSubject.next(false);
 
-    const targetMainComponent = this.mainComponents[index]?.nativeElement;
-    if (!targetMainComponent) return;
+    this.scrollToMainComponent(index, smooth);
+    this.resetScrollingFlagAfterTimeout(smooth);
+  }
 
-    targetMainComponent.scrollIntoView({
+  /**
+   * Scrolls the DOM element of the main component into view.
+   *
+   * @param index The index of the main component.
+   * @param smooth Whether to scroll smoothly or jump instantly.
+   */
+  private scrollToMainComponent(index: number, smooth: boolean) {
+    const target = this.mainComponents[index]?.nativeElement;
+    if (!target) return;
+
+    target.scrollIntoView({
       behavior: smooth ? 'smooth' : 'auto',
       block: 'start',
     });
-    this.menuDisplayedSubject.next(false);
+  }
 
+  /**
+   * Resets the scrolling flag after a timeout depending on smoothness.
+   *
+   * @param smooth Whether scrolling was smooth or instant.
+   */
+  private resetScrollingFlagAfterTimeout(smooth: boolean) {
     setTimeout(
       () => {
         this.scrollingThroughFunktion.set(false);

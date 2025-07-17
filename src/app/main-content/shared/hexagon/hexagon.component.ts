@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-hexagon',
   imports: [],
   templateUrl: './hexagon.component.html',
-  styleUrl: './hexagon.component.scss'
+  styleUrl: './hexagon.component.scss',
 })
-export class HexagonComponent {
-
-}
+export class HexagonComponent {}

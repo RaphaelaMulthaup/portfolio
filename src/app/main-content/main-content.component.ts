@@ -93,94 +93,172 @@ export class MainContentComponent implements AfterViewInit {
   }
 
   /**
-   * Initializes an IntersectionObserver that observes each main component in the view and triggers whenever at least 50% of a section is visible, during manual scrolling and update the current index accordingly in the PortfolioService. If scrolling through a function is active the observer does nothing.
+   * Initializes an IntersectionObserver that observes each main component.
+   * It triggers when at least 50% of a section is visible and updates
+   * the current index in the PortfolioService, unless a programmatic scroll is active.
    */
   private initIntersectionObserver() {
     const observer = new IntersectionObserver(
-      (entries) => {
-        if (this.portfolioService.scrollingThroughFunktion()) return;
-
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-            const index = this.mainComponents
-              .toArray()
-              .findIndex((el) => el.nativeElement === entry.target);
-            if (index !== -1) {
-              this.portfolioService.setCurrentIndex(index);
-            }
-          }
-        });
-      },
-      {
-        threshold: [0.5],
-      }
+      (entries) => this.handleIntersection(entries),
+      { threshold: [0.5] }
     );
 
     this.mainComponents.forEach((ref) => observer.observe(ref.nativeElement));
   }
 
   /**
-   * This function checks whether 'isScrolling' is true and if free scrolling shouldn't occur. If not, it sets 'isScrolling' to true for 800ms and checks in which direction the scrolling is taking place and whether there is another main component in that direction. If so, the new 'currentIndexMainComponents' is set and the function to scroll to that direction is called.
+   * Handles the logic for IntersectionObserver entries.
+   * Updates the current index in the PortfolioService if scrolling is manual.
    *
-   * @param event the wheel event
+   * @param entries The IntersectionObserver entries being evaluated.
+   */
+  private handleIntersection(entries: IntersectionObserverEntry[]) {
+    if (this.portfolioService.scrollingThroughFunktion()) return;
+
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+        const index = this.mainComponents
+          .toArray()
+          .findIndex((el) => el.nativeElement === entry.target);
+        if (index !== -1) {
+          this.portfolioService.setCurrentIndex(index);
+        }
+      }
+    });
+  }
+
+  /**
+   * Handles the wheel scroll event to navigate between sections,
+   * unless scrolling is inside a textarea or a scroll lock is active.
+   *
+   * @param event The wheel event triggered by user scrolling.
    */
   private handleScroll(event: WheelEvent) {
-    // if (this.freeScroll) return;
+    if (this.shouldIgnoreScroll(event)) return;
+    if (!this.lockScrollTemporarily()) return;
+
+    const currentIndex = this.portfolioService.currentIndexMainComponents();
+    const maxIndex = this.portfolioService.mainComponents.length - 1;
+
+    this.evaluateScrollDirection(event, currentIndex, maxIndex);
+  }
+
+  /**
+   * Determines if the scroll should be ignored (e.g., inside a textarea).
+   *
+   * @param event The wheel event.
+   * @returns True if scrolling should be ignored.
+   */
+  private shouldIgnoreScroll(event: WheelEvent): boolean {
     const target = event.target as HTMLElement;
-    const tagName = target.tagName.toLowerCase();
-    const isTextarea = ['textarea'].includes(tagName);
+    return target.tagName.toLowerCase() === 'textarea';
+  }
 
-    if (isTextarea) {
-      return; // Nicht reagieren, wenn z.B. in einer Textarea gescrollt wird
+  /**
+   * Locks scroll handling for a short duration to prevent rapid repeats.
+   *
+   * @returns False if already locked (i.e., a scroll is in progress), true otherwise.
+   */
+  private lockScrollTemporarily(): boolean {
+    if (this.isScrolling) {
+      return false;
     }
-
-    if (this.isScrolling) return;
     this.isScrolling = true;
     setTimeout(() => (this.isScrolling = false), 800);
+    return true;
+  }
 
-    if (
-      event.deltaY > 0 &&
-      this.portfolioService.currentIndexMainComponents() <
-        this.portfolioService.mainComponents.length - 1
-    ) {
-      const newIndex = this.portfolioService.currentIndexMainComponents() + 1;
-      this.portfolioService.setCurrentIndex(newIndex);
-      this.portfolioService.scrollToSection(newIndex);
-    } else if (
-      event.deltaY < 0 &&
-      this.portfolioService.currentIndexMainComponents() > 0
-    ) {
-      const newIndex = this.portfolioService.currentIndexMainComponents() - 1;
-      this.portfolioService.setCurrentIndex(newIndex);
-      this.portfolioService.scrollToSection(newIndex);
+  /**
+   * Evaluates scroll direction and triggers navigation if applicable.
+   *
+   * @param event The wheel event.
+   * @param currentIndex The currently active section index.
+   * @param maxIndex The highest valid section index.
+   */
+  private evaluateScrollDirection(
+    event: WheelEvent,
+    currentIndex: number,
+    maxIndex: number
+  ): void {
+    if (this.shouldScrollDown(event, currentIndex, maxIndex)) {
+      this.scrollToIndex(currentIndex + 1);
+    } else if (this.shouldScrollUp(event, currentIndex)) {
+      this.scrollToIndex(currentIndex - 1);
     }
   }
 
   /**
-   * This HostListener checks whether a keydown event occurs and free scrolling shouldn't occur. If so, the function is called. It checks whether one of the up or down arrow keys is pressed and whether there is another main component in that direction. If so, the new 'currentIndexMainComponents' is set and the function to scroll to that direction is called.
+   * Checks if scrolling down is allowed.
    *
-   * @param event the keydown event
+   * @param event The wheel event.
+   * @param currentIndex The currently active section index.
+   * @param maxIndex The highest valid section index.
+   * @returns True if the user scrolled down and there's a next section.
    */
-  @HostListener('window:keydown', ['$event'])
-  onKeyDown(event: KeyboardEvent) {
-    if (this.freeScroll) return;
-    if (
-      event.key === 'ArrowDown' &&
-      this.portfolioService.currentIndexMainComponents() <
-        this.portfolioService.mainComponents.length - 1
-    ) {
-      const newIndex = this.portfolioService.currentIndexMainComponents() + 1;
-      this.portfolioService.setCurrentIndex(newIndex);
-      this.portfolioService.scrollToSection(newIndex);
-    } else if (
-      event.key === 'ArrowUp' &&
-      this.portfolioService.currentIndexMainComponents() > 0
-    ) {
-      const newIndex = this.portfolioService.currentIndexMainComponents() - 1;
-      this.portfolioService.setCurrentIndex(newIndex);
-      this.portfolioService.scrollToSection(newIndex);
-    }
+  private shouldScrollDown(
+    event: WheelEvent,
+    currentIndex: number,
+    maxIndex: number
+  ): boolean {
+    return event.deltaY > 0 && currentIndex < maxIndex;
   }
+
+  /**
+   * Checks if scrolling up is allowed.
+   *
+   * @param event The wheel event.
+   * @param currentIndex The currently active section index.
+   * @returns True if the user scrolled up and there's a previous section.
+   */
+  private shouldScrollUp(event: WheelEvent, currentIndex: number): boolean {
+    return event.deltaY < 0 && currentIndex > 0;
+  }
+
+  /**
+   * Updates the current index in the service and scrolls to that section.
+   *
+   * @param index The target section index.
+   */
+  private scrollToIndex(index: number): void {
+    this.portfolioService.setCurrentIndex(index);
+    this.portfolioService.scrollToSection(index);
+  }
+
+/**
+ * This HostListener checks whether a keydown event occurs and free scrolling shouldn't occur.
+ * If an arrow key is pressed, and the navigation is valid, it updates the current index
+ * and scrolls to the corresponding section.
+ *
+ * @param event The keydown event.
+ */
+@HostListener('window:keydown', ['$event'])
+onKeyDown(event: KeyboardEvent) {
+  if (this.freeScroll) return;
+
+  const currentIndex = this.portfolioService.currentIndexMainComponents();
+  const maxIndex = this.portfolioService.mainComponents.length - 1;
+
+  this.evaluateKeyNavigation(event, currentIndex, maxIndex);
+}
+
+/**
+ * Evaluates key press direction and triggers navigation if applicable.
+ *
+ * @param event The keyboard event.
+ * @param currentIndex The currently active section index.
+ * @param maxIndex The highest valid section index.
+ */
+private evaluateKeyNavigation(
+  event: KeyboardEvent,
+  currentIndex: number,
+  maxIndex: number
+): void {
+  if (event.key === 'ArrowDown' && currentIndex < maxIndex) {
+    this.scrollToIndex(currentIndex + 1);
+  } else if (event.key === 'ArrowUp' && currentIndex > 0) {
+    this.scrollToIndex(currentIndex - 1);
+  }
+}
 
   /**
    * This host listener changes the variable 'freeScroll' to true if the screen is narrower than 1024px.

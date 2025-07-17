@@ -25,7 +25,6 @@ export class MainHeaderComponent {
     this.isImprintPage = this.router.url.includes('imprint') || this.router.url.includes('privacyPolicy');
   }
 
-
   /** A boolean that indicates whether the logo name is hovered. */
   logoNameIsHoveredImprint = false;
 
