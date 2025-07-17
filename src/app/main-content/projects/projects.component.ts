@@ -45,8 +45,8 @@ export class ProjectsComponent {
   portfolioService = inject(PortfolioService);
   /** Controller instance for managing overlay behavior */
   overlayController: OverlayController;
+  /** Initialize overlay controller from portfolio service. */
   constructor(private cdr: ChangeDetectorRef) {
-    // Initialize overlay controller from portfolio service
     this.overlayController = this.portfolioService.createOverlayController();
   }
   /** An array with the names of the projects. */
@@ -109,7 +109,6 @@ export class ProjectsComponent {
   nextJumpingImg = this.currentJumpingImg;
   /** This variable indicates whether the jumping image is hovered over. */
   jumpingImgIsHovered: boolean = false;
-
   /** This variable indicates whether the gitHub button is hovered over. */
   btnGitHubIsHovered: boolean = false;
   /** This variable indicates whether the live test button is hovered over. */
@@ -143,13 +142,25 @@ export class ProjectsComponent {
   setHoverState(imageName: string, state: boolean) {
     (this as any)[imageName + 'IsHovered'] = state;
   }
+
   /**
-   * This function cycles through the project images and provides a smooth animation. 'nextImg' receives the path of the next image. After that, 'currentImg' is faded out. Once this is done, the path of 'currentImg' is also updated, and its opacity is increased back to one. In between, the DOM is updated using change detection.
+   * Initiates the image change for a project by preparing the next image,
+   * updating the project index, and triggering the fade-out animation.
    *
-   * @param direction the direction in which the index changes
+   * @param direction The direction in which the index changes ('next' or 'prev').
    */
   changeProject(direction: string) {
     const nextIndex = this.getIndexNextDisplayedProject(direction);
+    this.prepareNextProjectImage(nextIndex);
+    this.fadeOutAndSwapImages();
+  }
+
+  /**
+   * Prepares the next project image and updates the necessary state.
+   *
+   * @param nextIndex The index of the next project to be displayed.
+   */
+  private prepareNextProjectImage(nextIndex: number) {
     this.nextImg = this.dataProjects[this.projects[nextIndex]].img;
     this.nextJumpingImg =
       this.dataProjects[this.projects[nextIndex]].jumpingImg;
@@ -159,7 +170,13 @@ export class ProjectsComponent {
     this.dataDisplayedProject =
       this.dataProjects[this.projects[this.indexDisplayedProject]];
     this.cdr.detectChanges();
+  }
 
+  /**
+   * Handles the fade-out transition and swaps the current image with the next one.
+   * Also triggers change detection to update the DOM.
+   */
+  private fadeOutAndSwapImages() {
     setTimeout(() => {
       this.currentImg = this.nextImg;
       this.currentJumpingImg = this.nextJumpingImg;
@@ -209,9 +226,14 @@ export class ProjectsComponent {
     this.overlayController.handleDocumentClick(event);
   }
 
+  /**
+   * Opens the specified project in a new browser tab.
+   *
+   * @param {string} projectName The subdomain name of the project to open.
+   */
   openProject(projectName: string) {
     const baseDomain = 'raphaela-multhaup.de';
     const url = `https://${projectName}.${baseDomain}`;
-    window.open(url, '_blank'); // öffnet die Subdomain in einem neuen Tab
+    window.open(url, '_blank');
   }
 }

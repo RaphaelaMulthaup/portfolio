@@ -17,6 +17,7 @@ export class FormComponent {
   @ViewChild('emailInput') emailInput!: ElementRef;
   @ViewChild('messageInput') messageInput!: ElementRef;
 
+  /** Boolean indicating whether the overlay is open. */
   overlayOpen: boolean = false;
 
   /** Injected HTTP client */
@@ -29,9 +30,6 @@ export class FormComponent {
     message: '',
     privacyPolicy: false,
   };
-
-  /** Enables test mode for skipping request */
-  mailTest = false;
 
   /** POST request config */
   post = {
@@ -48,7 +46,6 @@ export class FormComponent {
   /**
    * Sends contact data via HTTP POST.
    * If form is invalid, all controls are marked as touched.
-   * In test mode, only resets the form.
    */
   onSubmit(ngForm: NgForm) {
     if (!ngForm.valid) {
@@ -57,8 +54,7 @@ export class FormComponent {
       );
       return;
     }
-
-    if (ngForm.submitted && ngForm.valid && !this.mailTest) {
+    if (ngForm.submitted && ngForm.valid) {
       this.http
         .post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
@@ -66,14 +62,21 @@ export class FormComponent {
           error: (error) => console.error(error),
           complete: () => console.info('send post complete'),
         });
+      this.blurFormAndOpenOverlay();
+    }
+  }
+  
+  /**
+   * This function blurs the form inputs and briefly displays an overlay.
+   */
+  blurFormAndOpenOverlay() {
+    setTimeout(() => {
       this.nameInput?.nativeElement.blur();
       this.emailInput?.nativeElement.blur();
       this.messageInput?.nativeElement.blur();
       this.overlayOpen = true;
       setTimeout(() => (this.overlayOpen = false), 3000);
-    } else if (ngForm.submitted && ngForm.valid && this.mailTest) {
-      ngForm.resetForm();
-    }
+    }, 200);
   }
 
   /**

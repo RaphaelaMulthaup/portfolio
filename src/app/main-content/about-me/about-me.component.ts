@@ -38,8 +38,10 @@ export class AboutMeComponent {
   /** Controller instance for managing overlay behavior */
   overlayController: OverlayController;
 
+  /**
+   * Initialize the overlay controller from the portfolio service.
+   */
   constructor() {
-    // Initialize the overlay controller from the portfolio service
     this.overlayController = this.portfolioService.createOverlayController();
   }
 
