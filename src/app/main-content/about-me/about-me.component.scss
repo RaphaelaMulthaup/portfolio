@@ -11,6 +11,7 @@
 
 #aboutMe {
   background-color: $cream;
+  width: 100vw;
   @include respond-to(tablet-landscape) {
     height: auto;
   }
@@ -142,6 +143,7 @@
 .textAboutMe {
   background-color: $black;
   width: 46vw;
+  max-width: 840px;
   position: absolute;
   top: 22%;
   left: 84%;
@@ -195,7 +197,9 @@
   border-color: $black;
   padding: clamp(12px, 2vw, 24px);
   top: calc(95% + 400px);
-  left: 74%;
+  // left: 74%;
+  // left: clamp(74%, 74%, 426px);
+  left: min(74%, 426px);
   @include dFlex($g: 16px);
   flex-direction: column;
   color: $cream;
