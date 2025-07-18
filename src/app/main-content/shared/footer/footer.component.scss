@@ -78,6 +78,19 @@ footer {
       transform: rotate(30deg);
     }
   }
+  @media (min-width: 1024px) and (max-width: 1850px) and (min-height: 900px) {
+    height: 25vw;
+    width: 33vw;
+    > ::ng-deep app-hexagon:first-child {
+      height: 16vw;
+      width: 16vw;
+    }
+    > ::ng-deep app-hexagon:last-child {
+      height: 22vw;
+      width: 22vw;
+      left: 10vw
+    }
+  }
 }
 
 .links {
