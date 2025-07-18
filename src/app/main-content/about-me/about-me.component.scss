@@ -22,6 +22,12 @@
 
 .contentMainComponent {
   @include dFlex($jc: space-between, $ai: flex-start);
+  @media (max-width: 1300px) and (min-height: 960px) {
+    flex-direction: column-reverse;
+    h2 {
+      margin-bottom: 32px;
+    }
+  }
   @include respond-to(tablet-landscape) {
     flex-direction: column;
     padding: 8dvh 7vw;
@@ -46,6 +52,12 @@
       .wrapperTextAboutMe {
         justify-content: flex-end;
         min-width: 260px;
+      }
+    }
+    @media (min-height: 932px) {
+      align-items: flex-end;
+      .wrapperImgDiv {
+        margin-top: -32dvh !important;
       }
     }
   }
@@ -157,15 +169,28 @@
   @media (min-height: 1330px) and (min-width: 1920px) {
     left: 76%;
   }
+  @media (max-width: 1900px) {
+    width: 36vw;
+  }
+  @media (max-width: 1530px) {
+    width: 26vw;
+  }
   @media (max-width: 1450px) {
     top: 18%;
   }
   @media (max-width: 1300px) and (min-height: 830px) {
     width: 43vw;
   }
+  @media (max-width: 1300px) and (min-height: 960px) {
+    width: 26vw;
+  }
   @media (max-width: 1200px) and (min-width: 1025px) {
     width: 41vw;
   }
+  @media (max-width: 1200px) and (min-width: 960px) {
+    width: 25vw;
+  }
+
   @media (max-width: 1100px) {
     top: 14%;
     left: 76%;
