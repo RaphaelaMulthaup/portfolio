@@ -47,8 +47,9 @@
         required
         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
         (focus)="onInputFocus(emailInput)"
+        (blur)="onEmailBlur()"
       />
-      @if(isEmailFieldBlurredAndInvalid()){
+      @if(emailHintShouldBeShown){
       <span class="hintIncorrectMail">
         {{ "contact.form.mailNotValid" | translate }}
       </span>
