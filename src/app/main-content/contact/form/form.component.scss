@@ -36,6 +36,18 @@ form {
     }
   }
 }
+
+.formSectionMail {
+  position: relative;
+}
+
+.hintIncorrectMail {
+  position: absolute;
+  bottom: -28px;
+  left: 16px;
+  color: $red;
+}
+
 .formSectionMessage {
   margin-bottom: 9dvh;
 }

@@ -25,7 +25,7 @@
         (focus)="onInputFocus(nameInput)"
       />
     </div>
-    <div class="formSection">
+    <div class="formSection formSectionMail">
       <label for="email">
         <h4>
           {{ "contact.form.mail" | translate }}
@@ -48,6 +48,11 @@
         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
         (focus)="onInputFocus(emailInput)"
       />
+      @if(isEmailFieldBlurredAndInvalid()){
+      <span class="hintIncorrectMail">
+        {{ "contact.form.mailNotValid" | translate }}
+      </span>
+      }
     </div>
   </div>
   <div class="formSection formSectionMessage">
@@ -112,7 +117,7 @@
   >
     {{ "contact.form.button" | translate }}
   </button>
-  <div class="overlay overlayForm" [ngClass]="{ 'open': overlayOpen }">
+  <div class="overlay overlayForm" [ngClass]="{ open: overlayOpen }">
     <span> {{ "contact.form.overlay1" | translate }} </span
     ><span> {{ "contact.form.overlay2" | translate }} </span>
   </div>

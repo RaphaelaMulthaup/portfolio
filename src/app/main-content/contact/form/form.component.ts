@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, inject, ViewChild } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
 import { TouchHoverDirective } from '../../shared/directives/touch-hover.directive';
 import { HttpClient } from '@angular/common/http';
@@ -14,8 +14,9 @@ import { HttpClient } from '@angular/common/http';
 export class FormComponent {
   /** Input refs to blur after submission */
   @ViewChild('nameInput') nameInput!: ElementRef;
-  @ViewChild('emailInput') emailInput!: ElementRef;
+  @ViewChild('emailInput') emailInput!: ElementRef<HTMLInputElement>;
   @ViewChild('messageInput') messageInput!: ElementRef;
+  @ViewChild('email') email!: NgModel;
 
   /** Boolean indicating whether the overlay is open. */
   overlayOpen: boolean = false;
@@ -23,6 +24,16 @@ export class FormComponent {
   /** Injected HTTP client */
   http = inject(HttpClient);
 
+  isEmailFieldBlurredAndInvalid(): boolean {
+    const input = this.emailInput?.nativeElement;
+    return (
+      !!input &&
+      document.activeElement !== input &&
+      this.email.valid === false && // statt !this.email.valid
+      this.email.touched === true &&
+      !!this.contactData.email?.trim()
+    );
+  }
   /** Contact form data */
   contactData = {
     name: '',
@@ -65,7 +76,7 @@ export class FormComponent {
       this.blurFormAndOpenOverlay();
     }
   }
-  
+
   /**
    * This function blurs the form inputs and briefly displays an overlay.
    */
