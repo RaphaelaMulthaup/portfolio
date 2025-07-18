@@ -32,6 +32,9 @@
   @media (max-height: 820px) {
     padding-bottom: 7dvh;
   }
+  @media (min-height: 1000px) {
+    justify-content: space-around;
+  }
   @include respond-to(tablet) {
     padding: 80px 16px 22px;
     @include respond-to(short-height) {
@@ -46,6 +49,9 @@
 .skillsUpperArea {
   h2 {
     margin-bottom: clamp(30px, 4vh, 40px);
+    @media (min-height: 1000px) {
+      margin-bottom: 8dvh;
+    }
   }
 }
 
