@@ -237,6 +237,9 @@
   @media (max-width: 1450px) {
     top: calc(95% + 400px);
   }
+  @media (max-width: 1200px) {
+    top: calc(32% + 400px);
+  }
   @include respond-to(tablet-landscape) {
     top: calc(101% + 400px);
   }
@@ -250,15 +253,17 @@
     left: -45%;
     top: calc(64% + 400px);
   }
-  @media (min-height: 760px) {
+  @media (min-height: 760px) and (max-width: 480px) {
     top: calc(96% + 400px);
   }
-  @media (min-height: 870px) {
+  @media (min-height: 870px) and (max-width: 480px) {
     top: calc(88% + 400px);
   }
-  @media (max-height: 785px) and (min-width: 1025px) {
-    top: calc(75% + 400px);
-    left: 5%;
+  @media (max-width: 1900px) and (min-height: 1100px) {
+    top: calc(94% + 400px);
+  }
+  @media (max-width: 1340px) and (min-height: 1100px) {
+    left: -14%;
   }
   @include respond-to(mobile-portrait) {
     left: calc(50% - 159px);
