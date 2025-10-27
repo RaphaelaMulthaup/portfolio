@@ -50,11 +50,23 @@ export class ProjectsComponent {
     this.overlayController = this.portfolioService.createOverlayController();
   }
   /** An array with the names of the projects. */
-  projects: string[] = ['join', 'dABubble', 'elPolloLoco'];
+  projects: string[] = ['dABubble', 'join', 'elPolloLoco'];
   /** The currend displayed project. */
-  indexDisplayedProject: number = 1;
+  indexDisplayedProject: number = 0;
   /** The data of the projects. */
   dataProjects: { [key: string]: ProjectData } = {
+    dABubble: {
+      img: 'assets/img/dabubble.png',
+      bGroundColor: 'bgBlue',
+      colorHexagon: 'hexagonOrange',
+      name: 'DA Bubble',
+      technologies: 'Angular | TypeScript | Firebase | HTML | CSS',
+      jumpingImg: 'assets/img/speechBubble.png',
+      description: 'dABubbleDescription',
+      development: 'dABubbleDevelopment',
+      subdomain: 'da-bubble',
+      gitHub: 'https://github.com/RaphaelaMulthaup/DABubble.git',
+    },
     join: {
       img: 'assets/img/join.jpg',
       bGroundColor: 'bgYellow',
@@ -66,18 +78,6 @@ export class ProjectsComponent {
       development: 'joinDevelopment',
       subdomain: 'join',
       gitHub: 'https://github.com/RaphaelaMulthaup/Join.git',
-    },
-    dABubble: {
-      img: 'assets/img/elPolloLoco.png',
-      bGroundColor: 'bgBlue',
-      colorHexagon: 'hexagonOrange',
-      name: 'DA Bubble',
-      technologies: 'Angular | TypeScript | Firebase | HTML | CSS',
-      jumpingImg: 'assets/img/speechBubble.png',
-      description: 'dABubbleDescription',
-      development: 'dABubbleDevelopment',
-      subdomain: 'da-bubble',
-      gitHub: 'https://github.com/RaphaelaMulthaup/DABubble.git',
     },
     elPolloLoco: {
       img: 'assets/img/elPolloLoco.png',
