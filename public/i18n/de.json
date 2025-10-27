@@ -50,7 +50,7 @@
     "joinDescription": "Aufgabenmanager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen, weise Benutzer und Kategorien zu.",
     "joinDevelopment": "Ich war in unserer Projektgruppe unter anderem verantwortlich für die Umsetzung zentraler UI-Komponenten: das Eingabeformular für neue Tasks, das Kanbanboard mit den einzelnen Spalten sowie die Funktion zur Bearbeitung der Tasks. Darüber hinaus habe ich mich besonders um die Strukturierung und den Aufbau des Projekts gekümmert.",
     "dABubbleDescription": "Diese App ist ein Slack-Klon. Sie ermöglicht die Teamkommunikation und Zusammenarbeit durch eine intuitive Benutzeroberfläche, Echtzeitnachrichten und eine leistungsstarke Kanalorganisation.",
-    "daBubbleDevelopment": "",
+    "dABubbleDevelopment": "DABubble haben wir im Team entwickelt. Ich habe unter anderem die verschiedenen Suchfunktionen und Direkt-Chats umgesetzt, sowie das Beispeil-Setup des Gastzugangs eingerichtet.",
     "elPolloLocoDescription": "Ein einfaches Jump-and-Run-Spiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Tabaskoflaschen zu finden, um gegen das Riesenhuhn zu kämpfen.",
     "elPolloLocoDevelopment": "Das Spiel habe ich vollständig selbst entwickelt – von der Spielmechanik über das Leveldesign bis hin zur Gegnerlogik. Besonderen Fokus habe ich auf ein flüssiges Spielerlebnis gelegt, etwa durch eine eigene Kamera-Logik.",
     "liveTest": "Jetzt testen",
