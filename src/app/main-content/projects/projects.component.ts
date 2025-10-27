@@ -52,7 +52,7 @@ export class ProjectsComponent {
   /** An array with the names of the projects. */
   projects: string[] = ['join', 'dABubble', 'elPolloLoco'];
   /** The currend displayed project. */
-  indexDisplayedProject: number = 0;
+  indexDisplayedProject: number = 1;
   /** The data of the projects. */
   dataProjects: { [key: string]: ProjectData } = {
     join: {
@@ -77,7 +77,7 @@ export class ProjectsComponent {
       description: 'dABubbleDescription',
       development: 'dABubbleDevelopment',
       subdomain: 'da-bubble',
-      gitHub: 'https://github.com/RaphaelaMulthaup/Join.git',
+      gitHub: 'https://github.com/RaphaelaMulthaup/DABubble.git',
     },
     elPolloLoco: {
       img: 'assets/img/elPolloLoco.png',
