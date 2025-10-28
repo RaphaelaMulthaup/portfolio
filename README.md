@@ -1,59 +1,102 @@
-# Portfolio
+# 🌐 Frontend Developer Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+This is my personal **portfolio website**, built with **Angular**, to showcase my work as a **Frontend Developer**.  
+It presents my **skills, projects, and experience**, and also serves as a live example of my coding style and frontend craftsmanship.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Features
 
-```bash
-ng serve
-```
+- **Responsive Design** – optimized for desktop, tablet, and mobile 
+- **Smooth Section Scrolling** – on desktop, scrolling moves directly to the next section for an immersive experience  
+- **Multi-language Support** – powered by [`@ngx-translate`](https://github.com/ngx-translate/core)  
+- **Contact Form** – allows visitors to easily reach out directly from the website  
+- **Modular Architecture** – clean and scalable component-based structure  
+- **Easily Extensible** – organized modules and shared components  
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 🛠️ Tech Stack
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- [Angular 19](https://angular.dev/)
+- TypeScript
+- SCSS
+- RxJS
+- Angular CDK
+- @ngx-translate (internationalization)
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 📁 Project Structure
 
 ```bash
-ng test
+src/
+├── app/
+│   ├── imprint/                # Legal information page
+│   ├── main-content/           # Main sections of the website
+│   │   ├── about-me/           # About me section
+│   │   ├── contact/            # Contact page or form
+│   │   ├── landing-page/       # Landing page
+│   │   ├── projects/           # Projects showcase
+│   │   ├── references/         # References & testimonials
+│   │   ├── shared/             # Reusable shared components
+│   │   └── skills/             # Skills and technologies
+│   ├── privacy-policy/         # Privacy policy page
+│   ├── app.component.*         # Root component
+│   ├── app.routes.ts           # Routing configuration
+│   ├── portfolio.service.ts    # Service for portfolio/project data
+│   └── ...
+├── assets/                     # Images, fonts, and static assets
+├── index.html                  # Main entry point
+├── styles.scss                 # Global styles
+└── main.ts                     # Angular bootstrap file
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 💻 Installation & Development
+
+### 1️⃣ Clone the repository
 
 ```bash
-ng e2e
+git clone https://github.com/RaphaelaMulthaup/portfolio.git
+cd portfolio
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### 2️⃣ Install dependencies
 
-## Additional Resources
+```bash
+npm install
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### 3️⃣ Start the development server
+
+```bash
+npm start
+```
+
+The application will be available at http://localhost:4200
+
+---
+
+## 🧱 Build for Production
+
+```bash
+npm run build
+```
+
+The compiled files will be generated in the dist/portfolio/ directory.
+You can deploy them to any static web server.
+
+---
+
+## 📬 Contact
+
+If you have any questions or feedback, feel free to reach out:
+📧 kontakt@raphaela-multhaup.de
+
+---
+
+## 📝 License
+
+This project is licensed under the **MIT License** – feel free to use, modify, and share it.
