@@ -35,7 +35,7 @@ src/
 │   ├── imprint/                # Legal information page
 │   ├── main-content/           # Main sections of the website
 │   │   ├── about-me/           # About me section
-│   │   ├── contact/            # Contact page or form
+│   │   ├── contact/            # Contact page with form
 │   │   ├── landing-page/       # Landing page
 │   │   ├── projects/           # Projects showcase
 │   │   ├── references/         # References & testimonials
