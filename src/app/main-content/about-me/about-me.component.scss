@@ -265,6 +265,16 @@
   @media (max-width: 1340px) and (min-height: 1100px) {
     left: -14%;
   }
+  @media (min-width: 1201px) and (max-width: 1270px) and (max-height: 829px) {
+    top: 95%;
+    left: -26%
+  }
+
+    @media (min-width: 1271px) and (max-height: 829px) {
+    top: 95%;
+    left: 92%
+  }
+
   @include respond-to(mobile-portrait) {
     left: calc(50% - 159px);
     font-size: 13px;
