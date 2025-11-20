@@ -78,8 +78,8 @@
   // height: 100%;
   width: 38vw;
   @include respond-to(tablet-landscape) {
-    height: auto;
-    width: auto;
+    // height: auto;
+    width: 41vw;
   }
 
   app-reference {
