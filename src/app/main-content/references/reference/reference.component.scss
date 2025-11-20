@@ -8,16 +8,20 @@
   @include dFlex($ai: flex-start, $g: 10px);
   flex-direction: column;
   > span:nth-child(2) {
-    overflow: scroll;
+    overflow: auto;
   }
   > span:last-child {
     font-size: 18px;
     font-weight: 700;
   }
+  // @media (max-width: 1160px) {
+  //   height: 24dvh;
+  // }
 }
 
 .headerReference {
   width: 100%;
+  position: relative;
   @include dFlex($jc: space-between);
   > h4 {
     @media (max-width: 1220px) {
@@ -62,5 +66,19 @@
         cursor: pointer;
       }
     }
+  }
+}
+
+.scrollRequest {
+  color: $darkOrange;
+  position: absolute;
+  right: 45px;
+  z-index: 10;
+  font-weight: 700;
+  opacity: 0;
+  visibility: hidden;
+  &.hoverd {
+    opacity: 1;
+    visibility: visible;
   }
 }

@@ -7,6 +7,9 @@
 >
   <div class="headerReference">
     <h4>{{ dataReferences[referenceProvider].name }}</h4>
+    <span class="scrollRequest" [ngClass]="{ hoverd: referenceDivIsHovered }"
+      >{{ "references.scroll" | translate }}</span
+    >
     <app-hexagon
       class="hexagonOrange"
       [ngClass]="{ hoverd: referenceDivIsHovered }"

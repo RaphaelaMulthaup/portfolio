@@ -40,16 +40,19 @@
   @include dFlex($jc: space-between, $ai: flex-start, $g: 2vw);
   flex-direction: column;
   width: 100%;
-  margin-bottom: 8dvh;
+  margin-bottom: 4dvh;
   padding-right: 2.78vw;
   box-sizing: border-box;
   flex: 1;
-  @include respond-to(small-desktop) {
+  @media (max-width: 1450px) {
     margin-bottom: 9dvh;
   }
-  @media (max-width: 1220px) {
-    margin-bottom: 6dvh;
-  }
+  // @include respond-to(small-desktop) {
+  //   margin-bottom: 9dvh;
+  // }
+  // @media (max-width: 1220px) {
+  //   margin-bottom: 6dvh;
+  // }
   @include respond-to(tablet-landscape) {
     // flex-direction: column;
     padding: 0;

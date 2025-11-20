@@ -60,6 +60,7 @@
   },
   "references": {
     "h2": "Was meine Kollegen über mich sagen",
+    "scroll": "Scroll den Text",
     "textFeldtmann": "Es war eine Freude, mit Raphaela an diesem Projekt zu arbeiten. Ich schätzte besonders, dass sie das Projekt stets im Gesamtzusammenhang betrachtete und uns dabei half, eine klare Datenbankstruktur zu entwickeln. Sie verfügt über ein logisches Denkvermögen und ein gutes Verständnis für geschriebenen Code. Sie entwickelte erfolgreich das Suchsystem der Anwendung sowie weitere wichtige Komponenten. Während der gesamten Zusammenarbeit war sie offen für neue Ideen und zeigte stets ein hohes Maß an Engagement.",
     "designationFeldtmann": "Frontend-Entwickler",
     "textNeußer": "Die Zusammenarbeit mit Raphaela war geprägt von gegenseitigem Respekt und konstruktivem Austausch. Besonders schätzte ich ihre strukturierte Herangehensweise, die mir geholfen hat, meine eigene Arbeitsweise zu reflektieren und zu verbessern. Ihre Rückmeldungen waren klar, hilfreich und stets auf Augenhöhe – eine echte Bereicherung für das Projekt.",
