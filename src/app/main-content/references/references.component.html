@@ -4,17 +4,21 @@
   <div class="contentMainComponent">
     <h2>{{ "references.h2" | translate }}</h2>
     <div class="referencesLowerArea">
-      <div class="reference">
-        <app-reference [referenceProvider]="'vollmann'"></app-reference>
+      <div class="upperReferences">
+        <div class="reference">
+          <app-reference [referenceProvider]="'vollmann'"></app-reference>
+        </div>
+        <div class="reference">
+          <app-reference [referenceProvider]="'feldtmann'"></app-reference>
+        </div>
       </div>
-      <div class="reference">
-        <app-reference [referenceProvider]="'feldtmann'"></app-reference>
-      </div>
-      <div class="reference">
-        <app-reference [referenceProvider]="'buha'"></app-reference>
-      </div>
-      <div class="reference">
-        <app-reference [referenceProvider]="'neußer'"></app-reference>
+      <div class="lowerReferences">
+        <div class="reference">
+          <app-reference [referenceProvider]="'buha'"></app-reference>
+        </div>
+        <div class="reference">
+          <app-reference [referenceProvider]="'neußer'"></app-reference>
+        </div>
       </div>
     </div>
   </div>

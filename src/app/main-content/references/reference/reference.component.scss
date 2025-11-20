@@ -4,8 +4,12 @@
   border: 1px solid $cream;
   border-radius: $borderRadius;
   padding: clamp(16px, 2vw, 32px);
+  height: 20dvh;
   @include dFlex($ai: flex-start, $g: 10px);
   flex-direction: column;
+  > span:nth-child(2) {
+    overflow: scroll;
+  }
   > span:last-child {
     font-size: 18px;
     font-weight: 700;

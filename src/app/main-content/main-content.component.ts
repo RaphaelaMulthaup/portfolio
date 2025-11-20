@@ -151,7 +151,7 @@ export class MainContentComponent implements AfterViewInit {
    */
   private shouldIgnoreScroll(event: WheelEvent): boolean {
     const target = event.target as HTMLElement;
-    return target.tagName.toLowerCase() === 'textarea';
+    return target.tagName.toLowerCase() === 'textarea' || (target.tagName.toLowerCase() === 'span' && target.classList.contains('textReference'));
   }
 
   /**
