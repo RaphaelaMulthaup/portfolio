@@ -21,24 +21,30 @@ export class ReferenceComponent {
   @Input() referenceProvider!: string;
   /** The data of the references. */
   dataReferences: { [key: string]: ReferenceData } = {
-    martens: {
-      name: 'Helmut Martens',
-      text: 'textMartens',
-      designation: 'designationMartens',
-      linkedIn:
-        'https://www.linkedin.com/in/helmut-martens-2174921b2/?originalSubdomain=py',
+    feldtmann: {
+      name: 'Nicolaus Feldtmann',
+      text: 'textFeldtmann',
+      designation: 'designationFeldtmann',
+      linkedIn: 'https://www.linkedin.com/in/nicolaus-feldtmann-861371376/',
     },
     neußer: {
       name: 'Franz Neußer',
       text: 'textNeußer',
       designation: 'designationNeußer',
-      linkedIn: 'string',
+      linkedIn: 'https://www.linkedin.com/in/franz-neu%C3%9Fer-460214376/',
     },
-    potter: {
-      name: 'Harry Potter',
-      text: 'textPotter',
-      designation: 'designationPotter',
-      linkedIn: 'string',
+    vollmann: {
+      name: 'Anne Vollmann',
+      text: 'textVollmann',
+      designation: 'designationVollmann',
+      linkedIn: 'https://www.linkedin.com/in/anne-vollmann/',
+    },
+    buha: {
+      name: 'Andrei Buha',
+      text: 'textBuha',
+      designation: 'designationBuha',
+      linkedIn:
+        'https://www.linkedin.com/in/andrei-octavian-buha-web-developer/',
     },
   };
 

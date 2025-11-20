@@ -60,12 +60,14 @@
   },
   "references": {
     "h2": "What my colleagues say about me",
-    "textMartens": "Raphaela is a fantastic team player. She consistently approached our group work with a positive attitude and a strong sense of collaboration. Her keen eye for detail was a significant asset to our projects, ensuring that our work was polished and precise. Beyond her technical skills, Raphaela has a natural ability to create a supportive and productive work environment. I am certain that she will be a great addition to any team.",
-    "designationMartens": "Frontend Developer",
+    "textFeldtmann": "It was a pleasure working with Raphaela. She is an exceptionally conscientious team member who navigates complex code — even when it wasn’t written by her — with ease. Her willingness to take on the most challenging tasks is remarkable and demonstrates her strong dedication and expertise. Raphaela’s ability to respond to the needs of others in collaborative work made a significant contribution to the success of our project. She never hesitated to invest time in longer meetings and discussions, which greatly strengthened communication and team cohesion. Without Raphaela’s valuable contributions, the project could not have been realized in its final form. Her support was truly invaluable in every respect..",
+    "designationFeldtmann": "Frontend Developer",
     "textNeußer": "Working with Raphaela was characterized by mutual respect and constructive collaboration. I especially appreciated her structured approach, which helped me reflect on and improve my own way of working. Her feedback was clear, helpful, and always at eye level – a real asset to the project.",
     "designationNeußer": "Team Partner",
-    "textPotter": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "designationPotter": "Frontend Developer",
+    "textVollmann": "Working with Raphaela has been a truly valuable experience for me! The whole team benefited from her structured way of working and her attention to detail. She discovered bugs and inconsistencies that would otherwise have gone unnoticed. You can always rely on Raphaela! On the one hand, she efficiently and purposefully develops dependable solutions for challenges in our project. On the other hand, you can always trust that she will support her teammates and motivate them with her positive attitude. She is an absolute asset to our team. I would therefore be happy to work with her again at any time!",
+    "designationVollmann": "Frontend Developer",
+    "textBuha": "It was a pleasure working with Raphaela on this project. I especially appreciated how she consistently kept the bigger picture in mind and helped us develop a clear database structure. She has strong logical thinking skills and a solid understanding of written code. She successfully developed the application’s search system as well as several other important components. Throughout our collaboration, she was open to new ideas and consistently demonstrated a high level of commitment.",
+    "designationBuha": "Frontend Developer",
     "linkedIn": "View LinkedIn profile >>"
   },
   "contact": {
