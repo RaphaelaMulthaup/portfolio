@@ -59,6 +59,9 @@
     gap: 24px;
     margin-bottom: 0;
   }
+  @media (max-width: 830px) {
+    align-items: center;
+  }
   // > div:first-child {
   //   @include dFlex($ai: flex-start);
   // }
@@ -70,8 +73,12 @@
   // }
 }
 
-.upperReferences, .lowerReferences {
+.upperReferences,
+.lowerReferences {
   @include dFlex($g: 4vw);
+  @media (max-width: 830px) {
+    flex-direction: column;
+  }
 }
 
 .reference {
@@ -81,6 +88,16 @@
     // height: auto;
     width: 41vw;
   }
+  @media (max-width: 830px) {
+    width: 70vw;
+  }
+  @media (max-width: 700px) {
+    width: 80vw;
+  }
+    @media (max-width: 480px) {
+    width: 90vw;
+  }
+
 
   app-reference {
     width: 100%;
