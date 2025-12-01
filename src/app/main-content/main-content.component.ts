@@ -85,7 +85,7 @@ export class MainContentComponent implements AfterViewInit {
   private initScrollBehavior() {
     if (!this.freeScroll) {
       fromEvent(window, 'wheel')
-        .pipe(throttleTime(1000))
+        .pipe(throttleTime(400))
         .subscribe((event) => {
           this.handleScroll(event as WheelEvent);
         });
@@ -164,7 +164,7 @@ export class MainContentComponent implements AfterViewInit {
       return false;
     }
     this.isScrolling = true;
-    setTimeout(() => (this.isScrolling = false), 800);
+    setTimeout(() => (this.isScrolling = false), 400);
     return true;
   }
 
