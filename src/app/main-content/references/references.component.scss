@@ -47,14 +47,7 @@
   @media (max-width: 1450px) {
     margin-bottom: 9dvh;
   }
-  // @include respond-to(small-desktop) {
-  //   margin-bottom: 9dvh;
-  // }
-  // @media (max-width: 1220px) {
-  //   margin-bottom: 6dvh;
-  // }
   @include respond-to(tablet-landscape) {
-    // flex-direction: column;
     padding: 0;
     gap: 24px;
     margin-bottom: 0;
@@ -62,15 +55,6 @@
   @media (max-width: 830px) {
     align-items: center;
   }
-  // > div:first-child {
-  //   @include dFlex($ai: flex-start);
-  // }
-  // > div:nth-child(2) {
-  //   @include dFlex();
-  // }
-  // > div:last-child {
-  //   @include dFlex($ai: flex-end);
-  // }
 }
 
 .upperReferences,
@@ -83,10 +67,8 @@
 }
 
 .reference {
-  // height: 100%;
   width: 38vw;
   @include respond-to(tablet-landscape) {
-    // height: auto;
     width: 41vw;
   }
   @media (max-width: 830px) {
