@@ -76,6 +76,7 @@
 .upperReferences,
 .lowerReferences {
   @include dFlex($g: 4vw);
+  width: 100%;
   @media (max-width: 830px) {
     flex-direction: column;
   }
